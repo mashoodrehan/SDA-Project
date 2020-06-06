@@ -16,6 +16,7 @@ namespace AuditPlan
         {
             InitializeComponent();
         }
+        #region==================================================Panels==================================================
         public void Panel(System.Windows.Forms.Panel p)
         {
             MarketPnl.Visible = false;
@@ -89,6 +90,136 @@ namespace AuditPlan
             Panel(HomePnl);
         }
 
+        private void KI_NI_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(ChaklalaInstPnl);
+        }
+
+        private void KI_Bck_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(DeptPnl);
+        }
+
+        private void Rslt_Hm_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(HomePnl);
+        }
+
+        private void Rslt_Bck_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(DeptPnl);
+        }
+
+        private void FD_Pnl2_Hm_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(HomePnl);
+        }
+
+        private void FD_Pnl2_Bck_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(FinancePnl);
+        }
+
+        private void FD_Pnl1_Hm_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(HomePnl);
+        }
+
+        private void FD_Pnl1_Bck_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(DeptPnl);
+        }
+
+        private void FD_Pnl1_NP_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(FinancePnl2);
+        }
+
+        private void MD_Hm_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(HomePnl);
+        }
+
+        private void MD_Bck_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(DeptPnl);
+        }
+
+        private void HR_Hm_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(HomePnl);
+        }
+
+        private void HR_Bck_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(DeptPnl);
+        }
+
+        private void ParAVI_Hm_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(HomePnl);
+        }
+
+        private void ParAVI_Bck_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(ChaklalaAVIPnl);
+        }
+
+        private void KAVI_Home_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(HomePnl);
+        }
+
+        private void KAVI_Bck_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(DeptPnl);
+        }
+
+        private void KAVI_NAvi_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(ChaklalaAVIPnl);
+        }
+
+        private void ChaklalaAvi_Hm_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(HomePnl);
+        }
+
+        private void CAVI_Bck_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(KemariAviPnl);
+        }
+
+        private void CAVI_NA_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(ParcoAVIPnl);
+        }
+
+        private void C_Home_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(HomePnl);
+        }
+
+        private void C_Bck_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(KemariInstPnl);
+        }
+
+        private void C_NI_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(ParcoInstPnl);
+        }
+
+        private void ParcoHmBtn_Click(object sender, EventArgs e)
+        {
+            Panel(HomePnl);
+        }
+
+        private void P_Bck_Btn_Click(object sender, EventArgs e)
+        {
+            Panel(ChaklalaInstPnl);
+        }
+        #endregion
         private void KAVI_AddInfo_Btn_Click(object sender, EventArgs e)
         {
             try
@@ -130,5 +261,6 @@ namespace AuditPlan
             {
             }
         }
+
     }
 }
