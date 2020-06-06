@@ -16,5 +16,32 @@ namespace AuditPlan
         {
             InitializeComponent();
         }
+        public void Panel(System.Windows.Forms.Panel p)
+        {
+            MarketPnl.Visible = false;
+            HRMPnl.Visible = false;
+            ParcoAVIPnl.Visible = false;
+            ChaklalaAVIPnl.Visible = false;
+            KemariAviPnl.Visible = false;
+            ParcoInstPnl.Visible = false;
+            ChaklalaInstPnl.Visible = false;
+            KemariInstPnl.Visible = false;
+            DeptPnl.Visible = false;
+            HomePnl.Visible = false;
+            FinancePnl.Visible = false;
+            FinancePnl2.Visible = false;
+            ResultDptPnl.Visible = false;
+            p.Visible = true;
+        }
+
+        private void Home_DptBtn_Click(object sender, EventArgs e)
+        {
+            Panel(DeptPnl);
+        }
+
+        private void HomeResltBtn_Click(object sender, EventArgs e)
+        {
+            Panel(ResultDptPnl);
+        }
     }
 }
