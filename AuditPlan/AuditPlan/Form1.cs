@@ -43,5 +43,50 @@ namespace AuditPlan
         {
             Panel(ResultDptPnl);
         }
+
+        private void Dpt_HomeBtn_Click(object sender, EventArgs e)
+        {
+            Panel(HomePnl);
+        }
+
+        private void Dpt_HRDptBtn_Click(object sender, EventArgs e)
+        {
+            Panel(HRMPnl);
+        }
+
+        private void Dpt_OpDptBtn_Click(object sender, EventArgs e)
+        {
+            Panel(KemariInstPnl);
+        }
+
+        private void Dpt_MktDptBtn_Click(object sender, EventArgs e)
+        {
+            Panel(MarketPnl);
+        }
+
+        private void Dpt_AviDptBtn_Click(object sender, EventArgs e)
+        {
+            Panel(KemariAviPnl);
+        }
+
+        private void Dpt_FinDptBtn_Click(object sender, EventArgs e)
+        {
+            Panel(FinancePnl);
+            //try
+            //{
+            //    SLW();
+            //    LGLW();
+            //    PQVLW();
+            //    CSPLW();
+            //}
+            //catch (Exception)
+            //{
+            //}
+        }
+
+        private void KIDepoHmBtn_Click(object sender, EventArgs e)
+        {
+            Panel(HomePnl);
+        }
     }
 }
