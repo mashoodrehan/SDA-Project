@@ -7,3 +7,13 @@ E:\6th Semester\Software Design & Architecture Lab\SDA-Project\AuditPlan\AuditPl
 E:\6th Semester\Software Design & Architecture Lab\SDA-Project\AuditPlan\AuditPlan\obj\Debug\AuditPlan.csproj.GenerateResource.cache
 E:\6th Semester\Software Design & Architecture Lab\SDA-Project\AuditPlan\AuditPlan\obj\Debug\AuditPlan.exe
 E:\6th Semester\Software Design & Architecture Lab\SDA-Project\AuditPlan\AuditPlan\obj\Debug\AuditPlan.pdb
+C:\Users\farif\Desktop\Fahad University\6th Semester\Projects\SDA-Project\AuditPlan\AuditPlan\bin\Debug\AuditPlan.exe.config
+C:\Users\farif\Desktop\Fahad University\6th Semester\Projects\SDA-Project\AuditPlan\AuditPlan\bin\Debug\AuditPlan.exe
+C:\Users\farif\Desktop\Fahad University\6th Semester\Projects\SDA-Project\AuditPlan\AuditPlan\bin\Debug\AuditPlan.pdb
+C:\Users\farif\Desktop\Fahad University\6th Semester\Projects\SDA-Project\AuditPlan\AuditPlan\obj\Debug\AuditPlan.csprojAssemblyReference.cache
+C:\Users\farif\Desktop\Fahad University\6th Semester\Projects\SDA-Project\AuditPlan\AuditPlan\obj\Debug\AuditPlan.Form1.resources
+C:\Users\farif\Desktop\Fahad University\6th Semester\Projects\SDA-Project\AuditPlan\AuditPlan\obj\Debug\AuditPlan.Properties.Resources.resources
+C:\Users\farif\Desktop\Fahad University\6th Semester\Projects\SDA-Project\AuditPlan\AuditPlan\obj\Debug\AuditPlan.csproj.GenerateResource.cache
+C:\Users\farif\Desktop\Fahad University\6th Semester\Projects\SDA-Project\AuditPlan\AuditPlan\obj\Debug\AuditPlan.csproj.CoreCompileInputs.cache
+C:\Users\farif\Desktop\Fahad University\6th Semester\Projects\SDA-Project\AuditPlan\AuditPlan\obj\Debug\AuditPlan.exe
+C:\Users\farif\Desktop\Fahad University\6th Semester\Projects\SDA-Project\AuditPlan\AuditPlan\obj\Debug\AuditPlan.pdb
