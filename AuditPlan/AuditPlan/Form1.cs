@@ -262,5 +262,29 @@ namespace AuditPlan
             }
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'auditPlanDataSet.AuditPlanRes' table. You can move, or remove it, as needed.
+            this.auditPlanResTableAdapter.Fill(this.auditPlanDataSet.AuditPlanRes);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.FinanceDpt' table. You can move, or remove it, as needed.
+            this.financeDptTableAdapter.Fill(this.auditPlanDataSet.FinanceDpt);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.MarketDpt' table. You can move, or remove it, as needed.
+            this.marketDptTableAdapter.Fill(this.auditPlanDataSet.MarketDpt);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.HRDept' table. You can move, or remove it, as needed.
+            this.hRDeptTableAdapter.Fill(this.auditPlanDataSet.HRDept);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.PARCOAvi' table. You can move, or remove it, as needed.
+            this.pARCOAviTableAdapter.Fill(this.auditPlanDataSet.PARCOAvi);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.ChaklalaAvi' table. You can move, or remove it, as needed.
+            this.chaklalaAviTableAdapter.Fill(this.auditPlanDataSet.ChaklalaAvi);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.KeemariAvi' table. You can move, or remove it, as needed.
+            this.keemariAviTableAdapter.Fill(this.auditPlanDataSet.KeemariAvi);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.PARCODepo' table. You can move, or remove it, as needed.
+            this.pARCODepoTableAdapter.Fill(this.auditPlanDataSet.PARCODepo);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.ChaklalaDepo' table. You can move, or remove it, as needed.
+            this.chaklalaDepoTableAdapter.Fill(this.auditPlanDataSet.ChaklalaDepo);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.KeemariDepo' table. You can move, or remove it, as needed.
+            this.keemariDepoTableAdapter.Fill(this.auditPlanDataSet.KeemariDepo);
+
+        }
     }
 }

@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle639 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle640 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle641 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle642 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle643 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle644 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle645 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle646 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle647 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle648 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle649 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle650 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle651 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle652 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle653 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle654 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle655 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle656 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle657 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle658 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle659 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle660 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             this.HomePnl = new System.Windows.Forms.Panel();
             this.HomeResltBtn = new System.Windows.Forms.Button();
             this.Home_DptBtn = new System.Windows.Forms.Button();
@@ -585,6 +586,368 @@
             this.Dpt_MktDptBtn = new System.Windows.Forms.Button();
             this.Dpt_HRDptBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.auditPlanDataSet = new AuditPlan.AuditPlanDataSet();
+            this.keemariDepoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.keemariDepoTableAdapter = new AuditPlan.AuditPlanDataSetTableAdapters.KeemariDepoTableAdapter();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSPurLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCPurLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDPurLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOPurLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purTstockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSPurAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCPurAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDPurAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOPurAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purTamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSTranPerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCTranPerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDTranPerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOTranPerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSTranStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCTranStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDTranStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOTranStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tranTstockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSSalePerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCSalePerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDSalePerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOSalePerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSSaleAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCSaleAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDSaleAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOSaleAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saleTamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sukhDStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.daulDStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.queDStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.depoTstockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sukhDSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.daulDSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.queDSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.depoTSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSPurPrcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCPurPrcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDPurPrcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOPurPrcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSClosingSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCClosingSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDClosingSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOClosingSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSSalePrcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCSalePrcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDSalePrcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOSalePrcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chaklalaDepoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chaklalaDepoTableAdapter = new AuditPlan.AuditPlanDataSetTableAdapters.ChaklalaDepoTableAdapter();
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSPurLtrDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCPurLtrDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDPurLtrDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOPurLtrDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purTstockDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSPurAmntDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCPurAmntDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDPurAmntDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOPurAmntDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purTamountDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSTranPerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCTranPerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDTranPerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOTranPerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSTranStckDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCTranStckDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDTranStckDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOTranStckDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tranTstockDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSSalePerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCSalePerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDSalePerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOSalePerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSSaleAmntDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCSaleAmntDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDSaleAmntDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOSaleAmntDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saleTamountDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.badDStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.faisDStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sarDStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peshDStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bannDStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.depoTstockDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.badDSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.faisDSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sarDSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peshDSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bannDSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.depoTSaleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSPurPrcDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCPurPrcDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDPurPrcDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOPurPrcDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSClosingSDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCClosingSDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDClosingSDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOClosingSDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSSalePrcDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCSalePrcDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDSalePrcDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOSalePrcDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pARCODepoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pARCODepoTableAdapter = new AuditPlan.AuditPlanDataSetTableAdapters.PARCODepoTableAdapter();
+            this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSPurLtrDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCPurLtrDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDPurLtrDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOPurLtrDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purTstockDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSPurAmntDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCPurAmntDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDPurAmntDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOPurAmntDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purTamountDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSTranPerDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCTranPerDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDTranPerDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOTranPerDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSTranStckDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCTranStckDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDTranStckDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOTranStckDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tranTstockDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSSalePerDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCSalePerDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDSalePerDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOSalePerDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSSaleAmntDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCSaleAmntDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDSaleAmntDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOSaleAmntDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saleTamountDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehDStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sherDStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sahiDStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.depoTstockDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehDSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sherDSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sahiDSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.depoTSaleDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSPurPrcDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCPurPrcDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDPurPrcDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOPurPrcDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSClosingSDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCClosingSDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDClosingSDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOClosingSDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mSSalePrcDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOBCSalePrcDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hSDSalePrcDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOSalePrcDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.keemariAviBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.keemariAviTableAdapter = new AuditPlan.AuditPlanDataSetTableAdapters.KeemariAviTableAdapter();
+            this.iDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4PurLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1PurLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purTstockDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4PurAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1PurAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purTamountDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4TranPerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1TranPerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4TranStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1TranStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tranTstockDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4SalePerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1SalePerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4SaleAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1SaleAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saleTamountDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.karAStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.queAStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nawAStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sukAStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aviTstockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.karASaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.queASaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nawASaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sukASaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aviTSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4PurPrcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1PurPrcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4ClosingSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1ClosingSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4SalePrcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1SalePrcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chaklalaAviBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chaklalaAviTableAdapter = new AuditPlan.AuditPlanDataSetTableAdapters.ChaklalaAviTableAdapter();
+            this.iDDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4PurLtrDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1PurLtrDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purTstockDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4PurAmntDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1PurAmntDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purTamountDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4TranPerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1TranPerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4TranStckDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1TranStckDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tranTstockDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4SalePerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1SalePerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4SaleAmntDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1SaleAmntDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saleTamountDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.islAStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peshAStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aviTstockDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.islASaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peshASaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aviTSaleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4PurPrcDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1PurPrcDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4ClosingSDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1ClosingSDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4SalePrcDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1SalePrcDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pARCOAviBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pARCOAviTableAdapter = new AuditPlan.AuditPlanDataSetTableAdapters.PARCOAviTableAdapter();
+            this.iDDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4PurLtrDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1PurLtrDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purTstockDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4PurAmntDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1PurAmntDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purTamountDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4TranPerDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1TranPerDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4TranStckDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1TranStckDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tranTstockDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4SalePerDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1SalePerDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4SaleAmntDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1SaleAmntDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saleTamountDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lahAStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mulAStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aviTstockDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lahASaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mulASaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aviTSaleDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4PurPrcDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1PurPrcDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4ClosingSDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1ClosingSDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jP4SalePrcDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jetA1SalePrcDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hRDeptBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hRDeptTableAdapter = new AuditPlan.AuditPlanDataSetTableAdapters.HRDeptTableAdapter();
+            this.iDDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purAffTicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maintStaffCarsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotelBookDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transArranStaffDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.photoExpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marketDptBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.marketDptTableAdapter = new AuditPlan.AuditPlanDataSetTableAdapters.MarketDptTableAdapter();
+            this.iDDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.constChargRtSitesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maintRtSitesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kHiSprLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kHSDLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kHOBCLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kHiSprAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kHSDAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kHOBCAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kTLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kTAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lHiSprLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lHSDLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lHOBCLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lHiSprAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lHSDAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lHOBCAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lTLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lTAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iHiSprLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iHSDLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iHOBCLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iHiSprAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iHSDAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iHOBCAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iTLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iTAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qHiSprStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qHSDStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qHOBCStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qHiSprAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qHSDAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qHOBCAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qTLtrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qTAmntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.financeDptBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.financeDptTableAdapter = new AuditPlan.AuditPlanDataSetTableAdapters.FinanceDptTableAdapter();
+            this.iDDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saleLocwiseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lossesGainsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.custInvicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purQtyValLocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purInvSupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.closingStckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.custAcctDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesProdCustDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payRecCustDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.credlimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paySupCntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payEmpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.impreplenishDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salprosPayEmpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loansAdvEmpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profndInvstDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pensionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paySupCntBnkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cashEmpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mainBnkAcctDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bankReconDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saleLocwiseDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lossesGainsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.custInvicDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purQtyValLocDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purInvSupDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.closingStckDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.custAcctDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesProdCustDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payRecCustDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.credlimDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paySupCntDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payEmpDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.impreplenishDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salprosPayEmpDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loansAdvEmpDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profndInvstDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pensionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paySupCntBnkDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cashEmpDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mainBnkAcctDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bankReconDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.auditPlanResBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.auditPlanResTableAdapter = new AuditPlan.AuditPlanDataSetTableAdapters.AuditPlanResTableAdapter();
+            this.iDDataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.frequencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.riskDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HomePnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ResultDptPnl.SuspendLayout();
@@ -610,6 +973,17 @@
             this.KemariInstPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KemD_GV)).BeginInit();
             this.DeptPnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.auditPlanDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keemariDepoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chaklalaDepoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pARCODepoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keemariAviBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chaklalaAviBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pARCOAviBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hRDeptBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marketDptBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.financeDptBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.auditPlanResBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // HomePnl
@@ -689,23 +1063,30 @@
             // 
             this.Res_GV.AllowUserToAddRows = false;
             this.Res_GV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle639.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle639.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle639.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle639.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle639.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle639.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle639.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Res_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle639;
+            this.Res_GV.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Res_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Res_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle640.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle640.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle640.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle640.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle640.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle640.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle640.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Res_GV.DefaultCellStyle = dataGridViewCellStyle640;
+            this.Res_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn10,
+            this.departmentsDataGridViewTextBoxColumn,
+            this.frequencyDataGridViewTextBoxColumn,
+            this.riskDataGridViewTextBoxColumn});
+            this.Res_GV.DataSource = this.auditPlanResBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Res_GV.DefaultCellStyle = dataGridViewCellStyle2;
             this.Res_GV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Res_GV.Location = new System.Drawing.Point(0, 68);
             this.Res_GV.Name = "Res_GV";
@@ -813,23 +1194,49 @@
             // 
             this.FD2_GV.AllowUserToAddRows = false;
             this.FD2_GV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle641.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle641.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle641.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle641.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle641.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle641.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle641.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FD2_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle641;
+            this.FD2_GV.AutoGenerateColumns = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FD2_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.FD2_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle642.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle642.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle642.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle642.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle642.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle642.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle642.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FD2_GV.DefaultCellStyle = dataGridViewCellStyle642;
+            this.FD2_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn9,
+            this.dateDataGridViewTextBoxColumn9,
+            this.saleLocwiseDataGridViewTextBoxColumn1,
+            this.lossesGainsDataGridViewTextBoxColumn1,
+            this.custInvicDataGridViewTextBoxColumn1,
+            this.purQtyValLocDataGridViewTextBoxColumn1,
+            this.purInvSupDataGridViewTextBoxColumn1,
+            this.closingStckDataGridViewTextBoxColumn1,
+            this.custAcctDataGridViewTextBoxColumn1,
+            this.salesProdCustDataGridViewTextBoxColumn1,
+            this.payRecCustDataGridViewTextBoxColumn1,
+            this.credlimDataGridViewTextBoxColumn1,
+            this.paySupCntDataGridViewTextBoxColumn1,
+            this.payEmpDataGridViewTextBoxColumn1,
+            this.impreplenishDataGridViewTextBoxColumn1,
+            this.salprosPayEmpDataGridViewTextBoxColumn1,
+            this.loansAdvEmpDataGridViewTextBoxColumn1,
+            this.profndInvstDataGridViewTextBoxColumn1,
+            this.pensionDataGridViewTextBoxColumn1,
+            this.paySupCntBnkDataGridViewTextBoxColumn1,
+            this.cashEmpDataGridViewTextBoxColumn1,
+            this.mainBnkAcctDataGridViewTextBoxColumn1,
+            this.bankReconDataGridViewTextBoxColumn1});
+            this.FD2_GV.DataSource = this.financeDptBindingSource;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FD2_GV.DefaultCellStyle = dataGridViewCellStyle4;
             this.FD2_GV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.FD2_GV.Location = new System.Drawing.Point(0, 391);
             this.FD2_GV.Name = "FD2_GV";
@@ -1274,23 +1681,49 @@
             // 
             this.FD1_GV.AllowUserToAddRows = false;
             this.FD1_GV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle643.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle643.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle643.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle643.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle643.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle643.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle643.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FD1_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle643;
+            this.FD1_GV.AutoGenerateColumns = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FD1_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.FD1_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle644.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle644.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle644.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle644.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle644.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle644.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle644.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FD1_GV.DefaultCellStyle = dataGridViewCellStyle644;
+            this.FD1_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn8,
+            this.dateDataGridViewTextBoxColumn8,
+            this.saleLocwiseDataGridViewTextBoxColumn,
+            this.lossesGainsDataGridViewTextBoxColumn,
+            this.custInvicDataGridViewTextBoxColumn,
+            this.purQtyValLocDataGridViewTextBoxColumn,
+            this.purInvSupDataGridViewTextBoxColumn,
+            this.closingStckDataGridViewTextBoxColumn,
+            this.custAcctDataGridViewTextBoxColumn,
+            this.salesProdCustDataGridViewTextBoxColumn,
+            this.payRecCustDataGridViewTextBoxColumn,
+            this.credlimDataGridViewTextBoxColumn,
+            this.paySupCntDataGridViewTextBoxColumn,
+            this.payEmpDataGridViewTextBoxColumn,
+            this.impreplenishDataGridViewTextBoxColumn,
+            this.salprosPayEmpDataGridViewTextBoxColumn,
+            this.loansAdvEmpDataGridViewTextBoxColumn,
+            this.profndInvstDataGridViewTextBoxColumn,
+            this.pensionDataGridViewTextBoxColumn,
+            this.paySupCntBnkDataGridViewTextBoxColumn,
+            this.cashEmpDataGridViewTextBoxColumn,
+            this.mainBnkAcctDataGridViewTextBoxColumn,
+            this.bankReconDataGridViewTextBoxColumn});
+            this.FD1_GV.DataSource = this.financeDptBindingSource;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FD1_GV.DefaultCellStyle = dataGridViewCellStyle6;
             this.FD1_GV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.FD1_GV.Location = new System.Drawing.Point(0, 366);
             this.FD1_GV.Name = "FD1_GV";
@@ -1705,23 +2138,62 @@
             // 
             this.MD_GV.AllowUserToAddRows = false;
             this.MD_GV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle645.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle645.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle645.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle645.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle645.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle645.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle645.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MD_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle645;
+            this.MD_GV.AutoGenerateColumns = false;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MD_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.MD_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle646.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle646.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle646.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle646.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle646.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle646.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle646.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MD_GV.DefaultCellStyle = dataGridViewCellStyle646;
+            this.MD_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn7,
+            this.dateDataGridViewTextBoxColumn7,
+            this.constChargRtSitesDataGridViewTextBoxColumn,
+            this.maintRtSitesDataGridViewTextBoxColumn,
+            this.kHiSprLtrDataGridViewTextBoxColumn,
+            this.kHSDLtrDataGridViewTextBoxColumn,
+            this.kHOBCLtrDataGridViewTextBoxColumn,
+            this.kHiSprAmntDataGridViewTextBoxColumn,
+            this.kHSDAmntDataGridViewTextBoxColumn,
+            this.kHOBCAmntDataGridViewTextBoxColumn,
+            this.kTLtrDataGridViewTextBoxColumn,
+            this.kTAmntDataGridViewTextBoxColumn,
+            this.lHiSprLtrDataGridViewTextBoxColumn,
+            this.lHSDLtrDataGridViewTextBoxColumn,
+            this.lHOBCLtrDataGridViewTextBoxColumn,
+            this.lHiSprAmntDataGridViewTextBoxColumn,
+            this.lHSDAmntDataGridViewTextBoxColumn,
+            this.lHOBCAmntDataGridViewTextBoxColumn,
+            this.lTLtrDataGridViewTextBoxColumn,
+            this.lTAmntDataGridViewTextBoxColumn,
+            this.iHiSprLtrDataGridViewTextBoxColumn,
+            this.iHSDLtrDataGridViewTextBoxColumn,
+            this.iHOBCLtrDataGridViewTextBoxColumn,
+            this.iHiSprAmntDataGridViewTextBoxColumn,
+            this.iHSDAmntDataGridViewTextBoxColumn,
+            this.iHOBCAmntDataGridViewTextBoxColumn,
+            this.iTLtrDataGridViewTextBoxColumn,
+            this.iTAmntDataGridViewTextBoxColumn,
+            this.qHiSprStckDataGridViewTextBoxColumn,
+            this.qHSDStckDataGridViewTextBoxColumn,
+            this.qHOBCStckDataGridViewTextBoxColumn,
+            this.qHiSprAmntDataGridViewTextBoxColumn,
+            this.qHSDAmntDataGridViewTextBoxColumn,
+            this.qHOBCAmntDataGridViewTextBoxColumn,
+            this.qTLtrDataGridViewTextBoxColumn,
+            this.qTAmntDataGridViewTextBoxColumn});
+            this.MD_GV.DataSource = this.marketDptBindingSource;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MD_GV.DefaultCellStyle = dataGridViewCellStyle8;
             this.MD_GV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.MD_GV.Location = new System.Drawing.Point(0, 324);
             this.MD_GV.Name = "MD_GV";
@@ -2375,23 +2847,33 @@
             // 
             this.HR_GV.AllowUserToAddRows = false;
             this.HR_GV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle647.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle647.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle647.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle647.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle647.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle647.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle647.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.HR_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle647;
+            this.HR_GV.AutoGenerateColumns = false;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.HR_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.HR_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle648.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle648.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle648.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle648.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle648.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle648.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle648.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.HR_GV.DefaultCellStyle = dataGridViewCellStyle648;
+            this.HR_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn6,
+            this.dateDataGridViewTextBoxColumn6,
+            this.purAffTicDataGridViewTextBoxColumn,
+            this.maintStaffCarsDataGridViewTextBoxColumn,
+            this.hotelBookDataGridViewTextBoxColumn,
+            this.transArranStaffDataGridViewTextBoxColumn,
+            this.photoExpDataGridViewTextBoxColumn});
+            this.HR_GV.DataSource = this.hRDeptBindingSource;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.HR_GV.DefaultCellStyle = dataGridViewCellStyle10;
             this.HR_GV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.HR_GV.Location = new System.Drawing.Point(0, 243);
             this.HR_GV.Name = "HR_GV";
@@ -2706,23 +3188,56 @@
             // 
             this.PAVI_GV.AllowUserToAddRows = false;
             this.PAVI_GV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle649.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle649.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle649.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle649.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle649.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle649.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle649.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PAVI_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle649;
+            this.PAVI_GV.AutoGenerateColumns = false;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PAVI_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.PAVI_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle650.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle650.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle650.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle650.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle650.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle650.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle650.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.PAVI_GV.DefaultCellStyle = dataGridViewCellStyle650;
+            this.PAVI_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn5,
+            this.dateDataGridViewTextBoxColumn5,
+            this.jP4PurLtrDataGridViewTextBoxColumn2,
+            this.jetA1PurLtrDataGridViewTextBoxColumn2,
+            this.purTstockDataGridViewTextBoxColumn5,
+            this.jP4PurAmntDataGridViewTextBoxColumn2,
+            this.jetA1PurAmntDataGridViewTextBoxColumn2,
+            this.purTamountDataGridViewTextBoxColumn5,
+            this.jP4TranPerDataGridViewTextBoxColumn2,
+            this.jetA1TranPerDataGridViewTextBoxColumn2,
+            this.jP4TranStckDataGridViewTextBoxColumn2,
+            this.jetA1TranStckDataGridViewTextBoxColumn2,
+            this.tranTstockDataGridViewTextBoxColumn5,
+            this.jP4SalePerDataGridViewTextBoxColumn2,
+            this.jetA1SalePerDataGridViewTextBoxColumn2,
+            this.jP4SaleAmntDataGridViewTextBoxColumn2,
+            this.jetA1SaleAmntDataGridViewTextBoxColumn2,
+            this.saleTamountDataGridViewTextBoxColumn5,
+            this.lahAStckDataGridViewTextBoxColumn,
+            this.mulAStckDataGridViewTextBoxColumn,
+            this.aviTstockDataGridViewTextBoxColumn2,
+            this.lahASaleDataGridViewTextBoxColumn,
+            this.mulASaleDataGridViewTextBoxColumn,
+            this.aviTSaleDataGridViewTextBoxColumn2,
+            this.jP4PurPrcDataGridViewTextBoxColumn2,
+            this.jetA1PurPrcDataGridViewTextBoxColumn2,
+            this.jP4ClosingSDataGridViewTextBoxColumn2,
+            this.jetA1ClosingSDataGridViewTextBoxColumn2,
+            this.jP4SalePrcDataGridViewTextBoxColumn2,
+            this.jetA1SalePrcDataGridViewTextBoxColumn2});
+            this.PAVI_GV.DataSource = this.pARCOAviBindingSource;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.PAVI_GV.DefaultCellStyle = dataGridViewCellStyle12;
             this.PAVI_GV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PAVI_GV.Location = new System.Drawing.Point(0, 270);
             this.PAVI_GV.Name = "PAVI_GV";
@@ -3284,23 +3799,56 @@
             // 
             this.CAVI_GV.AllowUserToAddRows = false;
             this.CAVI_GV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle651.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle651.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle651.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle651.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle651.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle651.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle651.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CAVI_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle651;
+            this.CAVI_GV.AutoGenerateColumns = false;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CAVI_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.CAVI_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle652.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle652.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle652.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle652.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle652.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle652.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle652.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CAVI_GV.DefaultCellStyle = dataGridViewCellStyle652;
+            this.CAVI_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn4,
+            this.dateDataGridViewTextBoxColumn4,
+            this.jP4PurLtrDataGridViewTextBoxColumn1,
+            this.jetA1PurLtrDataGridViewTextBoxColumn1,
+            this.purTstockDataGridViewTextBoxColumn4,
+            this.jP4PurAmntDataGridViewTextBoxColumn1,
+            this.jetA1PurAmntDataGridViewTextBoxColumn1,
+            this.purTamountDataGridViewTextBoxColumn4,
+            this.jP4TranPerDataGridViewTextBoxColumn1,
+            this.jetA1TranPerDataGridViewTextBoxColumn1,
+            this.jP4TranStckDataGridViewTextBoxColumn1,
+            this.jetA1TranStckDataGridViewTextBoxColumn1,
+            this.tranTstockDataGridViewTextBoxColumn4,
+            this.jP4SalePerDataGridViewTextBoxColumn1,
+            this.jetA1SalePerDataGridViewTextBoxColumn1,
+            this.jP4SaleAmntDataGridViewTextBoxColumn1,
+            this.jetA1SaleAmntDataGridViewTextBoxColumn1,
+            this.saleTamountDataGridViewTextBoxColumn4,
+            this.islAStckDataGridViewTextBoxColumn,
+            this.peshAStckDataGridViewTextBoxColumn,
+            this.aviTstockDataGridViewTextBoxColumn1,
+            this.islASaleDataGridViewTextBoxColumn,
+            this.peshASaleDataGridViewTextBoxColumn,
+            this.aviTSaleDataGridViewTextBoxColumn1,
+            this.jP4PurPrcDataGridViewTextBoxColumn1,
+            this.jetA1PurPrcDataGridViewTextBoxColumn1,
+            this.jP4ClosingSDataGridViewTextBoxColumn1,
+            this.jetA1ClosingSDataGridViewTextBoxColumn1,
+            this.jP4SalePrcDataGridViewTextBoxColumn1,
+            this.jetA1SalePrcDataGridViewTextBoxColumn1});
+            this.CAVI_GV.DataSource = this.chaklalaAviBindingSource;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CAVI_GV.DefaultCellStyle = dataGridViewCellStyle14;
             this.CAVI_GV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.CAVI_GV.Location = new System.Drawing.Point(0, 290);
             this.CAVI_GV.Name = "CAVI_GV";
@@ -3882,23 +4430,60 @@
             // 
             this.KemA_GV.AllowUserToAddRows = false;
             this.KemA_GV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle653.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle653.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle653.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle653.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle653.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle653.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle653.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.KemA_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle653;
+            this.KemA_GV.AutoGenerateColumns = false;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.KemA_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.KemA_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle654.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle654.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle654.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle654.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle654.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle654.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle654.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.KemA_GV.DefaultCellStyle = dataGridViewCellStyle654;
+            this.KemA_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn3,
+            this.dateDataGridViewTextBoxColumn3,
+            this.jP4PurLtrDataGridViewTextBoxColumn,
+            this.jetA1PurLtrDataGridViewTextBoxColumn,
+            this.purTstockDataGridViewTextBoxColumn3,
+            this.jP4PurAmntDataGridViewTextBoxColumn,
+            this.jetA1PurAmntDataGridViewTextBoxColumn,
+            this.purTamountDataGridViewTextBoxColumn3,
+            this.jP4TranPerDataGridViewTextBoxColumn,
+            this.jetA1TranPerDataGridViewTextBoxColumn,
+            this.jP4TranStckDataGridViewTextBoxColumn,
+            this.jetA1TranStckDataGridViewTextBoxColumn,
+            this.tranTstockDataGridViewTextBoxColumn3,
+            this.jP4SalePerDataGridViewTextBoxColumn,
+            this.jetA1SalePerDataGridViewTextBoxColumn,
+            this.jP4SaleAmntDataGridViewTextBoxColumn,
+            this.jetA1SaleAmntDataGridViewTextBoxColumn,
+            this.saleTamountDataGridViewTextBoxColumn3,
+            this.karAStckDataGridViewTextBoxColumn,
+            this.queAStckDataGridViewTextBoxColumn,
+            this.nawAStckDataGridViewTextBoxColumn,
+            this.sukAStckDataGridViewTextBoxColumn,
+            this.aviTstockDataGridViewTextBoxColumn,
+            this.karASaleDataGridViewTextBoxColumn,
+            this.queASaleDataGridViewTextBoxColumn,
+            this.nawASaleDataGridViewTextBoxColumn,
+            this.sukASaleDataGridViewTextBoxColumn,
+            this.aviTSaleDataGridViewTextBoxColumn,
+            this.jP4PurPrcDataGridViewTextBoxColumn,
+            this.jetA1PurPrcDataGridViewTextBoxColumn,
+            this.jP4ClosingSDataGridViewTextBoxColumn,
+            this.jetA1ClosingSDataGridViewTextBoxColumn,
+            this.jP4SalePrcDataGridViewTextBoxColumn,
+            this.jetA1SalePrcDataGridViewTextBoxColumn});
+            this.KemA_GV.DataSource = this.keemariAviBindingSource;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.KemA_GV.DefaultCellStyle = dataGridViewCellStyle16;
             this.KemA_GV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.KemA_GV.Location = new System.Drawing.Point(0, 315);
             this.KemA_GV.Name = "KemA_GV";
@@ -4545,23 +5130,76 @@
             // 
             this.PARCOD_GV.AllowUserToAddRows = false;
             this.PARCOD_GV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle655.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle655.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle655.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle655.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle655.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle655.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle655.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PARCOD_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle655;
+            this.PARCOD_GV.AutoGenerateColumns = false;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PARCOD_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.PARCOD_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle656.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle656.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle656.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle656.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle656.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle656.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle656.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.PARCOD_GV.DefaultCellStyle = dataGridViewCellStyle656;
+            this.PARCOD_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn2,
+            this.dateDataGridViewTextBoxColumn2,
+            this.mSPurLtrDataGridViewTextBoxColumn2,
+            this.hOBCPurLtrDataGridViewTextBoxColumn2,
+            this.hSDPurLtrDataGridViewTextBoxColumn2,
+            this.kOPurLtrDataGridViewTextBoxColumn2,
+            this.purTstockDataGridViewTextBoxColumn2,
+            this.mSPurAmntDataGridViewTextBoxColumn2,
+            this.hOBCPurAmntDataGridViewTextBoxColumn2,
+            this.hSDPurAmntDataGridViewTextBoxColumn2,
+            this.kOPurAmntDataGridViewTextBoxColumn2,
+            this.purTamountDataGridViewTextBoxColumn2,
+            this.mSTranPerDataGridViewTextBoxColumn2,
+            this.hOBCTranPerDataGridViewTextBoxColumn2,
+            this.hSDTranPerDataGridViewTextBoxColumn2,
+            this.kOTranPerDataGridViewTextBoxColumn2,
+            this.mSTranStckDataGridViewTextBoxColumn2,
+            this.hOBCTranStckDataGridViewTextBoxColumn2,
+            this.hSDTranStckDataGridViewTextBoxColumn2,
+            this.kOTranStckDataGridViewTextBoxColumn2,
+            this.tranTstockDataGridViewTextBoxColumn2,
+            this.mSSalePerDataGridViewTextBoxColumn2,
+            this.hOBCSalePerDataGridViewTextBoxColumn2,
+            this.hSDSalePerDataGridViewTextBoxColumn2,
+            this.kOSalePerDataGridViewTextBoxColumn2,
+            this.mSSaleAmntDataGridViewTextBoxColumn2,
+            this.hOBCSaleAmntDataGridViewTextBoxColumn2,
+            this.hSDSaleAmntDataGridViewTextBoxColumn2,
+            this.kOSaleAmntDataGridViewTextBoxColumn2,
+            this.saleTamountDataGridViewTextBoxColumn2,
+            this.vehDStckDataGridViewTextBoxColumn,
+            this.sherDStckDataGridViewTextBoxColumn,
+            this.sahiDStckDataGridViewTextBoxColumn,
+            this.depoTstockDataGridViewTextBoxColumn2,
+            this.vehDSaleDataGridViewTextBoxColumn,
+            this.sherDSaleDataGridViewTextBoxColumn,
+            this.sahiDSaleDataGridViewTextBoxColumn,
+            this.depoTSaleDataGridViewTextBoxColumn2,
+            this.mSPurPrcDataGridViewTextBoxColumn2,
+            this.hOBCPurPrcDataGridViewTextBoxColumn2,
+            this.hSDPurPrcDataGridViewTextBoxColumn2,
+            this.kOPurPrcDataGridViewTextBoxColumn2,
+            this.mSClosingSDataGridViewTextBoxColumn2,
+            this.hOBCClosingSDataGridViewTextBoxColumn2,
+            this.hSDClosingSDataGridViewTextBoxColumn2,
+            this.kOClosingSDataGridViewTextBoxColumn2,
+            this.mSSalePrcDataGridViewTextBoxColumn2,
+            this.hOBCSalePrcDataGridViewTextBoxColumn2,
+            this.hSDSalePrcDataGridViewTextBoxColumn2,
+            this.kOSalePrcDataGridViewTextBoxColumn2});
+            this.PARCOD_GV.DataSource = this.pARCODepoBindingSource;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.PARCOD_GV.DefaultCellStyle = dataGridViewCellStyle18;
             this.PARCOD_GV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PARCOD_GV.Location = new System.Drawing.Point(0, 337);
             this.PARCOD_GV.Name = "PARCOD_GV";
@@ -5285,23 +5923,80 @@
             // 
             this.ChakD_GV.AllowUserToAddRows = false;
             this.ChakD_GV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle657.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle657.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle657.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle657.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle657.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle657.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle657.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ChakD_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle657;
+            this.ChakD_GV.AutoGenerateColumns = false;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ChakD_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.ChakD_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle658.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle658.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle658.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle658.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle658.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle658.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle658.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ChakD_GV.DefaultCellStyle = dataGridViewCellStyle658;
+            this.ChakD_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn1,
+            this.dateDataGridViewTextBoxColumn1,
+            this.mSPurLtrDataGridViewTextBoxColumn1,
+            this.hOBCPurLtrDataGridViewTextBoxColumn1,
+            this.hSDPurLtrDataGridViewTextBoxColumn1,
+            this.kOPurLtrDataGridViewTextBoxColumn1,
+            this.purTstockDataGridViewTextBoxColumn1,
+            this.mSPurAmntDataGridViewTextBoxColumn1,
+            this.hOBCPurAmntDataGridViewTextBoxColumn1,
+            this.hSDPurAmntDataGridViewTextBoxColumn1,
+            this.kOPurAmntDataGridViewTextBoxColumn1,
+            this.purTamountDataGridViewTextBoxColumn1,
+            this.mSTranPerDataGridViewTextBoxColumn1,
+            this.hOBCTranPerDataGridViewTextBoxColumn1,
+            this.hSDTranPerDataGridViewTextBoxColumn1,
+            this.kOTranPerDataGridViewTextBoxColumn1,
+            this.mSTranStckDataGridViewTextBoxColumn1,
+            this.hOBCTranStckDataGridViewTextBoxColumn1,
+            this.hSDTranStckDataGridViewTextBoxColumn1,
+            this.kOTranStckDataGridViewTextBoxColumn1,
+            this.tranTstockDataGridViewTextBoxColumn1,
+            this.mSSalePerDataGridViewTextBoxColumn1,
+            this.hOBCSalePerDataGridViewTextBoxColumn1,
+            this.hSDSalePerDataGridViewTextBoxColumn1,
+            this.kOSalePerDataGridViewTextBoxColumn1,
+            this.mSSaleAmntDataGridViewTextBoxColumn1,
+            this.hOBCSaleAmntDataGridViewTextBoxColumn1,
+            this.hSDSaleAmntDataGridViewTextBoxColumn1,
+            this.kOSaleAmntDataGridViewTextBoxColumn1,
+            this.saleTamountDataGridViewTextBoxColumn1,
+            this.badDStckDataGridViewTextBoxColumn,
+            this.faisDStckDataGridViewTextBoxColumn,
+            this.sarDStckDataGridViewTextBoxColumn,
+            this.peshDStckDataGridViewTextBoxColumn,
+            this.bannDStckDataGridViewTextBoxColumn,
+            this.depoTstockDataGridViewTextBoxColumn1,
+            this.badDSaleDataGridViewTextBoxColumn,
+            this.faisDSaleDataGridViewTextBoxColumn,
+            this.sarDSaleDataGridViewTextBoxColumn,
+            this.peshDSaleDataGridViewTextBoxColumn,
+            this.bannDSaleDataGridViewTextBoxColumn,
+            this.depoTSaleDataGridViewTextBoxColumn1,
+            this.mSPurPrcDataGridViewTextBoxColumn1,
+            this.hOBCPurPrcDataGridViewTextBoxColumn1,
+            this.hSDPurPrcDataGridViewTextBoxColumn1,
+            this.kOPurPrcDataGridViewTextBoxColumn1,
+            this.mSClosingSDataGridViewTextBoxColumn1,
+            this.hOBCClosingSDataGridViewTextBoxColumn1,
+            this.hSDClosingSDataGridViewTextBoxColumn1,
+            this.kOClosingSDataGridViewTextBoxColumn1,
+            this.mSSalePrcDataGridViewTextBoxColumn1,
+            this.hOBCSalePrcDataGridViewTextBoxColumn1,
+            this.hSDSalePrcDataGridViewTextBoxColumn1,
+            this.kOSalePrcDataGridViewTextBoxColumn1});
+            this.ChakD_GV.DataSource = this.chaklalaDepoBindingSource;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ChakD_GV.DefaultCellStyle = dataGridViewCellStyle20;
             this.ChakD_GV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ChakD_GV.Location = new System.Drawing.Point(0, 378);
             this.ChakD_GV.Name = "ChakD_GV";
@@ -6100,23 +6795,76 @@
             // 
             this.KemD_GV.AllowUserToAddRows = false;
             this.KemD_GV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle659.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle659.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle659.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle659.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle659.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle659.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle659.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.KemD_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle659;
+            this.KemD_GV.AutoGenerateColumns = false;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.KemD_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.KemD_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle660.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle660.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle660.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle660.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle660.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle660.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle660.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.KemD_GV.DefaultCellStyle = dataGridViewCellStyle660;
+            this.KemD_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.mSPurLtrDataGridViewTextBoxColumn,
+            this.hOBCPurLtrDataGridViewTextBoxColumn,
+            this.hSDPurLtrDataGridViewTextBoxColumn,
+            this.kOPurLtrDataGridViewTextBoxColumn,
+            this.purTstockDataGridViewTextBoxColumn,
+            this.mSPurAmntDataGridViewTextBoxColumn,
+            this.hOBCPurAmntDataGridViewTextBoxColumn,
+            this.hSDPurAmntDataGridViewTextBoxColumn,
+            this.kOPurAmntDataGridViewTextBoxColumn,
+            this.purTamountDataGridViewTextBoxColumn,
+            this.mSTranPerDataGridViewTextBoxColumn,
+            this.hOBCTranPerDataGridViewTextBoxColumn,
+            this.hSDTranPerDataGridViewTextBoxColumn,
+            this.kOTranPerDataGridViewTextBoxColumn,
+            this.mSTranStckDataGridViewTextBoxColumn,
+            this.hOBCTranStckDataGridViewTextBoxColumn,
+            this.hSDTranStckDataGridViewTextBoxColumn,
+            this.kOTranStckDataGridViewTextBoxColumn,
+            this.tranTstockDataGridViewTextBoxColumn,
+            this.mSSalePerDataGridViewTextBoxColumn,
+            this.hOBCSalePerDataGridViewTextBoxColumn,
+            this.hSDSalePerDataGridViewTextBoxColumn,
+            this.kOSalePerDataGridViewTextBoxColumn,
+            this.mSSaleAmntDataGridViewTextBoxColumn,
+            this.hOBCSaleAmntDataGridViewTextBoxColumn,
+            this.hSDSaleAmntDataGridViewTextBoxColumn,
+            this.kOSaleAmntDataGridViewTextBoxColumn,
+            this.saleTamountDataGridViewTextBoxColumn,
+            this.sukhDStckDataGridViewTextBoxColumn,
+            this.daulDStckDataGridViewTextBoxColumn,
+            this.queDStckDataGridViewTextBoxColumn,
+            this.depoTstockDataGridViewTextBoxColumn,
+            this.sukhDSaleDataGridViewTextBoxColumn,
+            this.daulDSaleDataGridViewTextBoxColumn,
+            this.queDSaleDataGridViewTextBoxColumn,
+            this.depoTSaleDataGridViewTextBoxColumn,
+            this.mSPurPrcDataGridViewTextBoxColumn,
+            this.hOBCPurPrcDataGridViewTextBoxColumn,
+            this.hSDPurPrcDataGridViewTextBoxColumn,
+            this.kOPurPrcDataGridViewTextBoxColumn,
+            this.mSClosingSDataGridViewTextBoxColumn,
+            this.hOBCClosingSDataGridViewTextBoxColumn,
+            this.hSDClosingSDataGridViewTextBoxColumn,
+            this.kOClosingSDataGridViewTextBoxColumn,
+            this.mSSalePrcDataGridViewTextBoxColumn,
+            this.hOBCSalePrcDataGridViewTextBoxColumn,
+            this.hSDSalePrcDataGridViewTextBoxColumn,
+            this.kOSalePrcDataGridViewTextBoxColumn});
+            this.KemD_GV.DataSource = this.keemariDepoBindingSource;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.KemD_GV.DefaultCellStyle = dataGridViewCellStyle22;
             this.KemD_GV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.KemD_GV.Location = new System.Drawing.Point(0, 334);
             this.KemD_GV.Name = "KemD_GV";
@@ -6805,11 +7553,2498 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Departments";
             // 
+            // auditPlanDataSet
+            // 
+            this.auditPlanDataSet.DataSetName = "AuditPlanDataSet";
+            this.auditPlanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // keemariDepoBindingSource
+            // 
+            this.keemariDepoBindingSource.DataMember = "KeemariDepo";
+            this.keemariDepoBindingSource.DataSource = this.auditPlanDataSet;
+            // 
+            // keemariDepoTableAdapter
+            // 
+            this.keemariDepoTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mSPurLtrDataGridViewTextBoxColumn
+            // 
+            this.mSPurLtrDataGridViewTextBoxColumn.DataPropertyName = "MS_Pur_Ltr";
+            this.mSPurLtrDataGridViewTextBoxColumn.HeaderText = "MS_Pur_Ltr";
+            this.mSPurLtrDataGridViewTextBoxColumn.Name = "mSPurLtrDataGridViewTextBoxColumn";
+            this.mSPurLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hOBCPurLtrDataGridViewTextBoxColumn
+            // 
+            this.hOBCPurLtrDataGridViewTextBoxColumn.DataPropertyName = "HOBC_Pur_Ltr";
+            this.hOBCPurLtrDataGridViewTextBoxColumn.HeaderText = "HOBC_Pur_Ltr";
+            this.hOBCPurLtrDataGridViewTextBoxColumn.Name = "hOBCPurLtrDataGridViewTextBoxColumn";
+            this.hOBCPurLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hSDPurLtrDataGridViewTextBoxColumn
+            // 
+            this.hSDPurLtrDataGridViewTextBoxColumn.DataPropertyName = "HSD_Pur_Ltr";
+            this.hSDPurLtrDataGridViewTextBoxColumn.HeaderText = "HSD_Pur_Ltr";
+            this.hSDPurLtrDataGridViewTextBoxColumn.Name = "hSDPurLtrDataGridViewTextBoxColumn";
+            this.hSDPurLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kOPurLtrDataGridViewTextBoxColumn
+            // 
+            this.kOPurLtrDataGridViewTextBoxColumn.DataPropertyName = "KO_Pur_Ltr";
+            this.kOPurLtrDataGridViewTextBoxColumn.HeaderText = "KO_Pur_Ltr";
+            this.kOPurLtrDataGridViewTextBoxColumn.Name = "kOPurLtrDataGridViewTextBoxColumn";
+            this.kOPurLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // purTstockDataGridViewTextBoxColumn
+            // 
+            this.purTstockDataGridViewTextBoxColumn.DataPropertyName = "Pur_Tstock";
+            this.purTstockDataGridViewTextBoxColumn.HeaderText = "Pur_Tstock";
+            this.purTstockDataGridViewTextBoxColumn.Name = "purTstockDataGridViewTextBoxColumn";
+            this.purTstockDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mSPurAmntDataGridViewTextBoxColumn
+            // 
+            this.mSPurAmntDataGridViewTextBoxColumn.DataPropertyName = "MS_Pur_Amnt";
+            this.mSPurAmntDataGridViewTextBoxColumn.HeaderText = "MS_Pur_Amnt";
+            this.mSPurAmntDataGridViewTextBoxColumn.Name = "mSPurAmntDataGridViewTextBoxColumn";
+            this.mSPurAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hOBCPurAmntDataGridViewTextBoxColumn
+            // 
+            this.hOBCPurAmntDataGridViewTextBoxColumn.DataPropertyName = "HOBC_Pur_Amnt";
+            this.hOBCPurAmntDataGridViewTextBoxColumn.HeaderText = "HOBC_Pur_Amnt";
+            this.hOBCPurAmntDataGridViewTextBoxColumn.Name = "hOBCPurAmntDataGridViewTextBoxColumn";
+            this.hOBCPurAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hSDPurAmntDataGridViewTextBoxColumn
+            // 
+            this.hSDPurAmntDataGridViewTextBoxColumn.DataPropertyName = "HSD_Pur_Amnt";
+            this.hSDPurAmntDataGridViewTextBoxColumn.HeaderText = "HSD_Pur_Amnt";
+            this.hSDPurAmntDataGridViewTextBoxColumn.Name = "hSDPurAmntDataGridViewTextBoxColumn";
+            this.hSDPurAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kOPurAmntDataGridViewTextBoxColumn
+            // 
+            this.kOPurAmntDataGridViewTextBoxColumn.DataPropertyName = "KO_Pur_Amnt";
+            this.kOPurAmntDataGridViewTextBoxColumn.HeaderText = "KO_Pur_Amnt";
+            this.kOPurAmntDataGridViewTextBoxColumn.Name = "kOPurAmntDataGridViewTextBoxColumn";
+            this.kOPurAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // purTamountDataGridViewTextBoxColumn
+            // 
+            this.purTamountDataGridViewTextBoxColumn.DataPropertyName = "Pur_Tamount";
+            this.purTamountDataGridViewTextBoxColumn.HeaderText = "Pur_Tamount";
+            this.purTamountDataGridViewTextBoxColumn.Name = "purTamountDataGridViewTextBoxColumn";
+            this.purTamountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mSTranPerDataGridViewTextBoxColumn
+            // 
+            this.mSTranPerDataGridViewTextBoxColumn.DataPropertyName = "MS_Tran_Per";
+            this.mSTranPerDataGridViewTextBoxColumn.HeaderText = "MS_Tran_Per";
+            this.mSTranPerDataGridViewTextBoxColumn.Name = "mSTranPerDataGridViewTextBoxColumn";
+            this.mSTranPerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hOBCTranPerDataGridViewTextBoxColumn
+            // 
+            this.hOBCTranPerDataGridViewTextBoxColumn.DataPropertyName = "HOBC_Tran_Per";
+            this.hOBCTranPerDataGridViewTextBoxColumn.HeaderText = "HOBC_Tran_Per";
+            this.hOBCTranPerDataGridViewTextBoxColumn.Name = "hOBCTranPerDataGridViewTextBoxColumn";
+            this.hOBCTranPerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hSDTranPerDataGridViewTextBoxColumn
+            // 
+            this.hSDTranPerDataGridViewTextBoxColumn.DataPropertyName = "HSD_Tran_Per";
+            this.hSDTranPerDataGridViewTextBoxColumn.HeaderText = "HSD_Tran_Per";
+            this.hSDTranPerDataGridViewTextBoxColumn.Name = "hSDTranPerDataGridViewTextBoxColumn";
+            this.hSDTranPerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kOTranPerDataGridViewTextBoxColumn
+            // 
+            this.kOTranPerDataGridViewTextBoxColumn.DataPropertyName = "KO_Tran_Per";
+            this.kOTranPerDataGridViewTextBoxColumn.HeaderText = "KO_Tran_Per";
+            this.kOTranPerDataGridViewTextBoxColumn.Name = "kOTranPerDataGridViewTextBoxColumn";
+            this.kOTranPerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mSTranStckDataGridViewTextBoxColumn
+            // 
+            this.mSTranStckDataGridViewTextBoxColumn.DataPropertyName = "MS_Tran_Stck";
+            this.mSTranStckDataGridViewTextBoxColumn.HeaderText = "MS_Tran_Stck";
+            this.mSTranStckDataGridViewTextBoxColumn.Name = "mSTranStckDataGridViewTextBoxColumn";
+            this.mSTranStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hOBCTranStckDataGridViewTextBoxColumn
+            // 
+            this.hOBCTranStckDataGridViewTextBoxColumn.DataPropertyName = "HOBC_Tran_Stck";
+            this.hOBCTranStckDataGridViewTextBoxColumn.HeaderText = "HOBC_Tran_Stck";
+            this.hOBCTranStckDataGridViewTextBoxColumn.Name = "hOBCTranStckDataGridViewTextBoxColumn";
+            this.hOBCTranStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hSDTranStckDataGridViewTextBoxColumn
+            // 
+            this.hSDTranStckDataGridViewTextBoxColumn.DataPropertyName = "HSD_Tran_Stck";
+            this.hSDTranStckDataGridViewTextBoxColumn.HeaderText = "HSD_Tran_Stck";
+            this.hSDTranStckDataGridViewTextBoxColumn.Name = "hSDTranStckDataGridViewTextBoxColumn";
+            this.hSDTranStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kOTranStckDataGridViewTextBoxColumn
+            // 
+            this.kOTranStckDataGridViewTextBoxColumn.DataPropertyName = "KO_Tran_Stck";
+            this.kOTranStckDataGridViewTextBoxColumn.HeaderText = "KO_Tran_Stck";
+            this.kOTranStckDataGridViewTextBoxColumn.Name = "kOTranStckDataGridViewTextBoxColumn";
+            this.kOTranStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tranTstockDataGridViewTextBoxColumn
+            // 
+            this.tranTstockDataGridViewTextBoxColumn.DataPropertyName = "Tran_Tstock";
+            this.tranTstockDataGridViewTextBoxColumn.HeaderText = "Tran_Tstock";
+            this.tranTstockDataGridViewTextBoxColumn.Name = "tranTstockDataGridViewTextBoxColumn";
+            this.tranTstockDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mSSalePerDataGridViewTextBoxColumn
+            // 
+            this.mSSalePerDataGridViewTextBoxColumn.DataPropertyName = "MS_Sale_Per";
+            this.mSSalePerDataGridViewTextBoxColumn.HeaderText = "MS_Sale_Per";
+            this.mSSalePerDataGridViewTextBoxColumn.Name = "mSSalePerDataGridViewTextBoxColumn";
+            this.mSSalePerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hOBCSalePerDataGridViewTextBoxColumn
+            // 
+            this.hOBCSalePerDataGridViewTextBoxColumn.DataPropertyName = "HOBC_Sale_Per";
+            this.hOBCSalePerDataGridViewTextBoxColumn.HeaderText = "HOBC_Sale_Per";
+            this.hOBCSalePerDataGridViewTextBoxColumn.Name = "hOBCSalePerDataGridViewTextBoxColumn";
+            this.hOBCSalePerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hSDSalePerDataGridViewTextBoxColumn
+            // 
+            this.hSDSalePerDataGridViewTextBoxColumn.DataPropertyName = "HSD_Sale_Per";
+            this.hSDSalePerDataGridViewTextBoxColumn.HeaderText = "HSD_Sale_Per";
+            this.hSDSalePerDataGridViewTextBoxColumn.Name = "hSDSalePerDataGridViewTextBoxColumn";
+            this.hSDSalePerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kOSalePerDataGridViewTextBoxColumn
+            // 
+            this.kOSalePerDataGridViewTextBoxColumn.DataPropertyName = "KO_Sale_Per";
+            this.kOSalePerDataGridViewTextBoxColumn.HeaderText = "KO_Sale_Per";
+            this.kOSalePerDataGridViewTextBoxColumn.Name = "kOSalePerDataGridViewTextBoxColumn";
+            this.kOSalePerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mSSaleAmntDataGridViewTextBoxColumn
+            // 
+            this.mSSaleAmntDataGridViewTextBoxColumn.DataPropertyName = "MS_Sale_Amnt";
+            this.mSSaleAmntDataGridViewTextBoxColumn.HeaderText = "MS_Sale_Amnt";
+            this.mSSaleAmntDataGridViewTextBoxColumn.Name = "mSSaleAmntDataGridViewTextBoxColumn";
+            this.mSSaleAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hOBCSaleAmntDataGridViewTextBoxColumn
+            // 
+            this.hOBCSaleAmntDataGridViewTextBoxColumn.DataPropertyName = "HOBC_Sale_Amnt";
+            this.hOBCSaleAmntDataGridViewTextBoxColumn.HeaderText = "HOBC_Sale_Amnt";
+            this.hOBCSaleAmntDataGridViewTextBoxColumn.Name = "hOBCSaleAmntDataGridViewTextBoxColumn";
+            this.hOBCSaleAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hSDSaleAmntDataGridViewTextBoxColumn
+            // 
+            this.hSDSaleAmntDataGridViewTextBoxColumn.DataPropertyName = "HSD_Sale_Amnt";
+            this.hSDSaleAmntDataGridViewTextBoxColumn.HeaderText = "HSD_Sale_Amnt";
+            this.hSDSaleAmntDataGridViewTextBoxColumn.Name = "hSDSaleAmntDataGridViewTextBoxColumn";
+            this.hSDSaleAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kOSaleAmntDataGridViewTextBoxColumn
+            // 
+            this.kOSaleAmntDataGridViewTextBoxColumn.DataPropertyName = "KO_Sale_Amnt";
+            this.kOSaleAmntDataGridViewTextBoxColumn.HeaderText = "KO_Sale_Amnt";
+            this.kOSaleAmntDataGridViewTextBoxColumn.Name = "kOSaleAmntDataGridViewTextBoxColumn";
+            this.kOSaleAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // saleTamountDataGridViewTextBoxColumn
+            // 
+            this.saleTamountDataGridViewTextBoxColumn.DataPropertyName = "Sale_Tamount";
+            this.saleTamountDataGridViewTextBoxColumn.HeaderText = "Sale_Tamount";
+            this.saleTamountDataGridViewTextBoxColumn.Name = "saleTamountDataGridViewTextBoxColumn";
+            this.saleTamountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sukhDStckDataGridViewTextBoxColumn
+            // 
+            this.sukhDStckDataGridViewTextBoxColumn.DataPropertyName = "SukhD_Stck";
+            this.sukhDStckDataGridViewTextBoxColumn.HeaderText = "SukhD_Stck";
+            this.sukhDStckDataGridViewTextBoxColumn.Name = "sukhDStckDataGridViewTextBoxColumn";
+            this.sukhDStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // daulDStckDataGridViewTextBoxColumn
+            // 
+            this.daulDStckDataGridViewTextBoxColumn.DataPropertyName = "DaulD_Stck";
+            this.daulDStckDataGridViewTextBoxColumn.HeaderText = "DaulD_Stck";
+            this.daulDStckDataGridViewTextBoxColumn.Name = "daulDStckDataGridViewTextBoxColumn";
+            this.daulDStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // queDStckDataGridViewTextBoxColumn
+            // 
+            this.queDStckDataGridViewTextBoxColumn.DataPropertyName = "QueD_Stck";
+            this.queDStckDataGridViewTextBoxColumn.HeaderText = "QueD_Stck";
+            this.queDStckDataGridViewTextBoxColumn.Name = "queDStckDataGridViewTextBoxColumn";
+            this.queDStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // depoTstockDataGridViewTextBoxColumn
+            // 
+            this.depoTstockDataGridViewTextBoxColumn.DataPropertyName = "Depo_Tstock";
+            this.depoTstockDataGridViewTextBoxColumn.HeaderText = "Depo_Tstock";
+            this.depoTstockDataGridViewTextBoxColumn.Name = "depoTstockDataGridViewTextBoxColumn";
+            this.depoTstockDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sukhDSaleDataGridViewTextBoxColumn
+            // 
+            this.sukhDSaleDataGridViewTextBoxColumn.DataPropertyName = "SukhD_Sale";
+            this.sukhDSaleDataGridViewTextBoxColumn.HeaderText = "SukhD_Sale";
+            this.sukhDSaleDataGridViewTextBoxColumn.Name = "sukhDSaleDataGridViewTextBoxColumn";
+            this.sukhDSaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // daulDSaleDataGridViewTextBoxColumn
+            // 
+            this.daulDSaleDataGridViewTextBoxColumn.DataPropertyName = "DaulD_Sale";
+            this.daulDSaleDataGridViewTextBoxColumn.HeaderText = "DaulD_Sale";
+            this.daulDSaleDataGridViewTextBoxColumn.Name = "daulDSaleDataGridViewTextBoxColumn";
+            this.daulDSaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // queDSaleDataGridViewTextBoxColumn
+            // 
+            this.queDSaleDataGridViewTextBoxColumn.DataPropertyName = "QueD_Sale";
+            this.queDSaleDataGridViewTextBoxColumn.HeaderText = "QueD_Sale";
+            this.queDSaleDataGridViewTextBoxColumn.Name = "queDSaleDataGridViewTextBoxColumn";
+            this.queDSaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // depoTSaleDataGridViewTextBoxColumn
+            // 
+            this.depoTSaleDataGridViewTextBoxColumn.DataPropertyName = "Depo_TSale";
+            this.depoTSaleDataGridViewTextBoxColumn.HeaderText = "Depo_TSale";
+            this.depoTSaleDataGridViewTextBoxColumn.Name = "depoTSaleDataGridViewTextBoxColumn";
+            this.depoTSaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mSPurPrcDataGridViewTextBoxColumn
+            // 
+            this.mSPurPrcDataGridViewTextBoxColumn.DataPropertyName = "MS_Pur_Prc";
+            this.mSPurPrcDataGridViewTextBoxColumn.HeaderText = "MS_Pur_Prc";
+            this.mSPurPrcDataGridViewTextBoxColumn.Name = "mSPurPrcDataGridViewTextBoxColumn";
+            this.mSPurPrcDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hOBCPurPrcDataGridViewTextBoxColumn
+            // 
+            this.hOBCPurPrcDataGridViewTextBoxColumn.DataPropertyName = "HOBC_Pur_Prc";
+            this.hOBCPurPrcDataGridViewTextBoxColumn.HeaderText = "HOBC_Pur_Prc";
+            this.hOBCPurPrcDataGridViewTextBoxColumn.Name = "hOBCPurPrcDataGridViewTextBoxColumn";
+            this.hOBCPurPrcDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hSDPurPrcDataGridViewTextBoxColumn
+            // 
+            this.hSDPurPrcDataGridViewTextBoxColumn.DataPropertyName = "HSD_Pur_Prc";
+            this.hSDPurPrcDataGridViewTextBoxColumn.HeaderText = "HSD_Pur_Prc";
+            this.hSDPurPrcDataGridViewTextBoxColumn.Name = "hSDPurPrcDataGridViewTextBoxColumn";
+            this.hSDPurPrcDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kOPurPrcDataGridViewTextBoxColumn
+            // 
+            this.kOPurPrcDataGridViewTextBoxColumn.DataPropertyName = "KO_Pur_Prc";
+            this.kOPurPrcDataGridViewTextBoxColumn.HeaderText = "KO_Pur_Prc";
+            this.kOPurPrcDataGridViewTextBoxColumn.Name = "kOPurPrcDataGridViewTextBoxColumn";
+            this.kOPurPrcDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mSClosingSDataGridViewTextBoxColumn
+            // 
+            this.mSClosingSDataGridViewTextBoxColumn.DataPropertyName = "MS_ClosingS";
+            this.mSClosingSDataGridViewTextBoxColumn.HeaderText = "MS_ClosingS";
+            this.mSClosingSDataGridViewTextBoxColumn.Name = "mSClosingSDataGridViewTextBoxColumn";
+            this.mSClosingSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hOBCClosingSDataGridViewTextBoxColumn
+            // 
+            this.hOBCClosingSDataGridViewTextBoxColumn.DataPropertyName = "HOBC_ClosingS";
+            this.hOBCClosingSDataGridViewTextBoxColumn.HeaderText = "HOBC_ClosingS";
+            this.hOBCClosingSDataGridViewTextBoxColumn.Name = "hOBCClosingSDataGridViewTextBoxColumn";
+            this.hOBCClosingSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hSDClosingSDataGridViewTextBoxColumn
+            // 
+            this.hSDClosingSDataGridViewTextBoxColumn.DataPropertyName = "HSD_ClosingS";
+            this.hSDClosingSDataGridViewTextBoxColumn.HeaderText = "HSD_ClosingS";
+            this.hSDClosingSDataGridViewTextBoxColumn.Name = "hSDClosingSDataGridViewTextBoxColumn";
+            this.hSDClosingSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kOClosingSDataGridViewTextBoxColumn
+            // 
+            this.kOClosingSDataGridViewTextBoxColumn.DataPropertyName = "KO_ClosingS";
+            this.kOClosingSDataGridViewTextBoxColumn.HeaderText = "KO_ClosingS";
+            this.kOClosingSDataGridViewTextBoxColumn.Name = "kOClosingSDataGridViewTextBoxColumn";
+            this.kOClosingSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mSSalePrcDataGridViewTextBoxColumn
+            // 
+            this.mSSalePrcDataGridViewTextBoxColumn.DataPropertyName = "MS_Sale_Prc";
+            this.mSSalePrcDataGridViewTextBoxColumn.HeaderText = "MS_Sale_Prc";
+            this.mSSalePrcDataGridViewTextBoxColumn.Name = "mSSalePrcDataGridViewTextBoxColumn";
+            this.mSSalePrcDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hOBCSalePrcDataGridViewTextBoxColumn
+            // 
+            this.hOBCSalePrcDataGridViewTextBoxColumn.DataPropertyName = "HOBC_Sale_Prc";
+            this.hOBCSalePrcDataGridViewTextBoxColumn.HeaderText = "HOBC_Sale_Prc";
+            this.hOBCSalePrcDataGridViewTextBoxColumn.Name = "hOBCSalePrcDataGridViewTextBoxColumn";
+            this.hOBCSalePrcDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hSDSalePrcDataGridViewTextBoxColumn
+            // 
+            this.hSDSalePrcDataGridViewTextBoxColumn.DataPropertyName = "HSD_Sale_Prc";
+            this.hSDSalePrcDataGridViewTextBoxColumn.HeaderText = "HSD_Sale_Prc";
+            this.hSDSalePrcDataGridViewTextBoxColumn.Name = "hSDSalePrcDataGridViewTextBoxColumn";
+            this.hSDSalePrcDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kOSalePrcDataGridViewTextBoxColumn
+            // 
+            this.kOSalePrcDataGridViewTextBoxColumn.DataPropertyName = "KO_Sale_Prc";
+            this.kOSalePrcDataGridViewTextBoxColumn.HeaderText = "KO_Sale_Prc";
+            this.kOSalePrcDataGridViewTextBoxColumn.Name = "kOSalePrcDataGridViewTextBoxColumn";
+            this.kOSalePrcDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // chaklalaDepoBindingSource
+            // 
+            this.chaklalaDepoBindingSource.DataMember = "ChaklalaDepo";
+            this.chaklalaDepoBindingSource.DataSource = this.auditPlanDataSet;
+            // 
+            // chaklalaDepoTableAdapter
+            // 
+            this.chaklalaDepoTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn1
+            // 
+            this.dateDataGridViewTextBoxColumn1.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn1.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn1.Name = "dateDataGridViewTextBoxColumn1";
+            this.dateDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // mSPurLtrDataGridViewTextBoxColumn1
+            // 
+            this.mSPurLtrDataGridViewTextBoxColumn1.DataPropertyName = "MS_Pur_Ltr";
+            this.mSPurLtrDataGridViewTextBoxColumn1.HeaderText = "MS_Pur_Ltr";
+            this.mSPurLtrDataGridViewTextBoxColumn1.Name = "mSPurLtrDataGridViewTextBoxColumn1";
+            this.mSPurLtrDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hOBCPurLtrDataGridViewTextBoxColumn1
+            // 
+            this.hOBCPurLtrDataGridViewTextBoxColumn1.DataPropertyName = "HOBC_Pur_Ltr";
+            this.hOBCPurLtrDataGridViewTextBoxColumn1.HeaderText = "HOBC_Pur_Ltr";
+            this.hOBCPurLtrDataGridViewTextBoxColumn1.Name = "hOBCPurLtrDataGridViewTextBoxColumn1";
+            this.hOBCPurLtrDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hSDPurLtrDataGridViewTextBoxColumn1
+            // 
+            this.hSDPurLtrDataGridViewTextBoxColumn1.DataPropertyName = "HSD_Pur_Ltr";
+            this.hSDPurLtrDataGridViewTextBoxColumn1.HeaderText = "HSD_Pur_Ltr";
+            this.hSDPurLtrDataGridViewTextBoxColumn1.Name = "hSDPurLtrDataGridViewTextBoxColumn1";
+            this.hSDPurLtrDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // kOPurLtrDataGridViewTextBoxColumn1
+            // 
+            this.kOPurLtrDataGridViewTextBoxColumn1.DataPropertyName = "KO_Pur_Ltr";
+            this.kOPurLtrDataGridViewTextBoxColumn1.HeaderText = "KO_Pur_Ltr";
+            this.kOPurLtrDataGridViewTextBoxColumn1.Name = "kOPurLtrDataGridViewTextBoxColumn1";
+            this.kOPurLtrDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // purTstockDataGridViewTextBoxColumn1
+            // 
+            this.purTstockDataGridViewTextBoxColumn1.DataPropertyName = "Pur_Tstock";
+            this.purTstockDataGridViewTextBoxColumn1.HeaderText = "Pur_Tstock";
+            this.purTstockDataGridViewTextBoxColumn1.Name = "purTstockDataGridViewTextBoxColumn1";
+            this.purTstockDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // mSPurAmntDataGridViewTextBoxColumn1
+            // 
+            this.mSPurAmntDataGridViewTextBoxColumn1.DataPropertyName = "MS_Pur_Amnt";
+            this.mSPurAmntDataGridViewTextBoxColumn1.HeaderText = "MS_Pur_Amnt";
+            this.mSPurAmntDataGridViewTextBoxColumn1.Name = "mSPurAmntDataGridViewTextBoxColumn1";
+            this.mSPurAmntDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hOBCPurAmntDataGridViewTextBoxColumn1
+            // 
+            this.hOBCPurAmntDataGridViewTextBoxColumn1.DataPropertyName = "HOBC_Pur_Amnt";
+            this.hOBCPurAmntDataGridViewTextBoxColumn1.HeaderText = "HOBC_Pur_Amnt";
+            this.hOBCPurAmntDataGridViewTextBoxColumn1.Name = "hOBCPurAmntDataGridViewTextBoxColumn1";
+            this.hOBCPurAmntDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hSDPurAmntDataGridViewTextBoxColumn1
+            // 
+            this.hSDPurAmntDataGridViewTextBoxColumn1.DataPropertyName = "HSD_Pur_Amnt";
+            this.hSDPurAmntDataGridViewTextBoxColumn1.HeaderText = "HSD_Pur_Amnt";
+            this.hSDPurAmntDataGridViewTextBoxColumn1.Name = "hSDPurAmntDataGridViewTextBoxColumn1";
+            this.hSDPurAmntDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // kOPurAmntDataGridViewTextBoxColumn1
+            // 
+            this.kOPurAmntDataGridViewTextBoxColumn1.DataPropertyName = "KO_Pur_Amnt";
+            this.kOPurAmntDataGridViewTextBoxColumn1.HeaderText = "KO_Pur_Amnt";
+            this.kOPurAmntDataGridViewTextBoxColumn1.Name = "kOPurAmntDataGridViewTextBoxColumn1";
+            this.kOPurAmntDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // purTamountDataGridViewTextBoxColumn1
+            // 
+            this.purTamountDataGridViewTextBoxColumn1.DataPropertyName = "Pur_Tamount";
+            this.purTamountDataGridViewTextBoxColumn1.HeaderText = "Pur_Tamount";
+            this.purTamountDataGridViewTextBoxColumn1.Name = "purTamountDataGridViewTextBoxColumn1";
+            this.purTamountDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // mSTranPerDataGridViewTextBoxColumn1
+            // 
+            this.mSTranPerDataGridViewTextBoxColumn1.DataPropertyName = "MS_Tran_Per";
+            this.mSTranPerDataGridViewTextBoxColumn1.HeaderText = "MS_Tran_Per";
+            this.mSTranPerDataGridViewTextBoxColumn1.Name = "mSTranPerDataGridViewTextBoxColumn1";
+            this.mSTranPerDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hOBCTranPerDataGridViewTextBoxColumn1
+            // 
+            this.hOBCTranPerDataGridViewTextBoxColumn1.DataPropertyName = "HOBC_Tran_Per";
+            this.hOBCTranPerDataGridViewTextBoxColumn1.HeaderText = "HOBC_Tran_Per";
+            this.hOBCTranPerDataGridViewTextBoxColumn1.Name = "hOBCTranPerDataGridViewTextBoxColumn1";
+            this.hOBCTranPerDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hSDTranPerDataGridViewTextBoxColumn1
+            // 
+            this.hSDTranPerDataGridViewTextBoxColumn1.DataPropertyName = "HSD_Tran_Per";
+            this.hSDTranPerDataGridViewTextBoxColumn1.HeaderText = "HSD_Tran_Per";
+            this.hSDTranPerDataGridViewTextBoxColumn1.Name = "hSDTranPerDataGridViewTextBoxColumn1";
+            this.hSDTranPerDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // kOTranPerDataGridViewTextBoxColumn1
+            // 
+            this.kOTranPerDataGridViewTextBoxColumn1.DataPropertyName = "KO_Tran_Per";
+            this.kOTranPerDataGridViewTextBoxColumn1.HeaderText = "KO_Tran_Per";
+            this.kOTranPerDataGridViewTextBoxColumn1.Name = "kOTranPerDataGridViewTextBoxColumn1";
+            this.kOTranPerDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // mSTranStckDataGridViewTextBoxColumn1
+            // 
+            this.mSTranStckDataGridViewTextBoxColumn1.DataPropertyName = "MS_Tran_Stck";
+            this.mSTranStckDataGridViewTextBoxColumn1.HeaderText = "MS_Tran_Stck";
+            this.mSTranStckDataGridViewTextBoxColumn1.Name = "mSTranStckDataGridViewTextBoxColumn1";
+            this.mSTranStckDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hOBCTranStckDataGridViewTextBoxColumn1
+            // 
+            this.hOBCTranStckDataGridViewTextBoxColumn1.DataPropertyName = "HOBC_Tran_Stck";
+            this.hOBCTranStckDataGridViewTextBoxColumn1.HeaderText = "HOBC_Tran_Stck";
+            this.hOBCTranStckDataGridViewTextBoxColumn1.Name = "hOBCTranStckDataGridViewTextBoxColumn1";
+            this.hOBCTranStckDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hSDTranStckDataGridViewTextBoxColumn1
+            // 
+            this.hSDTranStckDataGridViewTextBoxColumn1.DataPropertyName = "HSD_Tran_Stck";
+            this.hSDTranStckDataGridViewTextBoxColumn1.HeaderText = "HSD_Tran_Stck";
+            this.hSDTranStckDataGridViewTextBoxColumn1.Name = "hSDTranStckDataGridViewTextBoxColumn1";
+            this.hSDTranStckDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // kOTranStckDataGridViewTextBoxColumn1
+            // 
+            this.kOTranStckDataGridViewTextBoxColumn1.DataPropertyName = "KO_Tran_Stck";
+            this.kOTranStckDataGridViewTextBoxColumn1.HeaderText = "KO_Tran_Stck";
+            this.kOTranStckDataGridViewTextBoxColumn1.Name = "kOTranStckDataGridViewTextBoxColumn1";
+            this.kOTranStckDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // tranTstockDataGridViewTextBoxColumn1
+            // 
+            this.tranTstockDataGridViewTextBoxColumn1.DataPropertyName = "Tran_Tstock";
+            this.tranTstockDataGridViewTextBoxColumn1.HeaderText = "Tran_Tstock";
+            this.tranTstockDataGridViewTextBoxColumn1.Name = "tranTstockDataGridViewTextBoxColumn1";
+            this.tranTstockDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // mSSalePerDataGridViewTextBoxColumn1
+            // 
+            this.mSSalePerDataGridViewTextBoxColumn1.DataPropertyName = "MS_Sale_Per";
+            this.mSSalePerDataGridViewTextBoxColumn1.HeaderText = "MS_Sale_Per";
+            this.mSSalePerDataGridViewTextBoxColumn1.Name = "mSSalePerDataGridViewTextBoxColumn1";
+            this.mSSalePerDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hOBCSalePerDataGridViewTextBoxColumn1
+            // 
+            this.hOBCSalePerDataGridViewTextBoxColumn1.DataPropertyName = "HOBC_Sale_Per";
+            this.hOBCSalePerDataGridViewTextBoxColumn1.HeaderText = "HOBC_Sale_Per";
+            this.hOBCSalePerDataGridViewTextBoxColumn1.Name = "hOBCSalePerDataGridViewTextBoxColumn1";
+            this.hOBCSalePerDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hSDSalePerDataGridViewTextBoxColumn1
+            // 
+            this.hSDSalePerDataGridViewTextBoxColumn1.DataPropertyName = "HSD_Sale_Per";
+            this.hSDSalePerDataGridViewTextBoxColumn1.HeaderText = "HSD_Sale_Per";
+            this.hSDSalePerDataGridViewTextBoxColumn1.Name = "hSDSalePerDataGridViewTextBoxColumn1";
+            this.hSDSalePerDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // kOSalePerDataGridViewTextBoxColumn1
+            // 
+            this.kOSalePerDataGridViewTextBoxColumn1.DataPropertyName = "KO_Sale_Per";
+            this.kOSalePerDataGridViewTextBoxColumn1.HeaderText = "KO_Sale_Per";
+            this.kOSalePerDataGridViewTextBoxColumn1.Name = "kOSalePerDataGridViewTextBoxColumn1";
+            this.kOSalePerDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // mSSaleAmntDataGridViewTextBoxColumn1
+            // 
+            this.mSSaleAmntDataGridViewTextBoxColumn1.DataPropertyName = "MS_Sale_Amnt";
+            this.mSSaleAmntDataGridViewTextBoxColumn1.HeaderText = "MS_Sale_Amnt";
+            this.mSSaleAmntDataGridViewTextBoxColumn1.Name = "mSSaleAmntDataGridViewTextBoxColumn1";
+            this.mSSaleAmntDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hOBCSaleAmntDataGridViewTextBoxColumn1
+            // 
+            this.hOBCSaleAmntDataGridViewTextBoxColumn1.DataPropertyName = "HOBC_Sale_Amnt";
+            this.hOBCSaleAmntDataGridViewTextBoxColumn1.HeaderText = "HOBC_Sale_Amnt";
+            this.hOBCSaleAmntDataGridViewTextBoxColumn1.Name = "hOBCSaleAmntDataGridViewTextBoxColumn1";
+            this.hOBCSaleAmntDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hSDSaleAmntDataGridViewTextBoxColumn1
+            // 
+            this.hSDSaleAmntDataGridViewTextBoxColumn1.DataPropertyName = "HSD_Sale_Amnt";
+            this.hSDSaleAmntDataGridViewTextBoxColumn1.HeaderText = "HSD_Sale_Amnt";
+            this.hSDSaleAmntDataGridViewTextBoxColumn1.Name = "hSDSaleAmntDataGridViewTextBoxColumn1";
+            this.hSDSaleAmntDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // kOSaleAmntDataGridViewTextBoxColumn1
+            // 
+            this.kOSaleAmntDataGridViewTextBoxColumn1.DataPropertyName = "KO_Sale_Amnt";
+            this.kOSaleAmntDataGridViewTextBoxColumn1.HeaderText = "KO_Sale_Amnt";
+            this.kOSaleAmntDataGridViewTextBoxColumn1.Name = "kOSaleAmntDataGridViewTextBoxColumn1";
+            this.kOSaleAmntDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // saleTamountDataGridViewTextBoxColumn1
+            // 
+            this.saleTamountDataGridViewTextBoxColumn1.DataPropertyName = "Sale_Tamount";
+            this.saleTamountDataGridViewTextBoxColumn1.HeaderText = "Sale_Tamount";
+            this.saleTamountDataGridViewTextBoxColumn1.Name = "saleTamountDataGridViewTextBoxColumn1";
+            this.saleTamountDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // badDStckDataGridViewTextBoxColumn
+            // 
+            this.badDStckDataGridViewTextBoxColumn.DataPropertyName = "BadD_Stck";
+            this.badDStckDataGridViewTextBoxColumn.HeaderText = "BadD_Stck";
+            this.badDStckDataGridViewTextBoxColumn.Name = "badDStckDataGridViewTextBoxColumn";
+            this.badDStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // faisDStckDataGridViewTextBoxColumn
+            // 
+            this.faisDStckDataGridViewTextBoxColumn.DataPropertyName = "FaisD_Stck";
+            this.faisDStckDataGridViewTextBoxColumn.HeaderText = "FaisD_Stck";
+            this.faisDStckDataGridViewTextBoxColumn.Name = "faisDStckDataGridViewTextBoxColumn";
+            this.faisDStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sarDStckDataGridViewTextBoxColumn
+            // 
+            this.sarDStckDataGridViewTextBoxColumn.DataPropertyName = "SarD_Stck";
+            this.sarDStckDataGridViewTextBoxColumn.HeaderText = "SarD_Stck";
+            this.sarDStckDataGridViewTextBoxColumn.Name = "sarDStckDataGridViewTextBoxColumn";
+            this.sarDStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // peshDStckDataGridViewTextBoxColumn
+            // 
+            this.peshDStckDataGridViewTextBoxColumn.DataPropertyName = "PeshD_Stck";
+            this.peshDStckDataGridViewTextBoxColumn.HeaderText = "PeshD_Stck";
+            this.peshDStckDataGridViewTextBoxColumn.Name = "peshDStckDataGridViewTextBoxColumn";
+            this.peshDStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bannDStckDataGridViewTextBoxColumn
+            // 
+            this.bannDStckDataGridViewTextBoxColumn.DataPropertyName = "BannD_Stck";
+            this.bannDStckDataGridViewTextBoxColumn.HeaderText = "BannD_Stck";
+            this.bannDStckDataGridViewTextBoxColumn.Name = "bannDStckDataGridViewTextBoxColumn";
+            this.bannDStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // depoTstockDataGridViewTextBoxColumn1
+            // 
+            this.depoTstockDataGridViewTextBoxColumn1.DataPropertyName = "Depo_Tstock";
+            this.depoTstockDataGridViewTextBoxColumn1.HeaderText = "Depo_Tstock";
+            this.depoTstockDataGridViewTextBoxColumn1.Name = "depoTstockDataGridViewTextBoxColumn1";
+            this.depoTstockDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // badDSaleDataGridViewTextBoxColumn
+            // 
+            this.badDSaleDataGridViewTextBoxColumn.DataPropertyName = "BadD_Sale";
+            this.badDSaleDataGridViewTextBoxColumn.HeaderText = "BadD_Sale";
+            this.badDSaleDataGridViewTextBoxColumn.Name = "badDSaleDataGridViewTextBoxColumn";
+            this.badDSaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // faisDSaleDataGridViewTextBoxColumn
+            // 
+            this.faisDSaleDataGridViewTextBoxColumn.DataPropertyName = "FaisD_Sale";
+            this.faisDSaleDataGridViewTextBoxColumn.HeaderText = "FaisD_Sale";
+            this.faisDSaleDataGridViewTextBoxColumn.Name = "faisDSaleDataGridViewTextBoxColumn";
+            this.faisDSaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sarDSaleDataGridViewTextBoxColumn
+            // 
+            this.sarDSaleDataGridViewTextBoxColumn.DataPropertyName = "SarD_Sale";
+            this.sarDSaleDataGridViewTextBoxColumn.HeaderText = "SarD_Sale";
+            this.sarDSaleDataGridViewTextBoxColumn.Name = "sarDSaleDataGridViewTextBoxColumn";
+            this.sarDSaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // peshDSaleDataGridViewTextBoxColumn
+            // 
+            this.peshDSaleDataGridViewTextBoxColumn.DataPropertyName = "PeshD_Sale";
+            this.peshDSaleDataGridViewTextBoxColumn.HeaderText = "PeshD_Sale";
+            this.peshDSaleDataGridViewTextBoxColumn.Name = "peshDSaleDataGridViewTextBoxColumn";
+            this.peshDSaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bannDSaleDataGridViewTextBoxColumn
+            // 
+            this.bannDSaleDataGridViewTextBoxColumn.DataPropertyName = "BannD_Sale";
+            this.bannDSaleDataGridViewTextBoxColumn.HeaderText = "BannD_Sale";
+            this.bannDSaleDataGridViewTextBoxColumn.Name = "bannDSaleDataGridViewTextBoxColumn";
+            this.bannDSaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // depoTSaleDataGridViewTextBoxColumn1
+            // 
+            this.depoTSaleDataGridViewTextBoxColumn1.DataPropertyName = "Depo_TSale";
+            this.depoTSaleDataGridViewTextBoxColumn1.HeaderText = "Depo_TSale";
+            this.depoTSaleDataGridViewTextBoxColumn1.Name = "depoTSaleDataGridViewTextBoxColumn1";
+            this.depoTSaleDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // mSPurPrcDataGridViewTextBoxColumn1
+            // 
+            this.mSPurPrcDataGridViewTextBoxColumn1.DataPropertyName = "MS_Pur_Prc";
+            this.mSPurPrcDataGridViewTextBoxColumn1.HeaderText = "MS_Pur_Prc";
+            this.mSPurPrcDataGridViewTextBoxColumn1.Name = "mSPurPrcDataGridViewTextBoxColumn1";
+            this.mSPurPrcDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hOBCPurPrcDataGridViewTextBoxColumn1
+            // 
+            this.hOBCPurPrcDataGridViewTextBoxColumn1.DataPropertyName = "HOBC_Pur_Prc";
+            this.hOBCPurPrcDataGridViewTextBoxColumn1.HeaderText = "HOBC_Pur_Prc";
+            this.hOBCPurPrcDataGridViewTextBoxColumn1.Name = "hOBCPurPrcDataGridViewTextBoxColumn1";
+            this.hOBCPurPrcDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hSDPurPrcDataGridViewTextBoxColumn1
+            // 
+            this.hSDPurPrcDataGridViewTextBoxColumn1.DataPropertyName = "HSD_Pur_Prc";
+            this.hSDPurPrcDataGridViewTextBoxColumn1.HeaderText = "HSD_Pur_Prc";
+            this.hSDPurPrcDataGridViewTextBoxColumn1.Name = "hSDPurPrcDataGridViewTextBoxColumn1";
+            this.hSDPurPrcDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // kOPurPrcDataGridViewTextBoxColumn1
+            // 
+            this.kOPurPrcDataGridViewTextBoxColumn1.DataPropertyName = "KO_Pur_Prc";
+            this.kOPurPrcDataGridViewTextBoxColumn1.HeaderText = "KO_Pur_Prc";
+            this.kOPurPrcDataGridViewTextBoxColumn1.Name = "kOPurPrcDataGridViewTextBoxColumn1";
+            this.kOPurPrcDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // mSClosingSDataGridViewTextBoxColumn1
+            // 
+            this.mSClosingSDataGridViewTextBoxColumn1.DataPropertyName = "MS_ClosingS";
+            this.mSClosingSDataGridViewTextBoxColumn1.HeaderText = "MS_ClosingS";
+            this.mSClosingSDataGridViewTextBoxColumn1.Name = "mSClosingSDataGridViewTextBoxColumn1";
+            this.mSClosingSDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hOBCClosingSDataGridViewTextBoxColumn1
+            // 
+            this.hOBCClosingSDataGridViewTextBoxColumn1.DataPropertyName = "HOBC_ClosingS";
+            this.hOBCClosingSDataGridViewTextBoxColumn1.HeaderText = "HOBC_ClosingS";
+            this.hOBCClosingSDataGridViewTextBoxColumn1.Name = "hOBCClosingSDataGridViewTextBoxColumn1";
+            this.hOBCClosingSDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hSDClosingSDataGridViewTextBoxColumn1
+            // 
+            this.hSDClosingSDataGridViewTextBoxColumn1.DataPropertyName = "HSD_ClosingS";
+            this.hSDClosingSDataGridViewTextBoxColumn1.HeaderText = "HSD_ClosingS";
+            this.hSDClosingSDataGridViewTextBoxColumn1.Name = "hSDClosingSDataGridViewTextBoxColumn1";
+            this.hSDClosingSDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // kOClosingSDataGridViewTextBoxColumn1
+            // 
+            this.kOClosingSDataGridViewTextBoxColumn1.DataPropertyName = "KO_ClosingS";
+            this.kOClosingSDataGridViewTextBoxColumn1.HeaderText = "KO_ClosingS";
+            this.kOClosingSDataGridViewTextBoxColumn1.Name = "kOClosingSDataGridViewTextBoxColumn1";
+            this.kOClosingSDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // mSSalePrcDataGridViewTextBoxColumn1
+            // 
+            this.mSSalePrcDataGridViewTextBoxColumn1.DataPropertyName = "MS_Sale_Prc";
+            this.mSSalePrcDataGridViewTextBoxColumn1.HeaderText = "MS_Sale_Prc";
+            this.mSSalePrcDataGridViewTextBoxColumn1.Name = "mSSalePrcDataGridViewTextBoxColumn1";
+            this.mSSalePrcDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hOBCSalePrcDataGridViewTextBoxColumn1
+            // 
+            this.hOBCSalePrcDataGridViewTextBoxColumn1.DataPropertyName = "HOBC_Sale_Prc";
+            this.hOBCSalePrcDataGridViewTextBoxColumn1.HeaderText = "HOBC_Sale_Prc";
+            this.hOBCSalePrcDataGridViewTextBoxColumn1.Name = "hOBCSalePrcDataGridViewTextBoxColumn1";
+            this.hOBCSalePrcDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hSDSalePrcDataGridViewTextBoxColumn1
+            // 
+            this.hSDSalePrcDataGridViewTextBoxColumn1.DataPropertyName = "HSD_Sale_Prc";
+            this.hSDSalePrcDataGridViewTextBoxColumn1.HeaderText = "HSD_Sale_Prc";
+            this.hSDSalePrcDataGridViewTextBoxColumn1.Name = "hSDSalePrcDataGridViewTextBoxColumn1";
+            this.hSDSalePrcDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // kOSalePrcDataGridViewTextBoxColumn1
+            // 
+            this.kOSalePrcDataGridViewTextBoxColumn1.DataPropertyName = "KO_Sale_Prc";
+            this.kOSalePrcDataGridViewTextBoxColumn1.HeaderText = "KO_Sale_Prc";
+            this.kOSalePrcDataGridViewTextBoxColumn1.Name = "kOSalePrcDataGridViewTextBoxColumn1";
+            this.kOSalePrcDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // pARCODepoBindingSource
+            // 
+            this.pARCODepoBindingSource.DataMember = "PARCODepo";
+            this.pARCODepoBindingSource.DataSource = this.auditPlanDataSet;
+            // 
+            // pARCODepoTableAdapter
+            // 
+            this.pARCODepoTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn2
+            // 
+            this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
+            this.iDDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn2
+            // 
+            this.dateDataGridViewTextBoxColumn2.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn2.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn2.Name = "dateDataGridViewTextBoxColumn2";
+            this.dateDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // mSPurLtrDataGridViewTextBoxColumn2
+            // 
+            this.mSPurLtrDataGridViewTextBoxColumn2.DataPropertyName = "MS_Pur_Ltr";
+            this.mSPurLtrDataGridViewTextBoxColumn2.HeaderText = "MS_Pur_Ltr";
+            this.mSPurLtrDataGridViewTextBoxColumn2.Name = "mSPurLtrDataGridViewTextBoxColumn2";
+            this.mSPurLtrDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hOBCPurLtrDataGridViewTextBoxColumn2
+            // 
+            this.hOBCPurLtrDataGridViewTextBoxColumn2.DataPropertyName = "HOBC_Pur_Ltr";
+            this.hOBCPurLtrDataGridViewTextBoxColumn2.HeaderText = "HOBC_Pur_Ltr";
+            this.hOBCPurLtrDataGridViewTextBoxColumn2.Name = "hOBCPurLtrDataGridViewTextBoxColumn2";
+            this.hOBCPurLtrDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hSDPurLtrDataGridViewTextBoxColumn2
+            // 
+            this.hSDPurLtrDataGridViewTextBoxColumn2.DataPropertyName = "HSD_Pur_Ltr";
+            this.hSDPurLtrDataGridViewTextBoxColumn2.HeaderText = "HSD_Pur_Ltr";
+            this.hSDPurLtrDataGridViewTextBoxColumn2.Name = "hSDPurLtrDataGridViewTextBoxColumn2";
+            this.hSDPurLtrDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // kOPurLtrDataGridViewTextBoxColumn2
+            // 
+            this.kOPurLtrDataGridViewTextBoxColumn2.DataPropertyName = "KO_Pur_Ltr";
+            this.kOPurLtrDataGridViewTextBoxColumn2.HeaderText = "KO_Pur_Ltr";
+            this.kOPurLtrDataGridViewTextBoxColumn2.Name = "kOPurLtrDataGridViewTextBoxColumn2";
+            this.kOPurLtrDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // purTstockDataGridViewTextBoxColumn2
+            // 
+            this.purTstockDataGridViewTextBoxColumn2.DataPropertyName = "Pur_Tstock";
+            this.purTstockDataGridViewTextBoxColumn2.HeaderText = "Pur_Tstock";
+            this.purTstockDataGridViewTextBoxColumn2.Name = "purTstockDataGridViewTextBoxColumn2";
+            this.purTstockDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // mSPurAmntDataGridViewTextBoxColumn2
+            // 
+            this.mSPurAmntDataGridViewTextBoxColumn2.DataPropertyName = "MS_Pur_Amnt";
+            this.mSPurAmntDataGridViewTextBoxColumn2.HeaderText = "MS_Pur_Amnt";
+            this.mSPurAmntDataGridViewTextBoxColumn2.Name = "mSPurAmntDataGridViewTextBoxColumn2";
+            this.mSPurAmntDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hOBCPurAmntDataGridViewTextBoxColumn2
+            // 
+            this.hOBCPurAmntDataGridViewTextBoxColumn2.DataPropertyName = "HOBC_Pur_Amnt";
+            this.hOBCPurAmntDataGridViewTextBoxColumn2.HeaderText = "HOBC_Pur_Amnt";
+            this.hOBCPurAmntDataGridViewTextBoxColumn2.Name = "hOBCPurAmntDataGridViewTextBoxColumn2";
+            this.hOBCPurAmntDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hSDPurAmntDataGridViewTextBoxColumn2
+            // 
+            this.hSDPurAmntDataGridViewTextBoxColumn2.DataPropertyName = "HSD_Pur_Amnt";
+            this.hSDPurAmntDataGridViewTextBoxColumn2.HeaderText = "HSD_Pur_Amnt";
+            this.hSDPurAmntDataGridViewTextBoxColumn2.Name = "hSDPurAmntDataGridViewTextBoxColumn2";
+            this.hSDPurAmntDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // kOPurAmntDataGridViewTextBoxColumn2
+            // 
+            this.kOPurAmntDataGridViewTextBoxColumn2.DataPropertyName = "KO_Pur_Amnt";
+            this.kOPurAmntDataGridViewTextBoxColumn2.HeaderText = "KO_Pur_Amnt";
+            this.kOPurAmntDataGridViewTextBoxColumn2.Name = "kOPurAmntDataGridViewTextBoxColumn2";
+            this.kOPurAmntDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // purTamountDataGridViewTextBoxColumn2
+            // 
+            this.purTamountDataGridViewTextBoxColumn2.DataPropertyName = "Pur_Tamount";
+            this.purTamountDataGridViewTextBoxColumn2.HeaderText = "Pur_Tamount";
+            this.purTamountDataGridViewTextBoxColumn2.Name = "purTamountDataGridViewTextBoxColumn2";
+            this.purTamountDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // mSTranPerDataGridViewTextBoxColumn2
+            // 
+            this.mSTranPerDataGridViewTextBoxColumn2.DataPropertyName = "MS_Tran_Per";
+            this.mSTranPerDataGridViewTextBoxColumn2.HeaderText = "MS_Tran_Per";
+            this.mSTranPerDataGridViewTextBoxColumn2.Name = "mSTranPerDataGridViewTextBoxColumn2";
+            this.mSTranPerDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hOBCTranPerDataGridViewTextBoxColumn2
+            // 
+            this.hOBCTranPerDataGridViewTextBoxColumn2.DataPropertyName = "HOBC_Tran_Per";
+            this.hOBCTranPerDataGridViewTextBoxColumn2.HeaderText = "HOBC_Tran_Per";
+            this.hOBCTranPerDataGridViewTextBoxColumn2.Name = "hOBCTranPerDataGridViewTextBoxColumn2";
+            this.hOBCTranPerDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hSDTranPerDataGridViewTextBoxColumn2
+            // 
+            this.hSDTranPerDataGridViewTextBoxColumn2.DataPropertyName = "HSD_Tran_Per";
+            this.hSDTranPerDataGridViewTextBoxColumn2.HeaderText = "HSD_Tran_Per";
+            this.hSDTranPerDataGridViewTextBoxColumn2.Name = "hSDTranPerDataGridViewTextBoxColumn2";
+            this.hSDTranPerDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // kOTranPerDataGridViewTextBoxColumn2
+            // 
+            this.kOTranPerDataGridViewTextBoxColumn2.DataPropertyName = "KO_Tran_Per";
+            this.kOTranPerDataGridViewTextBoxColumn2.HeaderText = "KO_Tran_Per";
+            this.kOTranPerDataGridViewTextBoxColumn2.Name = "kOTranPerDataGridViewTextBoxColumn2";
+            this.kOTranPerDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // mSTranStckDataGridViewTextBoxColumn2
+            // 
+            this.mSTranStckDataGridViewTextBoxColumn2.DataPropertyName = "MS_Tran_Stck";
+            this.mSTranStckDataGridViewTextBoxColumn2.HeaderText = "MS_Tran_Stck";
+            this.mSTranStckDataGridViewTextBoxColumn2.Name = "mSTranStckDataGridViewTextBoxColumn2";
+            this.mSTranStckDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hOBCTranStckDataGridViewTextBoxColumn2
+            // 
+            this.hOBCTranStckDataGridViewTextBoxColumn2.DataPropertyName = "HOBC_Tran_Stck";
+            this.hOBCTranStckDataGridViewTextBoxColumn2.HeaderText = "HOBC_Tran_Stck";
+            this.hOBCTranStckDataGridViewTextBoxColumn2.Name = "hOBCTranStckDataGridViewTextBoxColumn2";
+            this.hOBCTranStckDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hSDTranStckDataGridViewTextBoxColumn2
+            // 
+            this.hSDTranStckDataGridViewTextBoxColumn2.DataPropertyName = "HSD_Tran_Stck";
+            this.hSDTranStckDataGridViewTextBoxColumn2.HeaderText = "HSD_Tran_Stck";
+            this.hSDTranStckDataGridViewTextBoxColumn2.Name = "hSDTranStckDataGridViewTextBoxColumn2";
+            this.hSDTranStckDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // kOTranStckDataGridViewTextBoxColumn2
+            // 
+            this.kOTranStckDataGridViewTextBoxColumn2.DataPropertyName = "KO_Tran_Stck";
+            this.kOTranStckDataGridViewTextBoxColumn2.HeaderText = "KO_Tran_Stck";
+            this.kOTranStckDataGridViewTextBoxColumn2.Name = "kOTranStckDataGridViewTextBoxColumn2";
+            this.kOTranStckDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // tranTstockDataGridViewTextBoxColumn2
+            // 
+            this.tranTstockDataGridViewTextBoxColumn2.DataPropertyName = "Tran_Tstock";
+            this.tranTstockDataGridViewTextBoxColumn2.HeaderText = "Tran_Tstock";
+            this.tranTstockDataGridViewTextBoxColumn2.Name = "tranTstockDataGridViewTextBoxColumn2";
+            this.tranTstockDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // mSSalePerDataGridViewTextBoxColumn2
+            // 
+            this.mSSalePerDataGridViewTextBoxColumn2.DataPropertyName = "MS_Sale_Per";
+            this.mSSalePerDataGridViewTextBoxColumn2.HeaderText = "MS_Sale_Per";
+            this.mSSalePerDataGridViewTextBoxColumn2.Name = "mSSalePerDataGridViewTextBoxColumn2";
+            this.mSSalePerDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hOBCSalePerDataGridViewTextBoxColumn2
+            // 
+            this.hOBCSalePerDataGridViewTextBoxColumn2.DataPropertyName = "HOBC_Sale_Per";
+            this.hOBCSalePerDataGridViewTextBoxColumn2.HeaderText = "HOBC_Sale_Per";
+            this.hOBCSalePerDataGridViewTextBoxColumn2.Name = "hOBCSalePerDataGridViewTextBoxColumn2";
+            this.hOBCSalePerDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hSDSalePerDataGridViewTextBoxColumn2
+            // 
+            this.hSDSalePerDataGridViewTextBoxColumn2.DataPropertyName = "HSD_Sale_Per";
+            this.hSDSalePerDataGridViewTextBoxColumn2.HeaderText = "HSD_Sale_Per";
+            this.hSDSalePerDataGridViewTextBoxColumn2.Name = "hSDSalePerDataGridViewTextBoxColumn2";
+            this.hSDSalePerDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // kOSalePerDataGridViewTextBoxColumn2
+            // 
+            this.kOSalePerDataGridViewTextBoxColumn2.DataPropertyName = "KO_Sale_Per";
+            this.kOSalePerDataGridViewTextBoxColumn2.HeaderText = "KO_Sale_Per";
+            this.kOSalePerDataGridViewTextBoxColumn2.Name = "kOSalePerDataGridViewTextBoxColumn2";
+            this.kOSalePerDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // mSSaleAmntDataGridViewTextBoxColumn2
+            // 
+            this.mSSaleAmntDataGridViewTextBoxColumn2.DataPropertyName = "MS_Sale_Amnt";
+            this.mSSaleAmntDataGridViewTextBoxColumn2.HeaderText = "MS_Sale_Amnt";
+            this.mSSaleAmntDataGridViewTextBoxColumn2.Name = "mSSaleAmntDataGridViewTextBoxColumn2";
+            this.mSSaleAmntDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hOBCSaleAmntDataGridViewTextBoxColumn2
+            // 
+            this.hOBCSaleAmntDataGridViewTextBoxColumn2.DataPropertyName = "HOBC_Sale_Amnt";
+            this.hOBCSaleAmntDataGridViewTextBoxColumn2.HeaderText = "HOBC_Sale_Amnt";
+            this.hOBCSaleAmntDataGridViewTextBoxColumn2.Name = "hOBCSaleAmntDataGridViewTextBoxColumn2";
+            this.hOBCSaleAmntDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hSDSaleAmntDataGridViewTextBoxColumn2
+            // 
+            this.hSDSaleAmntDataGridViewTextBoxColumn2.DataPropertyName = "HSD_Sale_Amnt";
+            this.hSDSaleAmntDataGridViewTextBoxColumn2.HeaderText = "HSD_Sale_Amnt";
+            this.hSDSaleAmntDataGridViewTextBoxColumn2.Name = "hSDSaleAmntDataGridViewTextBoxColumn2";
+            this.hSDSaleAmntDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // kOSaleAmntDataGridViewTextBoxColumn2
+            // 
+            this.kOSaleAmntDataGridViewTextBoxColumn2.DataPropertyName = "KO_Sale_Amnt";
+            this.kOSaleAmntDataGridViewTextBoxColumn2.HeaderText = "KO_Sale_Amnt";
+            this.kOSaleAmntDataGridViewTextBoxColumn2.Name = "kOSaleAmntDataGridViewTextBoxColumn2";
+            this.kOSaleAmntDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // saleTamountDataGridViewTextBoxColumn2
+            // 
+            this.saleTamountDataGridViewTextBoxColumn2.DataPropertyName = "Sale_Tamount";
+            this.saleTamountDataGridViewTextBoxColumn2.HeaderText = "Sale_Tamount";
+            this.saleTamountDataGridViewTextBoxColumn2.Name = "saleTamountDataGridViewTextBoxColumn2";
+            this.saleTamountDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // vehDStckDataGridViewTextBoxColumn
+            // 
+            this.vehDStckDataGridViewTextBoxColumn.DataPropertyName = "VehD_Stck";
+            this.vehDStckDataGridViewTextBoxColumn.HeaderText = "VehD_Stck";
+            this.vehDStckDataGridViewTextBoxColumn.Name = "vehDStckDataGridViewTextBoxColumn";
+            this.vehDStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sherDStckDataGridViewTextBoxColumn
+            // 
+            this.sherDStckDataGridViewTextBoxColumn.DataPropertyName = "SherD_Stck";
+            this.sherDStckDataGridViewTextBoxColumn.HeaderText = "SherD_Stck";
+            this.sherDStckDataGridViewTextBoxColumn.Name = "sherDStckDataGridViewTextBoxColumn";
+            this.sherDStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sahiDStckDataGridViewTextBoxColumn
+            // 
+            this.sahiDStckDataGridViewTextBoxColumn.DataPropertyName = "SahiD_Stck";
+            this.sahiDStckDataGridViewTextBoxColumn.HeaderText = "SahiD_Stck";
+            this.sahiDStckDataGridViewTextBoxColumn.Name = "sahiDStckDataGridViewTextBoxColumn";
+            this.sahiDStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // depoTstockDataGridViewTextBoxColumn2
+            // 
+            this.depoTstockDataGridViewTextBoxColumn2.DataPropertyName = "Depo_Tstock";
+            this.depoTstockDataGridViewTextBoxColumn2.HeaderText = "Depo_Tstock";
+            this.depoTstockDataGridViewTextBoxColumn2.Name = "depoTstockDataGridViewTextBoxColumn2";
+            this.depoTstockDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // vehDSaleDataGridViewTextBoxColumn
+            // 
+            this.vehDSaleDataGridViewTextBoxColumn.DataPropertyName = "VehD_Sale";
+            this.vehDSaleDataGridViewTextBoxColumn.HeaderText = "VehD_Sale";
+            this.vehDSaleDataGridViewTextBoxColumn.Name = "vehDSaleDataGridViewTextBoxColumn";
+            this.vehDSaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sherDSaleDataGridViewTextBoxColumn
+            // 
+            this.sherDSaleDataGridViewTextBoxColumn.DataPropertyName = "SherD_Sale";
+            this.sherDSaleDataGridViewTextBoxColumn.HeaderText = "SherD_Sale";
+            this.sherDSaleDataGridViewTextBoxColumn.Name = "sherDSaleDataGridViewTextBoxColumn";
+            this.sherDSaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sahiDSaleDataGridViewTextBoxColumn
+            // 
+            this.sahiDSaleDataGridViewTextBoxColumn.DataPropertyName = "SahiD_Sale";
+            this.sahiDSaleDataGridViewTextBoxColumn.HeaderText = "SahiD_Sale";
+            this.sahiDSaleDataGridViewTextBoxColumn.Name = "sahiDSaleDataGridViewTextBoxColumn";
+            this.sahiDSaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // depoTSaleDataGridViewTextBoxColumn2
+            // 
+            this.depoTSaleDataGridViewTextBoxColumn2.DataPropertyName = "Depo_TSale";
+            this.depoTSaleDataGridViewTextBoxColumn2.HeaderText = "Depo_TSale";
+            this.depoTSaleDataGridViewTextBoxColumn2.Name = "depoTSaleDataGridViewTextBoxColumn2";
+            this.depoTSaleDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // mSPurPrcDataGridViewTextBoxColumn2
+            // 
+            this.mSPurPrcDataGridViewTextBoxColumn2.DataPropertyName = "MS_Pur_Prc";
+            this.mSPurPrcDataGridViewTextBoxColumn2.HeaderText = "MS_Pur_Prc";
+            this.mSPurPrcDataGridViewTextBoxColumn2.Name = "mSPurPrcDataGridViewTextBoxColumn2";
+            this.mSPurPrcDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hOBCPurPrcDataGridViewTextBoxColumn2
+            // 
+            this.hOBCPurPrcDataGridViewTextBoxColumn2.DataPropertyName = "HOBC_Pur_Prc";
+            this.hOBCPurPrcDataGridViewTextBoxColumn2.HeaderText = "HOBC_Pur_Prc";
+            this.hOBCPurPrcDataGridViewTextBoxColumn2.Name = "hOBCPurPrcDataGridViewTextBoxColumn2";
+            this.hOBCPurPrcDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hSDPurPrcDataGridViewTextBoxColumn2
+            // 
+            this.hSDPurPrcDataGridViewTextBoxColumn2.DataPropertyName = "HSD_Pur_Prc";
+            this.hSDPurPrcDataGridViewTextBoxColumn2.HeaderText = "HSD_Pur_Prc";
+            this.hSDPurPrcDataGridViewTextBoxColumn2.Name = "hSDPurPrcDataGridViewTextBoxColumn2";
+            this.hSDPurPrcDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // kOPurPrcDataGridViewTextBoxColumn2
+            // 
+            this.kOPurPrcDataGridViewTextBoxColumn2.DataPropertyName = "KO_Pur_Prc";
+            this.kOPurPrcDataGridViewTextBoxColumn2.HeaderText = "KO_Pur_Prc";
+            this.kOPurPrcDataGridViewTextBoxColumn2.Name = "kOPurPrcDataGridViewTextBoxColumn2";
+            this.kOPurPrcDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // mSClosingSDataGridViewTextBoxColumn2
+            // 
+            this.mSClosingSDataGridViewTextBoxColumn2.DataPropertyName = "MS_ClosingS";
+            this.mSClosingSDataGridViewTextBoxColumn2.HeaderText = "MS_ClosingS";
+            this.mSClosingSDataGridViewTextBoxColumn2.Name = "mSClosingSDataGridViewTextBoxColumn2";
+            this.mSClosingSDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hOBCClosingSDataGridViewTextBoxColumn2
+            // 
+            this.hOBCClosingSDataGridViewTextBoxColumn2.DataPropertyName = "HOBC_ClosingS";
+            this.hOBCClosingSDataGridViewTextBoxColumn2.HeaderText = "HOBC_ClosingS";
+            this.hOBCClosingSDataGridViewTextBoxColumn2.Name = "hOBCClosingSDataGridViewTextBoxColumn2";
+            this.hOBCClosingSDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hSDClosingSDataGridViewTextBoxColumn2
+            // 
+            this.hSDClosingSDataGridViewTextBoxColumn2.DataPropertyName = "HSD_ClosingS";
+            this.hSDClosingSDataGridViewTextBoxColumn2.HeaderText = "HSD_ClosingS";
+            this.hSDClosingSDataGridViewTextBoxColumn2.Name = "hSDClosingSDataGridViewTextBoxColumn2";
+            this.hSDClosingSDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // kOClosingSDataGridViewTextBoxColumn2
+            // 
+            this.kOClosingSDataGridViewTextBoxColumn2.DataPropertyName = "KO_ClosingS";
+            this.kOClosingSDataGridViewTextBoxColumn2.HeaderText = "KO_ClosingS";
+            this.kOClosingSDataGridViewTextBoxColumn2.Name = "kOClosingSDataGridViewTextBoxColumn2";
+            this.kOClosingSDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // mSSalePrcDataGridViewTextBoxColumn2
+            // 
+            this.mSSalePrcDataGridViewTextBoxColumn2.DataPropertyName = "MS_Sale_Prc";
+            this.mSSalePrcDataGridViewTextBoxColumn2.HeaderText = "MS_Sale_Prc";
+            this.mSSalePrcDataGridViewTextBoxColumn2.Name = "mSSalePrcDataGridViewTextBoxColumn2";
+            this.mSSalePrcDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hOBCSalePrcDataGridViewTextBoxColumn2
+            // 
+            this.hOBCSalePrcDataGridViewTextBoxColumn2.DataPropertyName = "HOBC_Sale_Prc";
+            this.hOBCSalePrcDataGridViewTextBoxColumn2.HeaderText = "HOBC_Sale_Prc";
+            this.hOBCSalePrcDataGridViewTextBoxColumn2.Name = "hOBCSalePrcDataGridViewTextBoxColumn2";
+            this.hOBCSalePrcDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hSDSalePrcDataGridViewTextBoxColumn2
+            // 
+            this.hSDSalePrcDataGridViewTextBoxColumn2.DataPropertyName = "HSD_Sale_Prc";
+            this.hSDSalePrcDataGridViewTextBoxColumn2.HeaderText = "HSD_Sale_Prc";
+            this.hSDSalePrcDataGridViewTextBoxColumn2.Name = "hSDSalePrcDataGridViewTextBoxColumn2";
+            this.hSDSalePrcDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // kOSalePrcDataGridViewTextBoxColumn2
+            // 
+            this.kOSalePrcDataGridViewTextBoxColumn2.DataPropertyName = "KO_Sale_Prc";
+            this.kOSalePrcDataGridViewTextBoxColumn2.HeaderText = "KO_Sale_Prc";
+            this.kOSalePrcDataGridViewTextBoxColumn2.Name = "kOSalePrcDataGridViewTextBoxColumn2";
+            this.kOSalePrcDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // keemariAviBindingSource
+            // 
+            this.keemariAviBindingSource.DataMember = "KeemariAvi";
+            this.keemariAviBindingSource.DataSource = this.auditPlanDataSet;
+            // 
+            // keemariAviTableAdapter
+            // 
+            this.keemariAviTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn3
+            // 
+            this.iDDataGridViewTextBoxColumn3.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn3.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn3.Name = "iDDataGridViewTextBoxColumn3";
+            this.iDDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn3
+            // 
+            this.dateDataGridViewTextBoxColumn3.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn3.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn3.Name = "dateDataGridViewTextBoxColumn3";
+            this.dateDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // jP4PurLtrDataGridViewTextBoxColumn
+            // 
+            this.jP4PurLtrDataGridViewTextBoxColumn.DataPropertyName = "JP4_Pur_Ltr";
+            this.jP4PurLtrDataGridViewTextBoxColumn.HeaderText = "JP4_Pur_Ltr";
+            this.jP4PurLtrDataGridViewTextBoxColumn.Name = "jP4PurLtrDataGridViewTextBoxColumn";
+            this.jP4PurLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jetA1PurLtrDataGridViewTextBoxColumn
+            // 
+            this.jetA1PurLtrDataGridViewTextBoxColumn.DataPropertyName = "JetA1_Pur_Ltr";
+            this.jetA1PurLtrDataGridViewTextBoxColumn.HeaderText = "JetA1_Pur_Ltr";
+            this.jetA1PurLtrDataGridViewTextBoxColumn.Name = "jetA1PurLtrDataGridViewTextBoxColumn";
+            this.jetA1PurLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // purTstockDataGridViewTextBoxColumn3
+            // 
+            this.purTstockDataGridViewTextBoxColumn3.DataPropertyName = "Pur_Tstock";
+            this.purTstockDataGridViewTextBoxColumn3.HeaderText = "Pur_Tstock";
+            this.purTstockDataGridViewTextBoxColumn3.Name = "purTstockDataGridViewTextBoxColumn3";
+            this.purTstockDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // jP4PurAmntDataGridViewTextBoxColumn
+            // 
+            this.jP4PurAmntDataGridViewTextBoxColumn.DataPropertyName = "JP4_Pur_Amnt";
+            this.jP4PurAmntDataGridViewTextBoxColumn.HeaderText = "JP4_Pur_Amnt";
+            this.jP4PurAmntDataGridViewTextBoxColumn.Name = "jP4PurAmntDataGridViewTextBoxColumn";
+            this.jP4PurAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jetA1PurAmntDataGridViewTextBoxColumn
+            // 
+            this.jetA1PurAmntDataGridViewTextBoxColumn.DataPropertyName = "JetA1_Pur_Amnt";
+            this.jetA1PurAmntDataGridViewTextBoxColumn.HeaderText = "JetA1_Pur_Amnt";
+            this.jetA1PurAmntDataGridViewTextBoxColumn.Name = "jetA1PurAmntDataGridViewTextBoxColumn";
+            this.jetA1PurAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // purTamountDataGridViewTextBoxColumn3
+            // 
+            this.purTamountDataGridViewTextBoxColumn3.DataPropertyName = "Pur_Tamount";
+            this.purTamountDataGridViewTextBoxColumn3.HeaderText = "Pur_Tamount";
+            this.purTamountDataGridViewTextBoxColumn3.Name = "purTamountDataGridViewTextBoxColumn3";
+            this.purTamountDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // jP4TranPerDataGridViewTextBoxColumn
+            // 
+            this.jP4TranPerDataGridViewTextBoxColumn.DataPropertyName = "JP4_Tran_Per";
+            this.jP4TranPerDataGridViewTextBoxColumn.HeaderText = "JP4_Tran_Per";
+            this.jP4TranPerDataGridViewTextBoxColumn.Name = "jP4TranPerDataGridViewTextBoxColumn";
+            this.jP4TranPerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jetA1TranPerDataGridViewTextBoxColumn
+            // 
+            this.jetA1TranPerDataGridViewTextBoxColumn.DataPropertyName = "JetA1_Tran_Per";
+            this.jetA1TranPerDataGridViewTextBoxColumn.HeaderText = "JetA1_Tran_Per";
+            this.jetA1TranPerDataGridViewTextBoxColumn.Name = "jetA1TranPerDataGridViewTextBoxColumn";
+            this.jetA1TranPerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jP4TranStckDataGridViewTextBoxColumn
+            // 
+            this.jP4TranStckDataGridViewTextBoxColumn.DataPropertyName = "JP4_Tran_Stck";
+            this.jP4TranStckDataGridViewTextBoxColumn.HeaderText = "JP4_Tran_Stck";
+            this.jP4TranStckDataGridViewTextBoxColumn.Name = "jP4TranStckDataGridViewTextBoxColumn";
+            this.jP4TranStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jetA1TranStckDataGridViewTextBoxColumn
+            // 
+            this.jetA1TranStckDataGridViewTextBoxColumn.DataPropertyName = "JetA1_Tran_Stck";
+            this.jetA1TranStckDataGridViewTextBoxColumn.HeaderText = "JetA1_Tran_Stck";
+            this.jetA1TranStckDataGridViewTextBoxColumn.Name = "jetA1TranStckDataGridViewTextBoxColumn";
+            this.jetA1TranStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tranTstockDataGridViewTextBoxColumn3
+            // 
+            this.tranTstockDataGridViewTextBoxColumn3.DataPropertyName = "Tran_Tstock";
+            this.tranTstockDataGridViewTextBoxColumn3.HeaderText = "Tran_Tstock";
+            this.tranTstockDataGridViewTextBoxColumn3.Name = "tranTstockDataGridViewTextBoxColumn3";
+            this.tranTstockDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // jP4SalePerDataGridViewTextBoxColumn
+            // 
+            this.jP4SalePerDataGridViewTextBoxColumn.DataPropertyName = "JP4_Sale_Per";
+            this.jP4SalePerDataGridViewTextBoxColumn.HeaderText = "JP4_Sale_Per";
+            this.jP4SalePerDataGridViewTextBoxColumn.Name = "jP4SalePerDataGridViewTextBoxColumn";
+            this.jP4SalePerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jetA1SalePerDataGridViewTextBoxColumn
+            // 
+            this.jetA1SalePerDataGridViewTextBoxColumn.DataPropertyName = "JetA1_Sale_Per";
+            this.jetA1SalePerDataGridViewTextBoxColumn.HeaderText = "JetA1_Sale_Per";
+            this.jetA1SalePerDataGridViewTextBoxColumn.Name = "jetA1SalePerDataGridViewTextBoxColumn";
+            this.jetA1SalePerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jP4SaleAmntDataGridViewTextBoxColumn
+            // 
+            this.jP4SaleAmntDataGridViewTextBoxColumn.DataPropertyName = "JP4_Sale_Amnt";
+            this.jP4SaleAmntDataGridViewTextBoxColumn.HeaderText = "JP4_Sale_Amnt";
+            this.jP4SaleAmntDataGridViewTextBoxColumn.Name = "jP4SaleAmntDataGridViewTextBoxColumn";
+            this.jP4SaleAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jetA1SaleAmntDataGridViewTextBoxColumn
+            // 
+            this.jetA1SaleAmntDataGridViewTextBoxColumn.DataPropertyName = "JetA1_Sale_Amnt";
+            this.jetA1SaleAmntDataGridViewTextBoxColumn.HeaderText = "JetA1_Sale_Amnt";
+            this.jetA1SaleAmntDataGridViewTextBoxColumn.Name = "jetA1SaleAmntDataGridViewTextBoxColumn";
+            this.jetA1SaleAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // saleTamountDataGridViewTextBoxColumn3
+            // 
+            this.saleTamountDataGridViewTextBoxColumn3.DataPropertyName = "Sale_Tamount";
+            this.saleTamountDataGridViewTextBoxColumn3.HeaderText = "Sale_Tamount";
+            this.saleTamountDataGridViewTextBoxColumn3.Name = "saleTamountDataGridViewTextBoxColumn3";
+            this.saleTamountDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // karAStckDataGridViewTextBoxColumn
+            // 
+            this.karAStckDataGridViewTextBoxColumn.DataPropertyName = "KarA_Stck";
+            this.karAStckDataGridViewTextBoxColumn.HeaderText = "KarA_Stck";
+            this.karAStckDataGridViewTextBoxColumn.Name = "karAStckDataGridViewTextBoxColumn";
+            this.karAStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // queAStckDataGridViewTextBoxColumn
+            // 
+            this.queAStckDataGridViewTextBoxColumn.DataPropertyName = "QueA_Stck";
+            this.queAStckDataGridViewTextBoxColumn.HeaderText = "QueA_Stck";
+            this.queAStckDataGridViewTextBoxColumn.Name = "queAStckDataGridViewTextBoxColumn";
+            this.queAStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nawAStckDataGridViewTextBoxColumn
+            // 
+            this.nawAStckDataGridViewTextBoxColumn.DataPropertyName = "NawA_Stck";
+            this.nawAStckDataGridViewTextBoxColumn.HeaderText = "NawA_Stck";
+            this.nawAStckDataGridViewTextBoxColumn.Name = "nawAStckDataGridViewTextBoxColumn";
+            this.nawAStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sukAStckDataGridViewTextBoxColumn
+            // 
+            this.sukAStckDataGridViewTextBoxColumn.DataPropertyName = "SukA_Stck";
+            this.sukAStckDataGridViewTextBoxColumn.HeaderText = "SukA_Stck";
+            this.sukAStckDataGridViewTextBoxColumn.Name = "sukAStckDataGridViewTextBoxColumn";
+            this.sukAStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // aviTstockDataGridViewTextBoxColumn
+            // 
+            this.aviTstockDataGridViewTextBoxColumn.DataPropertyName = "Avi_Tstock";
+            this.aviTstockDataGridViewTextBoxColumn.HeaderText = "Avi_Tstock";
+            this.aviTstockDataGridViewTextBoxColumn.Name = "aviTstockDataGridViewTextBoxColumn";
+            this.aviTstockDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // karASaleDataGridViewTextBoxColumn
+            // 
+            this.karASaleDataGridViewTextBoxColumn.DataPropertyName = "KarA_Sale";
+            this.karASaleDataGridViewTextBoxColumn.HeaderText = "KarA_Sale";
+            this.karASaleDataGridViewTextBoxColumn.Name = "karASaleDataGridViewTextBoxColumn";
+            this.karASaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // queASaleDataGridViewTextBoxColumn
+            // 
+            this.queASaleDataGridViewTextBoxColumn.DataPropertyName = "QueA_Sale";
+            this.queASaleDataGridViewTextBoxColumn.HeaderText = "QueA_Sale";
+            this.queASaleDataGridViewTextBoxColumn.Name = "queASaleDataGridViewTextBoxColumn";
+            this.queASaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nawASaleDataGridViewTextBoxColumn
+            // 
+            this.nawASaleDataGridViewTextBoxColumn.DataPropertyName = "NawA_Sale";
+            this.nawASaleDataGridViewTextBoxColumn.HeaderText = "NawA_Sale";
+            this.nawASaleDataGridViewTextBoxColumn.Name = "nawASaleDataGridViewTextBoxColumn";
+            this.nawASaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sukASaleDataGridViewTextBoxColumn
+            // 
+            this.sukASaleDataGridViewTextBoxColumn.DataPropertyName = "SukA_Sale";
+            this.sukASaleDataGridViewTextBoxColumn.HeaderText = "SukA_Sale";
+            this.sukASaleDataGridViewTextBoxColumn.Name = "sukASaleDataGridViewTextBoxColumn";
+            this.sukASaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // aviTSaleDataGridViewTextBoxColumn
+            // 
+            this.aviTSaleDataGridViewTextBoxColumn.DataPropertyName = "Avi_TSale";
+            this.aviTSaleDataGridViewTextBoxColumn.HeaderText = "Avi_TSale";
+            this.aviTSaleDataGridViewTextBoxColumn.Name = "aviTSaleDataGridViewTextBoxColumn";
+            this.aviTSaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jP4PurPrcDataGridViewTextBoxColumn
+            // 
+            this.jP4PurPrcDataGridViewTextBoxColumn.DataPropertyName = "JP4_Pur_Prc";
+            this.jP4PurPrcDataGridViewTextBoxColumn.HeaderText = "JP4_Pur_Prc";
+            this.jP4PurPrcDataGridViewTextBoxColumn.Name = "jP4PurPrcDataGridViewTextBoxColumn";
+            this.jP4PurPrcDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jetA1PurPrcDataGridViewTextBoxColumn
+            // 
+            this.jetA1PurPrcDataGridViewTextBoxColumn.DataPropertyName = "JetA1_Pur_Prc";
+            this.jetA1PurPrcDataGridViewTextBoxColumn.HeaderText = "JetA1_Pur_Prc";
+            this.jetA1PurPrcDataGridViewTextBoxColumn.Name = "jetA1PurPrcDataGridViewTextBoxColumn";
+            this.jetA1PurPrcDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jP4ClosingSDataGridViewTextBoxColumn
+            // 
+            this.jP4ClosingSDataGridViewTextBoxColumn.DataPropertyName = "JP4_ClosingS";
+            this.jP4ClosingSDataGridViewTextBoxColumn.HeaderText = "JP4_ClosingS";
+            this.jP4ClosingSDataGridViewTextBoxColumn.Name = "jP4ClosingSDataGridViewTextBoxColumn";
+            this.jP4ClosingSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jetA1ClosingSDataGridViewTextBoxColumn
+            // 
+            this.jetA1ClosingSDataGridViewTextBoxColumn.DataPropertyName = "JetA1_ClosingS";
+            this.jetA1ClosingSDataGridViewTextBoxColumn.HeaderText = "JetA1_ClosingS";
+            this.jetA1ClosingSDataGridViewTextBoxColumn.Name = "jetA1ClosingSDataGridViewTextBoxColumn";
+            this.jetA1ClosingSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jP4SalePrcDataGridViewTextBoxColumn
+            // 
+            this.jP4SalePrcDataGridViewTextBoxColumn.DataPropertyName = "JP4_Sale_Prc";
+            this.jP4SalePrcDataGridViewTextBoxColumn.HeaderText = "JP4_Sale_Prc";
+            this.jP4SalePrcDataGridViewTextBoxColumn.Name = "jP4SalePrcDataGridViewTextBoxColumn";
+            this.jP4SalePrcDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jetA1SalePrcDataGridViewTextBoxColumn
+            // 
+            this.jetA1SalePrcDataGridViewTextBoxColumn.DataPropertyName = "JetA1_Sale_Prc";
+            this.jetA1SalePrcDataGridViewTextBoxColumn.HeaderText = "JetA1_Sale_Prc";
+            this.jetA1SalePrcDataGridViewTextBoxColumn.Name = "jetA1SalePrcDataGridViewTextBoxColumn";
+            this.jetA1SalePrcDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // chaklalaAviBindingSource
+            // 
+            this.chaklalaAviBindingSource.DataMember = "ChaklalaAvi";
+            this.chaklalaAviBindingSource.DataSource = this.auditPlanDataSet;
+            // 
+            // chaklalaAviTableAdapter
+            // 
+            this.chaklalaAviTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn4
+            // 
+            this.iDDataGridViewTextBoxColumn4.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn4.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn4.Name = "iDDataGridViewTextBoxColumn4";
+            this.iDDataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn4
+            // 
+            this.dateDataGridViewTextBoxColumn4.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn4.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn4.Name = "dateDataGridViewTextBoxColumn4";
+            this.dateDataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // jP4PurLtrDataGridViewTextBoxColumn1
+            // 
+            this.jP4PurLtrDataGridViewTextBoxColumn1.DataPropertyName = "JP4_Pur_Ltr";
+            this.jP4PurLtrDataGridViewTextBoxColumn1.HeaderText = "JP4_Pur_Ltr";
+            this.jP4PurLtrDataGridViewTextBoxColumn1.Name = "jP4PurLtrDataGridViewTextBoxColumn1";
+            this.jP4PurLtrDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // jetA1PurLtrDataGridViewTextBoxColumn1
+            // 
+            this.jetA1PurLtrDataGridViewTextBoxColumn1.DataPropertyName = "JetA1_Pur_Ltr";
+            this.jetA1PurLtrDataGridViewTextBoxColumn1.HeaderText = "JetA1_Pur_Ltr";
+            this.jetA1PurLtrDataGridViewTextBoxColumn1.Name = "jetA1PurLtrDataGridViewTextBoxColumn1";
+            this.jetA1PurLtrDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // purTstockDataGridViewTextBoxColumn4
+            // 
+            this.purTstockDataGridViewTextBoxColumn4.DataPropertyName = "Pur_Tstock";
+            this.purTstockDataGridViewTextBoxColumn4.HeaderText = "Pur_Tstock";
+            this.purTstockDataGridViewTextBoxColumn4.Name = "purTstockDataGridViewTextBoxColumn4";
+            this.purTstockDataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // jP4PurAmntDataGridViewTextBoxColumn1
+            // 
+            this.jP4PurAmntDataGridViewTextBoxColumn1.DataPropertyName = "JP4_Pur_Amnt";
+            this.jP4PurAmntDataGridViewTextBoxColumn1.HeaderText = "JP4_Pur_Amnt";
+            this.jP4PurAmntDataGridViewTextBoxColumn1.Name = "jP4PurAmntDataGridViewTextBoxColumn1";
+            this.jP4PurAmntDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // jetA1PurAmntDataGridViewTextBoxColumn1
+            // 
+            this.jetA1PurAmntDataGridViewTextBoxColumn1.DataPropertyName = "JetA1_Pur_Amnt";
+            this.jetA1PurAmntDataGridViewTextBoxColumn1.HeaderText = "JetA1_Pur_Amnt";
+            this.jetA1PurAmntDataGridViewTextBoxColumn1.Name = "jetA1PurAmntDataGridViewTextBoxColumn1";
+            this.jetA1PurAmntDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // purTamountDataGridViewTextBoxColumn4
+            // 
+            this.purTamountDataGridViewTextBoxColumn4.DataPropertyName = "Pur_Tamount";
+            this.purTamountDataGridViewTextBoxColumn4.HeaderText = "Pur_Tamount";
+            this.purTamountDataGridViewTextBoxColumn4.Name = "purTamountDataGridViewTextBoxColumn4";
+            this.purTamountDataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // jP4TranPerDataGridViewTextBoxColumn1
+            // 
+            this.jP4TranPerDataGridViewTextBoxColumn1.DataPropertyName = "JP4_Tran_Per";
+            this.jP4TranPerDataGridViewTextBoxColumn1.HeaderText = "JP4_Tran_Per";
+            this.jP4TranPerDataGridViewTextBoxColumn1.Name = "jP4TranPerDataGridViewTextBoxColumn1";
+            this.jP4TranPerDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // jetA1TranPerDataGridViewTextBoxColumn1
+            // 
+            this.jetA1TranPerDataGridViewTextBoxColumn1.DataPropertyName = "JetA1_Tran_Per";
+            this.jetA1TranPerDataGridViewTextBoxColumn1.HeaderText = "JetA1_Tran_Per";
+            this.jetA1TranPerDataGridViewTextBoxColumn1.Name = "jetA1TranPerDataGridViewTextBoxColumn1";
+            this.jetA1TranPerDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // jP4TranStckDataGridViewTextBoxColumn1
+            // 
+            this.jP4TranStckDataGridViewTextBoxColumn1.DataPropertyName = "JP4_Tran_Stck";
+            this.jP4TranStckDataGridViewTextBoxColumn1.HeaderText = "JP4_Tran_Stck";
+            this.jP4TranStckDataGridViewTextBoxColumn1.Name = "jP4TranStckDataGridViewTextBoxColumn1";
+            this.jP4TranStckDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // jetA1TranStckDataGridViewTextBoxColumn1
+            // 
+            this.jetA1TranStckDataGridViewTextBoxColumn1.DataPropertyName = "JetA1_Tran_Stck";
+            this.jetA1TranStckDataGridViewTextBoxColumn1.HeaderText = "JetA1_Tran_Stck";
+            this.jetA1TranStckDataGridViewTextBoxColumn1.Name = "jetA1TranStckDataGridViewTextBoxColumn1";
+            this.jetA1TranStckDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // tranTstockDataGridViewTextBoxColumn4
+            // 
+            this.tranTstockDataGridViewTextBoxColumn4.DataPropertyName = "Tran_Tstock";
+            this.tranTstockDataGridViewTextBoxColumn4.HeaderText = "Tran_Tstock";
+            this.tranTstockDataGridViewTextBoxColumn4.Name = "tranTstockDataGridViewTextBoxColumn4";
+            this.tranTstockDataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // jP4SalePerDataGridViewTextBoxColumn1
+            // 
+            this.jP4SalePerDataGridViewTextBoxColumn1.DataPropertyName = "JP4_Sale_Per";
+            this.jP4SalePerDataGridViewTextBoxColumn1.HeaderText = "JP4_Sale_Per";
+            this.jP4SalePerDataGridViewTextBoxColumn1.Name = "jP4SalePerDataGridViewTextBoxColumn1";
+            this.jP4SalePerDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // jetA1SalePerDataGridViewTextBoxColumn1
+            // 
+            this.jetA1SalePerDataGridViewTextBoxColumn1.DataPropertyName = "JetA1_Sale_Per";
+            this.jetA1SalePerDataGridViewTextBoxColumn1.HeaderText = "JetA1_Sale_Per";
+            this.jetA1SalePerDataGridViewTextBoxColumn1.Name = "jetA1SalePerDataGridViewTextBoxColumn1";
+            this.jetA1SalePerDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // jP4SaleAmntDataGridViewTextBoxColumn1
+            // 
+            this.jP4SaleAmntDataGridViewTextBoxColumn1.DataPropertyName = "JP4_Sale_Amnt";
+            this.jP4SaleAmntDataGridViewTextBoxColumn1.HeaderText = "JP4_Sale_Amnt";
+            this.jP4SaleAmntDataGridViewTextBoxColumn1.Name = "jP4SaleAmntDataGridViewTextBoxColumn1";
+            this.jP4SaleAmntDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // jetA1SaleAmntDataGridViewTextBoxColumn1
+            // 
+            this.jetA1SaleAmntDataGridViewTextBoxColumn1.DataPropertyName = "JetA1_Sale_Amnt";
+            this.jetA1SaleAmntDataGridViewTextBoxColumn1.HeaderText = "JetA1_Sale_Amnt";
+            this.jetA1SaleAmntDataGridViewTextBoxColumn1.Name = "jetA1SaleAmntDataGridViewTextBoxColumn1";
+            this.jetA1SaleAmntDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // saleTamountDataGridViewTextBoxColumn4
+            // 
+            this.saleTamountDataGridViewTextBoxColumn4.DataPropertyName = "Sale_Tamount";
+            this.saleTamountDataGridViewTextBoxColumn4.HeaderText = "Sale_Tamount";
+            this.saleTamountDataGridViewTextBoxColumn4.Name = "saleTamountDataGridViewTextBoxColumn4";
+            this.saleTamountDataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // islAStckDataGridViewTextBoxColumn
+            // 
+            this.islAStckDataGridViewTextBoxColumn.DataPropertyName = "IslA_Stck";
+            this.islAStckDataGridViewTextBoxColumn.HeaderText = "IslA_Stck";
+            this.islAStckDataGridViewTextBoxColumn.Name = "islAStckDataGridViewTextBoxColumn";
+            this.islAStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // peshAStckDataGridViewTextBoxColumn
+            // 
+            this.peshAStckDataGridViewTextBoxColumn.DataPropertyName = "PeshA_Stck";
+            this.peshAStckDataGridViewTextBoxColumn.HeaderText = "PeshA_Stck";
+            this.peshAStckDataGridViewTextBoxColumn.Name = "peshAStckDataGridViewTextBoxColumn";
+            this.peshAStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // aviTstockDataGridViewTextBoxColumn1
+            // 
+            this.aviTstockDataGridViewTextBoxColumn1.DataPropertyName = "Avi_Tstock";
+            this.aviTstockDataGridViewTextBoxColumn1.HeaderText = "Avi_Tstock";
+            this.aviTstockDataGridViewTextBoxColumn1.Name = "aviTstockDataGridViewTextBoxColumn1";
+            this.aviTstockDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // islASaleDataGridViewTextBoxColumn
+            // 
+            this.islASaleDataGridViewTextBoxColumn.DataPropertyName = "IslA_Sale";
+            this.islASaleDataGridViewTextBoxColumn.HeaderText = "IslA_Sale";
+            this.islASaleDataGridViewTextBoxColumn.Name = "islASaleDataGridViewTextBoxColumn";
+            this.islASaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // peshASaleDataGridViewTextBoxColumn
+            // 
+            this.peshASaleDataGridViewTextBoxColumn.DataPropertyName = "PeshA_Sale";
+            this.peshASaleDataGridViewTextBoxColumn.HeaderText = "PeshA_Sale";
+            this.peshASaleDataGridViewTextBoxColumn.Name = "peshASaleDataGridViewTextBoxColumn";
+            this.peshASaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // aviTSaleDataGridViewTextBoxColumn1
+            // 
+            this.aviTSaleDataGridViewTextBoxColumn1.DataPropertyName = "Avi_TSale";
+            this.aviTSaleDataGridViewTextBoxColumn1.HeaderText = "Avi_TSale";
+            this.aviTSaleDataGridViewTextBoxColumn1.Name = "aviTSaleDataGridViewTextBoxColumn1";
+            this.aviTSaleDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // jP4PurPrcDataGridViewTextBoxColumn1
+            // 
+            this.jP4PurPrcDataGridViewTextBoxColumn1.DataPropertyName = "JP4_Pur_Prc";
+            this.jP4PurPrcDataGridViewTextBoxColumn1.HeaderText = "JP4_Pur_Prc";
+            this.jP4PurPrcDataGridViewTextBoxColumn1.Name = "jP4PurPrcDataGridViewTextBoxColumn1";
+            this.jP4PurPrcDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // jetA1PurPrcDataGridViewTextBoxColumn1
+            // 
+            this.jetA1PurPrcDataGridViewTextBoxColumn1.DataPropertyName = "JetA1_Pur_Prc";
+            this.jetA1PurPrcDataGridViewTextBoxColumn1.HeaderText = "JetA1_Pur_Prc";
+            this.jetA1PurPrcDataGridViewTextBoxColumn1.Name = "jetA1PurPrcDataGridViewTextBoxColumn1";
+            this.jetA1PurPrcDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // jP4ClosingSDataGridViewTextBoxColumn1
+            // 
+            this.jP4ClosingSDataGridViewTextBoxColumn1.DataPropertyName = "JP4_ClosingS";
+            this.jP4ClosingSDataGridViewTextBoxColumn1.HeaderText = "JP4_ClosingS";
+            this.jP4ClosingSDataGridViewTextBoxColumn1.Name = "jP4ClosingSDataGridViewTextBoxColumn1";
+            this.jP4ClosingSDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // jetA1ClosingSDataGridViewTextBoxColumn1
+            // 
+            this.jetA1ClosingSDataGridViewTextBoxColumn1.DataPropertyName = "JetA1_ClosingS";
+            this.jetA1ClosingSDataGridViewTextBoxColumn1.HeaderText = "JetA1_ClosingS";
+            this.jetA1ClosingSDataGridViewTextBoxColumn1.Name = "jetA1ClosingSDataGridViewTextBoxColumn1";
+            this.jetA1ClosingSDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // jP4SalePrcDataGridViewTextBoxColumn1
+            // 
+            this.jP4SalePrcDataGridViewTextBoxColumn1.DataPropertyName = "JP4_Sale_Prc";
+            this.jP4SalePrcDataGridViewTextBoxColumn1.HeaderText = "JP4_Sale_Prc";
+            this.jP4SalePrcDataGridViewTextBoxColumn1.Name = "jP4SalePrcDataGridViewTextBoxColumn1";
+            this.jP4SalePrcDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // jetA1SalePrcDataGridViewTextBoxColumn1
+            // 
+            this.jetA1SalePrcDataGridViewTextBoxColumn1.DataPropertyName = "JetA1_Sale_Prc";
+            this.jetA1SalePrcDataGridViewTextBoxColumn1.HeaderText = "JetA1_Sale_Prc";
+            this.jetA1SalePrcDataGridViewTextBoxColumn1.Name = "jetA1SalePrcDataGridViewTextBoxColumn1";
+            this.jetA1SalePrcDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // pARCOAviBindingSource
+            // 
+            this.pARCOAviBindingSource.DataMember = "PARCOAvi";
+            this.pARCOAviBindingSource.DataSource = this.auditPlanDataSet;
+            // 
+            // pARCOAviTableAdapter
+            // 
+            this.pARCOAviTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn5
+            // 
+            this.iDDataGridViewTextBoxColumn5.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn5.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn5.Name = "iDDataGridViewTextBoxColumn5";
+            this.iDDataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn5
+            // 
+            this.dateDataGridViewTextBoxColumn5.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn5.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn5.Name = "dateDataGridViewTextBoxColumn5";
+            this.dateDataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // jP4PurLtrDataGridViewTextBoxColumn2
+            // 
+            this.jP4PurLtrDataGridViewTextBoxColumn2.DataPropertyName = "JP4_Pur_Ltr";
+            this.jP4PurLtrDataGridViewTextBoxColumn2.HeaderText = "JP4_Pur_Ltr";
+            this.jP4PurLtrDataGridViewTextBoxColumn2.Name = "jP4PurLtrDataGridViewTextBoxColumn2";
+            this.jP4PurLtrDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // jetA1PurLtrDataGridViewTextBoxColumn2
+            // 
+            this.jetA1PurLtrDataGridViewTextBoxColumn2.DataPropertyName = "JetA1_Pur_Ltr";
+            this.jetA1PurLtrDataGridViewTextBoxColumn2.HeaderText = "JetA1_Pur_Ltr";
+            this.jetA1PurLtrDataGridViewTextBoxColumn2.Name = "jetA1PurLtrDataGridViewTextBoxColumn2";
+            this.jetA1PurLtrDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // purTstockDataGridViewTextBoxColumn5
+            // 
+            this.purTstockDataGridViewTextBoxColumn5.DataPropertyName = "Pur_Tstock";
+            this.purTstockDataGridViewTextBoxColumn5.HeaderText = "Pur_Tstock";
+            this.purTstockDataGridViewTextBoxColumn5.Name = "purTstockDataGridViewTextBoxColumn5";
+            this.purTstockDataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // jP4PurAmntDataGridViewTextBoxColumn2
+            // 
+            this.jP4PurAmntDataGridViewTextBoxColumn2.DataPropertyName = "JP4_Pur_Amnt";
+            this.jP4PurAmntDataGridViewTextBoxColumn2.HeaderText = "JP4_Pur_Amnt";
+            this.jP4PurAmntDataGridViewTextBoxColumn2.Name = "jP4PurAmntDataGridViewTextBoxColumn2";
+            this.jP4PurAmntDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // jetA1PurAmntDataGridViewTextBoxColumn2
+            // 
+            this.jetA1PurAmntDataGridViewTextBoxColumn2.DataPropertyName = "JetA1_Pur_Amnt";
+            this.jetA1PurAmntDataGridViewTextBoxColumn2.HeaderText = "JetA1_Pur_Amnt";
+            this.jetA1PurAmntDataGridViewTextBoxColumn2.Name = "jetA1PurAmntDataGridViewTextBoxColumn2";
+            this.jetA1PurAmntDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // purTamountDataGridViewTextBoxColumn5
+            // 
+            this.purTamountDataGridViewTextBoxColumn5.DataPropertyName = "Pur_Tamount";
+            this.purTamountDataGridViewTextBoxColumn5.HeaderText = "Pur_Tamount";
+            this.purTamountDataGridViewTextBoxColumn5.Name = "purTamountDataGridViewTextBoxColumn5";
+            this.purTamountDataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // jP4TranPerDataGridViewTextBoxColumn2
+            // 
+            this.jP4TranPerDataGridViewTextBoxColumn2.DataPropertyName = "JP4_Tran_Per";
+            this.jP4TranPerDataGridViewTextBoxColumn2.HeaderText = "JP4_Tran_Per";
+            this.jP4TranPerDataGridViewTextBoxColumn2.Name = "jP4TranPerDataGridViewTextBoxColumn2";
+            this.jP4TranPerDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // jetA1TranPerDataGridViewTextBoxColumn2
+            // 
+            this.jetA1TranPerDataGridViewTextBoxColumn2.DataPropertyName = "JetA1_Tran_Per";
+            this.jetA1TranPerDataGridViewTextBoxColumn2.HeaderText = "JetA1_Tran_Per";
+            this.jetA1TranPerDataGridViewTextBoxColumn2.Name = "jetA1TranPerDataGridViewTextBoxColumn2";
+            this.jetA1TranPerDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // jP4TranStckDataGridViewTextBoxColumn2
+            // 
+            this.jP4TranStckDataGridViewTextBoxColumn2.DataPropertyName = "JP4_Tran_Stck";
+            this.jP4TranStckDataGridViewTextBoxColumn2.HeaderText = "JP4_Tran_Stck";
+            this.jP4TranStckDataGridViewTextBoxColumn2.Name = "jP4TranStckDataGridViewTextBoxColumn2";
+            this.jP4TranStckDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // jetA1TranStckDataGridViewTextBoxColumn2
+            // 
+            this.jetA1TranStckDataGridViewTextBoxColumn2.DataPropertyName = "JetA1_Tran_Stck";
+            this.jetA1TranStckDataGridViewTextBoxColumn2.HeaderText = "JetA1_Tran_Stck";
+            this.jetA1TranStckDataGridViewTextBoxColumn2.Name = "jetA1TranStckDataGridViewTextBoxColumn2";
+            this.jetA1TranStckDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // tranTstockDataGridViewTextBoxColumn5
+            // 
+            this.tranTstockDataGridViewTextBoxColumn5.DataPropertyName = "Tran_Tstock";
+            this.tranTstockDataGridViewTextBoxColumn5.HeaderText = "Tran_Tstock";
+            this.tranTstockDataGridViewTextBoxColumn5.Name = "tranTstockDataGridViewTextBoxColumn5";
+            this.tranTstockDataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // jP4SalePerDataGridViewTextBoxColumn2
+            // 
+            this.jP4SalePerDataGridViewTextBoxColumn2.DataPropertyName = "JP4_Sale_Per";
+            this.jP4SalePerDataGridViewTextBoxColumn2.HeaderText = "JP4_Sale_Per";
+            this.jP4SalePerDataGridViewTextBoxColumn2.Name = "jP4SalePerDataGridViewTextBoxColumn2";
+            this.jP4SalePerDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // jetA1SalePerDataGridViewTextBoxColumn2
+            // 
+            this.jetA1SalePerDataGridViewTextBoxColumn2.DataPropertyName = "JetA1_Sale_Per";
+            this.jetA1SalePerDataGridViewTextBoxColumn2.HeaderText = "JetA1_Sale_Per";
+            this.jetA1SalePerDataGridViewTextBoxColumn2.Name = "jetA1SalePerDataGridViewTextBoxColumn2";
+            this.jetA1SalePerDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // jP4SaleAmntDataGridViewTextBoxColumn2
+            // 
+            this.jP4SaleAmntDataGridViewTextBoxColumn2.DataPropertyName = "JP4_Sale_Amnt";
+            this.jP4SaleAmntDataGridViewTextBoxColumn2.HeaderText = "JP4_Sale_Amnt";
+            this.jP4SaleAmntDataGridViewTextBoxColumn2.Name = "jP4SaleAmntDataGridViewTextBoxColumn2";
+            this.jP4SaleAmntDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // jetA1SaleAmntDataGridViewTextBoxColumn2
+            // 
+            this.jetA1SaleAmntDataGridViewTextBoxColumn2.DataPropertyName = "JetA1_Sale_Amnt";
+            this.jetA1SaleAmntDataGridViewTextBoxColumn2.HeaderText = "JetA1_Sale_Amnt";
+            this.jetA1SaleAmntDataGridViewTextBoxColumn2.Name = "jetA1SaleAmntDataGridViewTextBoxColumn2";
+            this.jetA1SaleAmntDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // saleTamountDataGridViewTextBoxColumn5
+            // 
+            this.saleTamountDataGridViewTextBoxColumn5.DataPropertyName = "Sale_Tamount";
+            this.saleTamountDataGridViewTextBoxColumn5.HeaderText = "Sale_Tamount";
+            this.saleTamountDataGridViewTextBoxColumn5.Name = "saleTamountDataGridViewTextBoxColumn5";
+            this.saleTamountDataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // lahAStckDataGridViewTextBoxColumn
+            // 
+            this.lahAStckDataGridViewTextBoxColumn.DataPropertyName = "LahA_Stck";
+            this.lahAStckDataGridViewTextBoxColumn.HeaderText = "LahA_Stck";
+            this.lahAStckDataGridViewTextBoxColumn.Name = "lahAStckDataGridViewTextBoxColumn";
+            this.lahAStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mulAStckDataGridViewTextBoxColumn
+            // 
+            this.mulAStckDataGridViewTextBoxColumn.DataPropertyName = "MulA_Stck";
+            this.mulAStckDataGridViewTextBoxColumn.HeaderText = "MulA_Stck";
+            this.mulAStckDataGridViewTextBoxColumn.Name = "mulAStckDataGridViewTextBoxColumn";
+            this.mulAStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // aviTstockDataGridViewTextBoxColumn2
+            // 
+            this.aviTstockDataGridViewTextBoxColumn2.DataPropertyName = "Avi_Tstock";
+            this.aviTstockDataGridViewTextBoxColumn2.HeaderText = "Avi_Tstock";
+            this.aviTstockDataGridViewTextBoxColumn2.Name = "aviTstockDataGridViewTextBoxColumn2";
+            this.aviTstockDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // lahASaleDataGridViewTextBoxColumn
+            // 
+            this.lahASaleDataGridViewTextBoxColumn.DataPropertyName = "LahA_Sale";
+            this.lahASaleDataGridViewTextBoxColumn.HeaderText = "LahA_Sale";
+            this.lahASaleDataGridViewTextBoxColumn.Name = "lahASaleDataGridViewTextBoxColumn";
+            this.lahASaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mulASaleDataGridViewTextBoxColumn
+            // 
+            this.mulASaleDataGridViewTextBoxColumn.DataPropertyName = "MulA_Sale";
+            this.mulASaleDataGridViewTextBoxColumn.HeaderText = "MulA_Sale";
+            this.mulASaleDataGridViewTextBoxColumn.Name = "mulASaleDataGridViewTextBoxColumn";
+            this.mulASaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // aviTSaleDataGridViewTextBoxColumn2
+            // 
+            this.aviTSaleDataGridViewTextBoxColumn2.DataPropertyName = "Avi_TSale";
+            this.aviTSaleDataGridViewTextBoxColumn2.HeaderText = "Avi_TSale";
+            this.aviTSaleDataGridViewTextBoxColumn2.Name = "aviTSaleDataGridViewTextBoxColumn2";
+            this.aviTSaleDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // jP4PurPrcDataGridViewTextBoxColumn2
+            // 
+            this.jP4PurPrcDataGridViewTextBoxColumn2.DataPropertyName = "JP4_Pur_Prc";
+            this.jP4PurPrcDataGridViewTextBoxColumn2.HeaderText = "JP4_Pur_Prc";
+            this.jP4PurPrcDataGridViewTextBoxColumn2.Name = "jP4PurPrcDataGridViewTextBoxColumn2";
+            this.jP4PurPrcDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // jetA1PurPrcDataGridViewTextBoxColumn2
+            // 
+            this.jetA1PurPrcDataGridViewTextBoxColumn2.DataPropertyName = "JetA1_Pur_Prc";
+            this.jetA1PurPrcDataGridViewTextBoxColumn2.HeaderText = "JetA1_Pur_Prc";
+            this.jetA1PurPrcDataGridViewTextBoxColumn2.Name = "jetA1PurPrcDataGridViewTextBoxColumn2";
+            this.jetA1PurPrcDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // jP4ClosingSDataGridViewTextBoxColumn2
+            // 
+            this.jP4ClosingSDataGridViewTextBoxColumn2.DataPropertyName = "JP4_ClosingS";
+            this.jP4ClosingSDataGridViewTextBoxColumn2.HeaderText = "JP4_ClosingS";
+            this.jP4ClosingSDataGridViewTextBoxColumn2.Name = "jP4ClosingSDataGridViewTextBoxColumn2";
+            this.jP4ClosingSDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // jetA1ClosingSDataGridViewTextBoxColumn2
+            // 
+            this.jetA1ClosingSDataGridViewTextBoxColumn2.DataPropertyName = "JetA1_ClosingS";
+            this.jetA1ClosingSDataGridViewTextBoxColumn2.HeaderText = "JetA1_ClosingS";
+            this.jetA1ClosingSDataGridViewTextBoxColumn2.Name = "jetA1ClosingSDataGridViewTextBoxColumn2";
+            this.jetA1ClosingSDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // jP4SalePrcDataGridViewTextBoxColumn2
+            // 
+            this.jP4SalePrcDataGridViewTextBoxColumn2.DataPropertyName = "JP4_Sale_Prc";
+            this.jP4SalePrcDataGridViewTextBoxColumn2.HeaderText = "JP4_Sale_Prc";
+            this.jP4SalePrcDataGridViewTextBoxColumn2.Name = "jP4SalePrcDataGridViewTextBoxColumn2";
+            this.jP4SalePrcDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // jetA1SalePrcDataGridViewTextBoxColumn2
+            // 
+            this.jetA1SalePrcDataGridViewTextBoxColumn2.DataPropertyName = "JetA1_Sale_Prc";
+            this.jetA1SalePrcDataGridViewTextBoxColumn2.HeaderText = "JetA1_Sale_Prc";
+            this.jetA1SalePrcDataGridViewTextBoxColumn2.Name = "jetA1SalePrcDataGridViewTextBoxColumn2";
+            this.jetA1SalePrcDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // hRDeptBindingSource
+            // 
+            this.hRDeptBindingSource.DataMember = "HRDept";
+            this.hRDeptBindingSource.DataSource = this.auditPlanDataSet;
+            // 
+            // hRDeptTableAdapter
+            // 
+            this.hRDeptTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn6
+            // 
+            this.iDDataGridViewTextBoxColumn6.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn6.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn6.Name = "iDDataGridViewTextBoxColumn6";
+            this.iDDataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn6
+            // 
+            this.dateDataGridViewTextBoxColumn6.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn6.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn6.Name = "dateDataGridViewTextBoxColumn6";
+            this.dateDataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // purAffTicDataGridViewTextBoxColumn
+            // 
+            this.purAffTicDataGridViewTextBoxColumn.DataPropertyName = "Pur_Aff_Tic";
+            this.purAffTicDataGridViewTextBoxColumn.HeaderText = "Pur_Aff_Tic";
+            this.purAffTicDataGridViewTextBoxColumn.Name = "purAffTicDataGridViewTextBoxColumn";
+            this.purAffTicDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maintStaffCarsDataGridViewTextBoxColumn
+            // 
+            this.maintStaffCarsDataGridViewTextBoxColumn.DataPropertyName = "Maint_Staff_Cars";
+            this.maintStaffCarsDataGridViewTextBoxColumn.HeaderText = "Maint_Staff_Cars";
+            this.maintStaffCarsDataGridViewTextBoxColumn.Name = "maintStaffCarsDataGridViewTextBoxColumn";
+            this.maintStaffCarsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hotelBookDataGridViewTextBoxColumn
+            // 
+            this.hotelBookDataGridViewTextBoxColumn.DataPropertyName = "Hotel_Book";
+            this.hotelBookDataGridViewTextBoxColumn.HeaderText = "Hotel_Book";
+            this.hotelBookDataGridViewTextBoxColumn.Name = "hotelBookDataGridViewTextBoxColumn";
+            this.hotelBookDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // transArranStaffDataGridViewTextBoxColumn
+            // 
+            this.transArranStaffDataGridViewTextBoxColumn.DataPropertyName = "Trans_Arran_Staff";
+            this.transArranStaffDataGridViewTextBoxColumn.HeaderText = "Trans_Arran_Staff";
+            this.transArranStaffDataGridViewTextBoxColumn.Name = "transArranStaffDataGridViewTextBoxColumn";
+            this.transArranStaffDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // photoExpDataGridViewTextBoxColumn
+            // 
+            this.photoExpDataGridViewTextBoxColumn.DataPropertyName = "Photo_Exp";
+            this.photoExpDataGridViewTextBoxColumn.HeaderText = "Photo_Exp";
+            this.photoExpDataGridViewTextBoxColumn.Name = "photoExpDataGridViewTextBoxColumn";
+            this.photoExpDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // marketDptBindingSource
+            // 
+            this.marketDptBindingSource.DataMember = "MarketDpt";
+            this.marketDptBindingSource.DataSource = this.auditPlanDataSet;
+            // 
+            // marketDptTableAdapter
+            // 
+            this.marketDptTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn7
+            // 
+            this.iDDataGridViewTextBoxColumn7.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn7.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn7.Name = "iDDataGridViewTextBoxColumn7";
+            this.iDDataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn7
+            // 
+            this.dateDataGridViewTextBoxColumn7.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn7.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn7.Name = "dateDataGridViewTextBoxColumn7";
+            this.dateDataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // constChargRtSitesDataGridViewTextBoxColumn
+            // 
+            this.constChargRtSitesDataGridViewTextBoxColumn.DataPropertyName = "Const_Charg_Rt_Sites";
+            this.constChargRtSitesDataGridViewTextBoxColumn.HeaderText = "Const_Charg_Rt_Sites";
+            this.constChargRtSitesDataGridViewTextBoxColumn.Name = "constChargRtSitesDataGridViewTextBoxColumn";
+            this.constChargRtSitesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maintRtSitesDataGridViewTextBoxColumn
+            // 
+            this.maintRtSitesDataGridViewTextBoxColumn.DataPropertyName = "Maint_Rt_Sites";
+            this.maintRtSitesDataGridViewTextBoxColumn.HeaderText = "Maint_Rt_Sites";
+            this.maintRtSitesDataGridViewTextBoxColumn.Name = "maintRtSitesDataGridViewTextBoxColumn";
+            this.maintRtSitesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kHiSprLtrDataGridViewTextBoxColumn
+            // 
+            this.kHiSprLtrDataGridViewTextBoxColumn.DataPropertyName = "K_HiSpr_Ltr";
+            this.kHiSprLtrDataGridViewTextBoxColumn.HeaderText = "K_HiSpr_Ltr";
+            this.kHiSprLtrDataGridViewTextBoxColumn.Name = "kHiSprLtrDataGridViewTextBoxColumn";
+            this.kHiSprLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kHSDLtrDataGridViewTextBoxColumn
+            // 
+            this.kHSDLtrDataGridViewTextBoxColumn.DataPropertyName = "K_HSD_Ltr";
+            this.kHSDLtrDataGridViewTextBoxColumn.HeaderText = "K_HSD_Ltr";
+            this.kHSDLtrDataGridViewTextBoxColumn.Name = "kHSDLtrDataGridViewTextBoxColumn";
+            this.kHSDLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kHOBCLtrDataGridViewTextBoxColumn
+            // 
+            this.kHOBCLtrDataGridViewTextBoxColumn.DataPropertyName = "K_HOBC_Ltr";
+            this.kHOBCLtrDataGridViewTextBoxColumn.HeaderText = "K_HOBC_Ltr";
+            this.kHOBCLtrDataGridViewTextBoxColumn.Name = "kHOBCLtrDataGridViewTextBoxColumn";
+            this.kHOBCLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kHiSprAmntDataGridViewTextBoxColumn
+            // 
+            this.kHiSprAmntDataGridViewTextBoxColumn.DataPropertyName = "K_HiSpr_Amnt";
+            this.kHiSprAmntDataGridViewTextBoxColumn.HeaderText = "K_HiSpr_Amnt";
+            this.kHiSprAmntDataGridViewTextBoxColumn.Name = "kHiSprAmntDataGridViewTextBoxColumn";
+            this.kHiSprAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kHSDAmntDataGridViewTextBoxColumn
+            // 
+            this.kHSDAmntDataGridViewTextBoxColumn.DataPropertyName = "K_HSD_Amnt";
+            this.kHSDAmntDataGridViewTextBoxColumn.HeaderText = "K_HSD_Amnt";
+            this.kHSDAmntDataGridViewTextBoxColumn.Name = "kHSDAmntDataGridViewTextBoxColumn";
+            this.kHSDAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kHOBCAmntDataGridViewTextBoxColumn
+            // 
+            this.kHOBCAmntDataGridViewTextBoxColumn.DataPropertyName = "K_HOBC_Amnt";
+            this.kHOBCAmntDataGridViewTextBoxColumn.HeaderText = "K_HOBC_Amnt";
+            this.kHOBCAmntDataGridViewTextBoxColumn.Name = "kHOBCAmntDataGridViewTextBoxColumn";
+            this.kHOBCAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kTLtrDataGridViewTextBoxColumn
+            // 
+            this.kTLtrDataGridViewTextBoxColumn.DataPropertyName = "K_T_Ltr";
+            this.kTLtrDataGridViewTextBoxColumn.HeaderText = "K_T_Ltr";
+            this.kTLtrDataGridViewTextBoxColumn.Name = "kTLtrDataGridViewTextBoxColumn";
+            this.kTLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kTAmntDataGridViewTextBoxColumn
+            // 
+            this.kTAmntDataGridViewTextBoxColumn.DataPropertyName = "K_T_Amnt";
+            this.kTAmntDataGridViewTextBoxColumn.HeaderText = "K_T_Amnt";
+            this.kTAmntDataGridViewTextBoxColumn.Name = "kTAmntDataGridViewTextBoxColumn";
+            this.kTAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lHiSprLtrDataGridViewTextBoxColumn
+            // 
+            this.lHiSprLtrDataGridViewTextBoxColumn.DataPropertyName = "L_HiSpr_Ltr";
+            this.lHiSprLtrDataGridViewTextBoxColumn.HeaderText = "L_HiSpr_Ltr";
+            this.lHiSprLtrDataGridViewTextBoxColumn.Name = "lHiSprLtrDataGridViewTextBoxColumn";
+            this.lHiSprLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lHSDLtrDataGridViewTextBoxColumn
+            // 
+            this.lHSDLtrDataGridViewTextBoxColumn.DataPropertyName = "L_HSD_Ltr";
+            this.lHSDLtrDataGridViewTextBoxColumn.HeaderText = "L_HSD_Ltr";
+            this.lHSDLtrDataGridViewTextBoxColumn.Name = "lHSDLtrDataGridViewTextBoxColumn";
+            this.lHSDLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lHOBCLtrDataGridViewTextBoxColumn
+            // 
+            this.lHOBCLtrDataGridViewTextBoxColumn.DataPropertyName = "L_HOBC_Ltr";
+            this.lHOBCLtrDataGridViewTextBoxColumn.HeaderText = "L_HOBC_Ltr";
+            this.lHOBCLtrDataGridViewTextBoxColumn.Name = "lHOBCLtrDataGridViewTextBoxColumn";
+            this.lHOBCLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lHiSprAmntDataGridViewTextBoxColumn
+            // 
+            this.lHiSprAmntDataGridViewTextBoxColumn.DataPropertyName = "L_HiSpr_Amnt";
+            this.lHiSprAmntDataGridViewTextBoxColumn.HeaderText = "L_HiSpr_Amnt";
+            this.lHiSprAmntDataGridViewTextBoxColumn.Name = "lHiSprAmntDataGridViewTextBoxColumn";
+            this.lHiSprAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lHSDAmntDataGridViewTextBoxColumn
+            // 
+            this.lHSDAmntDataGridViewTextBoxColumn.DataPropertyName = "L_HSD_Amnt";
+            this.lHSDAmntDataGridViewTextBoxColumn.HeaderText = "L_HSD_Amnt";
+            this.lHSDAmntDataGridViewTextBoxColumn.Name = "lHSDAmntDataGridViewTextBoxColumn";
+            this.lHSDAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lHOBCAmntDataGridViewTextBoxColumn
+            // 
+            this.lHOBCAmntDataGridViewTextBoxColumn.DataPropertyName = "L_HOBC_Amnt";
+            this.lHOBCAmntDataGridViewTextBoxColumn.HeaderText = "L_HOBC_Amnt";
+            this.lHOBCAmntDataGridViewTextBoxColumn.Name = "lHOBCAmntDataGridViewTextBoxColumn";
+            this.lHOBCAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lTLtrDataGridViewTextBoxColumn
+            // 
+            this.lTLtrDataGridViewTextBoxColumn.DataPropertyName = "L_T_Ltr";
+            this.lTLtrDataGridViewTextBoxColumn.HeaderText = "L_T_Ltr";
+            this.lTLtrDataGridViewTextBoxColumn.Name = "lTLtrDataGridViewTextBoxColumn";
+            this.lTLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lTAmntDataGridViewTextBoxColumn
+            // 
+            this.lTAmntDataGridViewTextBoxColumn.DataPropertyName = "L_T_Amnt";
+            this.lTAmntDataGridViewTextBoxColumn.HeaderText = "L_T_Amnt";
+            this.lTAmntDataGridViewTextBoxColumn.Name = "lTAmntDataGridViewTextBoxColumn";
+            this.lTAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iHiSprLtrDataGridViewTextBoxColumn
+            // 
+            this.iHiSprLtrDataGridViewTextBoxColumn.DataPropertyName = "I_HiSpr_Ltr";
+            this.iHiSprLtrDataGridViewTextBoxColumn.HeaderText = "I_HiSpr_Ltr";
+            this.iHiSprLtrDataGridViewTextBoxColumn.Name = "iHiSprLtrDataGridViewTextBoxColumn";
+            this.iHiSprLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iHSDLtrDataGridViewTextBoxColumn
+            // 
+            this.iHSDLtrDataGridViewTextBoxColumn.DataPropertyName = "I_HSD_Ltr";
+            this.iHSDLtrDataGridViewTextBoxColumn.HeaderText = "I_HSD_Ltr";
+            this.iHSDLtrDataGridViewTextBoxColumn.Name = "iHSDLtrDataGridViewTextBoxColumn";
+            this.iHSDLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iHOBCLtrDataGridViewTextBoxColumn
+            // 
+            this.iHOBCLtrDataGridViewTextBoxColumn.DataPropertyName = "I_HOBC_Ltr";
+            this.iHOBCLtrDataGridViewTextBoxColumn.HeaderText = "I_HOBC_Ltr";
+            this.iHOBCLtrDataGridViewTextBoxColumn.Name = "iHOBCLtrDataGridViewTextBoxColumn";
+            this.iHOBCLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iHiSprAmntDataGridViewTextBoxColumn
+            // 
+            this.iHiSprAmntDataGridViewTextBoxColumn.DataPropertyName = "I_HiSpr_Amnt";
+            this.iHiSprAmntDataGridViewTextBoxColumn.HeaderText = "I_HiSpr_Amnt";
+            this.iHiSprAmntDataGridViewTextBoxColumn.Name = "iHiSprAmntDataGridViewTextBoxColumn";
+            this.iHiSprAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iHSDAmntDataGridViewTextBoxColumn
+            // 
+            this.iHSDAmntDataGridViewTextBoxColumn.DataPropertyName = "I_HSD_Amnt";
+            this.iHSDAmntDataGridViewTextBoxColumn.HeaderText = "I_HSD_Amnt";
+            this.iHSDAmntDataGridViewTextBoxColumn.Name = "iHSDAmntDataGridViewTextBoxColumn";
+            this.iHSDAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iHOBCAmntDataGridViewTextBoxColumn
+            // 
+            this.iHOBCAmntDataGridViewTextBoxColumn.DataPropertyName = "I_HOBC_Amnt";
+            this.iHOBCAmntDataGridViewTextBoxColumn.HeaderText = "I_HOBC_Amnt";
+            this.iHOBCAmntDataGridViewTextBoxColumn.Name = "iHOBCAmntDataGridViewTextBoxColumn";
+            this.iHOBCAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iTLtrDataGridViewTextBoxColumn
+            // 
+            this.iTLtrDataGridViewTextBoxColumn.DataPropertyName = "I_T_Ltr";
+            this.iTLtrDataGridViewTextBoxColumn.HeaderText = "I_T_Ltr";
+            this.iTLtrDataGridViewTextBoxColumn.Name = "iTLtrDataGridViewTextBoxColumn";
+            this.iTLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iTAmntDataGridViewTextBoxColumn
+            // 
+            this.iTAmntDataGridViewTextBoxColumn.DataPropertyName = "I_T_Amnt";
+            this.iTAmntDataGridViewTextBoxColumn.HeaderText = "I_T_Amnt";
+            this.iTAmntDataGridViewTextBoxColumn.Name = "iTAmntDataGridViewTextBoxColumn";
+            this.iTAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // qHiSprStckDataGridViewTextBoxColumn
+            // 
+            this.qHiSprStckDataGridViewTextBoxColumn.DataPropertyName = "Q_HiSpr_Stck";
+            this.qHiSprStckDataGridViewTextBoxColumn.HeaderText = "Q_HiSpr_Stck";
+            this.qHiSprStckDataGridViewTextBoxColumn.Name = "qHiSprStckDataGridViewTextBoxColumn";
+            this.qHiSprStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // qHSDStckDataGridViewTextBoxColumn
+            // 
+            this.qHSDStckDataGridViewTextBoxColumn.DataPropertyName = "Q_HSD_Stck";
+            this.qHSDStckDataGridViewTextBoxColumn.HeaderText = "Q_HSD_Stck";
+            this.qHSDStckDataGridViewTextBoxColumn.Name = "qHSDStckDataGridViewTextBoxColumn";
+            this.qHSDStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // qHOBCStckDataGridViewTextBoxColumn
+            // 
+            this.qHOBCStckDataGridViewTextBoxColumn.DataPropertyName = "Q_HOBC_Stck";
+            this.qHOBCStckDataGridViewTextBoxColumn.HeaderText = "Q_HOBC_Stck";
+            this.qHOBCStckDataGridViewTextBoxColumn.Name = "qHOBCStckDataGridViewTextBoxColumn";
+            this.qHOBCStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // qHiSprAmntDataGridViewTextBoxColumn
+            // 
+            this.qHiSprAmntDataGridViewTextBoxColumn.DataPropertyName = "Q_HiSpr_Amnt";
+            this.qHiSprAmntDataGridViewTextBoxColumn.HeaderText = "Q_HiSpr_Amnt";
+            this.qHiSprAmntDataGridViewTextBoxColumn.Name = "qHiSprAmntDataGridViewTextBoxColumn";
+            this.qHiSprAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // qHSDAmntDataGridViewTextBoxColumn
+            // 
+            this.qHSDAmntDataGridViewTextBoxColumn.DataPropertyName = "Q_HSD_Amnt";
+            this.qHSDAmntDataGridViewTextBoxColumn.HeaderText = "Q_HSD_Amnt";
+            this.qHSDAmntDataGridViewTextBoxColumn.Name = "qHSDAmntDataGridViewTextBoxColumn";
+            this.qHSDAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // qHOBCAmntDataGridViewTextBoxColumn
+            // 
+            this.qHOBCAmntDataGridViewTextBoxColumn.DataPropertyName = "Q_HOBC_Amnt";
+            this.qHOBCAmntDataGridViewTextBoxColumn.HeaderText = "Q_HOBC_Amnt";
+            this.qHOBCAmntDataGridViewTextBoxColumn.Name = "qHOBCAmntDataGridViewTextBoxColumn";
+            this.qHOBCAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // qTLtrDataGridViewTextBoxColumn
+            // 
+            this.qTLtrDataGridViewTextBoxColumn.DataPropertyName = "Q_T_Ltr";
+            this.qTLtrDataGridViewTextBoxColumn.HeaderText = "Q_T_Ltr";
+            this.qTLtrDataGridViewTextBoxColumn.Name = "qTLtrDataGridViewTextBoxColumn";
+            this.qTLtrDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // qTAmntDataGridViewTextBoxColumn
+            // 
+            this.qTAmntDataGridViewTextBoxColumn.DataPropertyName = "Q_T_Amnt";
+            this.qTAmntDataGridViewTextBoxColumn.HeaderText = "Q_T_Amnt";
+            this.qTAmntDataGridViewTextBoxColumn.Name = "qTAmntDataGridViewTextBoxColumn";
+            this.qTAmntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // financeDptBindingSource
+            // 
+            this.financeDptBindingSource.DataMember = "FinanceDpt";
+            this.financeDptBindingSource.DataSource = this.auditPlanDataSet;
+            // 
+            // financeDptTableAdapter
+            // 
+            this.financeDptTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn8
+            // 
+            this.iDDataGridViewTextBoxColumn8.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn8.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn8.Name = "iDDataGridViewTextBoxColumn8";
+            this.iDDataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn8
+            // 
+            this.dateDataGridViewTextBoxColumn8.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn8.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn8.Name = "dateDataGridViewTextBoxColumn8";
+            this.dateDataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // saleLocwiseDataGridViewTextBoxColumn
+            // 
+            this.saleLocwiseDataGridViewTextBoxColumn.DataPropertyName = "Sale_Loc_wise";
+            this.saleLocwiseDataGridViewTextBoxColumn.HeaderText = "Sale_Loc_wise";
+            this.saleLocwiseDataGridViewTextBoxColumn.Name = "saleLocwiseDataGridViewTextBoxColumn";
+            this.saleLocwiseDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lossesGainsDataGridViewTextBoxColumn
+            // 
+            this.lossesGainsDataGridViewTextBoxColumn.DataPropertyName = "LossesGains";
+            this.lossesGainsDataGridViewTextBoxColumn.HeaderText = "LossesGains";
+            this.lossesGainsDataGridViewTextBoxColumn.Name = "lossesGainsDataGridViewTextBoxColumn";
+            this.lossesGainsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // custInvicDataGridViewTextBoxColumn
+            // 
+            this.custInvicDataGridViewTextBoxColumn.DataPropertyName = "Cust_Invic";
+            this.custInvicDataGridViewTextBoxColumn.HeaderText = "Cust_Invic";
+            this.custInvicDataGridViewTextBoxColumn.Name = "custInvicDataGridViewTextBoxColumn";
+            this.custInvicDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // purQtyValLocDataGridViewTextBoxColumn
+            // 
+            this.purQtyValLocDataGridViewTextBoxColumn.DataPropertyName = "Pur_QtyValLoc";
+            this.purQtyValLocDataGridViewTextBoxColumn.HeaderText = "Pur_QtyValLoc";
+            this.purQtyValLocDataGridViewTextBoxColumn.Name = "purQtyValLocDataGridViewTextBoxColumn";
+            this.purQtyValLocDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // purInvSupDataGridViewTextBoxColumn
+            // 
+            this.purInvSupDataGridViewTextBoxColumn.DataPropertyName = "Pur_Inv_Sup";
+            this.purInvSupDataGridViewTextBoxColumn.HeaderText = "Pur_Inv_Sup";
+            this.purInvSupDataGridViewTextBoxColumn.Name = "purInvSupDataGridViewTextBoxColumn";
+            this.purInvSupDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // closingStckDataGridViewTextBoxColumn
+            // 
+            this.closingStckDataGridViewTextBoxColumn.DataPropertyName = "Closing_Stck";
+            this.closingStckDataGridViewTextBoxColumn.HeaderText = "Closing_Stck";
+            this.closingStckDataGridViewTextBoxColumn.Name = "closingStckDataGridViewTextBoxColumn";
+            this.closingStckDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // custAcctDataGridViewTextBoxColumn
+            // 
+            this.custAcctDataGridViewTextBoxColumn.DataPropertyName = "Cust_Acct";
+            this.custAcctDataGridViewTextBoxColumn.HeaderText = "Cust_Acct";
+            this.custAcctDataGridViewTextBoxColumn.Name = "custAcctDataGridViewTextBoxColumn";
+            this.custAcctDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // salesProdCustDataGridViewTextBoxColumn
+            // 
+            this.salesProdCustDataGridViewTextBoxColumn.DataPropertyName = "Sales_ProdCust";
+            this.salesProdCustDataGridViewTextBoxColumn.HeaderText = "Sales_ProdCust";
+            this.salesProdCustDataGridViewTextBoxColumn.Name = "salesProdCustDataGridViewTextBoxColumn";
+            this.salesProdCustDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // payRecCustDataGridViewTextBoxColumn
+            // 
+            this.payRecCustDataGridViewTextBoxColumn.DataPropertyName = "Pay_Rec_Cust";
+            this.payRecCustDataGridViewTextBoxColumn.HeaderText = "Pay_Rec_Cust";
+            this.payRecCustDataGridViewTextBoxColumn.Name = "payRecCustDataGridViewTextBoxColumn";
+            this.payRecCustDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // credlimDataGridViewTextBoxColumn
+            // 
+            this.credlimDataGridViewTextBoxColumn.DataPropertyName = "Cred_lim";
+            this.credlimDataGridViewTextBoxColumn.HeaderText = "Cred_lim";
+            this.credlimDataGridViewTextBoxColumn.Name = "credlimDataGridViewTextBoxColumn";
+            this.credlimDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // paySupCntDataGridViewTextBoxColumn
+            // 
+            this.paySupCntDataGridViewTextBoxColumn.DataPropertyName = "Pay_SupCnt";
+            this.paySupCntDataGridViewTextBoxColumn.HeaderText = "Pay_SupCnt";
+            this.paySupCntDataGridViewTextBoxColumn.Name = "paySupCntDataGridViewTextBoxColumn";
+            this.paySupCntDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // payEmpDataGridViewTextBoxColumn
+            // 
+            this.payEmpDataGridViewTextBoxColumn.DataPropertyName = "Pay_Emp";
+            this.payEmpDataGridViewTextBoxColumn.HeaderText = "Pay_Emp";
+            this.payEmpDataGridViewTextBoxColumn.Name = "payEmpDataGridViewTextBoxColumn";
+            this.payEmpDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // impreplenishDataGridViewTextBoxColumn
+            // 
+            this.impreplenishDataGridViewTextBoxColumn.DataPropertyName = "Imp_replenish";
+            this.impreplenishDataGridViewTextBoxColumn.HeaderText = "Imp_replenish";
+            this.impreplenishDataGridViewTextBoxColumn.Name = "impreplenishDataGridViewTextBoxColumn";
+            this.impreplenishDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // salprosPayEmpDataGridViewTextBoxColumn
+            // 
+            this.salprosPayEmpDataGridViewTextBoxColumn.DataPropertyName = "Sal_pros_Pay_Emp";
+            this.salprosPayEmpDataGridViewTextBoxColumn.HeaderText = "Sal_pros_Pay_Emp";
+            this.salprosPayEmpDataGridViewTextBoxColumn.Name = "salprosPayEmpDataGridViewTextBoxColumn";
+            this.salprosPayEmpDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // loansAdvEmpDataGridViewTextBoxColumn
+            // 
+            this.loansAdvEmpDataGridViewTextBoxColumn.DataPropertyName = "Loans_Adv_Emp";
+            this.loansAdvEmpDataGridViewTextBoxColumn.HeaderText = "Loans_Adv_Emp";
+            this.loansAdvEmpDataGridViewTextBoxColumn.Name = "loansAdvEmpDataGridViewTextBoxColumn";
+            this.loansAdvEmpDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profndInvstDataGridViewTextBoxColumn
+            // 
+            this.profndInvstDataGridViewTextBoxColumn.DataPropertyName = "Profnd_Invst";
+            this.profndInvstDataGridViewTextBoxColumn.HeaderText = "Profnd_Invst";
+            this.profndInvstDataGridViewTextBoxColumn.Name = "profndInvstDataGridViewTextBoxColumn";
+            this.profndInvstDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pensionDataGridViewTextBoxColumn
+            // 
+            this.pensionDataGridViewTextBoxColumn.DataPropertyName = "Pension";
+            this.pensionDataGridViewTextBoxColumn.HeaderText = "Pension";
+            this.pensionDataGridViewTextBoxColumn.Name = "pensionDataGridViewTextBoxColumn";
+            this.pensionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // paySupCntBnkDataGridViewTextBoxColumn
+            // 
+            this.paySupCntBnkDataGridViewTextBoxColumn.DataPropertyName = "Pay_SupCnt_Bnk";
+            this.paySupCntBnkDataGridViewTextBoxColumn.HeaderText = "Pay_SupCnt_Bnk";
+            this.paySupCntBnkDataGridViewTextBoxColumn.Name = "paySupCntBnkDataGridViewTextBoxColumn";
+            this.paySupCntBnkDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cashEmpDataGridViewTextBoxColumn
+            // 
+            this.cashEmpDataGridViewTextBoxColumn.DataPropertyName = "Cash_Emp";
+            this.cashEmpDataGridViewTextBoxColumn.HeaderText = "Cash_Emp";
+            this.cashEmpDataGridViewTextBoxColumn.Name = "cashEmpDataGridViewTextBoxColumn";
+            this.cashEmpDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mainBnkAcctDataGridViewTextBoxColumn
+            // 
+            this.mainBnkAcctDataGridViewTextBoxColumn.DataPropertyName = "Main_Bnk_Acct";
+            this.mainBnkAcctDataGridViewTextBoxColumn.HeaderText = "Main_Bnk_Acct";
+            this.mainBnkAcctDataGridViewTextBoxColumn.Name = "mainBnkAcctDataGridViewTextBoxColumn";
+            this.mainBnkAcctDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bankReconDataGridViewTextBoxColumn
+            // 
+            this.bankReconDataGridViewTextBoxColumn.DataPropertyName = "Bank_Recon";
+            this.bankReconDataGridViewTextBoxColumn.HeaderText = "Bank_Recon";
+            this.bankReconDataGridViewTextBoxColumn.Name = "bankReconDataGridViewTextBoxColumn";
+            this.bankReconDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDDataGridViewTextBoxColumn9
+            // 
+            this.iDDataGridViewTextBoxColumn9.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn9.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn9.Name = "iDDataGridViewTextBoxColumn9";
+            this.iDDataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn9
+            // 
+            this.dateDataGridViewTextBoxColumn9.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn9.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn9.Name = "dateDataGridViewTextBoxColumn9";
+            this.dateDataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // saleLocwiseDataGridViewTextBoxColumn1
+            // 
+            this.saleLocwiseDataGridViewTextBoxColumn1.DataPropertyName = "Sale_Loc_wise";
+            this.saleLocwiseDataGridViewTextBoxColumn1.HeaderText = "Sale_Loc_wise";
+            this.saleLocwiseDataGridViewTextBoxColumn1.Name = "saleLocwiseDataGridViewTextBoxColumn1";
+            this.saleLocwiseDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // lossesGainsDataGridViewTextBoxColumn1
+            // 
+            this.lossesGainsDataGridViewTextBoxColumn1.DataPropertyName = "LossesGains";
+            this.lossesGainsDataGridViewTextBoxColumn1.HeaderText = "LossesGains";
+            this.lossesGainsDataGridViewTextBoxColumn1.Name = "lossesGainsDataGridViewTextBoxColumn1";
+            this.lossesGainsDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // custInvicDataGridViewTextBoxColumn1
+            // 
+            this.custInvicDataGridViewTextBoxColumn1.DataPropertyName = "Cust_Invic";
+            this.custInvicDataGridViewTextBoxColumn1.HeaderText = "Cust_Invic";
+            this.custInvicDataGridViewTextBoxColumn1.Name = "custInvicDataGridViewTextBoxColumn1";
+            this.custInvicDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // purQtyValLocDataGridViewTextBoxColumn1
+            // 
+            this.purQtyValLocDataGridViewTextBoxColumn1.DataPropertyName = "Pur_QtyValLoc";
+            this.purQtyValLocDataGridViewTextBoxColumn1.HeaderText = "Pur_QtyValLoc";
+            this.purQtyValLocDataGridViewTextBoxColumn1.Name = "purQtyValLocDataGridViewTextBoxColumn1";
+            this.purQtyValLocDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // purInvSupDataGridViewTextBoxColumn1
+            // 
+            this.purInvSupDataGridViewTextBoxColumn1.DataPropertyName = "Pur_Inv_Sup";
+            this.purInvSupDataGridViewTextBoxColumn1.HeaderText = "Pur_Inv_Sup";
+            this.purInvSupDataGridViewTextBoxColumn1.Name = "purInvSupDataGridViewTextBoxColumn1";
+            this.purInvSupDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // closingStckDataGridViewTextBoxColumn1
+            // 
+            this.closingStckDataGridViewTextBoxColumn1.DataPropertyName = "Closing_Stck";
+            this.closingStckDataGridViewTextBoxColumn1.HeaderText = "Closing_Stck";
+            this.closingStckDataGridViewTextBoxColumn1.Name = "closingStckDataGridViewTextBoxColumn1";
+            this.closingStckDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // custAcctDataGridViewTextBoxColumn1
+            // 
+            this.custAcctDataGridViewTextBoxColumn1.DataPropertyName = "Cust_Acct";
+            this.custAcctDataGridViewTextBoxColumn1.HeaderText = "Cust_Acct";
+            this.custAcctDataGridViewTextBoxColumn1.Name = "custAcctDataGridViewTextBoxColumn1";
+            this.custAcctDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // salesProdCustDataGridViewTextBoxColumn1
+            // 
+            this.salesProdCustDataGridViewTextBoxColumn1.DataPropertyName = "Sales_ProdCust";
+            this.salesProdCustDataGridViewTextBoxColumn1.HeaderText = "Sales_ProdCust";
+            this.salesProdCustDataGridViewTextBoxColumn1.Name = "salesProdCustDataGridViewTextBoxColumn1";
+            this.salesProdCustDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // payRecCustDataGridViewTextBoxColumn1
+            // 
+            this.payRecCustDataGridViewTextBoxColumn1.DataPropertyName = "Pay_Rec_Cust";
+            this.payRecCustDataGridViewTextBoxColumn1.HeaderText = "Pay_Rec_Cust";
+            this.payRecCustDataGridViewTextBoxColumn1.Name = "payRecCustDataGridViewTextBoxColumn1";
+            this.payRecCustDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // credlimDataGridViewTextBoxColumn1
+            // 
+            this.credlimDataGridViewTextBoxColumn1.DataPropertyName = "Cred_lim";
+            this.credlimDataGridViewTextBoxColumn1.HeaderText = "Cred_lim";
+            this.credlimDataGridViewTextBoxColumn1.Name = "credlimDataGridViewTextBoxColumn1";
+            this.credlimDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // paySupCntDataGridViewTextBoxColumn1
+            // 
+            this.paySupCntDataGridViewTextBoxColumn1.DataPropertyName = "Pay_SupCnt";
+            this.paySupCntDataGridViewTextBoxColumn1.HeaderText = "Pay_SupCnt";
+            this.paySupCntDataGridViewTextBoxColumn1.Name = "paySupCntDataGridViewTextBoxColumn1";
+            this.paySupCntDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // payEmpDataGridViewTextBoxColumn1
+            // 
+            this.payEmpDataGridViewTextBoxColumn1.DataPropertyName = "Pay_Emp";
+            this.payEmpDataGridViewTextBoxColumn1.HeaderText = "Pay_Emp";
+            this.payEmpDataGridViewTextBoxColumn1.Name = "payEmpDataGridViewTextBoxColumn1";
+            this.payEmpDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // impreplenishDataGridViewTextBoxColumn1
+            // 
+            this.impreplenishDataGridViewTextBoxColumn1.DataPropertyName = "Imp_replenish";
+            this.impreplenishDataGridViewTextBoxColumn1.HeaderText = "Imp_replenish";
+            this.impreplenishDataGridViewTextBoxColumn1.Name = "impreplenishDataGridViewTextBoxColumn1";
+            this.impreplenishDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // salprosPayEmpDataGridViewTextBoxColumn1
+            // 
+            this.salprosPayEmpDataGridViewTextBoxColumn1.DataPropertyName = "Sal_pros_Pay_Emp";
+            this.salprosPayEmpDataGridViewTextBoxColumn1.HeaderText = "Sal_pros_Pay_Emp";
+            this.salprosPayEmpDataGridViewTextBoxColumn1.Name = "salprosPayEmpDataGridViewTextBoxColumn1";
+            this.salprosPayEmpDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // loansAdvEmpDataGridViewTextBoxColumn1
+            // 
+            this.loansAdvEmpDataGridViewTextBoxColumn1.DataPropertyName = "Loans_Adv_Emp";
+            this.loansAdvEmpDataGridViewTextBoxColumn1.HeaderText = "Loans_Adv_Emp";
+            this.loansAdvEmpDataGridViewTextBoxColumn1.Name = "loansAdvEmpDataGridViewTextBoxColumn1";
+            this.loansAdvEmpDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // profndInvstDataGridViewTextBoxColumn1
+            // 
+            this.profndInvstDataGridViewTextBoxColumn1.DataPropertyName = "Profnd_Invst";
+            this.profndInvstDataGridViewTextBoxColumn1.HeaderText = "Profnd_Invst";
+            this.profndInvstDataGridViewTextBoxColumn1.Name = "profndInvstDataGridViewTextBoxColumn1";
+            this.profndInvstDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // pensionDataGridViewTextBoxColumn1
+            // 
+            this.pensionDataGridViewTextBoxColumn1.DataPropertyName = "Pension";
+            this.pensionDataGridViewTextBoxColumn1.HeaderText = "Pension";
+            this.pensionDataGridViewTextBoxColumn1.Name = "pensionDataGridViewTextBoxColumn1";
+            this.pensionDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // paySupCntBnkDataGridViewTextBoxColumn1
+            // 
+            this.paySupCntBnkDataGridViewTextBoxColumn1.DataPropertyName = "Pay_SupCnt_Bnk";
+            this.paySupCntBnkDataGridViewTextBoxColumn1.HeaderText = "Pay_SupCnt_Bnk";
+            this.paySupCntBnkDataGridViewTextBoxColumn1.Name = "paySupCntBnkDataGridViewTextBoxColumn1";
+            this.paySupCntBnkDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // cashEmpDataGridViewTextBoxColumn1
+            // 
+            this.cashEmpDataGridViewTextBoxColumn1.DataPropertyName = "Cash_Emp";
+            this.cashEmpDataGridViewTextBoxColumn1.HeaderText = "Cash_Emp";
+            this.cashEmpDataGridViewTextBoxColumn1.Name = "cashEmpDataGridViewTextBoxColumn1";
+            this.cashEmpDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // mainBnkAcctDataGridViewTextBoxColumn1
+            // 
+            this.mainBnkAcctDataGridViewTextBoxColumn1.DataPropertyName = "Main_Bnk_Acct";
+            this.mainBnkAcctDataGridViewTextBoxColumn1.HeaderText = "Main_Bnk_Acct";
+            this.mainBnkAcctDataGridViewTextBoxColumn1.Name = "mainBnkAcctDataGridViewTextBoxColumn1";
+            this.mainBnkAcctDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // bankReconDataGridViewTextBoxColumn1
+            // 
+            this.bankReconDataGridViewTextBoxColumn1.DataPropertyName = "Bank_Recon";
+            this.bankReconDataGridViewTextBoxColumn1.HeaderText = "Bank_Recon";
+            this.bankReconDataGridViewTextBoxColumn1.Name = "bankReconDataGridViewTextBoxColumn1";
+            this.bankReconDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // auditPlanResBindingSource
+            // 
+            this.auditPlanResBindingSource.DataMember = "AuditPlanRes";
+            this.auditPlanResBindingSource.DataSource = this.auditPlanDataSet;
+            // 
+            // auditPlanResTableAdapter
+            // 
+            this.auditPlanResTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn10
+            // 
+            this.iDDataGridViewTextBoxColumn10.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn10.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn10.Name = "iDDataGridViewTextBoxColumn10";
+            this.iDDataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // departmentsDataGridViewTextBoxColumn
+            // 
+            this.departmentsDataGridViewTextBoxColumn.DataPropertyName = "Departments";
+            this.departmentsDataGridViewTextBoxColumn.HeaderText = "Departments";
+            this.departmentsDataGridViewTextBoxColumn.Name = "departmentsDataGridViewTextBoxColumn";
+            this.departmentsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // frequencyDataGridViewTextBoxColumn
+            // 
+            this.frequencyDataGridViewTextBoxColumn.DataPropertyName = "Frequency";
+            this.frequencyDataGridViewTextBoxColumn.HeaderText = "Frequency";
+            this.frequencyDataGridViewTextBoxColumn.Name = "frequencyDataGridViewTextBoxColumn";
+            this.frequencyDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // riskDataGridViewTextBoxColumn
+            // 
+            this.riskDataGridViewTextBoxColumn.DataPropertyName = "Risk";
+            this.riskDataGridViewTextBoxColumn.HeaderText = "Risk";
+            this.riskDataGridViewTextBoxColumn.Name = "riskDataGridViewTextBoxColumn";
+            this.riskDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 516);
+            this.Controls.Add(this.ResultDptPnl);
+            this.Controls.Add(this.HomePnl);
+            this.Controls.Add(this.DeptPnl);
+            this.Controls.Add(this.KemariInstPnl);
+            this.Controls.Add(this.ChaklalaInstPnl);
             this.Controls.Add(this.ParcoInstPnl);
             this.Controls.Add(this.KemariAviPnl);
             this.Controls.Add(this.ChaklalaAVIPnl);
@@ -6818,13 +10053,9 @@
             this.Controls.Add(this.MarketPnl);
             this.Controls.Add(this.FinancePnl);
             this.Controls.Add(this.FinancePnl2);
-            this.Controls.Add(this.ResultDptPnl);
-            this.Controls.Add(this.HomePnl);
-            this.Controls.Add(this.DeptPnl);
-            this.Controls.Add(this.KemariInstPnl);
-            this.Controls.Add(this.ChaklalaInstPnl);
             this.Name = "Form1";
             this.Text = "Audit Plan";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.HomePnl.ResumeLayout(false);
             this.HomePnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -6863,6 +10094,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.KemD_GV)).EndInit();
             this.DeptPnl.ResumeLayout(false);
             this.DeptPnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.auditPlanDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keemariDepoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chaklalaDepoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pARCODepoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keemariAviBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chaklalaAviBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pARCOAviBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hRDeptBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marketDptBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.financeDptBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.auditPlanResBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -7404,6 +10646,368 @@
         private System.Windows.Forms.Button Dpt_MktDptBtn;
         private System.Windows.Forms.Button Dpt_HRDptBtn;
         private System.Windows.Forms.Label label5;
+        private AuditPlanDataSet auditPlanDataSet;
+        private System.Windows.Forms.BindingSource keemariDepoBindingSource;
+        private AuditPlanDataSetTableAdapters.KeemariDepoTableAdapter keemariDepoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSPurLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCPurLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDPurLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOPurLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purTstockDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSPurAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCPurAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDPurAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOPurAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purTamountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSTranPerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCTranPerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDTranPerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOTranPerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSTranStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCTranStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDTranStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOTranStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tranTstockDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSSalePerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCSalePerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDSalePerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOSalePerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSSaleAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCSaleAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDSaleAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOSaleAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saleTamountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sukhDStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn daulDStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn queDStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn depoTstockDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sukhDSaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn daulDSaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn queDSaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn depoTSaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSPurPrcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCPurPrcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDPurPrcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOPurPrcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSClosingSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCClosingSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDClosingSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOClosingSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSSalePrcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCSalePrcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDSalePrcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOSalePrcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource chaklalaDepoBindingSource;
+        private AuditPlanDataSetTableAdapters.ChaklalaDepoTableAdapter chaklalaDepoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSPurLtrDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCPurLtrDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDPurLtrDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOPurLtrDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purTstockDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSPurAmntDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCPurAmntDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDPurAmntDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOPurAmntDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purTamountDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSTranPerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCTranPerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDTranPerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOTranPerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSTranStckDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCTranStckDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDTranStckDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOTranStckDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tranTstockDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSSalePerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCSalePerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDSalePerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOSalePerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSSaleAmntDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCSaleAmntDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDSaleAmntDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOSaleAmntDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saleTamountDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn badDStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn faisDStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sarDStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn peshDStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bannDStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn depoTstockDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn badDSaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn faisDSaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sarDSaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn peshDSaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bannDSaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn depoTSaleDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSPurPrcDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCPurPrcDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDPurPrcDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOPurPrcDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSClosingSDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCClosingSDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDClosingSDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOClosingSDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSSalePrcDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCSalePrcDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDSalePrcDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOSalePrcDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource pARCODepoBindingSource;
+        private AuditPlanDataSetTableAdapters.PARCODepoTableAdapter pARCODepoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSPurLtrDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCPurLtrDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDPurLtrDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOPurLtrDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purTstockDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSPurAmntDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCPurAmntDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDPurAmntDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOPurAmntDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purTamountDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSTranPerDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCTranPerDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDTranPerDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOTranPerDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSTranStckDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCTranStckDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDTranStckDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOTranStckDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tranTstockDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSSalePerDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCSalePerDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDSalePerDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOSalePerDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSSaleAmntDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCSaleAmntDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDSaleAmntDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOSaleAmntDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saleTamountDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vehDStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sherDStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sahiDStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn depoTstockDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vehDSaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sherDSaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sahiDSaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn depoTSaleDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSPurPrcDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCPurPrcDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDPurPrcDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOPurPrcDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSClosingSDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCClosingSDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDClosingSDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOClosingSDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mSSalePrcDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hOBCSalePrcDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hSDSalePrcDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kOSalePrcDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.BindingSource keemariAviBindingSource;
+        private AuditPlanDataSetTableAdapters.KeemariAviTableAdapter keemariAviTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4PurLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1PurLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purTstockDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4PurAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1PurAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purTamountDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4TranPerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1TranPerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4TranStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1TranStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tranTstockDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4SalePerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1SalePerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4SaleAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1SaleAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saleTamountDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn karAStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn queAStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nawAStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sukAStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aviTstockDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn karASaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn queASaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nawASaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sukASaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aviTSaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4PurPrcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1PurPrcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4ClosingSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1ClosingSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4SalePrcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1SalePrcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource chaklalaAviBindingSource;
+        private AuditPlanDataSetTableAdapters.ChaklalaAviTableAdapter chaklalaAviTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4PurLtrDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1PurLtrDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purTstockDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4PurAmntDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1PurAmntDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purTamountDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4TranPerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1TranPerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4TranStckDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1TranStckDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tranTstockDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4SalePerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1SalePerDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4SaleAmntDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1SaleAmntDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saleTamountDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn islAStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn peshAStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aviTstockDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn islASaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn peshASaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aviTSaleDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4PurPrcDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1PurPrcDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4ClosingSDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1ClosingSDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4SalePrcDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1SalePrcDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource pARCOAviBindingSource;
+        private AuditPlanDataSetTableAdapters.PARCOAviTableAdapter pARCOAviTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4PurLtrDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1PurLtrDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purTstockDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4PurAmntDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1PurAmntDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purTamountDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4TranPerDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1TranPerDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4TranStckDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1TranStckDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tranTstockDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4SalePerDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1SalePerDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4SaleAmntDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1SaleAmntDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saleTamountDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lahAStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mulAStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aviTstockDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lahASaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mulASaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aviTSaleDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4PurPrcDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1PurPrcDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4ClosingSDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1ClosingSDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jP4SalePrcDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jetA1SalePrcDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.BindingSource hRDeptBindingSource;
+        private AuditPlanDataSetTableAdapters.HRDeptTableAdapter hRDeptTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purAffTicDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maintStaffCarsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hotelBookDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn transArranStaffDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn photoExpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource marketDptBindingSource;
+        private AuditPlanDataSetTableAdapters.MarketDptTableAdapter marketDptTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn constChargRtSitesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maintRtSitesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kHiSprLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kHSDLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kHOBCLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kHiSprAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kHSDAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kHOBCAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kTLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kTAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lHiSprLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lHSDLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lHOBCLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lHiSprAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lHSDAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lHOBCAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lTLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lTAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iHiSprLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iHSDLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iHOBCLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iHiSprAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iHSDAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iHOBCAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iTLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iTAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qHiSprStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qHSDStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qHOBCStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qHiSprAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qHSDAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qHOBCAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qTLtrDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qTAmntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource financeDptBindingSource;
+        private AuditPlanDataSetTableAdapters.FinanceDptTableAdapter financeDptTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saleLocwiseDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lossesGainsDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn custInvicDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purQtyValLocDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purInvSupDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn closingStckDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn custAcctDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salesProdCustDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn payRecCustDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn credlimDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paySupCntDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn payEmpDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn impreplenishDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salprosPayEmpDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loansAdvEmpDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profndInvstDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pensionDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paySupCntBnkDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cashEmpDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mainBnkAcctDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bankReconDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saleLocwiseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lossesGainsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn custInvicDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purQtyValLocDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purInvSupDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn closingStckDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn custAcctDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salesProdCustDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn payRecCustDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn credlimDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paySupCntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn payEmpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn impreplenishDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salprosPayEmpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loansAdvEmpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profndInvstDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pensionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paySupCntBnkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cashEmpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mainBnkAcctDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bankReconDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource auditPlanResBindingSource;
+        private AuditPlanDataSetTableAdapters.AuditPlanResTableAdapter auditPlanResTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmentsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn frequencyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn riskDataGridViewTextBoxColumn;
     }
 }
 
