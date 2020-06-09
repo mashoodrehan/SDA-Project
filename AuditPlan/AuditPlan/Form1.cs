@@ -16,6 +16,10 @@ namespace AuditPlan
         {
             InitializeComponent();
         }
+        static Random risk = new Random();
+        int LowFreq = 1;
+        int MedFreq = 2;
+        int HighFreq = 3;
         #region==================================================Panels==================================================
         public void Panel(System.Windows.Forms.Panel p)
         {
@@ -286,5 +290,68 @@ namespace AuditPlan
             this.keemariDepoTableAdapter.Fill(this.auditPlanDataSet.KeemariDepo);
 
         }
+        #region--------------------------HR Department-----------------------------------------------------------
+        public void HR_Clr()
+        {
+            HR_Date.Text = null; HR_Pur_Air_Tic_TB.Clear(); HR_Main_St_Cars_TB.Clear(); HR_HotlB_TB.Clear(); HR_Tran_Arr_TB.Clear();
+            HR_PhotoC_TB.Clear();
+        }
+        public void HR_Result()
+        {
+            int j = 0;
+            while (Res_GV.Rows.Count > j)
+            {
+                string dept = Res_GV.Rows[j].Cells[1].Value.ToString();
+                if (dept == "HR Department")
+                {
+                    try
+                    {
+                        SQL_Queires SQ = new SQL_Queires();
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                j++;
+            }
+            int Low = risk.Next(1, 40);
+            int Medium = risk.Next(41, 70);
+            int High = risk.Next(71, 100);
+            int i = 0;
+            double val = 0;
+            while (HR_GV.Rows.Count > i)
+            {
+                val += double.Parse(HR_GV.Rows[i].Cells[2].Value.ToString()) + double.Parse(HR_GV.Rows[i].Cells[3].Value.ToString()) +
+                    double.Parse(HR_GV.Rows[i].Cells[4].Value.ToString()) + double.Parse(HR_GV.Rows[i].Cells[5].Value.ToString()) +
+                    double.Parse(HR_GV.Rows[i].Cells[6].Value.ToString());
+                i++;
+            }
+            if (val > 6000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('HR Department', '" + HighFreq + "', '" + High + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 6000000 && val > 3000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('HR Department', '" + MedFreq + "', '" + Medium + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 3000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('HR Department', '" + LowFreq + "', '" + Low + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+        }
+        #endregion
+
     }
 }
