@@ -353,5 +353,70 @@ namespace AuditPlan
         }
         #endregion
 
+        private void HR_AddInfo_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQL_Queires SQ = new SQL_Queires();
+                int j = 0;
+                while (HR_GV.Rows.Count > j)
+                {
+                    string val = HR_GV.Rows[j].Cells[1].Value.ToString();
+                    if (HR_Date.Text == val)
+                    {
+                        SQ.DeleteData("DELETE FROM HRDept WHERE Date = '" + val + "';");
+                    }
+                    j++;
+                }
+                String query = "Insert INTO HRDept (Date, Pur_Aff_Tic, Maint_Staff_Cars, Hotel_Book, Trans_Arran_Staff, Photo_Exp) " +
+                    "VALUES('" + HR_Date.Text + "', '" + HR_Pur_Air_Tic_TB.Text + "', '" + HR_Main_St_Cars_TB.Text + "', '" + HR_HotlB_TB.Text + "', " +
+                    "'" + HR_Tran_Arr_TB.Text + "', '" + HR_PhotoC_TB.Text + "')";
+                SQ.InsertData(query);
+                MessageBox.Show("Success!");
+                HR_Clr();
+                SQ.ShowGVData("SELECT * FROM HRDept", HR_GV);
+                HR_Result();
+
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+            }
+        }
+
+        private void HR_GV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string id = HR_GV.SelectedRows[0].Cells[0].Value.ToString();
+                HR_Date.Text = HR_GV.SelectedRows[0].Cells[1].Value.ToString();
+                HR_Pur_Air_Tic_TB.Text = HR_GV.SelectedRows[0].Cells[2].Value.ToString();
+                HR_Main_St_Cars_TB.Text = HR_GV.SelectedRows[0].Cells[3].Value.ToString();
+                HR_HotlB_TB.Text = HR_GV.SelectedRows[0].Cells[4].Value.ToString();
+                HR_Tran_Arr_TB.Text = HR_GV.SelectedRows[0].Cells[5].Value.ToString();
+                HR_PhotoC_TB.Text = HR_GV.SelectedRows[0].Cells[6].Value.ToString();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void HR_Delete_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    string id = HR_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SQ.DeleteData("DELETE FROM HRDept WHERE ID = '" + id + "';");
+                    SQ.ShowGVData("Select * FROM HRDept", HR_GV);
+                    HR_Clr();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
