@@ -226,134 +226,6 @@ namespace AuditPlan
             Panel(ChaklalaInstPnl);
         }
         #endregion
-        private void KAVI_AddInfo_Btn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SQL_Queires SQ = new SQL_Queires();
-                int j = 0;
-                while (KemA_GV.Rows.Count > j)
-                {
-                    string val = KemA_GV.Rows[j].Cells[1].Value.ToString();
-                    if (KA_Date.Text == val)
-                    {
-                        SQ.DeleteData("DELETE FROM KeemariAvi WHERE Date = '" + val + "';");
-                    }
-                    j++;
-                }
-                double JP4_SaleStck = (Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(KAVI_JP4_S_IN_TB.Text)) / 100;
-                double JetA1_SaleStck = (Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(KAVI_JetA1_S_IN_TB.Text)) / 100;
-                double JP4_CStck = Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) - (Convert.ToInt64(KAVI_JP4_T_Stck_TB.Text) + JP4_SaleStck);
-                double JetA1_CStck = Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text) - (Convert.ToInt64(KAVI_JetA1_T_Stck_TB.Text) + JetA1_SaleStck);
-                String query = "Insert INTO KeemariAvi (Date, JP4_Pur_Ltr, JetA1_Pur_Ltr, Pur_Tstock, JP4_Pur_Amnt, JetA1_Pur_Amnt," +
-                "Pur_Tamount, JP4_Tran_Per, JetA1_Tran_Per, JP4_Tran_Stck, JetA1_Tran_Stck, Tran_Tstock, JP4_Sale_Per, JetA1_Sale_per, " +
-                "JP4_Sale_Amnt, JetA1_Sale_Amnt,Sale_Tamount, KarA_Stck, QueA_Stck, NawA_Stck, SukA_Stck, Avi_Tstock, KarA_Sale, " +
-                "QueA_Sale, NawA_Sale, SukA_Sale,  Avi_TSale, JP4_Pur_Prc, JetA1_Pur_Prc, JP4_ClosingS, JetA1_ClosingS, JP4_Sale_Prc, " +
-                "JetA1_Sale_Prc) VALUES('" + KA_Date.Text + "', '" + KAVI_JP4_P_IN_TB.Text + "', '" + KAVI_JetA1_P_IN_TB.Text + "', '" + KAVI_TPSM_P_TStck_TB.Text + "', " +
-                "'" + KAVI_JP4_P_Prc_TB.Text + "', '" + KAVI_JetA1_P_Prc_TB.Text + "', '" + KAVI_TPSM_P_TAmnt_TB.Text + "', '" + KAVI_JP4_T_IN_TB.Text + "', " +
-                "'" + KAVI_JetA1_T_IN_TB.Text + "', '" + KAVI_JP4_T_Stck_TB.Text + "', '" + KAVI_JetA1_T_Stck_TB.Text + "', '" + KAVI_TTS_T_TStck_TB.Text + "', " +
-                "'" + KAVI_JP4_S_IN_TB.Text + "', '" + KAVI_JetA1_S_IN_TB.Text + "', '" + KAVI_JP4_S_Amnt_TB.Text + "', '" + KAVI_JetA1_S_Amnt_TB.Text + "', " +
-                "'" + KAVI_TSA_S_TAmnt_TB.Text + "', '" + KAVI_KA_Stck_TB.Text + "', '" + KAVI_QA_Stck_TB.Text + "', '" + KAVI_NA_Stck_TB.Text + "', " +
-                "'" + KAVI_SA_Stck_TB.Text + "', '" + KAVI_Depo_Tstck_TB.Text + "', '" + KAVI_KA_Sale_TB.Text + "', '" + KAVI_QA_Sale_TB.Text + "', " +
-                "'" + KAVI_NA_Sale_TB.Text + "', '" + KAVI_SA_Sale_TB.Text + "', '" + KAVI_Depo_TSale_TB.Text + "', '" + 110 + "', '" + 115 + "', '" + JP4_CStck + "', " +
-                "'" + JetA1_CStck + "', '" + 120 + "', '" + 125 + "')";
-                SQ.InsertData(query);
-                MessageBox.Show("Success!");
-                //KAVI_Clr();
-                SQ.ShowGVData("SELECT * FROM KeemariAvi", KemA_GV);
-                //KeemariAvi_Result();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'auditPlanDataSet.AuditPlanRes' table. You can move, or remove it, as needed.
-            this.auditPlanResTableAdapter.Fill(this.auditPlanDataSet.AuditPlanRes);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.FinanceDpt' table. You can move, or remove it, as needed.
-            this.financeDptTableAdapter.Fill(this.auditPlanDataSet.FinanceDpt);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.MarketDpt' table. You can move, or remove it, as needed.
-            this.marketDptTableAdapter.Fill(this.auditPlanDataSet.MarketDpt);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.HRDept' table. You can move, or remove it, as needed.
-            this.hRDeptTableAdapter.Fill(this.auditPlanDataSet.HRDept);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.PARCOAvi' table. You can move, or remove it, as needed.
-            this.pARCOAviTableAdapter.Fill(this.auditPlanDataSet.PARCOAvi);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.ChaklalaAvi' table. You can move, or remove it, as needed.
-            this.chaklalaAviTableAdapter.Fill(this.auditPlanDataSet.ChaklalaAvi);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.KeemariAvi' table. You can move, or remove it, as needed.
-            this.keemariAviTableAdapter.Fill(this.auditPlanDataSet.KeemariAvi);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.PARCODepo' table. You can move, or remove it, as needed.
-            this.pARCODepoTableAdapter.Fill(this.auditPlanDataSet.PARCODepo);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.ChaklalaDepo' table. You can move, or remove it, as needed.
-            this.chaklalaDepoTableAdapter.Fill(this.auditPlanDataSet.ChaklalaDepo);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.KeemariDepo' table. You can move, or remove it, as needed.
-            this.keemariDepoTableAdapter.Fill(this.auditPlanDataSet.KeemariDepo);
-
-        }
-        #region--------------------------HR Department-----------------------------------------------------------
-        public void HR_Clr()
-        {
-            HR_Date.Text = null; HR_Pur_Air_Tic_TB.Clear(); HR_Main_St_Cars_TB.Clear(); HR_HotlB_TB.Clear(); HR_Tran_Arr_TB.Clear();
-            HR_PhotoC_TB.Clear();
-        }
-        public void HR_Result()
-        {
-            int j = 0;
-            while (Res_GV.Rows.Count > j)
-            {
-                string dept = Res_GV.Rows[j].Cells[1].Value.ToString();
-                if (dept == "HR Department")
-                {
-                    try
-                    {
-                        SQL_Queires SQ = new SQL_Queires();
-                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
-                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
-                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
-                    }
-                    catch (Exception)
-                    {
-                    }
-                }
-                j++;
-            }
-            int Low = risk.Next(1, 40);
-            int Medium = risk.Next(41, 70);
-            int High = risk.Next(71, 100);
-            int i = 0;
-            double val = 0;
-            while (HR_GV.Rows.Count > i)
-            {
-                val += double.Parse(HR_GV.Rows[i].Cells[2].Value.ToString()) + double.Parse(HR_GV.Rows[i].Cells[3].Value.ToString()) +
-                    double.Parse(HR_GV.Rows[i].Cells[4].Value.ToString()) + double.Parse(HR_GV.Rows[i].Cells[5].Value.ToString()) +
-                    double.Parse(HR_GV.Rows[i].Cells[6].Value.ToString());
-                i++;
-            }
-            if (val > 6000000)
-            {
-                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('HR Department', '" + HighFreq + "', '" + High + "')";
-                SQL_Queires SQ = new SQL_Queires();
-                SQ.InsertData(query);
-                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
-            }
-            else if (val < 6000000 && val > 3000000)
-            {
-                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('HR Department', '" + MedFreq + "', '" + Medium + "')";
-                SQL_Queires SQ = new SQL_Queires();
-                SQ.InsertData(query);
-                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
-            }
-            else if (val < 3000000)
-            {
-                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('HR Department', '" + LowFreq + "', '" + Low + "')";
-                SQL_Queires SQ = new SQL_Queires();
-                SQ.InsertData(query);
-                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
-            }
-        }
-        #endregion
         #region===============================================Keemari Depo===============================================
         public void TotalPurStckKemInst()
         {
@@ -613,6 +485,453 @@ namespace AuditPlan
             {
             }
         }
+        public void KD_TextChange()
+        {
+            try
+            {
+                KI_MS_P_Prc_TB.Text = (Convert.ToInt64(KI_MS_P_IN_TB.Text) * 90).ToString();
+                KI_HOBC_P_Prc_TB.Text = (Convert.ToInt64(KI_HOBC_P_IN_TB.Text) * 100).ToString();
+                KI_HSD_P_Prc_TB.Text = (Convert.ToInt64(KI_HSD_P_IN_TB.Text) * 115).ToString();
+                KI_KO_P_Prc_TB.Text = (Convert.ToInt64(KI_KO_P_IN_TB.Text) * 110).ToString();
+                TotalPurStckKemInst();
+                TotalPurAmntKemInst();
+                KI_MS_T_TS_TB.Text = ((Convert.ToInt64(KI_MS_P_IN_TB.Text) * Convert.ToInt64(KI_MS_T_IN_TB.Text)) / 100).ToString();
+                KI_HOBC_T_TS_TB.Text = ((Convert.ToInt64(KI_HOBC_P_IN_TB.Text) * Convert.ToInt64(KI_HOBC_T_IN_TB.Text)) / 100).ToString();
+                KI_HSD_T_TS_TB.Text = ((Convert.ToInt64(KI_HSD_P_IN_TB.Text) * Convert.ToInt64(KI_HSD_T_IN_TB.Text)) / 100).ToString();
+                KI_KO_T_TS_TB.Text = ((Convert.ToInt64(KI_KO_P_IN_TB.Text) * Convert.ToInt64(KI_KO_T_IN_TB.Text)) / 100).ToString();
+                TotalTranStckKemInst();
+                KI_MS_S_Prc_TB.Text = (((Convert.ToInt64(KI_MS_P_IN_TB.Text) * Convert.ToInt64(KI_MS_S_IN_TB.Text)) / 100) * 98).ToString();
+                KI_HOBC_S_Prc_TB.Text = (((Convert.ToInt64(KI_HOBC_P_IN_TB.Text) * Convert.ToInt64(KI_HOBC_S_IN_TB.Text)) / 100) * 116).ToString();
+                KI_HSD_S_Prc_TB.Text = (((Convert.ToInt64(KI_HSD_P_IN_TB.Text) * Convert.ToInt64(KI_HSD_S_IN_TB.Text)) / 100) * 125).ToString();
+                KI_KO_S_Prc_TB.Text = (((Convert.ToInt64(KI_KO_P_IN_TB.Text) * Convert.ToInt64(KI_KO_S_IN_TB.Text)) / 100) * 120).ToString();
+                TotalSaleAmntKemInst();
+                DepoPDStckKemInst();
+                DepoPDSaleKemInst();
+                DepoTotStckKemInst();
+                DepoTotSaleKemInst();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_MS_P_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KI_MS_P_IN_TB.Text == String.Empty)
+                {
+                    KI_MS_P_Prc_TB.Clear();
+                }
+                KI_MS_P_Prc_TB.Text = (Convert.ToInt64(KI_MS_P_IN_TB.Text) * 90).ToString();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_HOBC_P_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KI_HOBC_P_IN_TB.Text == String.Empty)
+                {
+                    KI_HOBC_P_Prc_TB.Clear();
+                }
+                KI_HOBC_P_Prc_TB.Text = (Convert.ToInt64(KI_HOBC_P_IN_TB.Text) * 100).ToString();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_HSD_P_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KI_HSD_P_IN_TB.Text == String.Empty)
+                {
+                    KI_HSD_P_Prc_TB.Clear();
+                }
+                KI_HSD_P_Prc_TB.Text = (Convert.ToInt64(KI_HSD_P_IN_TB.Text) * 115).ToString();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_KO_P_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KI_KO_P_IN_TB.Text == String.Empty)
+                {
+                    KI_KO_P_Prc_TB.Clear();
+                    KI_TPSM_P_Stck_TB.Clear();
+                    KI_TPSM_P_Prc_TB.Clear();
+                }
+                KI_KO_P_Prc_TB.Text = (Convert.ToInt64(KI_KO_P_IN_TB.Text) * 110).ToString();
+                TotalPurStckKemInst();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_MS_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KI_MS_T_IN_TB.Text == String.Empty)
+                {
+                    KI_MS_T_TS_TB.Clear();
+                }
+                KI_MS_T_TS_TB.Text = ((Convert.ToInt64(KI_MS_P_IN_TB.Text) * Convert.ToInt64(KI_MS_T_IN_TB.Text)) / 100).ToString();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_HOBC_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KI_HOBC_T_IN_TB.Text == String.Empty)
+                {
+                    KI_HOBC_T_TS_TB.Clear();
+                }
+                KI_HOBC_T_TS_TB.Text = ((Convert.ToInt64(KI_HOBC_P_IN_TB.Text) * Convert.ToInt64(KI_HOBC_T_IN_TB.Text)) / 100).ToString();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_HSD_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KI_HSD_T_IN_TB.Text == String.Empty)
+                {
+                    KI_HSD_T_TS_TB.Clear();
+                }
+                KI_HSD_T_TS_TB.Text = ((Convert.ToInt64(KI_HSD_P_IN_TB.Text) * Convert.ToInt64(KI_HSD_T_IN_TB.Text)) / 100).ToString();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_KO_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KI_KO_T_IN_TB.Text == String.Empty)
+                {
+                    KI_KO_T_TS_TB.Clear();
+                    KI_TTS_T_Stck_TB.Clear();
+                    KI_DD_Sale_TB.Clear();
+                    KI_DD_Stck_TB.Clear();
+                    KI_SD_Sale_TB.Clear();
+                    KI_SD_Stck_TB.Clear();
+                    KI_QD_Sale_TB.Clear();
+                    KI_QD_Stck_TB.Clear();
+                    KI_Depo_TAmnt.Clear();
+                    KI_Depo_TStck.Clear();
+                }
+                KI_KO_T_TS_TB.Text = ((Convert.ToInt64(KI_KO_P_IN_TB.Text) * Convert.ToInt64(KI_KO_T_IN_TB.Text)) / 100).ToString();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_MS_S_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KI_MS_S_IN_TB.Text == String.Empty)
+                {
+                    KI_MS_S_Prc_TB.Clear();
+                }
+                KI_MS_S_Prc_TB.Text = (((Convert.ToInt64(KI_MS_P_IN_TB.Text) * Convert.ToInt64(KI_MS_S_IN_TB.Text)) / 100) * 98).ToString();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_HOBC_S_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KI_HOBC_S_IN_TB.Text == String.Empty)
+                {
+                    KI_HOBC_S_Prc_TB.Clear();
+                }
+                KI_HOBC_S_Prc_TB.Text = (((Convert.ToInt64(KI_HOBC_P_IN_TB.Text) * Convert.ToInt64(KI_HOBC_S_IN_TB.Text)) / 100) * 116).ToString();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_HSD_S_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KI_HSD_S_IN_TB.Text == String.Empty)
+                {
+                    KI_HSD_S_Prc_TB.Clear();
+                }
+                KI_HSD_S_Prc_TB.Text = (((Convert.ToInt64(KI_HSD_P_IN_TB.Text) * Convert.ToInt64(KI_HSD_S_IN_TB.Text)) / 100) * 125).ToString();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_KO_S_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KI_KO_S_IN_TB.Text == String.Empty)
+                {
+                    KI_KO_S_Prc_TB.Clear();
+                    KI_TSA_S_Amnt_TB.Clear();
+                }
+                KI_KO_S_Prc_TB.Text = (((Convert.ToInt64(KI_KO_P_IN_TB.Text) * Convert.ToInt64(KI_KO_S_IN_TB.Text)) / 100) * 120).ToString();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_KO_P_Prc_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                TotalPurAmntKemInst();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_KO_T_TS_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                TotalTranStckKemInst();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_KO_S_Prc_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                TotalSaleAmntKemInst();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_TTS_T_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DepoPDStckKemInst();
+                DepoPDSaleKemInst();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_QD_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DepoTotStckKemInst();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_QD_Sale_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DepoTotSaleKemInst();
+                KD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_Rest_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                KID_Clr();
+            }
+            catch (Exception)
+            {
+            }
+        }
         #endregion
+        private void KAVI_AddInfo_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQL_Queires SQ = new SQL_Queires();
+                int j = 0;
+                while (KemA_GV.Rows.Count > j)
+                {
+                    string val = KemA_GV.Rows[j].Cells[1].Value.ToString();
+                    if (KA_Date.Text == val)
+                    {
+                        SQ.DeleteData("DELETE FROM KeemariAvi WHERE Date = '" + val + "';");
+                    }
+                    j++;
+                }
+                double JP4_SaleStck = (Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(KAVI_JP4_S_IN_TB.Text)) / 100;
+                double JetA1_SaleStck = (Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(KAVI_JetA1_S_IN_TB.Text)) / 100;
+                double JP4_CStck = Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) - (Convert.ToInt64(KAVI_JP4_T_Stck_TB.Text) + JP4_SaleStck);
+                double JetA1_CStck = Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text) - (Convert.ToInt64(KAVI_JetA1_T_Stck_TB.Text) + JetA1_SaleStck);
+                String query = "Insert INTO KeemariAvi (Date, JP4_Pur_Ltr, JetA1_Pur_Ltr, Pur_Tstock, JP4_Pur_Amnt, JetA1_Pur_Amnt," +
+                "Pur_Tamount, JP4_Tran_Per, JetA1_Tran_Per, JP4_Tran_Stck, JetA1_Tran_Stck, Tran_Tstock, JP4_Sale_Per, JetA1_Sale_per, " +
+                "JP4_Sale_Amnt, JetA1_Sale_Amnt,Sale_Tamount, KarA_Stck, QueA_Stck, NawA_Stck, SukA_Stck, Avi_Tstock, KarA_Sale, " +
+                "QueA_Sale, NawA_Sale, SukA_Sale,  Avi_TSale, JP4_Pur_Prc, JetA1_Pur_Prc, JP4_ClosingS, JetA1_ClosingS, JP4_Sale_Prc, " +
+                "JetA1_Sale_Prc) VALUES('" + KA_Date.Text + "', '" + KAVI_JP4_P_IN_TB.Text + "', '" + KAVI_JetA1_P_IN_TB.Text + "', '" + KAVI_TPSM_P_TStck_TB.Text + "', " +
+                "'" + KAVI_JP4_P_Prc_TB.Text + "', '" + KAVI_JetA1_P_Prc_TB.Text + "', '" + KAVI_TPSM_P_TAmnt_TB.Text + "', '" + KAVI_JP4_T_IN_TB.Text + "', " +
+                "'" + KAVI_JetA1_T_IN_TB.Text + "', '" + KAVI_JP4_T_Stck_TB.Text + "', '" + KAVI_JetA1_T_Stck_TB.Text + "', '" + KAVI_TTS_T_TStck_TB.Text + "', " +
+                "'" + KAVI_JP4_S_IN_TB.Text + "', '" + KAVI_JetA1_S_IN_TB.Text + "', '" + KAVI_JP4_S_Amnt_TB.Text + "', '" + KAVI_JetA1_S_Amnt_TB.Text + "', " +
+                "'" + KAVI_TSA_S_TAmnt_TB.Text + "', '" + KAVI_KA_Stck_TB.Text + "', '" + KAVI_QA_Stck_TB.Text + "', '" + KAVI_NA_Stck_TB.Text + "', " +
+                "'" + KAVI_SA_Stck_TB.Text + "', '" + KAVI_Depo_Tstck_TB.Text + "', '" + KAVI_KA_Sale_TB.Text + "', '" + KAVI_QA_Sale_TB.Text + "', " +
+                "'" + KAVI_NA_Sale_TB.Text + "', '" + KAVI_SA_Sale_TB.Text + "', '" + KAVI_Depo_TSale_TB.Text + "', '" + 110 + "', '" + 115 + "', '" + JP4_CStck + "', " +
+                "'" + JetA1_CStck + "', '" + 120 + "', '" + 125 + "')";
+                SQ.InsertData(query);
+                MessageBox.Show("Success!");
+                //KAVI_Clr();
+                SQ.ShowGVData("SELECT * FROM KeemariAvi", KemA_GV);
+                //KeemariAvi_Result();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'auditPlanDataSet.AuditPlanRes' table. You can move, or remove it, as needed.
+            this.auditPlanResTableAdapter.Fill(this.auditPlanDataSet.AuditPlanRes);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.FinanceDpt' table. You can move, or remove it, as needed.
+            this.financeDptTableAdapter.Fill(this.auditPlanDataSet.FinanceDpt);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.MarketDpt' table. You can move, or remove it, as needed.
+            this.marketDptTableAdapter.Fill(this.auditPlanDataSet.MarketDpt);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.HRDept' table. You can move, or remove it, as needed.
+            this.hRDeptTableAdapter.Fill(this.auditPlanDataSet.HRDept);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.PARCOAvi' table. You can move, or remove it, as needed.
+            this.pARCOAviTableAdapter.Fill(this.auditPlanDataSet.PARCOAvi);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.ChaklalaAvi' table. You can move, or remove it, as needed.
+            this.chaklalaAviTableAdapter.Fill(this.auditPlanDataSet.ChaklalaAvi);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.KeemariAvi' table. You can move, or remove it, as needed.
+            this.keemariAviTableAdapter.Fill(this.auditPlanDataSet.KeemariAvi);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.PARCODepo' table. You can move, or remove it, as needed.
+            this.pARCODepoTableAdapter.Fill(this.auditPlanDataSet.PARCODepo);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.ChaklalaDepo' table. You can move, or remove it, as needed.
+            this.chaklalaDepoTableAdapter.Fill(this.auditPlanDataSet.ChaklalaDepo);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.KeemariDepo' table. You can move, or remove it, as needed.
+            this.keemariDepoTableAdapter.Fill(this.auditPlanDataSet.KeemariDepo);
+
+        }
+        #region--------------------------HR Department-----------------------------------------------------------
+        public void HR_Clr()
+        {
+            HR_Date.Text = null; HR_Pur_Air_Tic_TB.Clear(); HR_Main_St_Cars_TB.Clear(); HR_HotlB_TB.Clear(); HR_Tran_Arr_TB.Clear();
+            HR_PhotoC_TB.Clear();
+        }
+        public void HR_Result()
+        {
+            int j = 0;
+            while (Res_GV.Rows.Count > j)
+            {
+                string dept = Res_GV.Rows[j].Cells[1].Value.ToString();
+                if (dept == "HR Department")
+                {
+                    try
+                    {
+                        SQL_Queires SQ = new SQL_Queires();
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                j++;
+            }
+            int Low = risk.Next(1, 40);
+            int Medium = risk.Next(41, 70);
+            int High = risk.Next(71, 100);
+            int i = 0;
+            double val = 0;
+            while (HR_GV.Rows.Count > i)
+            {
+                val += double.Parse(HR_GV.Rows[i].Cells[2].Value.ToString()) + double.Parse(HR_GV.Rows[i].Cells[3].Value.ToString()) +
+                    double.Parse(HR_GV.Rows[i].Cells[4].Value.ToString()) + double.Parse(HR_GV.Rows[i].Cells[5].Value.ToString()) +
+                    double.Parse(HR_GV.Rows[i].Cells[6].Value.ToString());
+                i++;
+            }
+            if (val > 6000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('HR Department', '" + HighFreq + "', '" + High + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 6000000 && val > 3000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('HR Department', '" + MedFreq + "', '" + Medium + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 3000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('HR Department', '" + LowFreq + "', '" + Low + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+        }
+        #endregion
+        
     }
 }
