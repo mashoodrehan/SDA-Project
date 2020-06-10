@@ -9553,6 +9553,7 @@
             this.KI_AInfo_Btn.TabIndex = 45;
             this.KI_AInfo_Btn.Text = "Add Info";
             this.KI_AInfo_Btn.UseVisualStyleBackColor = false;
+            this.KI_AInfo_Btn.Click += new System.EventHandler(this.KI_AInfo_Btn_Click);
             // 
             // KI_QD_Sale_TB
             // 
@@ -10040,6 +10041,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 516);
+            this.Controls.Add(this.KemariInstPnl);
+            this.Controls.Add(this.ChaklalaInstPnl);
+            this.Controls.Add(this.ParcoInstPnl);
+            this.Controls.Add(this.KemariAviPnl);
+            this.Controls.Add(this.ChaklalaAVIPnl);
+            this.Controls.Add(this.ParcoAVIPnl);
             this.Controls.Add(this.HRMPnl);
             this.Controls.Add(this.MarketPnl);
             this.Controls.Add(this.FinancePnl);
@@ -10047,12 +10054,6 @@
             this.Controls.Add(this.ResultDptPnl);
             this.Controls.Add(this.HomePnl);
             this.Controls.Add(this.DeptPnl);
-            this.Controls.Add(this.KemariInstPnl);
-            this.Controls.Add(this.ChaklalaInstPnl);
-            this.Controls.Add(this.ParcoInstPnl);
-            this.Controls.Add(this.KemariAviPnl);
-            this.Controls.Add(this.ChaklalaAVIPnl);
-            this.Controls.Add(this.ParcoAVIPnl);
             this.Name = "Form1";
             this.Text = "Audit Plan";
             this.Load += new System.EventHandler(this.Form1_Load);

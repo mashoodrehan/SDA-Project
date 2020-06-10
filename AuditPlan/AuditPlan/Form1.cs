@@ -352,6 +352,115 @@ namespace AuditPlan
             }
         }
         #endregion
+        #region===============================================Keemari Depo===============================================
+        public void TotalPurStckKemInst()
+        {
+            KI_TPSM_P_Stck_TB.Text = ((Convert.ToInt64(KI_MS_P_IN_TB.Text) * 30) + (Convert.ToInt64(KI_HOBC_P_IN_TB.Text) * 30) + (Convert.ToInt64(KI_HSD_P_IN_TB.Text) * 30) + (Convert.ToInt64(KI_KO_P_IN_TB.Text) * 30)).ToString();
+        }
+        public void TotalPurAmntKemInst()
+        {
+            KI_TPSM_P_Prc_TB.Text = ((Convert.ToInt64(KI_MS_P_Prc_TB.Text) * 30) + (Convert.ToInt64(KI_HOBC_P_Prc_TB.Text) * 30) + (Convert.ToInt64(KI_HSD_P_Prc_TB.Text) * 30) + (Convert.ToInt64(KI_KO_P_Prc_TB.Text) * 30)).ToString();
+        }
+        public void TotalTranStckKemInst()
+        {
+            KI_TTS_T_Stck_TB.Text = ((Convert.ToInt64(KI_MS_T_TS_TB.Text) * 30) + (Convert.ToInt64(KI_HOBC_T_TS_TB.Text) * 30) + (Convert.ToInt64(KI_HSD_T_TS_TB.Text) * 30) + (Convert.ToInt64(KI_KO_T_TS_TB.Text) * 30)).ToString();
+        }
 
+        public void TotalSaleAmntKemInst()
+        {
+            KI_TSA_S_Amnt_TB.Text = ((Convert.ToInt64(KI_MS_S_Prc_TB.Text) * 30) + (Convert.ToInt64(KI_HOBC_S_Prc_TB.Text) * 30) + (Convert.ToInt64(KI_HSD_S_Prc_TB.Text) * 30) + (Convert.ToInt64(KI_KO_S_Prc_TB.Text) * 30)).ToString();
+        }
+
+        public void DepoPDStckKemInst()
+        {
+            KI_SD_Stck_TB.Text = (Convert.ToInt64(KI_TTS_T_Stck_TB.Text) / 90).ToString();
+            KI_DD_Stck_TB.Text = (Convert.ToInt64(KI_TTS_T_Stck_TB.Text) / 90).ToString();
+            KI_QD_Stck_TB.Text = (Convert.ToInt64(KI_TTS_T_Stck_TB.Text) / 90).ToString();
+        }
+        public void DepoTotStckKemInst()
+        {
+            KI_Depo_TStck.Text = KI_TTS_T_Stck_TB.Text;
+        }
+        public void DepoPDSaleKemInst()
+        {
+            KI_SD_Sale_TB.Text = (Convert.ToInt64(KI_SD_Stck_TB.Text) * 125).ToString();
+            KI_DD_Sale_TB.Text = (Convert.ToInt64(KI_DD_Stck_TB.Text) * 130).ToString();
+            KI_QD_Sale_TB.Text = (Convert.ToInt64(KI_QD_Stck_TB.Text) * 122).ToString();
+        }
+        public void DepoTotSaleKemInst()
+        {
+            KI_Depo_TAmnt.Text = ((Convert.ToInt64(KI_SD_Sale_TB.Text) + Convert.ToInt64(KI_DD_Sale_TB.Text) + Convert.ToInt64(KI_QD_Sale_TB.Text)) * 30).ToString();
+        }
+
+        public void KID_Clr()
+        {
+            KD_Date.Text = null; KI_MS_P_IN_TB.Clear(); KI_HOBC_P_IN_TB.Clear(); KI_HSD_P_IN_TB.Clear(); KI_KO_P_IN_TB.Clear(); KI_MS_P_Prc_TB.Clear();
+            KI_HOBC_P_Prc_TB.Clear(); KI_HSD_P_Prc_TB.Clear(); KI_KO_P_Prc_TB.Clear(); KI_MS_T_IN_TB.Clear(); KI_HOBC_T_IN_TB.Clear();
+            KI_HSD_T_IN_TB.Clear(); KI_KO_T_IN_TB.Clear(); KI_MS_T_TS_TB.Clear(); KI_HOBC_T_TS_TB.Clear(); KI_HSD_T_TS_TB.Clear();
+            KI_KO_T_TS_TB.Clear(); KI_MS_S_IN_TB.Clear(); KI_HOBC_S_IN_TB.Clear(); KI_HSD_S_IN_TB.Clear(); KI_KO_S_IN_TB.Clear();
+            KI_MS_S_Prc_TB.Clear(); KI_HOBC_S_Prc_TB.Clear(); KI_HSD_S_Prc_TB.Clear(); KI_KO_S_Prc_TB.Clear(); KI_TPSM_P_Prc_TB.Clear();
+            KI_TPSM_P_Stck_TB.Clear(); KI_TTS_T_Stck_TB.Clear(); KI_TSA_S_Amnt_TB.Clear(); KI_SD_Sale_TB.Clear(); KI_SD_Stck_TB.Clear();
+            KI_DD_Sale_TB.Clear(); KI_DD_Stck_TB.Clear(); KI_QD_Sale_TB.Clear(); KI_QD_Stck_TB.Clear(); KI_Depo_TAmnt.Clear();
+            KI_Depo_TStck.Clear();
+        }
+
+        public void KeemariDepo_Result()
+        {
+            int j = 0;
+            while (Res_GV.Rows.Count > j)
+            {
+                string dept = Res_GV.Rows[j].Cells[1].Value.ToString();
+                if (dept == "Keemari Depo")
+                {
+                    try
+                    {
+                        SQL_Queires SQ = new SQL_Queires();
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                j++;
+            }
+            int i = 0;
+            int Low = risk.Next(1, 40);
+            int Medium = risk.Next(41, 70);
+            int High = risk.Next(71, 100);
+            double val = 0;
+            while (KemD_GV.Rows.Count > i)
+            {
+                val += double.Parse(KemD_GV.Rows[i].Cells[11].Value.ToString());
+                i++;
+            }
+            if (val > 25000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Keemari Depo', '" + HighFreq + "', '" + High + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 25000000 && val > 15000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Keemari Depo', '" + MedFreq + "', '" + Medium + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 15000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Keemari Depo', '" + LowFreq + "', '" + Low + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+        }
+        private void KI_AInfo_Btn_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }
