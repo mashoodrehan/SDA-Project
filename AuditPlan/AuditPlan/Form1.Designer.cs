@@ -8877,6 +8877,7 @@
             this.KI_Del_Btn.TabIndex = 49;
             this.KI_Del_Btn.Text = "Delete";
             this.KI_Del_Btn.UseVisualStyleBackColor = false;
+            this.KI_Del_Btn.Click += new System.EventHandler(this.KI_Del_Btn_Click);
             // 
             // KemD_GV
             // 
@@ -8958,6 +8959,7 @@
             this.KemD_GV.ReadOnly = true;
             this.KemD_GV.Size = new System.Drawing.Size(934, 182);
             this.KemD_GV.TabIndex = 89;
+            this.KemD_GV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.KemD_GV_CellClick);
             // 
             // iDDataGridViewTextBoxColumn
             // 

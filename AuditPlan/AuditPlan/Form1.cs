@@ -547,7 +547,72 @@ namespace AuditPlan
                 con.Close();
             }
         }
-        #endregion
 
+        private void KemD_GV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string id = KemD_GV.SelectedRows[0].Cells[0].Value.ToString();
+                KD_Date.Text = KemD_GV.SelectedRows[0].Cells[1].Value.ToString();
+                KI_MS_P_IN_TB.Text = KemD_GV.SelectedRows[0].Cells[2].Value.ToString();
+                KI_HOBC_P_IN_TB.Text = KemD_GV.SelectedRows[0].Cells[3].Value.ToString();
+                KI_HSD_P_IN_TB.Text = KemD_GV.SelectedRows[0].Cells[4].Value.ToString();
+                KI_KO_P_IN_TB.Text = KemD_GV.SelectedRows[0].Cells[5].Value.ToString();
+                KI_TPSM_P_Stck_TB.Text = KemD_GV.SelectedRows[0].Cells[6].Value.ToString();
+                KI_MS_P_Prc_TB.Text = KemD_GV.SelectedRows[0].Cells[7].Value.ToString();
+                KI_HOBC_P_Prc_TB.Text = KemD_GV.SelectedRows[0].Cells[8].Value.ToString();
+                KI_HSD_P_Prc_TB.Text = KemD_GV.SelectedRows[0].Cells[9].Value.ToString();
+                KI_KO_P_Prc_TB.Text = KemD_GV.SelectedRows[0].Cells[10].Value.ToString();
+                KI_TPSM_P_Prc_TB.Text = KemD_GV.SelectedRows[0].Cells[11].Value.ToString();
+                KI_MS_T_IN_TB.Text = KemD_GV.SelectedRows[0].Cells[12].Value.ToString();
+                KI_HOBC_T_IN_TB.Text = KemD_GV.SelectedRows[0].Cells[13].Value.ToString();
+                KI_HSD_T_IN_TB.Text = KemD_GV.SelectedRows[0].Cells[14].Value.ToString();
+                KI_KO_T_IN_TB.Text = KemD_GV.SelectedRows[0].Cells[15].Value.ToString();
+                KI_MS_T_TS_TB.Text = KemD_GV.SelectedRows[0].Cells[16].Value.ToString();
+                KI_HOBC_T_TS_TB.Text = KemD_GV.SelectedRows[0].Cells[17].Value.ToString();
+                KI_HSD_T_TS_TB.Text = KemD_GV.SelectedRows[0].Cells[18].Value.ToString();
+                KI_KO_T_TS_TB.Text = KemD_GV.SelectedRows[0].Cells[19].Value.ToString();
+                KI_TTS_T_Stck_TB.Text = KemD_GV.SelectedRows[0].Cells[20].Value.ToString();
+                KI_MS_S_IN_TB.Text = KemD_GV.SelectedRows[0].Cells[21].Value.ToString();
+                KI_HOBC_S_IN_TB.Text = KemD_GV.SelectedRows[0].Cells[22].Value.ToString();
+                KI_HSD_S_IN_TB.Text = KemD_GV.SelectedRows[0].Cells[23].Value.ToString();
+                KI_KO_S_IN_TB.Text = KemD_GV.SelectedRows[0].Cells[24].Value.ToString();
+                KI_MS_S_Prc_TB.Text = KemD_GV.SelectedRows[0].Cells[25].Value.ToString();
+                KI_HOBC_S_Prc_TB.Text = KemD_GV.SelectedRows[0].Cells[26].Value.ToString();
+                KI_HSD_S_Prc_TB.Text = KemD_GV.SelectedRows[0].Cells[27].Value.ToString();
+                KI_KO_S_Prc_TB.Text = KemD_GV.SelectedRows[0].Cells[28].Value.ToString();
+                KI_TSA_S_Amnt_TB.Text = KemD_GV.SelectedRows[0].Cells[29].Value.ToString();
+                KI_SD_Stck_TB.Text = KemD_GV.SelectedRows[0].Cells[30].Value.ToString();
+                KI_DD_Stck_TB.Text = KemD_GV.SelectedRows[0].Cells[31].Value.ToString();
+                KI_QD_Stck_TB.Text = KemD_GV.SelectedRows[0].Cells[32].Value.ToString();
+                KI_Depo_TStck.Text = KemD_GV.SelectedRows[0].Cells[33].Value.ToString();
+                KI_SD_Sale_TB.Text = KemD_GV.SelectedRows[0].Cells[34].Value.ToString();
+                KI_DD_Sale_TB.Text = KemD_GV.SelectedRows[0].Cells[35].Value.ToString();
+                KI_QD_Sale_TB.Text = KemD_GV.SelectedRows[0].Cells[36].Value.ToString();
+                KI_Depo_TAmnt.Text = KemD_GV.SelectedRows[0].Cells[37].Value.ToString();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KI_Del_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    string id = KemD_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SQ.DeleteData("DELETE FROM KeemariDepo WHERE ID = '" + id + "';");
+                    SQ.ShowGVData("Select * FROM KeemariDepo", KemD_GV);
+                    KID_Clr();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+        #endregion
     }
 }
