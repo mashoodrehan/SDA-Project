@@ -1857,6 +1857,176 @@ namespace AuditPlan
             FD_CSPLW_CB.DataSource = Close;
             FD_CSPLW_CB.Text = null;
         }
+
         #endregion
+
+        private void FD_Pnl2_AddInfo_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQL_Queires SQ = new SQL_Queires();
+                int j = 0;
+                while (FD1_GV.Rows.Count > j)
+                {
+                    string val = FD1_GV.Rows[j].Cells[1].Value.ToString();
+                    if (FD_Date.Text == val)
+                    {
+                        SQ.DeleteData("DELETE FROM MarketDpt WHERE Date = '" + val + "';");
+                    }
+                    j++;
+                }
+                String query = "Insert INTO FinanceDpt (Date, Sale_Loc_Wise, LossesGains, Cust_Invic, Pur_QtyValLoc, Pur_Inv_Sup, Closing_Stck," +
+                "Cust_Acct, Sales_ProdCust, Pay_Rec_Cust, Cred_lim, Pay_SupCnt, Pay_Emp, Imp_replenish, Sal_pros_Pay_Emp, Loans_Adv_Emp, " +
+                "Profnd_Invst, Pension, Pay_SupCnt_Bnk, Cash_Emp, Main_Bnk_Acct, Bank_Recon) VALUES('" + FD_Date.Text + "', '" + FD_SLW_CB.Text + "', " +
+                "'" + FD_LGLW_CB.Text + "', '" + FD_CIPLW_Tb.Text + "', '" + FD_PQVLW_CB.Text + "', '" + FD_PISW_TB.Text + "', " +
+                "'" + FD_CSPLW_CB.Text + "', '" + FD_CA_CB.Text + "', '" + FD_SPWCW_TB.Text + "', '" + FD_PRC_CB.Text + "'," +
+                " '" + FD_CL_TB.Text + "', '" + FD_PSC_CB.Text + "', '" + FD_PE_TB.Text + "', '" + FD_IRL_TB.Text + "', " +
+                "'" + FD_SPPE_TB.Text + "', '" + FD_LAE_TB.Text + "', '" + FD_PFDI_TB.Text + "', '" + FD_PFMI_TB.Text + "', " +
+                "'" + FD_PSCB_CB.Text + "', '" + FD_CPE_TB.Text + "', '" + FD_MBA_TB.Text + "', '" + FD_BR_TB.Text + "')";
+                SQ.InsertData(query);
+                MessageBox.Show("Success!");
+                FD_Clr();
+                SQ.ShowGVData("Select * FROM FinanceDpt", FD1_GV);
+                SQ.ShowGVData("Select * FROM FinanceDpt", FD2_GV);
+                FD_Result();
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+            }
+        }
+
+        private void FD1_GV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string id = FD1_GV.SelectedRows[0].Cells[0].Value.ToString();
+                FD_Date.Text = FD1_GV.SelectedRows[0].Cells[1].Value.ToString();
+                FD_SLW_CB.Text = FD1_GV.SelectedRows[0].Cells[2].Value.ToString();
+                FD_LGLW_CB.Text = FD1_GV.SelectedRows[0].Cells[3].Value.ToString();
+                FD_CIPLW_Tb.Text = FD1_GV.SelectedRows[0].Cells[4].Value.ToString();
+                FD_PQVLW_CB.Text = FD1_GV.SelectedRows[0].Cells[5].Value.ToString();
+                FD_PISW_TB.Text = FD1_GV.SelectedRows[0].Cells[6].Value.ToString();
+                FD_CSPLW_CB.Text = FD1_GV.SelectedRows[0].Cells[7].Value.ToString();
+                FD_CA_CB.Text = FD1_GV.SelectedRows[0].Cells[8].Value.ToString();
+                FD_SPWCW_TB.Text = FD1_GV.SelectedRows[0].Cells[9].Value.ToString();
+                FD_PRC_CB.Text = FD1_GV.SelectedRows[0].Cells[10].Value.ToString();
+                FD_CL_TB.Text = FD1_GV.SelectedRows[0].Cells[11].Value.ToString();
+                FD_PSC_CB.Text = FD1_GV.SelectedRows[0].Cells[12].Value.ToString();
+                FD_PE_TB.Text = FD1_GV.SelectedRows[0].Cells[13].Value.ToString();
+                FD_IRL_TB.Text = FD1_GV.SelectedRows[0].Cells[14].Value.ToString();
+                FD_SPPE_TB.Text = FD1_GV.SelectedRows[0].Cells[15].Value.ToString();
+                FD_LAE_TB.Text = FD1_GV.SelectedRows[0].Cells[16].Value.ToString();
+                FD_PFDI_TB.Text = FD1_GV.SelectedRows[0].Cells[17].Value.ToString();
+                FD_PFMI_TB.Text = FD1_GV.SelectedRows[0].Cells[18].Value.ToString();
+                FD_PSCB_CB.Text = FD1_GV.SelectedRows[0].Cells[19].Value.ToString();
+                FD_CPE_TB.Text = FD1_GV.SelectedRows[0].Cells[20].Value.ToString();
+                FD_MBA_TB.Text = FD1_GV.SelectedRows[0].Cells[21].Value.ToString();
+                FD_BR_TB.Text = FD1_GV.SelectedRows[0].Cells[22].Value.ToString();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void FD_Pnl1_Delete_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    string id = FD1_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SQ.DeleteData("DELETE FROM FinanceDpt WHERE ID = '" + id + "';");
+                    SQ.ShowGVData("Select * FROM FinanceDpt", FD1_GV);
+                    SQ.ShowGVData("Select * FROM FinanceDpt", FD2_GV);
+                    FD_Clr();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void FD_Pnl2_Delete_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    string id = FD2_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SQ.DeleteData("DELETE FROM FinanceDpt WHERE ID = '" + id + "';");
+                    SQ.ShowGVData("Select * FROM FinanceDpt", FD2_GV);
+                    SQ.ShowGVData("Select * FROM FinanceDpt", FD1_GV);
+                    FD_Clr();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void FD_Pnl2_Update_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string comp = FD1_GV.SelectedRows[0].Cells[1].Value.ToString();
+                if (FD_Date.Text == comp)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    con.Open();
+                    string id = FD2_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SqlDataAdapter Update = new SqlDataAdapter("UPDATE FinanceDpt SET Date= '" + FD_Date.Text + "', Sale_Loc_Wise= '" + FD_SLW_CB.Text + "', LossesGains= '" + FD_LGLW_CB.Text + "', " +
+                        "Cust_Invic= '" + FD_CIPLW_Tb.Text + "', Pur_QtyValLoc= '" + FD_PQVLW_CB.Text + "', Closing_Stck= '" + FD_CSPLW_CB.Text + "', Cust_Acct= '" + FD_CA_CB.Text + "', " +
+                        "Sales_ProdCust= '" + FD_SPWCW_TB.Text + "', Pay_Rec_Cust= '" + FD_PRC_CB.Text + "', Cred_lim= '" + FD_CL_TB.Text + "', Pay_SupCnt= '" + FD_PSC_CB.Text + "', " +
+                        "Pay_Emp= '" + FD_PE_TB.Text + "', Imp_replenish= '" + FD_IRL_TB.Text + "', Sal_pros_Pay_Emp= '" + FD_SPPE_TB.Text + "', Loans_Adv_Emp= '" + FD_LAE_TB.Text + "', " +
+                        "Profnd_Invst= '" + FD_PFDI_TB.Text + "', Pension= '" + FD_PFMI_TB.Text + "', Pay_SupCnt_Bnk= '" + FD_PSCB_CB.Text + "', Cash_Emp= '" + FD_CPE_TB.Text + "', " +
+                        "Main_Bnk_Acct= '" + FD_MBA_TB.Text + "', Bank_Recon= '" + FD_BR_TB.Text + "' WHERE ID = '" + id + "'", con);
+                    Update.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+                    SQ.ShowGVData("SELECT * FROM FinanceDpt", FD1_GV);
+                    SQ.ShowGVData("SELECT * FROM FinanceDpt", FD2_GV);
+                    FD_Clr();
+                    MessageBox.Show("Updated Successfully");
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void FD_SPPE_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (FD_SPPE_TB.Text == String.Empty)
+                {
+                    FD_PFDI_TB.Clear();
+                    FD_PFMI_TB.Clear();
+                }
+                FD_PFDI_TB.Text = ((Convert.ToInt64(FD_SPPE_TB.Text) * 10) / 100).ToString();
+                FD_PFMI_TB.Text = ((Convert.ToInt64(FD_SPPE_TB.Text) * 2.5) / 100).ToString();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void FD_BR_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (FD_BR_TB.Text == String.Empty)
+                {
+                    FD_MBA_TB.Clear();
+                }
+                FD_MBA_TB.Text = (Convert.ToInt64(FD_PSCB_CB.Text) / Convert.ToInt64(FD_BR_TB.Text)).ToString();
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
