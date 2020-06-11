@@ -2160,5 +2160,121 @@ namespace AuditPlan
             }
         }
         #endregion
+
+        private void C_AInfo_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQL_Queires SQ = new SQL_Queires();
+                int j = 0;
+                while (ChakD_GV.Rows.Count > j)
+                {
+                    string val = ChakD_GV.Rows[j].Cells[1].Value.ToString();
+                    if (CD_Date.Text == val)
+                    {
+                        SQ.DeleteData("DELETE FROM ChaklalaDepo WHERE Date = '" + val + "';");
+                    }
+                    j++;
+                }
+                double MS_SaleStck = (Convert.ToInt64(C_MS_P_IN_TB.Text) * Convert.ToInt64(C_MS_S_Stck_TB.Text)) / 100;
+                double HOBC_SaleStck = (Convert.ToInt64(C_HOBC_P_IN_TB.Text) * Convert.ToInt64(C_HOBC_S_Stck_TB.Text)) / 100;
+                double HSD_SaleStck = (Convert.ToInt64(C_HSD_P_IN_TB.Text) * Convert.ToInt64(C_HSD_S_Stck_TB.Text)) / 100;
+                double KO_SaleStck = (Convert.ToInt64(C_KO_P_IN_TB.Text) * Convert.ToInt64(C_KO_S_Stck_TB.Text)) / 100;
+                double MS_CStck = Convert.ToInt64(C_MS_P_IN_TB.Text) - (Convert.ToInt64(C_MS_T_Stck_TB.Text) + MS_SaleStck);
+                double HOBC_CStck = Convert.ToInt64(C_HOBC_P_IN_TB.Text) - (Convert.ToInt64(C_HOBC_T_Stck_TB.Text) + HOBC_SaleStck);
+                double HSD_CStck = Convert.ToInt64(C_HSD_P_IN_TB.Text) - (Convert.ToInt64(C_HSD_T_Stck_TB.Text) + HSD_SaleStck);
+                double KO_CStck = Convert.ToInt64(C_KO_P_IN_TB.Text) - (Convert.ToInt64(C_KO_T_Stck_TB.Text) + KO_SaleStck);
+                String query = "Insert INTO ChaklalaDepo (Date, MS_Pur_Ltr, HOBC_Pur_Ltr, HSD_Pur_Ltr, KO_Pur_Ltr, Pur_Tstock, MS_Pur_Amnt, HOBC_Pur_Amnt," +
+                "HSD_Pur_Amnt, KO_Pur_Amnt, Pur_Tamount, MS_Tran_Per, HOBC_Tran_Per, HSD_Tran_Per, KO_Tran_Per, MS_Tran_Stck, HOBC_Tran_Stck, " +
+                "HSD_Tran_Stck, KO_Tran_Stck, Tran_Tstock, MS_Sale_Per, HOBC_Sale_per, HSD_Sale_Per, KO_Sale_Per, MS_Sale_Amnt, HOBC_Sale_Amnt, HSD_Sale_Amnt," +
+                "KO_Sale_Amnt, Sale_Tamount, BadD_Stck, FaisD_Stck, SarD_Stck, PeshD_Stck, BannD_Stck, Depo_Tstock, BadD_Sale, FaisD_Sale, SarD_Sale, PeshD_Sale, " +
+                "BannD_Sale, Depo_TSale, MS_Pur_Prc, HOBC_Pur_Prc, HSD_Pur_Prc, KO_Pur_Prc, MS_ClosingS, HOBC_ClosingS, HSD_ClosingS, KO_ClosingS, MS_Sale_Prc, HOBC_Sale_Prc," +
+                "HSD_Sale_Prc, KO_Sale_Prc) VALUES('" + CD_Date.Text + "', '" + C_MS_P_IN_TB.Text + "', '" + C_HOBC_P_IN_TB.Text + "', '" + C_HSD_P_IN_TB.Text + "', '" + C_KO_P_IN_TB.Text + "', '" + C_TPSM_P_Stck_TB.Text + "', " +
+                "'" + C_MS_P_Prc_TB.Text + "', '" + C_HOBC_P_Prc_TB.Text + "', '" + C_HSD_P_Prc_TB.Text + "', '" + C_KO_P_Prc_TB.Text + "', '" + C_TPSM_P_Amnt_TB.Text + "', '" + C_MS_T_IN_TB.Text + "', " +
+                "'" + C_HOBC_T_IN_TB.Text + "', '" + C_HSD_T_IN_TB.Text + "', '" + C_KO_T_IN_TB.Text + "', '" + C_MS_T_Stck_TB.Text + "', '" + C_HOBC_T_Stck_TB.Text + "', '" + C_HSD_T_Stck_TB.Text + "', " +
+                "'" + C_KO_T_Stck_TB.Text + "', '" + C_TS_T_TStck_TB.Text + "', '" + C_MS_S_Stck_TB.Text + "', '" + C_HOBC_S_Stck_TB.Text + "', '" + C_HSD_S_Stck_TB.Text + "', '" + C_KO_S_Stck_TB.Text + "', " +
+                "'" + C_MS_S_Amnt_TB.Text + "', '" + C_HOBC_S_Amnt_TB.Text + "', '" + C_HSD_S_Amnt_TB.Text + "', '" + C_KO_S_Amnt_TB.Text + "', '" + C_TSM_S_Amnt_TB.Text + "', '" + C_BBD_Stck_TB.Text + "', '" + C_FD_Stck_TB.Text + "', " +
+                "'" + C_SD_Stck_TB.Text + "', '" + C_PD_Stck_TB.Text + "','" + C_BD_Stck_TB.Text + "','" + C_Depo_TStck.Text + "', '" + C_BBD_Sale_TB.Text + "', '" + C_FD_Sale_TB.Text + "', '" + C_SD_Sale_TB.Text + "', " +
+                "'" + C_PD_Sale_TB.Text + "','" + C_BD_Sale_TB.Text + "','" + C_Depo_TAmnt.Text + "', " +
+                "'" + 90 + "', '" + 100 + "', '" + 115 + "', '" + 110 + "', '" + MS_CStck + "', '" + HOBC_CStck + "', '" + HSD_CStck + "', '" + KO_CStck + "', '" + 98 + "', '" + 116 + "', '" + 125 + "', '" + 120 + "')";
+                SQ.InsertData(query);
+                MessageBox.Show("Success!");
+                CD_Clr();
+                SQ.ShowGVData("SELECT * FROM ChaklalaDepo", ChakD_GV);
+                ChaklalaDepo_Result();
+            }
+            catch (FormatException)
+            {
+            }
+        }
+
+        private void ChakD_GV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void C_Del_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    string id = ChakD_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SQ.DeleteData("DELETE FROM ChaklalaDepo WHERE ID = '" + id + "';");
+                    SQ.ShowGVData("Select * FROM ChaklalaDepo", ChakD_GV);
+                    CD_Clr();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_Update_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string comp = ChakD_GV.SelectedRows[0].Cells[1].Value.ToString();
+
+                if (CD_Date.Text == comp)
+                {
+                    double MS_SaleStck = (Convert.ToInt64(C_MS_P_IN_TB.Text) * Convert.ToInt64(C_MS_S_Stck_TB.Text)) / 100;
+                    double HOBC_SaleStck = (Convert.ToInt64(C_HOBC_P_IN_TB.Text) * Convert.ToInt64(C_HOBC_S_Stck_TB.Text)) / 100;
+                    double HSD_SaleStck = (Convert.ToInt64(C_HSD_P_IN_TB.Text) * Convert.ToInt64(C_HSD_S_Stck_TB.Text)) / 100;
+                    double KO_SaleStck = (Convert.ToInt64(C_KO_P_IN_TB.Text) * Convert.ToInt64(C_KO_S_Stck_TB.Text)) / 100;
+                    double MS_CStck = Convert.ToInt64(C_MS_P_IN_TB.Text) - (Convert.ToInt64(C_MS_T_Stck_TB.Text) + MS_SaleStck);
+                    double HOBC_CStck = Convert.ToInt64(C_HOBC_P_IN_TB.Text) - (Convert.ToInt64(C_HOBC_T_Stck_TB.Text) + HOBC_SaleStck);
+                    double HSD_CStck = Convert.ToInt64(C_HSD_P_IN_TB.Text) - (Convert.ToInt64(C_HSD_T_Stck_TB.Text) + HSD_SaleStck);
+                    double KO_CStck = Convert.ToInt64(C_KO_P_IN_TB.Text) - (Convert.ToInt64(C_KO_T_Stck_TB.Text) + KO_SaleStck);
+                    SQL_Queires SQ = new SQL_Queires();
+                    con.Open();
+                    string id = ChakD_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SqlDataAdapter Update = new SqlDataAdapter("UPDATE ChaklalaDepo SET Date= '" + CD_Date.Text + "', MS_Pur_Ltr= '" + C_MS_P_IN_TB.Text + "', HOBC_Pur_Ltr= '" + C_HOBC_P_IN_TB.Text + "', HSD_Pur_Ltr= '" + C_HSD_P_IN_TB.Text + "'," +
+                        "KO_Pur_Ltr= '" + C_KO_P_IN_TB.Text + "', Pur_Tstock= '" + C_TPSM_P_Stck_TB.Text + "', MS_Pur_Amnt= '" + C_MS_P_Prc_TB.Text + "', HOBC_Pur_Amnt= '" + C_HOBC_P_Prc_TB.Text + "', HSD_Pur_Amnt= '" + C_HSD_P_Prc_TB.Text + "'," +
+                        "KO_Pur_Amnt= '" + C_KO_P_Prc_TB.Text + "', Pur_Tamount= '" + C_TPSM_P_Amnt_TB.Text + "', MS_Tran_Per= '" + C_MS_T_IN_TB.Text + "', HOBC_Tran_Per= '" + C_HOBC_T_IN_TB.Text + "', HSD_Tran_Per= '" + C_HSD_T_IN_TB.Text + "'," +
+                        "KO_Tran_Per= '" + C_KO_T_IN_TB.Text + "', MS_Tran_Stck= '" + C_MS_T_Stck_TB.Text + "', HOBC_Tran_Stck= '" + C_HOBC_T_Stck_TB.Text + "', HSD_Tran_Stck= '" + C_HSD_T_Stck_TB.Text + "', KO_Tran_Stck= '" + C_KO_T_Stck_TB.Text + "'," +
+                        "Tran_Tstock= '" + C_TS_T_TStck_TB.Text + "', MS_Sale_Per= '" + C_MS_S_Stck_TB.Text + "', HOBC_Sale_Per= '" + C_HOBC_S_Stck_TB.Text + "', HSD_Sale_Per= '" + C_HSD_S_Stck_TB.Text + "', KO_Sale_Per= '" + C_KO_S_Stck_TB.Text + "'," +
+                        "MS_Sale_Amnt= '" + C_MS_S_Amnt_TB.Text + "', HOBC_Sale_Amnt= '" + C_HOBC_S_Amnt_TB.Text + "', HSD_Sale_Amnt= '" + C_HSD_S_Amnt_TB.Text + "', KO_Sale_Amnt= '" + C_KO_S_Amnt_TB.Text + "', Sale_Tamount= '" + C_TSM_S_Amnt_TB.Text + "'," +
+                        "BadD_Stck= '" + C_BBD_Stck_TB.Text + "', FaisD_Stck= '" + C_FD_Stck_TB.Text + "', SarD_Stck= '" + C_SD_Stck_TB.Text + "', PeshD_Stck= '" + C_PD_Stck_TB.Text + "', BannD_Stck= '" + C_BD_Stck_TB.Text + "', " +
+                        "Depo_Tstock= '" + C_Depo_TStck.Text + "', BadD_Sale= '" + C_BBD_Sale_TB.Text + "', FaisD_Sale= '" + C_FD_Sale_TB.Text + "', SarD_Sale= '" + C_SD_Sale_TB.Text + "', PeshD_Sale= '" + C_PD_Sale_TB.Text + "', " +
+                        "BannD_Sale= '" + C_BD_Sale_TB.Text + "', Depo_TSale= '" + C_Depo_TAmnt.Text + "', MS_ClosingS= '" + MS_CStck + "', HOBC_ClosingS= '" + HOBC_CStck + "'," +
+                        "HSD_ClosingS= '" + HSD_CStck + "', KO_ClosingS= '" + KO_CStck + "' WHERE ID = '" + id + "'", con);
+                    Update.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+                    SQ.ShowGVData("SELECT * FROM ChaklalaDepo", ChakD_GV);
+                    CD_Clr();
+                    MessageBox.Show("Updated Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("You cannot change date");
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }
