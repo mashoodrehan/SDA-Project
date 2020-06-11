@@ -1728,6 +1728,135 @@ namespace AuditPlan
             FD_CA_CB.DataSource = Sale;
             FD_CA_CB.Text = null;
         }
+        public void LGLW()
+        {
+            double val = 0; double val1 = 0; double val2 = 0; double val3 = 0; double val4 = 0; double val5 = 0;
+            int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0;
+            List<string> Loses = new List<string>();
+            while (CAVI_GV.Rows.Count > a)
+            {
+                val += Convert.ToInt64(CAVI_GV.Rows[a].Cells[4].Value);
+                a++;
+            }
+            while (ChakD_GV.Rows.Count > b)
+            {
+                val1 += Convert.ToInt64(ChakD_GV.Rows[b].Cells[6].Value);
+                b++;
+            }
+            while (KemA_GV.Rows.Count > c)
+            {
+                val2 += Convert.ToInt64(KemA_GV.Rows[c].Cells[4].Value);
+                c++;
+            }
+            while (KemD_GV.Rows.Count > d)
+            {
+                val3 += Convert.ToInt64(KemD_GV.Rows[d].Cells[6].Value);
+                d++;
+            }
+            while (PAVI_GV.Rows.Count > e)
+            {
+                val4 += Convert.ToInt64(PAVI_GV.Rows[e].Cells[4].Value);
+                e++;
+            }
+            while (PARCOD_GV.Rows.Count > f)
+            {
+                val5 += Convert.ToInt64(PARCOD_GV.Rows[f].Cells[6].Value);
+                f++;
+            }
+            double LG = val + val1 + val2 + val3 + val4 + val5;
+            double set = (LG * 0.5) / 100;
+            double set2 = (LG * 0.8) / 100;
+            Loses.Add(set + " - " + set2);
+            FD_LGLW_CB.DataSource = Loses;
+            FD_LGLW_CB.Text = null;
+        }
+        public void PQVLW()
+        {
+            double val1 = 0; double val2 = 0; double val3 = 0; double val4 = 0; double val5 = 0; double val6 = 0;
+            int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0;
+            List<double> Pur = new List<double>();
+            List<double> Payment = new List<double>();
+            while (CAVI_GV.Rows.Count > a)
+            {
+                val1 += Convert.ToInt64(CAVI_GV.Rows[a].Cells[7].Value);
+                a++;
+            }
+            while (ChakD_GV.Rows.Count > b)
+            {
+                val2 += Convert.ToInt64(ChakD_GV.Rows[b].Cells[11].Value);
+                b++;
+            }
+            while (KemA_GV.Rows.Count > c)
+            {
+                val3 += Convert.ToInt64(KemA_GV.Rows[c].Cells[7].Value);
+                c++;
+            }
+            while (KemD_GV.Rows.Count > d)
+            {
+                val4 += Convert.ToInt64(KemD_GV.Rows[d].Cells[11].Value);
+                d++;
+            }
+            while (PAVI_GV.Rows.Count > e)
+            {
+                val5 += Convert.ToInt64(PAVI_GV.Rows[e].Cells[7].Value);
+                e++;
+            }
+            while (PARCOD_GV.Rows.Count > f)
+            {
+                val6 += Convert.ToInt64(PARCOD_GV.Rows[f].Cells[11].Value);
+                f++;
+            }
+            double PQ = val1 + val2 + val3 + val4 + val5 + val6;
+            double PQ2 = PQ + 200000000;
+            Pur.Add(PQ);
+            FD_PQVLW_CB.DataSource = Pur;
+            FD_PQVLW_CB.Text = null;
+            Payment.Add(PQ2);
+            FD_PSC_CB.DataSource = Payment;
+            FD_PSC_CB.Text = null;
+            FD_PSCB_CB.DataSource = Payment;
+            FD_PSCB_CB.Text = null;
+        }
+        public void CSPLW()
+        {
+            decimal val1 = 0; decimal val2 = 0; decimal val3 = 0; decimal val4 = 0; decimal val5 = 0; decimal val6 = 0;
+            int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0;
+            List<decimal> Close = new List<decimal>();
+            while (CAVI_GV.Rows.Count > a)
+            {
+                val1 += Convert.ToInt64(CAVI_GV.Rows[a].Cells[26].Value) + Convert.ToInt64(CAVI_GV.Rows[a].Cells[27].Value);
+                a++;
+            }
+            while (ChakD_GV.Rows.Count > b)
+            {
+                val2 += Convert.ToInt64(ChakD_GV.Rows[b].Cells[46].Value) + Convert.ToInt64(ChakD_GV.Rows[b].Cells[47].Value) + Convert.ToInt64(ChakD_GV.Rows[b].Cells[48].Value) + Convert.ToInt64(ChakD_GV.Rows[b].Cells[49].Value);
+                b++;
+            }
+            while (KemA_GV.Rows.Count > c)
+            {
+                val3 += Convert.ToInt64(KemA_GV.Rows[c].Cells[30].Value) + Convert.ToInt64(KemA_GV.Rows[c].Cells[31].Value);
+                c++;
+            }
+            while (KemD_GV.Rows.Count > d)
+            {
+                val4 += Convert.ToInt64(KemD_GV.Rows[d].Cells[42].Value) + Convert.ToInt64(KemD_GV.Rows[d].Cells[43].Value) + Convert.ToInt64(KemD_GV.Rows[d].Cells[44].Value) + Convert.ToInt64(KemD_GV.Rows[d].Cells[45].Value);
+                d++;
+            }
+            while (PAVI_GV.Rows.Count > e)
+            {
+                val5 += Convert.ToInt64(PAVI_GV.Rows[e].Cells[26].Value) + Convert.ToInt64(PAVI_GV.Rows[e].Cells[27].Value);
+                e++;
+            }
+            while (PARCOD_GV.Rows.Count > f)
+            {
+                val6 += Convert.ToInt64(PARCOD_GV.Rows[f].Cells[42].Value) + Convert.ToInt64(PARCOD_GV.Rows[f].Cells[43].Value) + Convert.ToInt64(PARCOD_GV.Rows[f].Cells[44].Value) + Convert.ToInt64(PARCOD_GV.Rows[f].Cells[45].Value);
+                f++;
+            }
+            decimal CS = val1 + val2 + val3 + val4 + val5 + val6;
+            Close.Add(CS);
+            FD_CSPLW_CB.DataSource = Close;
+            FD_CSPLW_CB.Text = null;
+        }
         #endregion
     }
 }
