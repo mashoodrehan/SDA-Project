@@ -1140,7 +1140,7 @@ namespace AuditPlan
         }
 
 
-        #endregion
+        
 
         private void MD_AddInfo_Btn_Click(object sender, EventArgs e)
         {
@@ -1569,5 +1569,165 @@ namespace AuditPlan
                 Markt_Clr();
             }
         }
+        #endregion
+        #region-------------------------------------Finance Department-------------------------------------------------------
+        public void FD_Result()
+        {
+            int j = 0;
+            SQL_Queires SQ = new SQL_Queires();
+            while (Res_GV.Rows.Count > j)
+            {
+                string dept = Res_GV.Rows[j].Cells[1].Value.ToString();
+                if (dept == "Invoices Section")
+                {
+                    try
+                    {
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                else if (dept == "Stock Section")
+                {
+                    try
+                    {
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                else if (dept == "Credit Control Department")
+                {
+                    try
+                    {
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                else if (dept == "Payable Section")
+                {
+                    try
+                    {
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                else if (dept == "Salary Section")
+                {
+                    try
+                    {
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                else if (dept == "Cash Section")
+                {
+                    try
+                    {
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                j++;
+            }
+            int Medium = risk.Next(41, 70);
+            int Medium1 = risk.Next(41, 70);
+            int Medium2 = risk.Next(41, 70);
+            int Medium3 = risk.Next(41, 70);
+            int Medium4 = risk.Next(41, 70);
+            int Medium5 = risk.Next(41, 70);
+            String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Invoices Section', '" + MedFreq + "', '" + Medium + "')";
+            String query1 = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Stock Section', '" + MedFreq + "', '" + Medium1 + "')";
+            String query2 = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Credit Control Department', '" + MedFreq + "', '" + Medium2 + "')";
+            String query3 = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Payable Section', '" + MedFreq + "', '" + Medium3 + "')";
+            String query4 = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Salary Section', '" + MedFreq + "', '" + Medium4 + "')";
+            String query5 = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Cash Section', '" + MedFreq + "', '" + Medium5 + "')";
+            SQ.InsertData(query);
+            SQ.InsertData(query1);
+            SQ.InsertData(query2);
+            SQ.InsertData(query3);
+            SQ.InsertData(query4);
+            SQ.InsertData(query5);
+            SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+        }
+        public void FD_Clr()
+        {
+            FD_Date.Text = null; FD_SLW_CB.Text = null; FD_LGLW_CB.Text = null; FD_CIPLW_Tb.Clear(); FD_PQVLW_CB.Text = null;
+            FD_PISW_TB.Clear(); FD_CSPLW_CB.Text = null; FD_CA_CB.Text = null; FD_SPWCW_TB.Clear(); FD_PRC_CB.Text = null;
+            FD_CL_TB.Clear(); FD_PSC_CB.Text = null; FD_PE_TB.Clear();
+            FD_IRL_TB.Clear(); FD_SPPE_TB.Clear(); FD_LAE_TB.Clear(); FD_PFDI_TB.Clear(); FD_PFMI_TB.Clear();
+            FD_PSCB_CB.Text = null; FD_CPE_TB.Clear(); FD_MBA_TB.Clear(); FD_BR_TB.Clear();
+        }
+        public void SLW()
+        {
+            decimal val = 0; decimal val1 = 0; decimal val2 = 0; decimal val3 = 0; decimal val4 = 0; decimal val5 = 0; decimal val6 = 0;
+            int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0, p = 0;
+            List<decimal> Sale = new List<decimal>();
+            while (CAVI_GV.Rows.Count > i)
+            {
+                val += Convert.ToInt64(CAVI_GV.Rows[i].Cells[17].Value);
+                i++;
+            }
+            while (ChakD_GV.Rows.Count > j)
+            {
+                val1 += Convert.ToInt64(ChakD_GV.Rows[j].Cells[29].Value);
+                j++;
+            }
+            while (KemA_GV.Rows.Count > k)
+            {
+                val2 += Convert.ToInt64(KemA_GV.Rows[k].Cells[17].Value);
+                k++;
+            }
+            while (KemD_GV.Rows.Count > l)
+            {
+                val3 += Convert.ToInt64(KemD_GV.Rows[l].Cells[29].Value);
+                l++;
+            }
+            while (PAVI_GV.Rows.Count > m)
+            {
+                val4 += Convert.ToInt64(PAVI_GV.Rows[m].Cells[17].Value);
+                m++;
+            }
+            while (PARCOD_GV.Rows.Count > n)
+            {
+                val5 += Convert.ToInt64(PARCOD_GV.Rows[n].Cells[29].Value);
+                n++;
+            }
+            while (MD_GV.Rows.Count > p)
+            {
+                val6 += Convert.ToInt64(MD_GV.Rows[p].Cells[11].Value) + Convert.ToInt64(MD_GV.Rows[p].Cells[19].Value)
+                + Convert.ToInt64(MD_GV.Rows[p].Cells[27].Value) + Convert.ToInt64(MD_GV.Rows[p].Cells[35].Value);
+                p++;
+            }
+            decimal saleLWise = val + val1 + val2 + val3 + val4 + val5 + val6;
+            Sale.Add(saleLWise);
+            FD_SLW_CB.DataSource = Sale;
+            FD_SLW_CB.Text = null;
+            FD_CA_CB.DataSource = Sale;
+            FD_CA_CB.Text = null;
+        }
+        #endregion
     }
 }
