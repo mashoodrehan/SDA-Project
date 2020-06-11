@@ -1421,7 +1421,7 @@ namespace AuditPlan
 
         }
         #endregion
-        #region===============================================Keemari Aviation===============================================
+        #region=============================================Keemari Aviation=============================================
         public void KAVI_PurTStck()
         {
             KAVI_TPSM_P_TStck_TB.Text = ((Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) + Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text)) * 30).ToString();
@@ -1868,7 +1868,6 @@ namespace AuditPlan
             {
             }
         }
-
         #endregion
         #region=================================================HR Dept==================================================
         public void HR_Clr()
@@ -3049,11 +3048,6 @@ namespace AuditPlan
             {
             }
         }
-<<<<<<< HEAD
         #endregion
-=======
-
-        
->>>>>>> 78485272dc4b7ef5ae9139775487360fbf5763c7
     }
 }
