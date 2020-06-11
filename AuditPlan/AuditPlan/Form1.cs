@@ -1858,7 +1858,7 @@ namespace AuditPlan
             FD_CSPLW_CB.Text = null;
         }
 
-        #endregion
+        
 
         private void FD_Pnl2_AddInfo_Btn_Click(object sender, EventArgs e)
         {
@@ -2023,6 +2023,30 @@ namespace AuditPlan
                     FD_MBA_TB.Clear();
                 }
                 FD_MBA_TB.Text = (Convert.ToInt64(FD_PSCB_CB.Text) / Convert.ToInt64(FD_BR_TB.Text)).ToString();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        #endregion
+
+        private void FD_Pnl2_Rst_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FD_Clr();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void FD_Pnl1_Rst_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FD_Clr();
             }
             catch (Exception)
             {
