@@ -998,34 +998,34 @@ namespace AuditPlan
             {
             }
         }
-        //private void HR_Update_Btn_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        string comp = HR_GV.SelectedRows[0].Cells[1].Value.ToString();
-        //        if (HR_Date.Text == comp)
-        //        {
-        //            SQL_Queires SQ = new SQL_Queires();
-        //            con.Open();
-        //            string id = HR_GV.SelectedRows[0].Cells[0].Value.ToString();
-        //            SqlDataAdapter Update = new SqlDataAdapter("UPDATE HRDept SET Date= '" + HR_Date.Text + "', Pur_Aff_Tic= '" + HR_Pur_Air_Tic_TB.Text + "', Maint_Staff_Cars= '" + HR_Main_St_Cars_TB.Text + "', Hotel_Book= '" + HR_HotlB_TB.Text + "'," +
-        //                "Trans_Arran_Staff= '" + HR_Tran_Arr_TB.Text + "', Photo_Exp= '" + HR_PhotoC_TB.Text + "' WHERE ID = '" + id + "'", con);
-        //            Update.SelectCommand.ExecuteNonQuery();
-        //            con.Close();
-        //            SQ.ShowGVData("SELECT * FROM HRDept", HR_GV);
-        //            HR_Clr();
-        //            MessageBox.Show("Updated Successfully");
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("You cannot change date");
-        //        }
-        //    }
-        //    finally
-        //    {
-        //        con.Close();
-            // }
-       // }
+        private void HR_Update_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string comp = HR_GV.SelectedRows[0].Cells[1].Value.ToString();
+                if (HR_Date.Text == comp)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    con.Open();
+                    string id = HR_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SqlDataAdapter Update = new SqlDataAdapter("UPDATE HRDept SET Date= '" + HR_Date.Text + "', Pur_Aff_Tic= '" + HR_Pur_Air_Tic_TB.Text + "', Maint_Staff_Cars= '" + HR_Main_St_Cars_TB.Text + "', Hotel_Book= '" + HR_HotlB_TB.Text + "'," +
+                        "Trans_Arran_Staff= '" + HR_Tran_Arr_TB.Text + "', Photo_Exp= '" + HR_PhotoC_TB.Text + "' WHERE ID = '" + id + "'", con);
+                    Update.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+                    SQ.ShowGVData("SELECT * FROM HRDept", HR_GV);
+                    HR_Clr();
+                    MessageBox.Show("Updated Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("You cannot change date");
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
         private void HR_Rst_Btn_Click(object sender, EventArgs e)
         {
@@ -1139,15 +1139,111 @@ namespace AuditPlan
             }
         }
 
+
         #endregion
-<<<<<<< HEAD
 
         private void MD_AddInfo_Btn_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                SQL_Queires SQ = new SQL_Queires();
+                int j = 0;
+                while (MD_GV.Rows.Count > j)
+                {
+                    string val = MD_GV.Rows[j].Cells[1].Value.ToString();
+                    if (MD_Date.Text == val)
+                    {
+                        SQ.DeleteData("DELETE FROM MarketDpt WHERE Date = '" + val + "';");
+                    }
+                    j++;
+                }
+                String query = "Insert INTO MarketDpt (Date, Const_Charg_Rt_Sites, Maint_Rt_Sites, K_HiSpr_Ltr, K_HSD_Ltr, K_HOBC_Ltr," +
+                "K_HiSpr_Amnt, K_HSD_Amnt, K_HOBC_Amnt, K_T_Ltr, K_T_Amnt, L_HiSpr_Ltr, L_HSD_Ltr, L_HOBC_Ltr, " +
+                "L_HiSpr_Amnt, L_HSD_Amnt, L_HOBC_Amnt, L_T_Ltr, L_T_Amnt, I_HiSpr_Ltr, I_HSD_Ltr, " +
+                "I_HOBC_Ltr, I_HiSpr_Amnt, I_HSD_Amnt, I_HOBC_Amnt, I_T_Ltr, I_T_Amnt, Q_HiSpr_Stck, " +
+                "Q_HSD_Stck, Q_HOBC_Stck, Q_HiSpr_Amnt, Q_HSD_Amnt, Q_HOBC_Amnt, Q_T_Ltr, Q_T_Amnt) VALUES('" + MD_Date.Text + "', '" + MD_ED_CCRS_TB.Text + "', " +
+                "'" + MD_ED_MRS_TB.Text + "', '" + RD_KS_HiSpr_Stck_TB.Text + "', '" + RD_KS_HSD_Stck_TB.Text + "', '" + RD_KS_HOBC_Stck_TB.Text + "', " +
+                "'" + RD_KS_HiSpr_Sale_TB.Text + "', '" + RD_KS_HSD_Sale_TB.Text + "', '" + RD_KS_HOBC_Sale_TB.Text + "', '" + MD_K_T_Stck_TB.Text + "'," +
+                " '" + MD_K_T_Sale_TB.Text + "', '" + RD_LS_HiSpr_Stck_TB.Text + "', '" + RD_LS_HSD_Stck_TB.Text + "', '" + RD_LS_HOBC_Stck_TB.Text + "', " +
+                "'" + RD_LS_HiSpr_Sale_TB.Text + "', '" + RD_LS_HSD_Sale_TB.Text + "', '" + RD_LS_HOBC_Sale_TB.Text + "', '" + MD_L_T_Stck_TB.Text + "', " +
+                "'" + MD_L_T_Sale_TB.Text + "', '" + RD_IS_HiSpr_Stck_TB.Text + "', '" + RD_IS_HSD_Stck_TB.Text + "', '" + RD_IS_HOBC_Stck_TB.Text + "', " +
+                "'" + RD_IS_HiSpr_Sale_TB.Text + "', '" + RD_IS_HSD_Sale_TB.Text + "', '" + RD_IS_HOBC_Sale_TB.Text + "', '" + MD_I_T_Stck_TB.Text + "', " +
+                "'" + MD_I_T_Sale_TB.Text + "', '" + RD_QS_HiSpr_Stck_TB.Text + "', '" + RD_QS_HSD_Stck_TB.Text + "', '" + RD_QS_HOBC_Stck_TB.Text + "', " +
+                "'" + RD_QS_HiSpr_Sale_TB.Text + "', '" + RD_QS_HSD_Sale_TB.Text + "', '" + RD_QS_HOBC_Sale_TB.Text + "', '" + MD_Q_T_Stck_TB.Text + "', " +
+                "'" + MD_Q_T_Sale_TB.Text + "')";
+                SQ.InsertData(query);
+                MessageBox.Show("Success!");
+                Markt_Clr();
+                SQ.ShowGVData("Select * FROM MarketDpt", MD_GV);
+                Market_Result();
+            }
+            catch (Exception)
+            {
+            }
         }
-=======
-        
->>>>>>> a9f619f00adbcbd3de3fc1303e0c1facbd6b91e6
+
+        private void MD_GV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string id = MD_GV.SelectedRows[0].Cells[0].Value.ToString();
+                MD_Date.Text = MD_GV.SelectedRows[0].Cells[1].Value.ToString();
+                MD_ED_CCRS_TB.Text = MD_GV.SelectedRows[0].Cells[2].Value.ToString();
+                MD_ED_MRS_TB.Text = MD_GV.SelectedRows[0].Cells[3].Value.ToString();
+                RD_KS_HiSpr_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[4].Value.ToString();
+                RD_KS_HSD_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[5].Value.ToString();
+                RD_KS_HOBC_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[6].Value.ToString();
+                RD_KS_HiSpr_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[7].Value.ToString();
+                RD_KS_HSD_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[8].Value.ToString();
+                RD_KS_HOBC_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[9].Value.ToString();
+                MD_K_T_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[10].Value.ToString();
+                MD_K_T_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[11].Value.ToString();
+                RD_LS_HiSpr_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[12].Value.ToString();
+                RD_LS_HSD_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[13].Value.ToString();
+                RD_LS_HOBC_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[14].Value.ToString();
+                RD_LS_HiSpr_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[15].Value.ToString();
+                RD_LS_HSD_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[16].Value.ToString();
+                RD_LS_HOBC_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[17].Value.ToString();
+                MD_L_T_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[18].Value.ToString();
+                MD_L_T_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[19].Value.ToString();
+                RD_IS_HiSpr_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[20].Value.ToString();
+                RD_IS_HSD_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[21].Value.ToString();
+                RD_IS_HOBC_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[22].Value.ToString();
+                RD_IS_HiSpr_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[23].Value.ToString();
+                RD_IS_HSD_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[24].Value.ToString();
+                RD_IS_HOBC_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[25].Value.ToString();
+                MD_I_T_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[26].Value.ToString();
+                MD_I_T_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[27].Value.ToString();
+                RD_QS_HiSpr_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[28].Value.ToString();
+                RD_QS_HSD_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[29].Value.ToString();
+                RD_QS_HOBC_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[30].Value.ToString();
+                RD_QS_HiSpr_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[31].Value.ToString();
+                RD_QS_HSD_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[32].Value.ToString();
+                RD_QS_HOBC_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[33].Value.ToString();
+                MD_Q_T_Stck_TB.Text = MD_GV.SelectedRows[0].Cells[34].Value.ToString();
+                MD_Q_T_Sale_TB.Text = MD_GV.SelectedRows[0].Cells[35].Value.ToString();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void MD_Delete_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    string id = MD_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SQ.DeleteData("DELETE FROM MarketDpt WHERE ID = '" + id + "';");
+                    SQ.ShowGVData("Select * FROM MarketDpt", MD_GV);
+                    Markt_Clr();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
