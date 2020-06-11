@@ -805,7 +805,16 @@ namespace AuditPlan
         }
         #endregion
         #region===============================================Keemari Aviation===============================================
-
+        public void KAVI_Clr()
+        {
+            KA_Date.Text = null; KAVI_JP4_P_IN_TB.Clear(); KAVI_JetA1_P_IN_TB.Clear(); KAVI_TPSM_P_TStck_TB.Clear(); KAVI_JP4_P_Prc_TB.Clear();
+            KAVI_JetA1_P_Prc_TB.Clear(); KAVI_TPSM_P_TAmnt_TB.Clear(); KAVI_JP4_T_IN_TB.Clear(); KAVI_JetA1_T_IN_TB.Clear();
+            KAVI_JP4_T_Stck_TB.Clear(); KAVI_JetA1_T_Stck_TB.Clear(); KAVI_TTS_T_TStck_TB.Clear(); KAVI_JP4_S_IN_TB.Clear();
+            KAVI_JetA1_S_IN_TB.Clear(); KAVI_JP4_S_Amnt_TB.Clear(); KAVI_JetA1_S_Amnt_TB.Clear(); KAVI_TSA_S_TAmnt_TB.Clear();
+            KAVI_KA_Stck_TB.Clear(); KAVI_QA_Stck_TB.Clear(); KAVI_NA_Stck_TB.Clear(); KAVI_SA_Stck_TB.Clear();
+            KAVI_Depo_Tstck_TB.Clear(); KAVI_KA_Sale_TB.Clear(); KAVI_QA_Sale_TB.Clear(); KAVI_NA_Sale_TB.Clear();
+            KAVI_SA_Sale_TB.Clear(); KAVI_Depo_TSale_TB.Clear();
+        }
         private void KAVI_AddInfo_Btn_Click(object sender, EventArgs e)
         {
             try
@@ -847,10 +856,54 @@ namespace AuditPlan
             {
             }
         }
+        private void KemA_GV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string id = KemA_GV.SelectedRows[0].Cells[0].Value.ToString();
+                KA_Date.Text = KemA_GV.SelectedRows[0].Cells[1].Value.ToString();
+                KAVI_JP4_P_IN_TB.Text = KemA_GV.SelectedRows[0].Cells[2].Value.ToString();
+                KAVI_JetA1_P_IN_TB.Text = KemA_GV.SelectedRows[0].Cells[3].Value.ToString();
+                KAVI_TPSM_P_TStck_TB.Text = KemA_GV.SelectedRows[0].Cells[4].Value.ToString();
+                KAVI_JP4_P_Prc_TB.Text = KemA_GV.SelectedRows[0].Cells[5].Value.ToString();
+                KAVI_JetA1_P_Prc_TB.Text = KemA_GV.SelectedRows[0].Cells[6].Value.ToString();
+                KAVI_TPSM_P_TAmnt_TB.Text = KemA_GV.SelectedRows[0].Cells[7].Value.ToString();
+                KAVI_JP4_T_IN_TB.Text = KemA_GV.SelectedRows[0].Cells[8].Value.ToString();
+                KAVI_JetA1_T_IN_TB.Text = KemA_GV.SelectedRows[0].Cells[9].Value.ToString();
+                KAVI_JP4_T_Stck_TB.Text = KemA_GV.SelectedRows[0].Cells[10].Value.ToString();
+                KAVI_JetA1_T_Stck_TB.Text = KemA_GV.SelectedRows[0].Cells[11].Value.ToString();
+                KAVI_TTS_T_TStck_TB.Text = KemA_GV.SelectedRows[0].Cells[12].Value.ToString();
+                KAVI_JP4_S_IN_TB.Text = KemA_GV.SelectedRows[0].Cells[13].Value.ToString();
+                KAVI_JetA1_S_IN_TB.Text = KemA_GV.SelectedRows[0].Cells[14].Value.ToString();
+                KAVI_JP4_S_Amnt_TB.Text = KemA_GV.SelectedRows[0].Cells[15].Value.ToString();
+                KAVI_JetA1_S_Amnt_TB.Text = KemA_GV.SelectedRows[0].Cells[16].Value.ToString();
+                KAVI_TSA_S_TAmnt_TB.Text = KemA_GV.SelectedRows[0].Cells[17].Value.ToString();
+                KAVI_KA_Stck_TB.Text = KemA_GV.SelectedRows[0].Cells[18].Value.ToString();
+                KAVI_QA_Stck_TB.Text = KemA_GV.SelectedRows[0].Cells[19].Value.ToString();
+                KAVI_NA_Stck_TB.Text = KemA_GV.SelectedRows[0].Cells[20].Value.ToString();
+                KAVI_SA_Stck_TB.Text = KemA_GV.SelectedRows[0].Cells[21].Value.ToString();
+                KAVI_Depo_Tstck_TB.Text = KemA_GV.SelectedRows[0].Cells[22].Value.ToString();
+                KAVI_KA_Sale_TB.Text = KemA_GV.SelectedRows[0].Cells[23].Value.ToString();
+                KAVI_QA_Sale_TB.Text = KemA_GV.SelectedRows[0].Cells[24].Value.ToString();
+                KAVI_NA_Sale_TB.Text = KemA_GV.SelectedRows[0].Cells[25].Value.ToString();
+                KAVI_SA_Sale_TB.Text = KemA_GV.SelectedRows[0].Cells[26].Value.ToString();
+                KAVI_Depo_TSale_TB.Text = KemA_GV.SelectedRows[0].Cells[27].Value.ToString();
+            }
+            catch (Exception)
+            {
+            }
+        }
         private void KAVI_Rst_Btn_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                KAVI_Clr();
+            }
+            catch (Exception)
+            {
+            }
         }
+
         #endregion
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -2059,6 +2112,6 @@ namespace AuditPlan
             }
         }
 
-      
+       
     }
 }
