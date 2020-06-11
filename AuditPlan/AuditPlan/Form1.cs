@@ -893,6 +893,61 @@ namespace AuditPlan
             {
             }
         }
+        private void KAVI_Delete_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    string id = KemA_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SQ.DeleteData("DELETE FROM KeemariAvi WHERE ID = '" + id + "';");
+                    SQ.ShowGVData("Select * FROM KeemariAvi", KemA_GV);
+                    KAVI_Clr();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KAVI_Update_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string comp = KemA_GV.SelectedRows[0].Cells[1].Value.ToString();
+                if (KA_Date.Text == comp)
+                {
+                    double JP4_SaleStck = (Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(KAVI_JP4_S_IN_TB.Text)) / 100;
+                    double JetA1_SaleStck = (Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(KAVI_JetA1_S_IN_TB.Text)) / 100;
+                    double JP4_CStck = Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) - (Convert.ToInt64(KAVI_JP4_T_Stck_TB.Text) + JP4_SaleStck);
+                    double JetA1_CStck = Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text) - (Convert.ToInt64(KAVI_JetA1_T_Stck_TB.Text) + JetA1_SaleStck);
+                    SQL_Queires SQ = new SQL_Queires();
+                    con.Open();
+                    string id = KemA_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SqlDataAdapter Update = new SqlDataAdapter("UPDATE KeemariAvi SET Date= '" + KA_Date.Text + "', JP4_Pur_Ltr= '" + KAVI_JP4_P_IN_TB.Text + "', JetA1_Pur_Ltr= '" + KAVI_JetA1_P_IN_TB.Text + "', Pur_Tstock= '" + KAVI_TPSM_P_TStck_TB.Text + "'," +
+                        "JP4_Pur_Amnt= '" + KAVI_JP4_P_Prc_TB.Text + "', JetA1_Pur_Amnt= '" + KAVI_JetA1_P_Prc_TB.Text + "', Pur_Tamount= '" + KAVI_TPSM_P_TAmnt_TB.Text + "', JP4_Tran_Per= '" + KAVI_JP4_T_IN_TB.Text + "', JetA1_Tran_Per= '" + KAVI_JetA1_T_IN_TB.Text + "'," +
+                        "JP4_Tran_Stck= '" + KAVI_JP4_T_Stck_TB.Text + "', JetA1_Tran_Stck= '" + KAVI_JetA1_T_Stck_TB.Text + "', Tran_Tstock= '" + KAVI_TTS_T_TStck_TB.Text + "', JP4_Sale_Per= '" + KAVI_JP4_S_IN_TB.Text + "', JetA1_Sale_Per= '" + KAVI_JetA1_S_IN_TB.Text + "'," +
+                        "JP4_Sale_Amnt= '" + KAVI_JP4_S_Amnt_TB.Text + "', JetA1_Sale_Amnt= '" + KAVI_JetA1_S_Amnt_TB.Text + "', Sale_Tamount= '" + KAVI_TSA_S_TAmnt_TB.Text + "', KarA_Stck= '" + KAVI_KA_Stck_TB.Text + "', QueA_Stck= '" + KAVI_QA_Stck_TB.Text + "'," +
+                        "NawA_Stck= '" + KAVI_NA_Stck_TB.Text + "', SukA_Stck= '" + KAVI_SA_Stck_TB.Text + "', Avi_Tstock= '" + KAVI_Depo_Tstck_TB.Text + "', KarA_Sale= '" + KAVI_KA_Sale_TB.Text + "', QueA_Sale= '" + KAVI_QA_Sale_TB.Text + "'," +
+                        "NawA_Sale= '" + KAVI_NA_Sale_TB.Text + "', SukA_Sale= '" + KAVI_SA_Sale_TB.Text + "', Avi_TSale= '" + KAVI_Depo_TSale_TB.Text + "', JP4_ClosingS= '" + JP4_CStck + "', JetA1_ClosingS= '" + JetA1_CStck + "' WHERE ID = '" + id + "'", con);
+                    Update.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+                    SQ.ShowGVData("SELECT * FROM KeemariAvi", KemA_GV);
+                    KAVI_Clr();
+                    MessageBox.Show("Updated Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("You cannot change date");
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
         private void KAVI_Rst_Btn_Click(object sender, EventArgs e)
         {
             try
@@ -2112,6 +2167,6 @@ namespace AuditPlan
             }
         }
 
-       
+      
     }
 }
