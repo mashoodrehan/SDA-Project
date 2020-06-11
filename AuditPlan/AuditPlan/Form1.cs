@@ -805,6 +805,40 @@ namespace AuditPlan
         }
         #endregion
         #region===============================================Keemari Aviation===============================================
+        public void KAVI_PurTStck()
+        {
+            KAVI_TPSM_P_TStck_TB.Text = ((Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) + Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text)) * 30).ToString();
+        }
+        public void KAVI_PurTAmnt()
+        {
+            KAVI_TPSM_P_TAmnt_TB.Text = ((Convert.ToInt64(KAVI_JP4_P_Prc_TB.Text) + Convert.ToInt64(KAVI_JetA1_P_Prc_TB.Text)) * 30).ToString();
+        }
+        public void KAVI_TranTStck()
+        {
+            KAVI_TTS_T_TStck_TB.Text = ((Convert.ToInt64(KAVI_JP4_T_Stck_TB.Text) + Convert.ToInt64(KAVI_JetA1_T_Stck_TB.Text)) * 30).ToString();
+        }
+        public void KAVI_SaleTAmnt()
+        {
+            KAVI_TSA_S_TAmnt_TB.Text = ((Convert.ToInt64(KAVI_JP4_S_Amnt_TB.Text) + Convert.ToInt64(KAVI_JetA1_S_Amnt_TB.Text)) * 30).ToString();
+        }
+        public void K_AP_Stck()
+        {
+            KAVI_KA_Stck_TB.Text = (Convert.ToInt64(KAVI_TTS_T_TStck_TB.Text) / 120).ToString();
+            KAVI_QA_Stck_TB.Text = (Convert.ToInt64(KAVI_TTS_T_TStck_TB.Text) / 120).ToString();
+            KAVI_NA_Stck_TB.Text = (Convert.ToInt64(KAVI_TTS_T_TStck_TB.Text) / 120).ToString();
+            KAVI_SA_Stck_TB.Text = (Convert.ToInt64(KAVI_TTS_T_TStck_TB.Text) / 120).ToString();
+        }
+        public void K_AP_Sale()
+        {
+            KAVI_KA_Sale_TB.Text = (Convert.ToInt64(KAVI_KA_Stck_TB.Text) * 120).ToString();
+            KAVI_QA_Sale_TB.Text = (Convert.ToInt64(KAVI_QA_Stck_TB.Text) * 123).ToString();
+            KAVI_NA_Sale_TB.Text = (Convert.ToInt64(KAVI_NA_Stck_TB.Text) * 125).ToString();
+            KAVI_SA_Sale_TB.Text = (Convert.ToInt64(KAVI_SA_Stck_TB.Text) * 127).ToString();
+        }
+        public void K_AP_TotAmnt()
+        {
+            KAVI_Depo_TSale_TB.Text = ((Convert.ToInt64(KAVI_KA_Sale_TB.Text) + Convert.ToInt64(KAVI_QA_Sale_TB.Text) + Convert.ToInt64(KAVI_NA_Sale_TB.Text) + Convert.ToInt64(KAVI_SA_Sale_TB.Text)) * 30).ToString();
+        }
         public void KAVI_Clr()
         {
             KA_Date.Text = null; KAVI_JP4_P_IN_TB.Clear(); KAVI_JetA1_P_IN_TB.Clear(); KAVI_TPSM_P_TStck_TB.Clear(); KAVI_JP4_P_Prc_TB.Clear();
@@ -814,6 +848,59 @@ namespace AuditPlan
             KAVI_KA_Stck_TB.Clear(); KAVI_QA_Stck_TB.Clear(); KAVI_NA_Stck_TB.Clear(); KAVI_SA_Stck_TB.Clear();
             KAVI_Depo_Tstck_TB.Clear(); KAVI_KA_Sale_TB.Clear(); KAVI_QA_Sale_TB.Clear(); KAVI_NA_Sale_TB.Clear();
             KAVI_SA_Sale_TB.Clear(); KAVI_Depo_TSale_TB.Clear();
+        }
+        public void KeemariAvi_Result()
+        {
+            int j = 0;
+            while (Res_GV.Rows.Count > j)
+            {
+                string dept = Res_GV.Rows[j].Cells[1].Value.ToString();
+                if (dept == "Keemari Aviation")
+                {
+                    try
+                    {
+                        SQL_Queires SQ = new SQL_Queires();
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                j++;
+            }
+            int Low = risk.Next(1, 40);
+            int Medium = risk.Next(41, 70);
+            int High = risk.Next(71, 100);
+            int i = 0;
+            double val = 0;
+            while (KemA_GV.Rows.Count > i)
+            {
+                val += double.Parse(KemA_GV.Rows[i].Cells[7].Value.ToString());
+                i++;
+            }
+            if (val > 25000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Keemari Aviation', '" + HighFreq + "', '" + High + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 25000000 && val > 15000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Keemari Aviation', '" + MedFreq + "', '" + Medium + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 15000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Keemari Aviation', '" + LowFreq + "', '" + Low + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
         }
         private void KAVI_AddInfo_Btn_Click(object sender, EventArgs e)
         {
@@ -848,9 +935,9 @@ namespace AuditPlan
                 "'" + JetA1_CStck + "', '" + 120 + "', '" + 125 + "')";
                 SQ.InsertData(query);
                 MessageBox.Show("Success!");
-                //KAVI_Clr();
+                KAVI_Clr();
                 SQ.ShowGVData("SELECT * FROM KeemariAvi", KemA_GV);
-                //KeemariAvi_Result();
+                KeemariAvi_Result();
             }
             catch (Exception)
             {
@@ -946,7 +1033,29 @@ namespace AuditPlan
             {
                 con.Close();
             }
-
+        }
+        public void KA_TextChange()
+        {
+            try
+            {
+                KAVI_JP4_P_Prc_TB.Text = (Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) * 110).ToString();
+                KAVI_JetA1_P_Prc_TB.Text = (Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text) * 115).ToString();
+                KAVI_PurTStck();
+                KAVI_PurTAmnt();
+                KAVI_JP4_T_Stck_TB.Text = ((Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(KAVI_JP4_T_IN_TB.Text)) / 100).ToString();
+                KAVI_JetA1_T_Stck_TB.Text = ((Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(KAVI_JetA1_T_IN_TB.Text)) / 100).ToString();
+                KAVI_TranTStck();
+                KAVI_JP4_S_Amnt_TB.Text = (((Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(KAVI_JP4_S_IN_TB.Text)) / 100) * 120).ToString();
+                KAVI_JetA1_S_Amnt_TB.Text = (((Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(KAVI_JetA1_S_IN_TB.Text)) / 100) * 125).ToString();
+                KAVI_SaleTAmnt();
+                K_AP_Stck();
+                K_AP_Sale();
+                KAVI_Depo_Tstck_TB.Text = KAVI_TTS_T_TStck_TB.Text;
+                K_AP_TotAmnt();
+            }
+            catch (Exception)
+            {
+            }
         }
         private void KAVI_JP4_P_IN_TB_TextChanged(object sender, EventArgs e)
         {
@@ -957,7 +1066,7 @@ namespace AuditPlan
                     KAVI_JP4_P_Prc_TB.Clear();
                 }
                 KAVI_JP4_P_Prc_TB.Text = (Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) * 110).ToString();
-                //KA_TextChange();
+                KA_TextChange();
             }
             catch (Exception)
             {
@@ -975,8 +1084,8 @@ namespace AuditPlan
                     KAVI_TPSM_P_TAmnt_TB.Clear();
                 }
                 KAVI_JetA1_P_Prc_TB.Text = (Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text) * 115).ToString();
-                //KAVI_PurTStck();
-                //KA_TextChange();
+                KAVI_PurTStck();
+                KA_TextChange();
             }
             catch (Exception)
             {
@@ -987,8 +1096,8 @@ namespace AuditPlan
         {
             try
             {
-                //KAVI_PurTAmnt();
-                //KA_TextChange();
+                KAVI_PurTAmnt();
+                KA_TextChange();
             }
             catch (Exception)
             {
@@ -1004,7 +1113,7 @@ namespace AuditPlan
                     KAVI_JP4_T_Stck_TB.Clear();
                 }
                 KAVI_JP4_T_Stck_TB.Text = ((Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(KAVI_JP4_T_IN_TB.Text)) / 100).ToString();
-                //KA_TextChange();
+                KA_TextChange();
             }
             catch (Exception)
             {
@@ -1031,7 +1140,7 @@ namespace AuditPlan
                     KAVI_Depo_TSale_TB.Clear();
                 }
                 KAVI_JetA1_T_Stck_TB.Text = ((Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(KAVI_JetA1_T_IN_TB.Text)) / 100).ToString();
-                //KA_TextChange();
+                KA_TextChange();
             }
             catch (Exception)
             {
@@ -1042,8 +1151,8 @@ namespace AuditPlan
         {
             try
             {
-                //KAVI_TranTStck();
-                //KA_TextChange();
+                KAVI_TranTStck();
+                KA_TextChange();
             }
             catch (Exception)
             {
@@ -1059,7 +1168,7 @@ namespace AuditPlan
                     KAVI_JP4_S_Amnt_TB.Clear();
                 }
                 KAVI_JP4_S_Amnt_TB.Text = (((Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(KAVI_JP4_S_IN_TB.Text)) / 100) * 120).ToString();
-                //KA_TextChange();
+                KA_TextChange();
             }
             catch (Exception)
             {
@@ -1076,7 +1185,7 @@ namespace AuditPlan
                     KAVI_TSA_S_TAmnt_TB.Clear();
                 }
                 KAVI_JetA1_S_Amnt_TB.Text = (((Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(KAVI_JetA1_S_IN_TB.Text)) / 100) * 125).ToString();
-                //KA_TextChange();
+                KA_TextChange();
             }
             catch (Exception)
             {
@@ -1087,8 +1196,8 @@ namespace AuditPlan
         {
             try
             {
-                //KAVI_SaleTAmnt();
-                //KA_TextChange();
+                KAVI_SaleTAmnt();
+                KA_TextChange();
             }
             catch (Exception)
             {
@@ -1099,9 +1208,9 @@ namespace AuditPlan
         {
             try
             {
-                //K_AP_Stck();
-                //K_AP_Sale();
-                //KA_TextChange();
+                K_AP_Stck();
+                K_AP_Sale();
+                KA_TextChange();
             }
             catch (Exception)
             {
@@ -1113,7 +1222,7 @@ namespace AuditPlan
             try
             {
                 KAVI_Depo_Tstck_TB.Text = KAVI_TTS_T_TStck_TB.Text;
-                //KA_TextChange();
+                KA_TextChange();
             }
             catch (Exception)
             {
@@ -1124,8 +1233,8 @@ namespace AuditPlan
         {
             try
             {
-                //K_AP_TotAmnt();
-                //KA_TextChange();
+                K_AP_TotAmnt();
+                KA_TextChange();
             }
             catch (Exception)
             {
