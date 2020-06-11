@@ -1245,5 +1245,329 @@ namespace AuditPlan
             {
             }
         }
+
+        private void MD_Update_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string comp = MD_GV.SelectedRows[0].Cells[1].Value.ToString();
+                if (MD_Date.Text == comp)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    con.Open();
+                    string id = MD_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SqlDataAdapter Update = new SqlDataAdapter("UPDATE MarketDpt SET Date= '" + MD_Date.Text + "', Const_Charg_Rt_Sites= '" + MD_ED_CCRS_TB.Text + "', Maint_Rt_Sites= '" + MD_ED_MRS_TB.Text + "', " +
+                        "K_HiSpr_Ltr= '" + RD_KS_HiSpr_Stck_TB.Text + "', K_HSD_Ltr= '" + RD_KS_HSD_Stck_TB.Text + "', K_HOBC_Ltr= '" + RD_KS_HOBC_Stck_TB.Text + "', K_HiSpr_Amnt= '" + RD_KS_HiSpr_Sale_TB.Text + "', " +
+                        "K_HSD_Amnt= '" + RD_KS_HSD_Sale_TB.Text + "', K_HOBC_Amnt= '" + RD_KS_HOBC_Sale_TB.Text + "', K_T_Ltr= '" + MD_K_T_Stck_TB.Text + "', K_T_Amnt= '" + MD_K_T_Sale_TB.Text + "', " +
+                        "L_HiSpr_Ltr= '" + RD_LS_HiSpr_Stck_TB.Text + "', L_HSD_Ltr= '" + RD_LS_HSD_Stck_TB.Text + "', L_HOBC_Ltr= '" + RD_LS_HOBC_Stck_TB.Text + "', L_HiSpr_Amnt= '" + RD_LS_HiSpr_Sale_TB.Text + "', " +
+                        "L_HSD_Amnt= '" + RD_LS_HSD_Sale_TB.Text + "', L_HOBC_Amnt= '" + RD_LS_HOBC_Sale_TB.Text + "', L_T_Ltr= '" + MD_L_T_Stck_TB.Text + "', L_T_Amnt= '" + MD_L_T_Sale_TB.Text + "', " +
+                        "I_HiSpr_Ltr = '" + RD_IS_HiSpr_Stck_TB.Text + "', I_HSD_Ltr= '" + RD_IS_HSD_Stck_TB.Text + "', I_HOBC_Ltr= '" + RD_IS_HOBC_Stck_TB.Text + "', I_HiSpr_Amnt= '" + RD_IS_HiSpr_Sale_TB.Text + "', " +
+                        "I_HSD_Amnt= '" + RD_IS_HSD_Sale_TB.Text + "', I_HOBC_Amnt= '" + RD_IS_HOBC_Sale_TB.Text + "', I_T_Ltr= '" + MD_I_T_Stck_TB.Text + "', I_T_Amnt= '" + MD_I_T_Sale_TB.Text + "', " +
+                        "Q_HiSpr_Stck= '" + RD_QS_HiSpr_Stck_TB.Text + "', Q_HSD_Stck= '" + RD_QS_HSD_Stck_TB.Text + "', Q_HOBC_Stck= '" + RD_QS_HOBC_Stck_TB.Text + "', Q_HiSpr_Amnt= '" + RD_QS_HiSpr_Sale_TB.Text + "', " +
+                        "Q_HSD_Amnt= '" + RD_QS_HSD_Sale_TB.Text + "', Q_HOBC_Amnt= '" + RD_QS_HOBC_Sale_TB.Text + "', Q_T_Ltr= '" + MD_Q_T_Stck_TB.Text + "', Q_T_Amnt= '" + MD_Q_T_Sale_TB.Text + "' WHERE ID = '" + id + "'", con);
+                    Update.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+                    SQ.ShowGVData("SELECT * FROM MarketDpt", MD_GV);
+                    Markt_Clr();
+                    MessageBox.Show("Updated Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("You cannot change date");
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void MD_TextChange()
+        {
+            try
+            {
+                RD_KS_HiSpr_Sale_TB.Text = (Convert.ToInt64(RD_KS_HiSpr_Stck_TB.Text) * 98).ToString();
+                RD_KS_HSD_Sale_TB.Text = (Convert.ToInt64(RD_KS_HSD_Stck_TB.Text) * 120).ToString();
+                RD_KS_HOBC_Sale_TB.Text = (Convert.ToInt64(RD_KS_HOBC_Stck_TB.Text) * 110).ToString();
+                Markt_K_TStck();
+                Markt_K_TSale();
+                RD_LS_HiSpr_Sale_TB.Text = (Convert.ToInt64(RD_LS_HiSpr_Stck_TB.Text) * 98).ToString();
+                RD_LS_HSD_Sale_TB.Text = (Convert.ToInt64(RD_LS_HSD_Stck_TB.Text) * 120).ToString();
+                RD_LS_HOBC_Sale_TB.Text = (Convert.ToInt64(RD_LS_HOBC_Stck_TB.Text) * 110).ToString();
+                Markt_L_TStck();
+                Markt_L_TSale();
+                RD_IS_HiSpr_Sale_TB.Text = (Convert.ToInt64(RD_IS_HiSpr_Stck_TB.Text) * 98).ToString();
+                RD_IS_HSD_Sale_TB.Text = (Convert.ToInt64(RD_IS_HSD_Stck_TB.Text) * 120).ToString();
+                RD_IS_HOBC_Sale_TB.Text = (Convert.ToInt64(RD_IS_HOBC_Stck_TB.Text) * 110).ToString();
+                Markt_I_TStck();
+                Markt_I_TSale();
+                RD_QS_HiSpr_Sale_TB.Text = (Convert.ToInt64(RD_QS_HiSpr_Stck_TB.Text) * 98).ToString();
+                RD_QS_HSD_Sale_TB.Text = (Convert.ToInt64(RD_QS_HSD_Stck_TB.Text) * 120).ToString();
+                RD_QS_HOBC_Sale_TB.Text = (Convert.ToInt64(RD_QS_HOBC_Stck_TB.Text) * 110).ToString();
+                Markt_Q_TStck();
+                Markt_Q_TSale();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_KS_HiSpr_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RD_KS_HiSpr_Stck_TB.Text == String.Empty)
+                {
+                    RD_KS_HiSpr_Sale_TB.Clear();
+                }
+                RD_KS_HiSpr_Sale_TB.Text = (Convert.ToInt64(RD_KS_HiSpr_Stck_TB.Text) * 98).ToString();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_KS_HSD_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RD_KS_HSD_Stck_TB.Text == String.Empty)
+                {
+                    RD_KS_HSD_Sale_TB.Clear();
+                }
+                RD_KS_HSD_Sale_TB.Text = (Convert.ToInt64(RD_KS_HSD_Stck_TB.Text) * 120).ToString();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_KS_HOBC_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RD_KS_HOBC_Stck_TB.Text == String.Empty)
+                {
+                    RD_KS_HOBC_Sale_TB.Clear();
+                    MD_K_T_Stck_TB.Clear();
+                    MD_K_T_Sale_TB.Clear();
+                }
+                RD_KS_HOBC_Sale_TB.Text = (Convert.ToInt64(RD_KS_HOBC_Stck_TB.Text) * 110).ToString();
+                Markt_K_TStck();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_KS_HOBC_Sale_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Markt_K_TSale();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_LS_HiSpr_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RD_LS_HiSpr_Stck_TB.Text == String.Empty)
+                {
+                    RD_LS_HiSpr_Sale_TB.Clear();
+                }
+                RD_LS_HiSpr_Sale_TB.Text = (Convert.ToInt64(RD_LS_HiSpr_Stck_TB.Text) * 98).ToString();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_LS_HSD_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RD_LS_HSD_Stck_TB.Text == String.Empty)
+                {
+                    RD_LS_HSD_Sale_TB.Clear();
+                }
+                RD_LS_HSD_Sale_TB.Text = (Convert.ToInt64(RD_LS_HSD_Stck_TB.Text) * 120).ToString();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_LS_HOBC_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RD_LS_HOBC_Stck_TB.Text == String.Empty)
+                {
+                    RD_LS_HOBC_Sale_TB.Clear();
+                    MD_L_T_Stck_TB.Clear();
+                    MD_L_T_Sale_TB.Clear();
+                }
+                RD_LS_HOBC_Sale_TB.Text = (Convert.ToInt64(RD_LS_HOBC_Stck_TB.Text) * 110).ToString();
+                Markt_L_TStck();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_LS_HOBC_Sale_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Markt_L_TSale();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_IS_HiSpr_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RD_IS_HiSpr_Stck_TB.Text == String.Empty)
+                {
+                    RD_IS_HiSpr_Sale_TB.Clear();
+                }
+                RD_IS_HiSpr_Sale_TB.Text = (Convert.ToInt64(RD_IS_HiSpr_Stck_TB.Text) * 98).ToString();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_IS_HSD_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RD_IS_HSD_Stck_TB.Text == String.Empty)
+                {
+                    RD_IS_HSD_Sale_TB.Clear();
+                }
+                RD_IS_HSD_Sale_TB.Text = (Convert.ToInt64(RD_IS_HSD_Stck_TB.Text) * 120).ToString();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_IS_HOBC_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RD_IS_HOBC_Stck_TB.Text == String.Empty)
+                {
+                    RD_IS_HOBC_Sale_TB.Clear();
+                    MD_I_T_Stck_TB.Clear();
+                    MD_I_T_Sale_TB.Clear();
+                }
+                RD_IS_HOBC_Sale_TB.Text = (Convert.ToInt64(RD_IS_HOBC_Stck_TB.Text) * 110).ToString();
+                Markt_I_TStck();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_IS_HOBC_Sale_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Markt_I_TSale();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_QS_HiSpr_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RD_QS_HiSpr_Stck_TB.Text == String.Empty)
+                {
+                    RD_QS_HiSpr_Sale_TB.Clear();
+                }
+                RD_QS_HiSpr_Sale_TB.Text = (Convert.ToInt64(RD_QS_HiSpr_Stck_TB.Text) * 98).ToString();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_QS_HSD_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RD_QS_HSD_Stck_TB.Text == String.Empty)
+                {
+                    RD_QS_HSD_Sale_TB.Clear();
+                }
+                RD_QS_HSD_Sale_TB.Text = (Convert.ToInt64(RD_QS_HSD_Stck_TB.Text) * 120).ToString();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_QS_HOBC_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (RD_QS_HOBC_Stck_TB.Text == String.Empty)
+                {
+                    RD_QS_HOBC_Sale_TB.Clear();
+                    MD_Q_T_Stck_TB.Clear();
+                    MD_Q_T_Sale_TB.Clear();
+                }
+                RD_QS_HOBC_Sale_TB.Text = (Convert.ToInt64(RD_QS_HOBC_Stck_TB.Text) * 110).ToString();
+                Markt_Q_TStck();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void RD_QS_HOBC_Sale_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Markt_Q_TSale();
+                MD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void MD_Rst_Btn_Click(object sender, EventArgs e)
+        {
+            {
+                Markt_Clr();
+            }
+        }
     }
 }
