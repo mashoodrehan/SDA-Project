@@ -351,7 +351,7 @@ namespace AuditPlan
                 SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
             }
         }
-        #endregion
+        
 
         private void HR_AddInfo_Btn_Click(object sender, EventArgs e)
         {
@@ -417,6 +417,153 @@ namespace AuditPlan
             catch (Exception)
             {
             }
+        }
+        //private void HR_Update_Btn_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        string comp = HR_GV.SelectedRows[0].Cells[1].Value.ToString();
+        //        if (HR_Date.Text == comp)
+        //        {
+        //            SQL_Queires SQ = new SQL_Queires();
+        //            con.Open();
+        //            string id = HR_GV.SelectedRows[0].Cells[0].Value.ToString();
+        //            SqlDataAdapter Update = new SqlDataAdapter("UPDATE HRDept SET Date= '" + HR_Date.Text + "', Pur_Aff_Tic= '" + HR_Pur_Air_Tic_TB.Text + "', Maint_Staff_Cars= '" + HR_Main_St_Cars_TB.Text + "', Hotel_Book= '" + HR_HotlB_TB.Text + "'," +
+        //                "Trans_Arran_Staff= '" + HR_Tran_Arr_TB.Text + "', Photo_Exp= '" + HR_PhotoC_TB.Text + "' WHERE ID = '" + id + "'", con);
+        //            Update.SelectCommand.ExecuteNonQuery();
+        //            con.Close();
+        //            SQ.ShowGVData("SELECT * FROM HRDept", HR_GV);
+        //            HR_Clr();
+        //            MessageBox.Show("Updated Successfully");
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("You cannot change date");
+        //        }
+        //    }
+        //    finally
+        //    {
+        //        con.Close();
+            // }
+       // }
+
+        private void HR_Rst_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HR_Clr();
+            }
+            catch (Exception)
+            {
+            }
+        }
+        #endregion
+        #region---------------------------------Marketing Department--------------------------------------
+        public void Markt_K_TStck()
+        {
+            MD_K_T_Stck_TB.Text = ((Convert.ToInt64(RD_KS_HiSpr_Stck_TB.Text) + Convert.ToInt64(RD_KS_HSD_Stck_TB.Text) + Convert.ToInt64(RD_KS_HOBC_Stck_TB.Text)) * 90).ToString();
+        }
+        public void Markt_K_TSale()
+        {
+            MD_K_T_Sale_TB.Text = ((Convert.ToInt64(RD_KS_HiSpr_Sale_TB.Text) + Convert.ToInt64(RD_KS_HSD_Sale_TB.Text) + Convert.ToInt64(RD_KS_HOBC_Sale_TB.Text)) * 90).ToString();
+        }
+        public void Markt_L_TStck()
+        {
+            MD_L_T_Stck_TB.Text = ((Convert.ToInt64(RD_LS_HiSpr_Stck_TB.Text) + Convert.ToInt64(RD_LS_HSD_Stck_TB.Text) + Convert.ToInt64(RD_LS_HOBC_Stck_TB.Text)) * 30).ToString();
+        }
+        public void Markt_L_TSale()
+        {
+            MD_L_T_Sale_TB.Text = ((Convert.ToInt64(RD_LS_HiSpr_Sale_TB.Text) + Convert.ToInt64(RD_LS_HSD_Sale_TB.Text) + Convert.ToInt64(RD_LS_HOBC_Sale_TB.Text)) * 30).ToString();
+        }
+        public void Markt_I_TStck()
+        {
+            MD_I_T_Stck_TB.Text = ((Convert.ToInt64(RD_IS_HiSpr_Stck_TB.Text) + Convert.ToInt64(RD_IS_HSD_Stck_TB.Text) + Convert.ToInt64(RD_IS_HOBC_Stck_TB.Text)) * 30).ToString();
+        }
+        public void Markt_I_TSale()
+        {
+            MD_I_T_Sale_TB.Text = ((Convert.ToInt64(RD_IS_HiSpr_Sale_TB.Text) + Convert.ToInt64(RD_IS_HSD_Sale_TB.Text) + Convert.ToInt64(RD_IS_HOBC_Sale_TB.Text)) * 30).ToString();
+        }
+        public void Markt_Q_TStck()
+        {
+            MD_Q_T_Stck_TB.Text = ((Convert.ToInt64(RD_QS_HiSpr_Stck_TB.Text) + Convert.ToInt64(RD_QS_HSD_Stck_TB.Text) + Convert.ToInt64(RD_QS_HOBC_Stck_TB.Text)) * 30).ToString();
+        }
+        public void Markt_Q_TSale()
+        {
+            MD_Q_T_Sale_TB.Text = ((Convert.ToInt64(RD_QS_HiSpr_Sale_TB.Text) + Convert.ToInt64(RD_QS_HSD_Sale_TB.Text) + Convert.ToInt64(RD_QS_HOBC_Sale_TB.Text)) * 30).ToString();
+        }
+        public void Markt_Clr()
+        {
+            MD_Date.Text = null; MD_ED_CCRS_TB.Clear(); MD_ED_MRS_TB.Clear(); RD_KS_HiSpr_Stck_TB.Clear(); RD_KS_HiSpr_Sale_TB.Clear();
+            RD_KS_HSD_Stck_TB.Clear(); RD_KS_HSD_Sale_TB.Clear(); RD_KS_HOBC_Stck_TB.Clear(); RD_KS_HOBC_Sale_TB.Clear();
+            MD_K_T_Stck_TB.Clear(); MD_K_T_Sale_TB.Clear(); RD_LS_HiSpr_Stck_TB.Clear(); RD_LS_HiSpr_Sale_TB.Clear();
+            RD_LS_HSD_Stck_TB.Clear(); RD_LS_HSD_Sale_TB.Clear(); RD_LS_HOBC_Stck_TB.Clear(); RD_LS_HOBC_Sale_TB.Clear();
+            MD_L_T_Stck_TB.Clear(); MD_L_T_Sale_TB.Clear(); RD_IS_HiSpr_Stck_TB.Clear(); RD_IS_HiSpr_Sale_TB.Clear();
+            RD_IS_HSD_Stck_TB.Clear(); RD_IS_HSD_Sale_TB.Clear(); RD_IS_HOBC_Stck_TB.Clear(); RD_IS_HOBC_Sale_TB.Clear();
+            MD_I_T_Stck_TB.Clear(); MD_I_T_Sale_TB.Clear(); RD_QS_HiSpr_Stck_TB.Clear(); RD_QS_HiSpr_Sale_TB.Clear();
+            RD_QS_HSD_Stck_TB.Clear(); RD_QS_HSD_Sale_TB.Clear(); RD_QS_HOBC_Stck_TB.Clear(); RD_QS_HOBC_Sale_TB.Clear();
+            MD_Q_T_Stck_TB.Clear(); MD_Q_T_Sale_TB.Clear();
+        }
+        public void Market_Result()
+        {
+            int j = 0;
+            while (Res_GV.Rows.Count > j)
+            {
+                string dept = Res_GV.Rows[j].Cells[1].Value.ToString();
+                if (dept == "Marketing Department")
+                {
+                    try
+                    {
+                        SQL_Queires SQ = new SQL_Queires();
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                j++;
+            }
+            int Low = risk.Next(1, 40);
+            int Medium = risk.Next(41, 70);
+            int High = risk.Next(71, 100);
+            int i = 0;
+            double val = 0;
+            while (MD_GV.Rows.Count > i)
+            {
+                val += double.Parse(MD_GV.Rows[i].Cells[2].Value.ToString()) + double.Parse(MD_GV.Rows[i].Cells[3].Value.ToString()) +
+                    double.Parse(MD_GV.Rows[i].Cells[11].Value.ToString()) + double.Parse(MD_GV.Rows[i].Cells[19].Value.ToString()) +
+                    double.Parse(MD_GV.Rows[i].Cells[27].Value.ToString()) + double.Parse(MD_GV.Rows[i].Cells[35].Value.ToString());
+                i++;
+            }
+            if (val > 785000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Marketing Department', '" + HighFreq + "', '" + High + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 785000000 && val > 250000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Marketing Department', '" + MedFreq + "', '" + Medium + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 250000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Marketing Department', '" + LowFreq + "', '" + Low + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+        }
+
+        #endregion
+
+        private void MD_AddInfo_Btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
