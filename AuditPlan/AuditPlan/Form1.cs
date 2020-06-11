@@ -17,6 +17,29 @@ namespace AuditPlan
         {
             InitializeComponent();
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'auditPlanDataSet.AuditPlanRes' table. You can move, or remove it, as needed.
+            this.auditPlanResTableAdapter.Fill(this.auditPlanDataSet.AuditPlanRes);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.FinanceDpt' table. You can move, or remove it, as needed.
+            this.financeDptTableAdapter.Fill(this.auditPlanDataSet.FinanceDpt);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.MarketDpt' table. You can move, or remove it, as needed.
+            this.marketDptTableAdapter.Fill(this.auditPlanDataSet.MarketDpt);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.HRDept' table. You can move, or remove it, as needed.
+            this.hRDeptTableAdapter.Fill(this.auditPlanDataSet.HRDept);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.PARCOAvi' table. You can move, or remove it, as needed.
+            this.pARCOAviTableAdapter.Fill(this.auditPlanDataSet.PARCOAvi);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.ChaklalaAvi' table. You can move, or remove it, as needed.
+            this.chaklalaAviTableAdapter.Fill(this.auditPlanDataSet.ChaklalaAvi);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.KeemariAvi' table. You can move, or remove it, as needed.
+            this.keemariAviTableAdapter.Fill(this.auditPlanDataSet.KeemariAvi);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.PARCODepo' table. You can move, or remove it, as needed.
+            this.pARCODepoTableAdapter.Fill(this.auditPlanDataSet.PARCODepo);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.ChaklalaDepo' table. You can move, or remove it, as needed.
+            this.chaklalaDepoTableAdapter.Fill(this.auditPlanDataSet.ChaklalaDepo);
+            // TODO: This line of code loads data into the 'auditPlanDataSet.KeemariDepo' table. You can move, or remove it, as needed.
+            this.keemariDepoTableAdapter.Fill(this.auditPlanDataSet.KeemariDepo);
+        }
         SqlConnection con = new SqlConnection("Data Source=MASHOOD;Initial Catalog=AuditPlan;Integrated Security=True");
         static Random risk = new Random();
         int LowFreq = 1;
@@ -804,6 +827,600 @@ namespace AuditPlan
             }
         }
         #endregion
+        #region===============================================Chaklala Depo==============================================
+        public void C_STotAmnt()
+        {
+            C_TSM_S_Amnt_TB.Text = ((Convert.ToInt64(C_MS_S_Amnt_TB.Text) + Convert.ToInt64(C_HOBC_S_Amnt_TB.Text) + Convert.ToInt64(C_HSD_S_Amnt_TB.Text) + Convert.ToInt64(C_KO_S_Amnt_TB.Text)) * 30).ToString();
+        }
+        public void C_TTotStck()
+        {
+            C_TS_T_TStck_TB.Text = ((Convert.ToInt64(C_MS_T_Stck_TB.Text) + Convert.ToInt64(C_HOBC_T_Stck_TB.Text) + Convert.ToInt64(C_HSD_P_IN_TB.Text) + Convert.ToInt64(C_KO_P_IN_TB.Text)) * 30).ToString();
+        }
+        public void C_PTotAmnt()
+        {
+            C_TPSM_P_Amnt_TB.Text = ((Convert.ToInt64(C_MS_P_Prc_TB.Text) + Convert.ToInt64(C_HOBC_P_Prc_TB.Text) + Convert.ToInt64(C_HSD_P_Prc_TB.Text) + Convert.ToInt64(C_KO_P_Prc_TB.Text)) * 30).ToString();
+        }
+        public void C_PTotStck()
+        {
+            C_TPSM_P_Stck_TB.Text = ((Convert.ToInt64(C_MS_P_IN_TB.Text) + Convert.ToInt64(C_HOBC_P_IN_TB.Text) + Convert.ToInt64(C_HSD_P_IN_TB.Text) + Convert.ToInt64(C_KO_P_IN_TB.Text)) * 30).ToString();
+        }
+        public void C_DepoStck()
+        {
+            C_BBD_Stck_TB.Text = (Convert.ToInt64(C_TS_T_TStck_TB.Text) / 150).ToString();
+            C_FD_Stck_TB.Text = (Convert.ToInt64(C_TS_T_TStck_TB.Text) / 150).ToString();
+            C_SD_Stck_TB.Text = (Convert.ToInt64(C_TS_T_TStck_TB.Text) / 150).ToString();
+            C_PD_Stck_TB.Text = (Convert.ToInt64(C_TS_T_TStck_TB.Text) / 150).ToString();
+            C_BD_Stck_TB.Text = (Convert.ToInt64(C_TS_T_TStck_TB.Text) / 150).ToString();
+        }
+        public void C_Depo_Sale()
+        {
+            C_BBD_Sale_TB.Text = (Convert.ToInt64(C_BBD_Stck_TB.Text) * 125).ToString();
+            C_FD_Sale_TB.Text = (Convert.ToInt64(C_FD_Stck_TB.Text) * 122).ToString();
+            C_SD_Sale_TB.Text = (Convert.ToInt64(C_SD_Stck_TB.Text) * 124).ToString();
+            C_PD_Sale_TB.Text = (Convert.ToInt64(C_PD_Stck_TB.Text) * 130).ToString();
+            C_BD_Sale_TB.Text = (Convert.ToInt64(C_BD_Stck_TB.Text) * 129).ToString();
+        }
+        public void C_Depo_TotSale()
+        {
+            C_Depo_TAmnt.Text = (Convert.ToInt64(C_BBD_Sale_TB.Text) + Convert.ToInt64(C_FD_Sale_TB.Text) + Convert.ToInt64(C_SD_Sale_TB.Text) + Convert.ToInt64(C_PD_Sale_TB.Text) + Convert.ToInt64(C_BD_Sale_TB.Text)).ToString();
+        }
+        public void CD_Clr()
+        {
+            CD_Date.Text = null; C_MS_P_IN_TB.Clear(); C_HOBC_P_IN_TB.Clear(); C_HSD_P_IN_TB.Clear(); C_KO_P_IN_TB.Clear(); C_MS_P_Prc_TB.Clear();
+            C_HOBC_P_Prc_TB.Clear(); C_HSD_P_Prc_TB.Clear(); C_KO_P_Prc_TB.Clear(); C_MS_T_IN_TB.Clear(); C_HOBC_T_IN_TB.Clear();
+            C_HSD_T_IN_TB.Clear(); C_KO_T_IN_TB.Clear(); C_MS_T_Stck_TB.Clear(); C_HOBC_T_Stck_TB.Clear(); C_HSD_T_Stck_TB.Clear();
+            C_KO_T_Stck_TB.Clear(); C_MS_S_Stck_TB.Clear(); C_HOBC_S_Stck_TB.Clear(); C_HSD_S_Stck_TB.Clear(); C_KO_S_Stck_TB.Clear();
+            C_MS_S_Amnt_TB.Clear(); C_HOBC_S_Amnt_TB.Clear(); C_HSD_S_Amnt_TB.Clear(); C_KO_S_Amnt_TB.Clear(); C_TPSM_P_Stck_TB.Clear();
+            C_TPSM_P_Amnt_TB.Clear(); C_TS_T_TStck_TB.Clear(); C_TSM_S_Amnt_TB.Clear(); C_BBD_Stck_TB.Clear(); C_FD_Stck_TB.Clear();
+            C_SD_Stck_TB.Clear(); C_PD_Stck_TB.Clear(); C_BD_Stck_TB.Clear(); C_Depo_TStck.Clear(); C_BBD_Sale_TB.Clear();
+            C_FD_Sale_TB.Clear(); C_SD_Sale_TB.Clear(); C_PD_Sale_TB.Clear(); C_BD_Sale_TB.Clear(); C_Depo_TAmnt.Clear();
+        }
+        public void ChaklalaDepo_Result()
+        {
+            int j = 0;
+            while (Res_GV.Rows.Count > j)
+            {
+                string dept = Res_GV.Rows[j].Cells[1].Value.ToString();
+                if (dept == "Chaklala Depo")
+                {
+                    try
+                    {
+                        SQL_Queires SQ = new SQL_Queires();
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                j++;
+            }
+            int Low = risk.Next(1, 40);
+            int Medium = risk.Next(41, 70);
+            int High = risk.Next(71, 100);
+            int i = 0;
+            double val = 0;
+            while (ChakD_GV.Rows.Count > i)
+            {
+                val += double.Parse(ChakD_GV.Rows[i].Cells[11].Value.ToString());
+                i++;
+            }
+            if (val > 25000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Chaklala Depo', '" + HighFreq + "', '" + High + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 25000000 && val > 15000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Chaklala Depo', '" + MedFreq + "', '" + Medium + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 15000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Chaklala Depo', '" + LowFreq + "', '" + Low + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+        }
+
+        private void C_AInfo_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQL_Queires SQ = new SQL_Queires();
+                int j = 0;
+                while (ChakD_GV.Rows.Count > j)
+                {
+                    string val = ChakD_GV.Rows[j].Cells[1].Value.ToString();
+                    if (CD_Date.Text == val)
+                    {
+                        SQ.DeleteData("DELETE FROM ChaklalaDepo WHERE Date = '" + val + "';");
+                    }
+                    j++;
+                }
+                double MS_SaleStck = (Convert.ToInt64(C_MS_P_IN_TB.Text) * Convert.ToInt64(C_MS_S_Stck_TB.Text)) / 100;
+                double HOBC_SaleStck = (Convert.ToInt64(C_HOBC_P_IN_TB.Text) * Convert.ToInt64(C_HOBC_S_Stck_TB.Text)) / 100;
+                double HSD_SaleStck = (Convert.ToInt64(C_HSD_P_IN_TB.Text) * Convert.ToInt64(C_HSD_S_Stck_TB.Text)) / 100;
+                double KO_SaleStck = (Convert.ToInt64(C_KO_P_IN_TB.Text) * Convert.ToInt64(C_KO_S_Stck_TB.Text)) / 100;
+                double MS_CStck = Convert.ToInt64(C_MS_P_IN_TB.Text) - (Convert.ToInt64(C_MS_T_Stck_TB.Text) + MS_SaleStck);
+                double HOBC_CStck = Convert.ToInt64(C_HOBC_P_IN_TB.Text) - (Convert.ToInt64(C_HOBC_T_Stck_TB.Text) + HOBC_SaleStck);
+                double HSD_CStck = Convert.ToInt64(C_HSD_P_IN_TB.Text) - (Convert.ToInt64(C_HSD_T_Stck_TB.Text) + HSD_SaleStck);
+                double KO_CStck = Convert.ToInt64(C_KO_P_IN_TB.Text) - (Convert.ToInt64(C_KO_T_Stck_TB.Text) + KO_SaleStck);
+                String query = "Insert INTO ChaklalaDepo (Date, MS_Pur_Ltr, HOBC_Pur_Ltr, HSD_Pur_Ltr, KO_Pur_Ltr, Pur_Tstock, MS_Pur_Amnt, HOBC_Pur_Amnt," +
+                "HSD_Pur_Amnt, KO_Pur_Amnt, Pur_Tamount, MS_Tran_Per, HOBC_Tran_Per, HSD_Tran_Per, KO_Tran_Per, MS_Tran_Stck, HOBC_Tran_Stck, " +
+                "HSD_Tran_Stck, KO_Tran_Stck, Tran_Tstock, MS_Sale_Per, HOBC_Sale_per, HSD_Sale_Per, KO_Sale_Per, MS_Sale_Amnt, HOBC_Sale_Amnt, HSD_Sale_Amnt," +
+                "KO_Sale_Amnt, Sale_Tamount, BadD_Stck, FaisD_Stck, SarD_Stck, PeshD_Stck, BannD_Stck, Depo_Tstock, BadD_Sale, FaisD_Sale, SarD_Sale, PeshD_Sale, " +
+                "BannD_Sale, Depo_TSale, MS_Pur_Prc, HOBC_Pur_Prc, HSD_Pur_Prc, KO_Pur_Prc, MS_ClosingS, HOBC_ClosingS, HSD_ClosingS, KO_ClosingS, MS_Sale_Prc, HOBC_Sale_Prc," +
+                "HSD_Sale_Prc, KO_Sale_Prc) VALUES('" + CD_Date.Text + "', '" + C_MS_P_IN_TB.Text + "', '" + C_HOBC_P_IN_TB.Text + "', '" + C_HSD_P_IN_TB.Text + "', '" + C_KO_P_IN_TB.Text + "', '" + C_TPSM_P_Stck_TB.Text + "', " +
+                "'" + C_MS_P_Prc_TB.Text + "', '" + C_HOBC_P_Prc_TB.Text + "', '" + C_HSD_P_Prc_TB.Text + "', '" + C_KO_P_Prc_TB.Text + "', '" + C_TPSM_P_Amnt_TB.Text + "', '" + C_MS_T_IN_TB.Text + "', " +
+                "'" + C_HOBC_T_IN_TB.Text + "', '" + C_HSD_T_IN_TB.Text + "', '" + C_KO_T_IN_TB.Text + "', '" + C_MS_T_Stck_TB.Text + "', '" + C_HOBC_T_Stck_TB.Text + "', '" + C_HSD_T_Stck_TB.Text + "', " +
+                "'" + C_KO_T_Stck_TB.Text + "', '" + C_TS_T_TStck_TB.Text + "', '" + C_MS_S_Stck_TB.Text + "', '" + C_HOBC_S_Stck_TB.Text + "', '" + C_HSD_S_Stck_TB.Text + "', '" + C_KO_S_Stck_TB.Text + "', " +
+                "'" + C_MS_S_Amnt_TB.Text + "', '" + C_HOBC_S_Amnt_TB.Text + "', '" + C_HSD_S_Amnt_TB.Text + "', '" + C_KO_S_Amnt_TB.Text + "', '" + C_TSM_S_Amnt_TB.Text + "', '" + C_BBD_Stck_TB.Text + "', '" + C_FD_Stck_TB.Text + "', " +
+                "'" + C_SD_Stck_TB.Text + "', '" + C_PD_Stck_TB.Text + "','" + C_BD_Stck_TB.Text + "','" + C_Depo_TStck.Text + "', '" + C_BBD_Sale_TB.Text + "', '" + C_FD_Sale_TB.Text + "', '" + C_SD_Sale_TB.Text + "', " +
+                "'" + C_PD_Sale_TB.Text + "','" + C_BD_Sale_TB.Text + "','" + C_Depo_TAmnt.Text + "', " +
+                "'" + 90 + "', '" + 100 + "', '" + 115 + "', '" + 110 + "', '" + MS_CStck + "', '" + HOBC_CStck + "', '" + HSD_CStck + "', '" + KO_CStck + "', '" + 98 + "', '" + 116 + "', '" + 125 + "', '" + 120 + "')";
+                SQ.InsertData(query);
+                MessageBox.Show("Success!");
+                CD_Clr();
+                SQ.ShowGVData("SELECT * FROM ChaklalaDepo", ChakD_GV);
+                ChaklalaDepo_Result();
+            }
+            catch (FormatException)
+            {
+            }
+        }
+
+        private void ChakD_GV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string id = ChakD_GV.SelectedRows[0].Cells[0].Value.ToString();
+                CD_Date.Text = ChakD_GV.SelectedRows[0].Cells[1].Value.ToString();
+                C_MS_P_IN_TB.Text = ChakD_GV.SelectedRows[0].Cells[2].Value.ToString();
+                C_HOBC_P_IN_TB.Text = ChakD_GV.SelectedRows[0].Cells[3].Value.ToString();
+                C_HSD_P_IN_TB.Text = ChakD_GV.SelectedRows[0].Cells[4].Value.ToString();
+                C_KO_P_IN_TB.Text = ChakD_GV.SelectedRows[0].Cells[5].Value.ToString();
+                C_TPSM_P_Stck_TB.Text = ChakD_GV.SelectedRows[0].Cells[6].Value.ToString();
+                C_MS_P_Prc_TB.Text = ChakD_GV.SelectedRows[0].Cells[7].Value.ToString();
+                C_HOBC_P_Prc_TB.Text = ChakD_GV.SelectedRows[0].Cells[8].Value.ToString();
+                C_HSD_P_Prc_TB.Text = ChakD_GV.SelectedRows[0].Cells[9].Value.ToString();
+                C_KO_P_Prc_TB.Text = ChakD_GV.SelectedRows[0].Cells[10].Value.ToString();
+                C_TPSM_P_Amnt_TB.Text = ChakD_GV.SelectedRows[0].Cells[11].Value.ToString();
+                C_MS_T_IN_TB.Text = ChakD_GV.SelectedRows[0].Cells[12].Value.ToString();
+                C_HOBC_T_IN_TB.Text = ChakD_GV.SelectedRows[0].Cells[13].Value.ToString();
+                C_HSD_T_IN_TB.Text = ChakD_GV.SelectedRows[0].Cells[14].Value.ToString();
+                C_KO_T_IN_TB.Text = ChakD_GV.SelectedRows[0].Cells[15].Value.ToString();
+                C_MS_T_Stck_TB.Text = ChakD_GV.SelectedRows[0].Cells[16].Value.ToString();
+                C_HOBC_T_Stck_TB.Text = ChakD_GV.SelectedRows[0].Cells[17].Value.ToString();
+                C_HSD_T_Stck_TB.Text = ChakD_GV.SelectedRows[0].Cells[18].Value.ToString();
+                C_KO_T_Stck_TB.Text = ChakD_GV.SelectedRows[0].Cells[19].Value.ToString();
+                C_TS_T_TStck_TB.Text = ChakD_GV.SelectedRows[0].Cells[20].Value.ToString();
+                C_MS_S_Stck_TB.Text = ChakD_GV.SelectedRows[0].Cells[21].Value.ToString();
+                C_HOBC_S_Stck_TB.Text = ChakD_GV.SelectedRows[0].Cells[22].Value.ToString();
+                C_HSD_S_Stck_TB.Text = ChakD_GV.SelectedRows[0].Cells[23].Value.ToString();
+                C_KO_S_Stck_TB.Text = ChakD_GV.SelectedRows[0].Cells[24].Value.ToString();
+                C_MS_S_Amnt_TB.Text = ChakD_GV.SelectedRows[0].Cells[25].Value.ToString();
+                C_HOBC_S_Amnt_TB.Text = ChakD_GV.SelectedRows[0].Cells[26].Value.ToString();
+                C_HSD_S_Amnt_TB.Text = ChakD_GV.SelectedRows[0].Cells[27].Value.ToString();
+                C_KO_S_Amnt_TB.Text = ChakD_GV.SelectedRows[0].Cells[28].Value.ToString();
+                C_TSM_S_Amnt_TB.Text = ChakD_GV.SelectedRows[0].Cells[29].Value.ToString();
+                C_BBD_Stck_TB.Text = ChakD_GV.SelectedRows[0].Cells[30].Value.ToString();
+                C_FD_Stck_TB.Text = ChakD_GV.SelectedRows[0].Cells[31].Value.ToString();
+                C_SD_Stck_TB.Text = ChakD_GV.SelectedRows[0].Cells[32].Value.ToString();
+                C_PD_Stck_TB.Text = ChakD_GV.SelectedRows[0].Cells[33].Value.ToString();
+                C_BD_Stck_TB.Text = ChakD_GV.SelectedRows[0].Cells[34].Value.ToString();
+                C_Depo_TStck.Text = ChakD_GV.SelectedRows[0].Cells[35].Value.ToString();
+                C_BBD_Sale_TB.Text = ChakD_GV.SelectedRows[0].Cells[36].Value.ToString();
+                C_FD_Sale_TB.Text = ChakD_GV.SelectedRows[0].Cells[37].Value.ToString();
+                C_SD_Sale_TB.Text = ChakD_GV.SelectedRows[0].Cells[38].Value.ToString();
+                C_PD_Sale_TB.Text = ChakD_GV.SelectedRows[0].Cells[39].Value.ToString();
+                C_BD_Sale_TB.Text = ChakD_GV.SelectedRows[0].Cells[40].Value.ToString();
+                C_Depo_TAmnt.Text = ChakD_GV.SelectedRows[0].Cells[41].Value.ToString();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_Del_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    string id = ChakD_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SQ.DeleteData("DELETE FROM ChaklalaDepo WHERE ID = '" + id + "';");
+                    SQ.ShowGVData("Select * FROM ChaklalaDepo", ChakD_GV);
+                    CD_Clr();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_Update_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string comp = ChakD_GV.SelectedRows[0].Cells[1].Value.ToString();
+
+                if (CD_Date.Text == comp)
+                {
+                    double MS_SaleStck = (Convert.ToInt64(C_MS_P_IN_TB.Text) * Convert.ToInt64(C_MS_S_Stck_TB.Text)) / 100;
+                    double HOBC_SaleStck = (Convert.ToInt64(C_HOBC_P_IN_TB.Text) * Convert.ToInt64(C_HOBC_S_Stck_TB.Text)) / 100;
+                    double HSD_SaleStck = (Convert.ToInt64(C_HSD_P_IN_TB.Text) * Convert.ToInt64(C_HSD_S_Stck_TB.Text)) / 100;
+                    double KO_SaleStck = (Convert.ToInt64(C_KO_P_IN_TB.Text) * Convert.ToInt64(C_KO_S_Stck_TB.Text)) / 100;
+                    double MS_CStck = Convert.ToInt64(C_MS_P_IN_TB.Text) - (Convert.ToInt64(C_MS_T_Stck_TB.Text) + MS_SaleStck);
+                    double HOBC_CStck = Convert.ToInt64(C_HOBC_P_IN_TB.Text) - (Convert.ToInt64(C_HOBC_T_Stck_TB.Text) + HOBC_SaleStck);
+                    double HSD_CStck = Convert.ToInt64(C_HSD_P_IN_TB.Text) - (Convert.ToInt64(C_HSD_T_Stck_TB.Text) + HSD_SaleStck);
+                    double KO_CStck = Convert.ToInt64(C_KO_P_IN_TB.Text) - (Convert.ToInt64(C_KO_T_Stck_TB.Text) + KO_SaleStck);
+                    SQL_Queires SQ = new SQL_Queires();
+                    con.Open();
+                    string id = ChakD_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SqlDataAdapter Update = new SqlDataAdapter("UPDATE ChaklalaDepo SET Date= '" + CD_Date.Text + "', MS_Pur_Ltr= '" + C_MS_P_IN_TB.Text + "', HOBC_Pur_Ltr= '" + C_HOBC_P_IN_TB.Text + "', HSD_Pur_Ltr= '" + C_HSD_P_IN_TB.Text + "'," +
+                        "KO_Pur_Ltr= '" + C_KO_P_IN_TB.Text + "', Pur_Tstock= '" + C_TPSM_P_Stck_TB.Text + "', MS_Pur_Amnt= '" + C_MS_P_Prc_TB.Text + "', HOBC_Pur_Amnt= '" + C_HOBC_P_Prc_TB.Text + "', HSD_Pur_Amnt= '" + C_HSD_P_Prc_TB.Text + "'," +
+                        "KO_Pur_Amnt= '" + C_KO_P_Prc_TB.Text + "', Pur_Tamount= '" + C_TPSM_P_Amnt_TB.Text + "', MS_Tran_Per= '" + C_MS_T_IN_TB.Text + "', HOBC_Tran_Per= '" + C_HOBC_T_IN_TB.Text + "', HSD_Tran_Per= '" + C_HSD_T_IN_TB.Text + "'," +
+                        "KO_Tran_Per= '" + C_KO_T_IN_TB.Text + "', MS_Tran_Stck= '" + C_MS_T_Stck_TB.Text + "', HOBC_Tran_Stck= '" + C_HOBC_T_Stck_TB.Text + "', HSD_Tran_Stck= '" + C_HSD_T_Stck_TB.Text + "', KO_Tran_Stck= '" + C_KO_T_Stck_TB.Text + "'," +
+                        "Tran_Tstock= '" + C_TS_T_TStck_TB.Text + "', MS_Sale_Per= '" + C_MS_S_Stck_TB.Text + "', HOBC_Sale_Per= '" + C_HOBC_S_Stck_TB.Text + "', HSD_Sale_Per= '" + C_HSD_S_Stck_TB.Text + "', KO_Sale_Per= '" + C_KO_S_Stck_TB.Text + "'," +
+                        "MS_Sale_Amnt= '" + C_MS_S_Amnt_TB.Text + "', HOBC_Sale_Amnt= '" + C_HOBC_S_Amnt_TB.Text + "', HSD_Sale_Amnt= '" + C_HSD_S_Amnt_TB.Text + "', KO_Sale_Amnt= '" + C_KO_S_Amnt_TB.Text + "', Sale_Tamount= '" + C_TSM_S_Amnt_TB.Text + "'," +
+                        "BadD_Stck= '" + C_BBD_Stck_TB.Text + "', FaisD_Stck= '" + C_FD_Stck_TB.Text + "', SarD_Stck= '" + C_SD_Stck_TB.Text + "', PeshD_Stck= '" + C_PD_Stck_TB.Text + "', BannD_Stck= '" + C_BD_Stck_TB.Text + "', " +
+                        "Depo_Tstock= '" + C_Depo_TStck.Text + "', BadD_Sale= '" + C_BBD_Sale_TB.Text + "', FaisD_Sale= '" + C_FD_Sale_TB.Text + "', SarD_Sale= '" + C_SD_Sale_TB.Text + "', PeshD_Sale= '" + C_PD_Sale_TB.Text + "', " +
+                        "BannD_Sale= '" + C_BD_Sale_TB.Text + "', Depo_TSale= '" + C_Depo_TAmnt.Text + "', MS_ClosingS= '" + MS_CStck + "', HOBC_ClosingS= '" + HOBC_CStck + "'," +
+                        "HSD_ClosingS= '" + HSD_CStck + "', KO_ClosingS= '" + KO_CStck + "' WHERE ID = '" + id + "'", con);
+                    Update.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+                    SQ.ShowGVData("SELECT * FROM ChaklalaDepo", ChakD_GV);
+                    CD_Clr();
+                    MessageBox.Show("Updated Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("You cannot change date");
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void CD_TextChange()
+        {
+            try
+            {
+                C_MS_P_Prc_TB.Text = (Convert.ToInt64(C_MS_P_IN_TB.Text) * 90).ToString();
+                C_HOBC_P_Prc_TB.Text = (Convert.ToInt64(C_HOBC_P_IN_TB.Text) * 100).ToString();
+                C_HSD_P_Prc_TB.Text = (Convert.ToInt64(C_HSD_P_IN_TB.Text) * 115).ToString();
+                C_KO_P_Prc_TB.Text = (Convert.ToInt64(C_KO_P_IN_TB.Text) * 110).ToString();
+                C_PTotStck();
+                C_PTotAmnt();
+                C_MS_T_Stck_TB.Text = ((Convert.ToInt64(C_MS_P_IN_TB.Text) * Convert.ToInt64(C_MS_T_IN_TB.Text)) / 100).ToString();
+                C_HOBC_T_Stck_TB.Text = ((Convert.ToInt64(C_HOBC_P_IN_TB.Text) * Convert.ToInt64(C_HOBC_T_IN_TB.Text)) / 100).ToString();
+                C_HSD_T_Stck_TB.Text = ((Convert.ToInt64(C_HSD_P_IN_TB.Text) * Convert.ToInt64(C_HSD_T_IN_TB.Text)) / 100).ToString();
+                C_KO_T_Stck_TB.Text = ((Convert.ToInt64(C_KO_P_IN_TB.Text) * Convert.ToInt64(C_KO_T_IN_TB.Text)) / 100).ToString();
+                C_TTotStck();
+                C_MS_S_Amnt_TB.Text = (((Convert.ToUInt64(C_MS_P_IN_TB.Text) * Convert.ToUInt64(C_MS_S_Stck_TB.Text)) / 100) * 98).ToString();
+                C_HOBC_S_Amnt_TB.Text = (((Convert.ToUInt64(C_HOBC_P_IN_TB.Text) * Convert.ToUInt64(C_HOBC_S_Stck_TB.Text)) / 100) * 98).ToString();
+                C_HSD_S_Amnt_TB.Text = (((Convert.ToUInt64(C_HSD_P_IN_TB.Text) * Convert.ToUInt64(C_HSD_S_Stck_TB.Text)) / 100) * 98).ToString();
+                C_KO_S_Amnt_TB.Text = (((Convert.ToUInt64(C_KO_P_IN_TB.Text) * Convert.ToUInt64(C_KO_S_Stck_TB.Text)) / 100) * 98).ToString();
+                C_STotAmnt();
+                C_DepoStck();
+                C_Depo_TStck.Text = C_TS_T_TStck_TB.Text;
+                C_Depo_TotSale();
+                C_Depo_Sale();
+
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_MS_P_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (C_MS_P_IN_TB.Text == String.Empty)
+                {
+                    C_MS_P_Prc_TB.Clear();
+                }
+                C_MS_P_Prc_TB.Text = (Convert.ToInt64(C_MS_P_IN_TB.Text) * 90).ToString();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_HOBC_P_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (C_HOBC_P_IN_TB.Text == String.Empty)
+                {
+                    C_HOBC_P_Prc_TB.Clear();
+                }
+                C_HOBC_P_Prc_TB.Text = (Convert.ToInt64(C_HOBC_P_IN_TB.Text) * 100).ToString();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_HSD_P_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (C_HSD_P_IN_TB.Text == String.Empty)
+                {
+                    C_HSD_P_Prc_TB.Clear();
+                }
+                C_HSD_P_Prc_TB.Text = (Convert.ToInt64(C_HSD_P_IN_TB.Text) * 115).ToString();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_KO_P_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (C_KO_P_IN_TB.Text == String.Empty)
+                {
+                    C_KO_P_Prc_TB.Clear();
+                    C_TPSM_P_Stck_TB.Clear();
+                    C_TPSM_P_Amnt_TB.Clear();
+                }
+                C_KO_P_Prc_TB.Text = (Convert.ToInt64(C_KO_P_IN_TB.Text) * 110).ToString();
+                C_PTotStck();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_KO_P_Prc_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                C_PTotAmnt();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_MS_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (C_MS_T_IN_TB.Text == String.Empty)
+                {
+                    C_MS_T_Stck_TB.Clear();
+                }
+                C_MS_T_Stck_TB.Text = ((Convert.ToInt64(C_MS_P_IN_TB.Text) * Convert.ToInt64(C_MS_T_IN_TB.Text)) / 100).ToString();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_HOBC_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (C_HOBC_T_IN_TB.Text == String.Empty)
+                {
+                    C_HOBC_T_Stck_TB.Clear();
+                }
+                C_HOBC_T_Stck_TB.Text = ((Convert.ToInt64(C_HOBC_P_IN_TB.Text) * Convert.ToInt64(C_HOBC_T_IN_TB.Text)) / 100).ToString();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_HSD_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (C_HSD_T_IN_TB.Text == String.Empty)
+                {
+                    C_HSD_T_Stck_TB.Clear();
+                }
+                C_HSD_T_Stck_TB.Text = ((Convert.ToInt64(C_HSD_P_IN_TB.Text) * Convert.ToInt64(C_HSD_T_IN_TB.Text)) / 100).ToString();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_KO_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (C_KO_T_IN_TB.Text == String.Empty)
+                {
+                    C_KO_T_Stck_TB.Clear();
+                    C_TS_T_TStck_TB.Clear();
+                    C_BBD_Stck_TB.Clear();
+                    C_BBD_Sale_TB.Clear();
+                    C_FD_Stck_TB.Clear();
+                    C_FD_Sale_TB.Clear();
+                    C_SD_Stck_TB.Clear();
+                    C_SD_Sale_TB.Clear();
+                    C_PD_Stck_TB.Clear();
+                    C_PD_Sale_TB.Clear();
+                    C_BD_Stck_TB.Clear();
+                    C_BD_Sale_TB.Clear();
+                    C_Depo_TAmnt.Clear();
+                    C_Depo_TStck.Clear();
+                }
+                C_KO_T_Stck_TB.Text = ((Convert.ToInt64(C_KO_P_IN_TB.Text) * Convert.ToInt64(C_KO_T_IN_TB.Text)) / 100).ToString();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_MS_S_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (C_MS_S_Stck_TB.Text == String.Empty)
+                {
+                    C_MS_S_Amnt_TB.Clear();
+                }
+                C_MS_S_Amnt_TB.Text = (((Convert.ToUInt64(C_MS_P_IN_TB.Text) * Convert.ToUInt64(C_MS_S_Stck_TB.Text)) / 100) * 98).ToString();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_HOBC_S_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (C_HOBC_S_Stck_TB.Text == String.Empty)
+                {
+                    C_HOBC_S_Amnt_TB.Clear();
+                }
+                C_HOBC_S_Amnt_TB.Text = (((Convert.ToUInt64(C_HOBC_P_IN_TB.Text) * Convert.ToUInt64(C_HOBC_S_Stck_TB.Text)) / 100) * 98).ToString();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_HSD_S_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (C_HSD_S_Stck_TB.Text == String.Empty)
+                {
+                    C_HSD_S_Amnt_TB.Clear();
+                }
+                C_HSD_S_Amnt_TB.Text = (((Convert.ToUInt64(C_HSD_P_IN_TB.Text) * Convert.ToUInt64(C_HSD_S_Stck_TB.Text)) / 100) * 98).ToString();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_KO_S_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (C_KO_S_Stck_TB.Text == String.Empty)
+                {
+                    C_KO_S_Amnt_TB.Clear();
+                    C_TSM_S_Amnt_TB.Clear();
+                }
+                C_KO_S_Amnt_TB.Text = (((Convert.ToUInt64(C_KO_P_IN_TB.Text) * Convert.ToUInt64(C_KO_S_Stck_TB.Text)) / 100) * 98).ToString();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_KO_T_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                C_TTotStck();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_KO_S_Amnt_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                C_STotAmnt();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_TS_T_TStck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                C_DepoStck();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_BD_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                C_Depo_TStck.Text = C_TS_T_TStck_TB.Text;
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_BD_Sale_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                C_Depo_TotSale();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_Depo_TStck_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                C_Depo_Sale();
+                CD_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void C_Rst_Btn_Click(object sender, EventArgs e)
+        {
+            CD_Clr();
+
+        }
+        #endregion
         #region===============================================Keemari Aviation===============================================
 
         private void KAVI_AddInfo_Btn_Click(object sender, EventArgs e)
@@ -852,31 +1469,7 @@ namespace AuditPlan
 
         }
         #endregion
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'auditPlanDataSet.AuditPlanRes' table. You can move, or remove it, as needed.
-            this.auditPlanResTableAdapter.Fill(this.auditPlanDataSet.AuditPlanRes);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.FinanceDpt' table. You can move, or remove it, as needed.
-            this.financeDptTableAdapter.Fill(this.auditPlanDataSet.FinanceDpt);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.MarketDpt' table. You can move, or remove it, as needed.
-            this.marketDptTableAdapter.Fill(this.auditPlanDataSet.MarketDpt);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.HRDept' table. You can move, or remove it, as needed.
-            this.hRDeptTableAdapter.Fill(this.auditPlanDataSet.HRDept);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.PARCOAvi' table. You can move, or remove it, as needed.
-            this.pARCOAviTableAdapter.Fill(this.auditPlanDataSet.PARCOAvi);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.ChaklalaAvi' table. You can move, or remove it, as needed.
-            this.chaklalaAviTableAdapter.Fill(this.auditPlanDataSet.ChaklalaAvi);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.KeemariAvi' table. You can move, or remove it, as needed.
-            this.keemariAviTableAdapter.Fill(this.auditPlanDataSet.KeemariAvi);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.PARCODepo' table. You can move, or remove it, as needed.
-            this.pARCODepoTableAdapter.Fill(this.auditPlanDataSet.PARCODepo);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.ChaklalaDepo' table. You can move, or remove it, as needed.
-            this.chaklalaDepoTableAdapter.Fill(this.auditPlanDataSet.ChaklalaDepo);
-            // TODO: This line of code loads data into the 'auditPlanDataSet.KeemariDepo' table. You can move, or remove it, as needed.
-            this.keemariDepoTableAdapter.Fill(this.auditPlanDataSet.KeemariDepo);
-
-        }
-        #region--------------------------HR Department-----------------------------------------------------------
+        #region=================================================HR Dept==================================================
         public void HR_Clr()
         {
             HR_Date.Text = null; HR_Pur_Air_Tic_TB.Clear(); HR_Main_St_Cars_TB.Clear(); HR_HotlB_TB.Clear(); HR_Tran_Arr_TB.Clear();
@@ -1044,7 +1637,7 @@ namespace AuditPlan
             }
         }
         #endregion
-        #region---------------------------------Marketing Department--------------------------------------
+        #region==============================================Marketing Dept==============================================
         public void Markt_K_TStck()
         {
             MD_K_T_Stck_TB.Text = ((Convert.ToInt64(RD_KS_HiSpr_Stck_TB.Text) + Convert.ToInt64(RD_KS_HSD_Stck_TB.Text) + Convert.ToInt64(RD_KS_HOBC_Stck_TB.Text)) * 90).ToString();
@@ -1576,7 +2169,7 @@ namespace AuditPlan
             }
         }
         #endregion
-        #region-------------------------------------Finance Department-------------------------------------------------------
+        #region================================================Finance Dpt===============================================
         public void FD_Result()
         {
             int j = 0;
@@ -2034,9 +2627,6 @@ namespace AuditPlan
             {
             }
         }
-
-        #endregion
-
         private void FD_Pnl2_Rst_Btn_Click(object sender, EventArgs e)
         {
             try
@@ -2058,223 +2648,6 @@ namespace AuditPlan
             {
             }
         }
-        #region===============================================Chaklala Depo==============================================
-        public void C_STotAmnt()
-        {
-            C_TSM_S_Amnt_TB.Text = ((Convert.ToInt64(C_MS_S_Amnt_TB.Text) + Convert.ToInt64(C_HOBC_S_Amnt_TB.Text) + Convert.ToInt64(C_HSD_S_Amnt_TB.Text) + Convert.ToInt64(C_KO_S_Amnt_TB.Text)) * 30).ToString();
-        }
-        public void C_TTotStck()
-        {
-            C_TS_T_TStck_TB.Text = ((Convert.ToInt64(C_MS_T_Stck_TB.Text) + Convert.ToInt64(C_HOBC_T_Stck_TB.Text) + Convert.ToInt64(C_HSD_P_IN_TB.Text) + Convert.ToInt64(C_KO_P_IN_TB.Text)) * 30).ToString();
-        }
-        public void C_PTotAmnt()
-        {
-            C_TPSM_P_Amnt_TB.Text = ((Convert.ToInt64(C_MS_P_Prc_TB.Text) + Convert.ToInt64(C_HOBC_P_Prc_TB.Text) + Convert.ToInt64(C_HSD_P_Prc_TB.Text) + Convert.ToInt64(C_KO_P_Prc_TB.Text)) * 30).ToString();
-        }
-        public void C_PTotStck()
-        {
-            C_TPSM_P_Stck_TB.Text = ((Convert.ToInt64(C_MS_P_IN_TB.Text) + Convert.ToInt64(C_HOBC_P_IN_TB.Text) + Convert.ToInt64(C_HSD_P_IN_TB.Text) + Convert.ToInt64(C_KO_P_IN_TB.Text)) * 30).ToString();
-        }
-        public void C_DepoStck()
-        {
-            C_BBD_Stck_TB.Text = (Convert.ToInt64(C_TS_T_TStck_TB.Text) / 150).ToString();
-            C_FD_Stck_TB.Text = (Convert.ToInt64(C_TS_T_TStck_TB.Text) / 150).ToString();
-            C_SD_Stck_TB.Text = (Convert.ToInt64(C_TS_T_TStck_TB.Text) / 150).ToString();
-            C_PD_Stck_TB.Text = (Convert.ToInt64(C_TS_T_TStck_TB.Text) / 150).ToString();
-            C_BD_Stck_TB.Text = (Convert.ToInt64(C_TS_T_TStck_TB.Text) / 150).ToString();
-        }
-        public void C_Depo_Sale()
-        {
-            C_BBD_Sale_TB.Text = (Convert.ToInt64(C_BBD_Stck_TB.Text) * 125).ToString();
-            C_FD_Sale_TB.Text = (Convert.ToInt64(C_FD_Stck_TB.Text) * 122).ToString();
-            C_SD_Sale_TB.Text = (Convert.ToInt64(C_SD_Stck_TB.Text) * 124).ToString();
-            C_PD_Sale_TB.Text = (Convert.ToInt64(C_PD_Stck_TB.Text) * 130).ToString();
-            C_BD_Sale_TB.Text = (Convert.ToInt64(C_BD_Stck_TB.Text) * 129).ToString();
-        }
-        public void C_Depo_TotSale()
-        {
-            C_Depo_TAmnt.Text = (Convert.ToInt64(C_BBD_Sale_TB.Text) + Convert.ToInt64(C_FD_Sale_TB.Text) + Convert.ToInt64(C_SD_Sale_TB.Text) + Convert.ToInt64(C_PD_Sale_TB.Text) + Convert.ToInt64(C_BD_Sale_TB.Text)).ToString();
-        }
-        public void CD_Clr()
-        {
-            CD_Date.Text = null; C_MS_P_IN_TB.Clear(); C_HOBC_P_IN_TB.Clear(); C_HSD_P_IN_TB.Clear(); C_KO_P_IN_TB.Clear(); C_MS_P_Prc_TB.Clear();
-            C_HOBC_P_Prc_TB.Clear(); C_HSD_P_Prc_TB.Clear(); C_KO_P_Prc_TB.Clear(); C_MS_T_IN_TB.Clear(); C_HOBC_T_IN_TB.Clear();
-            C_HSD_T_IN_TB.Clear(); C_KO_T_IN_TB.Clear(); C_MS_T_Stck_TB.Clear(); C_HOBC_T_Stck_TB.Clear(); C_HSD_T_Stck_TB.Clear();
-            C_KO_T_Stck_TB.Clear(); C_MS_S_Stck_TB.Clear(); C_HOBC_S_Stck_TB.Clear(); C_HSD_S_Stck_TB.Clear(); C_KO_S_Stck_TB.Clear();
-            C_MS_S_Amnt_TB.Clear(); C_HOBC_S_Amnt_TB.Clear(); C_HSD_S_Amnt_TB.Clear(); C_KO_S_Amnt_TB.Clear(); C_TPSM_P_Stck_TB.Clear();
-            C_TPSM_P_Amnt_TB.Clear(); C_TS_T_TStck_TB.Clear(); C_TSM_S_Amnt_TB.Clear(); C_BBD_Stck_TB.Clear(); C_FD_Stck_TB.Clear();
-            C_SD_Stck_TB.Clear(); C_PD_Stck_TB.Clear(); C_BD_Stck_TB.Clear(); C_Depo_TStck.Clear(); C_BBD_Sale_TB.Clear();
-            C_FD_Sale_TB.Clear(); C_SD_Sale_TB.Clear(); C_PD_Sale_TB.Clear(); C_BD_Sale_TB.Clear(); C_Depo_TAmnt.Clear();
-        }
-        public void ChaklalaDepo_Result()
-        {
-            int j = 0;
-            while (Res_GV.Rows.Count > j)
-            {
-                string dept = Res_GV.Rows[j].Cells[1].Value.ToString();
-                if (dept == "Chaklala Depo")
-                {
-                    try
-                    {
-                        SQL_Queires SQ = new SQL_Queires();
-                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
-                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
-                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
-                    }
-                    catch (Exception)
-                    {
-                    }
-                }
-                j++;
-            }
-            int Low = risk.Next(1, 40);
-            int Medium = risk.Next(41, 70);
-            int High = risk.Next(71, 100);
-            int i = 0;
-            double val = 0;
-            while (ChakD_GV.Rows.Count > i)
-            {
-                val += double.Parse(ChakD_GV.Rows[i].Cells[11].Value.ToString());
-                i++;
-            }
-            if (val > 25000000)
-            {
-                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Chaklala Depo', '" + HighFreq + "', '" + High + "')";
-                SQL_Queires SQ = new SQL_Queires();
-                SQ.InsertData(query);
-                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
-            }
-            else if (val < 25000000 && val > 15000000)
-            {
-                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Chaklala Depo', '" + MedFreq + "', '" + Medium + "')";
-                SQL_Queires SQ = new SQL_Queires();
-                SQ.InsertData(query);
-                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
-            }
-            else if (val < 15000000)
-            {
-                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Chaklala Depo', '" + LowFreq + "', '" + Low + "')";
-                SQL_Queires SQ = new SQL_Queires();
-                SQ.InsertData(query);
-                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
-            }
-        }
         #endregion
-
-        private void C_AInfo_Btn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SQL_Queires SQ = new SQL_Queires();
-                int j = 0;
-                while (ChakD_GV.Rows.Count > j)
-                {
-                    string val = ChakD_GV.Rows[j].Cells[1].Value.ToString();
-                    if (CD_Date.Text == val)
-                    {
-                        SQ.DeleteData("DELETE FROM ChaklalaDepo WHERE Date = '" + val + "';");
-                    }
-                    j++;
-                }
-                double MS_SaleStck = (Convert.ToInt64(C_MS_P_IN_TB.Text) * Convert.ToInt64(C_MS_S_Stck_TB.Text)) / 100;
-                double HOBC_SaleStck = (Convert.ToInt64(C_HOBC_P_IN_TB.Text) * Convert.ToInt64(C_HOBC_S_Stck_TB.Text)) / 100;
-                double HSD_SaleStck = (Convert.ToInt64(C_HSD_P_IN_TB.Text) * Convert.ToInt64(C_HSD_S_Stck_TB.Text)) / 100;
-                double KO_SaleStck = (Convert.ToInt64(C_KO_P_IN_TB.Text) * Convert.ToInt64(C_KO_S_Stck_TB.Text)) / 100;
-                double MS_CStck = Convert.ToInt64(C_MS_P_IN_TB.Text) - (Convert.ToInt64(C_MS_T_Stck_TB.Text) + MS_SaleStck);
-                double HOBC_CStck = Convert.ToInt64(C_HOBC_P_IN_TB.Text) - (Convert.ToInt64(C_HOBC_T_Stck_TB.Text) + HOBC_SaleStck);
-                double HSD_CStck = Convert.ToInt64(C_HSD_P_IN_TB.Text) - (Convert.ToInt64(C_HSD_T_Stck_TB.Text) + HSD_SaleStck);
-                double KO_CStck = Convert.ToInt64(C_KO_P_IN_TB.Text) - (Convert.ToInt64(C_KO_T_Stck_TB.Text) + KO_SaleStck);
-                String query = "Insert INTO ChaklalaDepo (Date, MS_Pur_Ltr, HOBC_Pur_Ltr, HSD_Pur_Ltr, KO_Pur_Ltr, Pur_Tstock, MS_Pur_Amnt, HOBC_Pur_Amnt," +
-                "HSD_Pur_Amnt, KO_Pur_Amnt, Pur_Tamount, MS_Tran_Per, HOBC_Tran_Per, HSD_Tran_Per, KO_Tran_Per, MS_Tran_Stck, HOBC_Tran_Stck, " +
-                "HSD_Tran_Stck, KO_Tran_Stck, Tran_Tstock, MS_Sale_Per, HOBC_Sale_per, HSD_Sale_Per, KO_Sale_Per, MS_Sale_Amnt, HOBC_Sale_Amnt, HSD_Sale_Amnt," +
-                "KO_Sale_Amnt, Sale_Tamount, BadD_Stck, FaisD_Stck, SarD_Stck, PeshD_Stck, BannD_Stck, Depo_Tstock, BadD_Sale, FaisD_Sale, SarD_Sale, PeshD_Sale, " +
-                "BannD_Sale, Depo_TSale, MS_Pur_Prc, HOBC_Pur_Prc, HSD_Pur_Prc, KO_Pur_Prc, MS_ClosingS, HOBC_ClosingS, HSD_ClosingS, KO_ClosingS, MS_Sale_Prc, HOBC_Sale_Prc," +
-                "HSD_Sale_Prc, KO_Sale_Prc) VALUES('" + CD_Date.Text + "', '" + C_MS_P_IN_TB.Text + "', '" + C_HOBC_P_IN_TB.Text + "', '" + C_HSD_P_IN_TB.Text + "', '" + C_KO_P_IN_TB.Text + "', '" + C_TPSM_P_Stck_TB.Text + "', " +
-                "'" + C_MS_P_Prc_TB.Text + "', '" + C_HOBC_P_Prc_TB.Text + "', '" + C_HSD_P_Prc_TB.Text + "', '" + C_KO_P_Prc_TB.Text + "', '" + C_TPSM_P_Amnt_TB.Text + "', '" + C_MS_T_IN_TB.Text + "', " +
-                "'" + C_HOBC_T_IN_TB.Text + "', '" + C_HSD_T_IN_TB.Text + "', '" + C_KO_T_IN_TB.Text + "', '" + C_MS_T_Stck_TB.Text + "', '" + C_HOBC_T_Stck_TB.Text + "', '" + C_HSD_T_Stck_TB.Text + "', " +
-                "'" + C_KO_T_Stck_TB.Text + "', '" + C_TS_T_TStck_TB.Text + "', '" + C_MS_S_Stck_TB.Text + "', '" + C_HOBC_S_Stck_TB.Text + "', '" + C_HSD_S_Stck_TB.Text + "', '" + C_KO_S_Stck_TB.Text + "', " +
-                "'" + C_MS_S_Amnt_TB.Text + "', '" + C_HOBC_S_Amnt_TB.Text + "', '" + C_HSD_S_Amnt_TB.Text + "', '" + C_KO_S_Amnt_TB.Text + "', '" + C_TSM_S_Amnt_TB.Text + "', '" + C_BBD_Stck_TB.Text + "', '" + C_FD_Stck_TB.Text + "', " +
-                "'" + C_SD_Stck_TB.Text + "', '" + C_PD_Stck_TB.Text + "','" + C_BD_Stck_TB.Text + "','" + C_Depo_TStck.Text + "', '" + C_BBD_Sale_TB.Text + "', '" + C_FD_Sale_TB.Text + "', '" + C_SD_Sale_TB.Text + "', " +
-                "'" + C_PD_Sale_TB.Text + "','" + C_BD_Sale_TB.Text + "','" + C_Depo_TAmnt.Text + "', " +
-                "'" + 90 + "', '" + 100 + "', '" + 115 + "', '" + 110 + "', '" + MS_CStck + "', '" + HOBC_CStck + "', '" + HSD_CStck + "', '" + KO_CStck + "', '" + 98 + "', '" + 116 + "', '" + 125 + "', '" + 120 + "')";
-                SQ.InsertData(query);
-                MessageBox.Show("Success!");
-                CD_Clr();
-                SQ.ShowGVData("SELECT * FROM ChaklalaDepo", ChakD_GV);
-                ChaklalaDepo_Result();
-            }
-            catch (FormatException)
-            {
-            }
-        }
-
-        private void ChakD_GV_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void C_Del_Btn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    SQL_Queires SQ = new SQL_Queires();
-                    string id = ChakD_GV.SelectedRows[0].Cells[0].Value.ToString();
-                    SQ.DeleteData("DELETE FROM ChaklalaDepo WHERE ID = '" + id + "';");
-                    SQ.ShowGVData("Select * FROM ChaklalaDepo", ChakD_GV);
-                    CD_Clr();
-                }
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void C_Update_Btn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string comp = ChakD_GV.SelectedRows[0].Cells[1].Value.ToString();
-
-                if (CD_Date.Text == comp)
-                {
-                    double MS_SaleStck = (Convert.ToInt64(C_MS_P_IN_TB.Text) * Convert.ToInt64(C_MS_S_Stck_TB.Text)) / 100;
-                    double HOBC_SaleStck = (Convert.ToInt64(C_HOBC_P_IN_TB.Text) * Convert.ToInt64(C_HOBC_S_Stck_TB.Text)) / 100;
-                    double HSD_SaleStck = (Convert.ToInt64(C_HSD_P_IN_TB.Text) * Convert.ToInt64(C_HSD_S_Stck_TB.Text)) / 100;
-                    double KO_SaleStck = (Convert.ToInt64(C_KO_P_IN_TB.Text) * Convert.ToInt64(C_KO_S_Stck_TB.Text)) / 100;
-                    double MS_CStck = Convert.ToInt64(C_MS_P_IN_TB.Text) - (Convert.ToInt64(C_MS_T_Stck_TB.Text) + MS_SaleStck);
-                    double HOBC_CStck = Convert.ToInt64(C_HOBC_P_IN_TB.Text) - (Convert.ToInt64(C_HOBC_T_Stck_TB.Text) + HOBC_SaleStck);
-                    double HSD_CStck = Convert.ToInt64(C_HSD_P_IN_TB.Text) - (Convert.ToInt64(C_HSD_T_Stck_TB.Text) + HSD_SaleStck);
-                    double KO_CStck = Convert.ToInt64(C_KO_P_IN_TB.Text) - (Convert.ToInt64(C_KO_T_Stck_TB.Text) + KO_SaleStck);
-                    SQL_Queires SQ = new SQL_Queires();
-                    con.Open();
-                    string id = ChakD_GV.SelectedRows[0].Cells[0].Value.ToString();
-                    SqlDataAdapter Update = new SqlDataAdapter("UPDATE ChaklalaDepo SET Date= '" + CD_Date.Text + "', MS_Pur_Ltr= '" + C_MS_P_IN_TB.Text + "', HOBC_Pur_Ltr= '" + C_HOBC_P_IN_TB.Text + "', HSD_Pur_Ltr= '" + C_HSD_P_IN_TB.Text + "'," +
-                        "KO_Pur_Ltr= '" + C_KO_P_IN_TB.Text + "', Pur_Tstock= '" + C_TPSM_P_Stck_TB.Text + "', MS_Pur_Amnt= '" + C_MS_P_Prc_TB.Text + "', HOBC_Pur_Amnt= '" + C_HOBC_P_Prc_TB.Text + "', HSD_Pur_Amnt= '" + C_HSD_P_Prc_TB.Text + "'," +
-                        "KO_Pur_Amnt= '" + C_KO_P_Prc_TB.Text + "', Pur_Tamount= '" + C_TPSM_P_Amnt_TB.Text + "', MS_Tran_Per= '" + C_MS_T_IN_TB.Text + "', HOBC_Tran_Per= '" + C_HOBC_T_IN_TB.Text + "', HSD_Tran_Per= '" + C_HSD_T_IN_TB.Text + "'," +
-                        "KO_Tran_Per= '" + C_KO_T_IN_TB.Text + "', MS_Tran_Stck= '" + C_MS_T_Stck_TB.Text + "', HOBC_Tran_Stck= '" + C_HOBC_T_Stck_TB.Text + "', HSD_Tran_Stck= '" + C_HSD_T_Stck_TB.Text + "', KO_Tran_Stck= '" + C_KO_T_Stck_TB.Text + "'," +
-                        "Tran_Tstock= '" + C_TS_T_TStck_TB.Text + "', MS_Sale_Per= '" + C_MS_S_Stck_TB.Text + "', HOBC_Sale_Per= '" + C_HOBC_S_Stck_TB.Text + "', HSD_Sale_Per= '" + C_HSD_S_Stck_TB.Text + "', KO_Sale_Per= '" + C_KO_S_Stck_TB.Text + "'," +
-                        "MS_Sale_Amnt= '" + C_MS_S_Amnt_TB.Text + "', HOBC_Sale_Amnt= '" + C_HOBC_S_Amnt_TB.Text + "', HSD_Sale_Amnt= '" + C_HSD_S_Amnt_TB.Text + "', KO_Sale_Amnt= '" + C_KO_S_Amnt_TB.Text + "', Sale_Tamount= '" + C_TSM_S_Amnt_TB.Text + "'," +
-                        "BadD_Stck= '" + C_BBD_Stck_TB.Text + "', FaisD_Stck= '" + C_FD_Stck_TB.Text + "', SarD_Stck= '" + C_SD_Stck_TB.Text + "', PeshD_Stck= '" + C_PD_Stck_TB.Text + "', BannD_Stck= '" + C_BD_Stck_TB.Text + "', " +
-                        "Depo_Tstock= '" + C_Depo_TStck.Text + "', BadD_Sale= '" + C_BBD_Sale_TB.Text + "', FaisD_Sale= '" + C_FD_Sale_TB.Text + "', SarD_Sale= '" + C_SD_Sale_TB.Text + "', PeshD_Sale= '" + C_PD_Sale_TB.Text + "', " +
-                        "BannD_Sale= '" + C_BD_Sale_TB.Text + "', Depo_TSale= '" + C_Depo_TAmnt.Text + "', MS_ClosingS= '" + MS_CStck + "', HOBC_ClosingS= '" + HOBC_CStck + "'," +
-                        "HSD_ClosingS= '" + HSD_CStck + "', KO_ClosingS= '" + KO_CStck + "' WHERE ID = '" + id + "'", con);
-                    Update.SelectCommand.ExecuteNonQuery();
-                    con.Close();
-                    SQ.ShowGVData("SELECT * FROM ChaklalaDepo", ChakD_GV);
-                    CD_Clr();
-                    MessageBox.Show("Updated Successfully");
-                }
-                else
-                {
-                    MessageBox.Show("You cannot change date");
-                }
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
     }
 }
