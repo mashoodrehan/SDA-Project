@@ -2214,5 +2214,60 @@ namespace AuditPlan
             {
             }
         }
+
+        private void KAVI_JP4_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KAVI_JP4_T_IN_TB.Text == String.Empty)
+                {
+                    KAVI_JP4_T_Stck_TB.Clear();
+                }
+                KAVI_JP4_T_Stck_TB.Text = ((Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(KAVI_JP4_T_IN_TB.Text)) / 100).ToString();
+                //KA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KAVI_JetA1_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KAVI_JetA1_T_IN_TB.Text == String.Empty)
+                {
+                    KAVI_JetA1_T_Stck_TB.Clear();
+                    KAVI_TTS_T_TStck_TB.Clear();
+                    KAVI_KA_Stck_TB.Clear();
+                    KAVI_KA_Sale_TB.Clear();
+                    KAVI_QA_Stck_TB.Clear();
+                    KAVI_QA_Sale_TB.Clear();
+                    KAVI_NA_Stck_TB.Clear();
+                    KAVI_NA_Sale_TB.Clear();
+                    KAVI_SA_Stck_TB.Clear();
+                    KAVI_SA_Sale_TB.Clear();
+                    KAVI_Depo_Tstck_TB.Clear();
+                    KAVI_Depo_TSale_TB.Clear();
+                }
+                KAVI_JetA1_T_Stck_TB.Text = ((Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(KAVI_JetA1_T_IN_TB.Text)) / 100).ToString();
+                //KA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KAVI_JetA1_T_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //KAVI_TranTStck();
+                //KA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
