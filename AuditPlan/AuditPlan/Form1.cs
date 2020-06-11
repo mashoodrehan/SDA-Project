@@ -2269,5 +2269,63 @@ namespace AuditPlan
             {
             }
         }
+
+        private void KAVI_JP4_S_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KAVI_JP4_S_IN_TB.Text == String.Empty)
+                {
+                    KAVI_JP4_S_Amnt_TB.Clear();
+                }
+                KAVI_JP4_S_Amnt_TB.Text = (((Convert.ToInt64(KAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(KAVI_JP4_S_IN_TB.Text)) / 100) * 120).ToString();
+                //KA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KAVI_JetA1_S_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (KAVI_JetA1_S_IN_TB.Text == String.Empty)
+                {
+                    KAVI_JetA1_S_Amnt_TB.Clear();
+                    KAVI_TSA_S_TAmnt_TB.Clear();
+                }
+                KAVI_JetA1_S_Amnt_TB.Text = (((Convert.ToInt64(KAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(KAVI_JetA1_S_IN_TB.Text)) / 100) * 125).ToString();
+                //KA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KAVI_JetA1_S_Amnt_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //KAVI_SaleTAmnt();
+                //KA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void KAVI_TTS_T_TStck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //K_AP_Stck();
+                //K_AP_Sale();
+                //KA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
