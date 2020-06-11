@@ -2058,7 +2058,107 @@ namespace AuditPlan
             {
             }
         }
-
-      
+        #region===============================================Chaklala Depo==============================================
+        public void C_STotAmnt()
+        {
+            C_TSM_S_Amnt_TB.Text = ((Convert.ToInt64(C_MS_S_Amnt_TB.Text) + Convert.ToInt64(C_HOBC_S_Amnt_TB.Text) + Convert.ToInt64(C_HSD_S_Amnt_TB.Text) + Convert.ToInt64(C_KO_S_Amnt_TB.Text)) * 30).ToString();
+        }
+        public void C_TTotStck()
+        {
+            C_TS_T_TStck_TB.Text = ((Convert.ToInt64(C_MS_T_Stck_TB.Text) + Convert.ToInt64(C_HOBC_T_Stck_TB.Text) + Convert.ToInt64(C_HSD_P_IN_TB.Text) + Convert.ToInt64(C_KO_P_IN_TB.Text)) * 30).ToString();
+        }
+        public void C_PTotAmnt()
+        {
+            C_TPSM_P_Amnt_TB.Text = ((Convert.ToInt64(C_MS_P_Prc_TB.Text) + Convert.ToInt64(C_HOBC_P_Prc_TB.Text) + Convert.ToInt64(C_HSD_P_Prc_TB.Text) + Convert.ToInt64(C_KO_P_Prc_TB.Text)) * 30).ToString();
+        }
+        public void C_PTotStck()
+        {
+            C_TPSM_P_Stck_TB.Text = ((Convert.ToInt64(C_MS_P_IN_TB.Text) + Convert.ToInt64(C_HOBC_P_IN_TB.Text) + Convert.ToInt64(C_HSD_P_IN_TB.Text) + Convert.ToInt64(C_KO_P_IN_TB.Text)) * 30).ToString();
+        }
+        public void C_DepoStck()
+        {
+            C_BBD_Stck_TB.Text = (Convert.ToInt64(C_TS_T_TStck_TB.Text) / 150).ToString();
+            C_FD_Stck_TB.Text = (Convert.ToInt64(C_TS_T_TStck_TB.Text) / 150).ToString();
+            C_SD_Stck_TB.Text = (Convert.ToInt64(C_TS_T_TStck_TB.Text) / 150).ToString();
+            C_PD_Stck_TB.Text = (Convert.ToInt64(C_TS_T_TStck_TB.Text) / 150).ToString();
+            C_BD_Stck_TB.Text = (Convert.ToInt64(C_TS_T_TStck_TB.Text) / 150).ToString();
+        }
+        public void C_Depo_Sale()
+        {
+            C_BBD_Sale_TB.Text = (Convert.ToInt64(C_BBD_Stck_TB.Text) * 125).ToString();
+            C_FD_Sale_TB.Text = (Convert.ToInt64(C_FD_Stck_TB.Text) * 122).ToString();
+            C_SD_Sale_TB.Text = (Convert.ToInt64(C_SD_Stck_TB.Text) * 124).ToString();
+            C_PD_Sale_TB.Text = (Convert.ToInt64(C_PD_Stck_TB.Text) * 130).ToString();
+            C_BD_Sale_TB.Text = (Convert.ToInt64(C_BD_Stck_TB.Text) * 129).ToString();
+        }
+        public void C_Depo_TotSale()
+        {
+            C_Depo_TAmnt.Text = (Convert.ToInt64(C_BBD_Sale_TB.Text) + Convert.ToInt64(C_FD_Sale_TB.Text) + Convert.ToInt64(C_SD_Sale_TB.Text) + Convert.ToInt64(C_PD_Sale_TB.Text) + Convert.ToInt64(C_BD_Sale_TB.Text)).ToString();
+        }
+        public void CD_Clr()
+        {
+            CD_Date.Text = null; C_MS_P_IN_TB.Clear(); C_HOBC_P_IN_TB.Clear(); C_HSD_P_IN_TB.Clear(); C_KO_P_IN_TB.Clear(); C_MS_P_Prc_TB.Clear();
+            C_HOBC_P_Prc_TB.Clear(); C_HSD_P_Prc_TB.Clear(); C_KO_P_Prc_TB.Clear(); C_MS_T_IN_TB.Clear(); C_HOBC_T_IN_TB.Clear();
+            C_HSD_T_IN_TB.Clear(); C_KO_T_IN_TB.Clear(); C_MS_T_Stck_TB.Clear(); C_HOBC_T_Stck_TB.Clear(); C_HSD_T_Stck_TB.Clear();
+            C_KO_T_Stck_TB.Clear(); C_MS_S_Stck_TB.Clear(); C_HOBC_S_Stck_TB.Clear(); C_HSD_S_Stck_TB.Clear(); C_KO_S_Stck_TB.Clear();
+            C_MS_S_Amnt_TB.Clear(); C_HOBC_S_Amnt_TB.Clear(); C_HSD_S_Amnt_TB.Clear(); C_KO_S_Amnt_TB.Clear(); C_TPSM_P_Stck_TB.Clear();
+            C_TPSM_P_Amnt_TB.Clear(); C_TS_T_TStck_TB.Clear(); C_TSM_S_Amnt_TB.Clear(); C_BBD_Stck_TB.Clear(); C_FD_Stck_TB.Clear();
+            C_SD_Stck_TB.Clear(); C_PD_Stck_TB.Clear(); C_BD_Stck_TB.Clear(); C_Depo_TStck.Clear(); C_BBD_Sale_TB.Clear();
+            C_FD_Sale_TB.Clear(); C_SD_Sale_TB.Clear(); C_PD_Sale_TB.Clear(); C_BD_Sale_TB.Clear(); C_Depo_TAmnt.Clear();
+        }
+        public void ChaklalaDepo_Result()
+        {
+            int j = 0;
+            while (Res_GV.Rows.Count > j)
+            {
+                string dept = Res_GV.Rows[j].Cells[1].Value.ToString();
+                if (dept == "Chaklala Depo")
+                {
+                    try
+                    {
+                        SQL_Queires SQ = new SQL_Queires();
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                j++;
+            }
+            int Low = risk.Next(1, 40);
+            int Medium = risk.Next(41, 70);
+            int High = risk.Next(71, 100);
+            int i = 0;
+            double val = 0;
+            while (ChakD_GV.Rows.Count > i)
+            {
+                val += double.Parse(ChakD_GV.Rows[i].Cells[11].Value.ToString());
+                i++;
+            }
+            if (val > 25000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Chaklala Depo', '" + HighFreq + "', '" + High + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 25000000 && val > 15000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Chaklala Depo', '" + MedFreq + "', '" + Medium + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 15000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Chaklala Depo', '" + LowFreq + "', '" + Low + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+        }
+        #endregion
     }
 }
