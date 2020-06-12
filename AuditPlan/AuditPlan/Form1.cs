@@ -4360,5 +4360,29 @@ namespace AuditPlan
             {
             }
         }
+
+        private void PAVI_MA_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                PAVI_Depo_Tstck_TB.Text = PAVI_TTS_T_TStck_TB.Text;
+                //PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_MA_Sale_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //PAVI_DepoTotAmnt();
+                //PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
