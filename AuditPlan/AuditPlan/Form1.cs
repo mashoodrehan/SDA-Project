@@ -2890,7 +2890,441 @@ namespace AuditPlan
         #endregion
         #region=============================================PARCO Aviation=============================================
 
+        public void PAVI_PurTStck()
+        {
+            PAVI_TPSA_P_TStck_TB.Text = ((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) + Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text)) * 30).ToString();
 
+        }
+        public void PAVI_PurTAmnt()
+        {
+            PAVI_TPSA_P_TAmnt_TB.Text = ((Convert.ToInt64(PAVI_JP4_P_Prc_TB.Text) + Convert.ToInt64(PAVI_JetA1_P_Prc_TB.Text)) * 30).ToString();
+        }
+        public void PAVI_TranTStck()
+        {
+            PAVI_TTS_T_TStck_TB.Text = ((Convert.ToInt64(PAVI_JP4_T_Stck_TB.Text) + Convert.ToInt64(PAVI_JetA1_T_Stck_TB.Text)) * 30).ToString();
+        }
+        public void PAVI_SaleTAmnt()
+        {
+            PAVI_TSA_S_TAmnt_TB.Text = ((Convert.ToInt64(PAVI_JP4_S_Amnt_TB.Text) + Convert.ToInt64(PAVI_JetA1_S_Amnt_TB.Text)) * 30).ToString();
+        }
+        public void PAVI_DepoTotAmnt()
+        {
+            PAVI_Depo_TSale_TB.Text = ((Convert.ToInt64(PAVI_LA_Sale_TB.Text) + Convert.ToInt64(PAVI_MA_Sale_TB.Text)) * 30).ToString();
+        }
+        public void PAVI_DepoStck()
+        {
+            PAVI_LA_Stck_TB.Text = (Convert.ToInt64(PAVI_TTS_T_TStck_TB.Text) / 60).ToString();
+            PAVI_MA_Stck_TB.Text = (Convert.ToInt64(PAVI_TTS_T_TStck_TB.Text) / 60).ToString();
+        }
+        public void PAVI_DepoSale()
+        {
+            PAVI_LA_Sale_TB.Text = (Convert.ToInt64(PAVI_LA_Stck_TB.Text) * 127).ToString();
+            PAVI_MA_Sale_TB.Text = (Convert.ToInt64(PAVI_MA_Stck_TB.Text) * 132).ToString();
+        }
+        public void PAVI_Clr()
+        {
+            PA_Date.Text = null; PAVI_JP4_P_IN_TB.Clear(); PAVI_JetA1_P_IN_TB.Clear(); PAVI_TPSA_P_TStck_TB.Clear(); PAVI_JP4_P_Prc_TB.Clear();
+            PAVI_JetA1_P_Prc_TB.Clear(); PAVI_TPSA_P_TAmnt_TB.Clear(); PAVI_JP4_T_IN_TB.Clear(); PAVI_JetA1_T_IN_TB.Clear();
+            PAVI_JP4_T_Stck_TB.Clear(); PAVI_JetA1_T_Stck_TB.Clear(); PAVI_TTS_T_TStck_TB.Clear(); PAVI_JP4_S_IN_TB.Clear();
+            PAVI_JetA1_S_IN_TB.Clear(); PAVI_JP4_S_Amnt_TB.Clear(); PAVI_JetA1_S_Amnt_TB.Clear(); PAVI_TSA_S_TAmnt_TB.Clear();
+            PAVI_LA_Stck_TB.Clear(); PAVI_MA_Stck_TB.Clear(); PAVI_Depo_Tstck_TB.Clear(); PAVI_LA_Sale_TB.Clear();
+            PAVI_MA_Sale_TB.Clear(); PAVI_Depo_TSale_TB.Clear();
+        }
+        public void PARCOAvi_Result()
+        {
+            int j = 0;
+            while (Res_GV.Rows.Count > j)
+            {
+                string dept = Res_GV.Rows[j].Cells[1].Value.ToString();
+                if (dept == "PARCO Aviation")
+                {
+                    try
+                    {
+                        SQL_Queires SQ = new SQL_Queires();
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                j++;
+            }
+            int Low = risk.Next(1, 40);
+            int Medium = risk.Next(41, 70);
+            int High = risk.Next(71, 100);
+            int i = 0;
+            double val = 0;
+            while (PAVI_GV.Rows.Count > i)
+            {
+                val += double.Parse(PAVI_GV.Rows[i].Cells[7].Value.ToString());
+                i++;
+            }
+            if (val > 25000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('PARCO Aviation', '" + HighFreq + "', '" + High + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 25000000 && val > 15000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('PARCO Aviation', '" + MedFreq + "', '" + Medium + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 15000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('PARCO Aviation', '" + LowFreq + "', '" + Low + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+        }
+        private void ParAVI_AddInfo_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQL_Queires SQ = new SQL_Queires();
+                int j = 0;
+                while (PAVI_GV.Rows.Count > j)
+                {
+                    string val = PAVI_GV.Rows[j].Cells[1].Value.ToString();
+                    if (PA_Date.Text == val)
+                    {
+                        SQ.DeleteData("DELETE FROM PARCOAvi WHERE Date = '" + val + "';");
+                    }
+                    j++;
+                }
+                double JP4_SaleStck = (Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_S_IN_TB.Text)) / 100;
+                double JetA1_SaleStck = (Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_S_IN_TB.Text)) / 100;
+                double JP4_CStck = Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) - (Convert.ToInt64(PAVI_JP4_T_Stck_TB.Text) + JP4_SaleStck);
+                double JetA1_CStck = Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) - (Convert.ToInt64(PAVI_JetA1_T_Stck_TB.Text) + JetA1_SaleStck);
+                String query = "Insert INTO PARCOAvi (Date, JP4_Pur_Ltr, JetA1_Pur_Ltr, Pur_Tstock, JP4_Pur_Amnt, JetA1_Pur_Amnt," +
+                "Pur_Tamount, JP4_Tran_Per, JetA1_Tran_Per, JP4_Tran_Stck, JetA1_Tran_Stck, Tran_Tstock, JP4_Sale_Per, JetA1_Sale_per, " +
+                "JP4_Sale_Amnt, JetA1_Sale_Amnt, Sale_Tamount, LAhA_Stck, MulA_Stck, Avi_Tstock, LahA_Sale, " +
+                "MulA_Sale, Avi_TSale, JP4_Pur_Prc, JetA1_Pur_Prc, JP4_ClosingS, JetA1_ClosingS, JP4_Sale_Prc, " +
+                "JetA1_Sale_Prc) VALUES('" + PA_Date.Text + "', '" + PAVI_JP4_P_IN_TB.Text + "', '" + PAVI_JetA1_P_IN_TB.Text + "', '" + PAVI_TPSA_P_TStck_TB.Text + "', " +
+                "'" + PAVI_JP4_P_Prc_TB.Text + "', '" + PAVI_JetA1_P_Prc_TB.Text + "', '" + PAVI_TPSA_P_TAmnt_TB.Text + "', '" + PAVI_JP4_T_IN_TB.Text + "', " +
+                "'" + PAVI_JetA1_T_IN_TB.Text + "', '" + PAVI_JP4_T_Stck_TB.Text + "', '" + PAVI_JetA1_T_Stck_TB.Text + "', '" + PAVI_TTS_T_TStck_TB.Text + "', " +
+                "'" + PAVI_JP4_S_IN_TB.Text + "', '" + PAVI_JetA1_S_IN_TB.Text + "', '" + PAVI_JP4_S_Amnt_TB.Text + "', '" + PAVI_JetA1_S_Amnt_TB.Text + "', " +
+                "'" + PAVI_TSA_S_TAmnt_TB.Text + "', '" + PAVI_LA_Stck_TB.Text + "', '" + PAVI_MA_Stck_TB.Text + "', '" + PAVI_Depo_Tstck_TB.Text + "', " +
+                "'" + PAVI_LA_Sale_TB.Text + "', '" + PAVI_MA_Sale_TB.Text + "', '" + PAVI_Depo_TSale_TB.Text + "', '" + 110 + "', '" + 115 + "', '" + JP4_CStck + "', " +
+                "'" + JetA1_CStck + "', '" + 120 + "', '" + 125 + "')";
+                SQ.InsertData(query);
+                MessageBox.Show("Success!");
+                PAVI_Clr();
+                SQ.ShowGVData("SELECT * FROM PARCOAvi", PAVI_GV);
+                PARCOAvi_Result();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_GV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string id = PAVI_GV.SelectedRows[0].Cells[0].Value.ToString();
+                PA_Date.Text = PAVI_GV.SelectedRows[0].Cells[1].Value.ToString();
+                PAVI_JP4_P_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[2].Value.ToString();
+                PAVI_JetA1_P_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[3].Value.ToString();
+                PAVI_TPSA_P_TStck_TB.Text = PAVI_GV.SelectedRows[0].Cells[4].Value.ToString();
+                PAVI_JP4_P_Prc_TB.Text = PAVI_GV.SelectedRows[0].Cells[5].Value.ToString();
+                PAVI_JetA1_P_Prc_TB.Text = PAVI_GV.SelectedRows[0].Cells[6].Value.ToString();
+                PAVI_TPSA_P_TAmnt_TB.Text = PAVI_GV.SelectedRows[0].Cells[7].Value.ToString();
+                PAVI_JP4_T_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[8].Value.ToString();
+                PAVI_JetA1_T_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[9].Value.ToString();
+                PAVI_JP4_T_Stck_TB.Text = PAVI_GV.SelectedRows[0].Cells[10].Value.ToString();
+                PAVI_JetA1_T_Stck_TB.Text = PAVI_GV.SelectedRows[0].Cells[11].Value.ToString();
+                PAVI_TTS_T_TStck_TB.Text = PAVI_GV.SelectedRows[0].Cells[12].Value.ToString();
+                PAVI_JP4_S_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[13].Value.ToString();
+                PAVI_JetA1_S_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[14].Value.ToString();
+                PAVI_JP4_S_Amnt_TB.Text = PAVI_GV.SelectedRows[0].Cells[15].Value.ToString();
+                PAVI_JetA1_S_Amnt_TB.Text = PAVI_GV.SelectedRows[0].Cells[16].Value.ToString();
+                PAVI_TSA_S_TAmnt_TB.Text = PAVI_GV.SelectedRows[0].Cells[17].Value.ToString();
+                PAVI_LA_Stck_TB.Text = PAVI_GV.SelectedRows[0].Cells[18].Value.ToString();
+                PAVI_MA_Stck_TB.Text = PAVI_GV.SelectedRows[0].Cells[19].Value.ToString();
+                PAVI_Depo_Tstck_TB.Text = PAVI_GV.SelectedRows[0].Cells[20].Value.ToString();
+                PAVI_LA_Sale_TB.Text = PAVI_GV.SelectedRows[0].Cells[21].Value.ToString();
+                PAVI_MA_Sale_TB.Text = PAVI_GV.SelectedRows[0].Cells[22].Value.ToString();
+                PAVI_Depo_TSale_TB.Text = PAVI_GV.SelectedRows[0].Cells[23].Value.ToString();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void ParAVI_Delete_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    string id = PAVI_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SQ.DeleteData("DELETE FROM PARCOAvi WHERE ID = '" + id + "';");
+                    SQ.ShowGVData("Select * FROM PARCOAvi", PAVI_GV);
+                    PAVI_Clr();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void ParAVI_Update_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string comp = PAVI_GV.SelectedRows[0].Cells[1].Value.ToString();
+                if (PA_Date.Text == comp)
+                {
+                    double JP4_SaleStck = (Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_S_IN_TB.Text)) / 100;
+                    double JetA1_SaleStck = (Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_S_IN_TB.Text)) / 100;
+                    double JP4_CStck = Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) - (Convert.ToInt64(PAVI_JP4_T_Stck_TB.Text) + JP4_SaleStck);
+                    double JetA1_CStck = Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) - (Convert.ToInt64(PAVI_JetA1_T_Stck_TB.Text) + JetA1_SaleStck);
+                    SQL_Queires SQ = new SQL_Queires();
+                    con.Open();
+                    string id = PAVI_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SqlDataAdapter Update = new SqlDataAdapter("UPDATE PARCOAvi SET Date= '" + PA_Date.Text + "', JP4_Pur_Ltr= '" + PAVI_JP4_P_IN_TB.Text + "', JetA1_Pur_Ltr= '" + PAVI_JetA1_P_IN_TB.Text + "', Pur_Tstock= '" + PAVI_TPSA_P_TStck_TB.Text + "'," +
+                        "JP4_Pur_Amnt= '" + PAVI_JP4_P_Prc_TB.Text + "', JetA1_Pur_Amnt= '" + PAVI_JetA1_P_Prc_TB.Text + "', Pur_Tamount= '" + PAVI_TPSA_P_TAmnt_TB.Text + "', JP4_Tran_Per= '" + PAVI_JP4_T_IN_TB.Text + "', JetA1_Tran_Per= '" + PAVI_JetA1_T_IN_TB.Text + "'," +
+                        "JP4_Tran_Stck= '" + PAVI_JP4_T_Stck_TB.Text + "', JetA1_Tran_Stck= '" + PAVI_JetA1_T_Stck_TB.Text + "', Tran_Tstock= '" + PAVI_TTS_T_TStck_TB.Text + "', JP4_Sale_Per= '" + PAVI_JP4_S_IN_TB.Text + "', JetA1_Sale_Per= '" + PAVI_JetA1_S_IN_TB.Text + "'," +
+                        "JP4_Sale_Amnt= '" + PAVI_JP4_S_Amnt_TB.Text + "', JetA1_Sale_Amnt= '" + PAVI_JetA1_S_Amnt_TB.Text + "', Sale_Tamount= '" + PAVI_TSA_S_TAmnt_TB.Text + "', LahA_Stck= '" + PAVI_LA_Stck_TB.Text + "', MulA_Stck= '" + PAVI_MA_Stck_TB.Text + "'," +
+                        "Avi_Tstock= '" + PAVI_Depo_Tstck_TB.Text + "', LahA_Sale= '" + PAVI_LA_Sale_TB.Text + "', MulA_Sale= '" + PAVI_MA_Sale_TB.Text + "'," +
+                        "Avi_TSale= '" + PAVI_Depo_TSale_TB.Text + "', JP4_ClosingS= '" + JP4_CStck + "', JetA1_ClosingS= '" + JetA1_CStck + "' WHERE ID = '" + id + "'", con);
+                    Update.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+                    SQ.ShowGVData("SELECT * FROM PARCOAvi", PAVI_GV);
+                    PAVI_Clr();
+                    MessageBox.Show("Updated Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("You cannot change date");
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void PA_TextChange()
+        {
+            try
+            {
+                PAVI_JP4_P_Prc_TB.Text = (Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * 110).ToString();
+                PAVI_JetA1_P_Prc_TB.Text = (Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * 115).ToString();
+                PAVI_PurTStck();
+                PAVI_PurTAmnt();
+                PAVI_JP4_T_Stck_TB.Text = ((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_T_IN_TB.Text)) / 100).ToString();
+                PAVI_JetA1_T_Stck_TB.Text = ((Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_T_IN_TB.Text)) / 100).ToString();
+                PAVI_TranTStck();
+                PAVI_JP4_S_Amnt_TB.Text = (((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_S_IN_TB.Text)) / 100) * 120).ToString();
+                PAVI_JetA1_S_Amnt_TB.Text = (((Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_S_IN_TB.Text)) / 100) * 125).ToString();
+                PAVI_SaleTAmnt();
+                PAVI_DepoStck();
+                PAVI_DepoSale();
+                PAVI_Depo_Tstck_TB.Text = PAVI_TTS_T_TStck_TB.Text;
+                PAVI_DepoTotAmnt();
+            }
+            catch (Exception)
+            {
+            }
+        }
+        private void PAVI_JP4_P_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PAVI_JP4_P_IN_TB.Text == String.Empty)
+                {
+                    PAVI_JP4_P_Prc_TB.Clear();
+                }
+                PAVI_JP4_P_Prc_TB.Text = (Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * 110).ToString();
+                PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JetA1_P_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PAVI_JetA1_P_IN_TB.Text == String.Empty)
+                {
+                    PAVI_JetA1_P_Prc_TB.Clear();
+                    PAVI_TPSA_P_TStck_TB.Clear();
+                    PAVI_TPSA_P_TAmnt_TB.Clear();
+                }
+                PAVI_JetA1_P_Prc_TB.Text = (Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * 115).ToString();
+                PAVI_PurTStck();
+                PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JetA1_P_Prc_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                PAVI_PurTAmnt();
+                PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JP4_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PAVI_JP4_T_IN_TB.Text == String.Empty)
+                {
+                    PAVI_JP4_T_Stck_TB.Clear();
+                }
+                PAVI_JP4_T_Stck_TB.Text = ((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_T_IN_TB.Text)) / 100).ToString();
+                PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JetA1_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PAVI_JetA1_T_IN_TB.Text == String.Empty)
+                {
+                    PAVI_JetA1_T_Stck_TB.Clear();
+                    PAVI_TTS_T_TStck_TB.Clear();
+                    PAVI_LA_Stck_TB.Clear();
+                    PAVI_LA_Sale_TB.Clear();
+                    PAVI_MA_Stck_TB.Clear();
+                    PAVI_MA_Sale_TB.Clear();
+                    PAVI_Depo_Tstck_TB.Clear();
+                    PAVI_Depo_TSale_TB.Clear();
+                }
+                PAVI_JetA1_T_Stck_TB.Text = ((Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_T_IN_TB.Text)) / 100).ToString();
+                PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JetA1_T_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                PAVI_TranTStck();
+                PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JP4_S_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PAVI_JP4_S_IN_TB.Text == String.Empty)
+                {
+                    PAVI_JP4_S_Amnt_TB.Clear();
+                }
+                PAVI_JP4_S_Amnt_TB.Text = (((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_S_IN_TB.Text)) / 100) * 120).ToString();
+                PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JetA1_S_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PAVI_JetA1_S_IN_TB.Text == String.Empty)
+                {
+                    PAVI_JetA1_S_Amnt_TB.Clear();
+                    PAVI_TSA_S_TAmnt_TB.Clear();
+                }
+                PAVI_JetA1_S_Amnt_TB.Text = (((Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_S_IN_TB.Text)) / 100) * 125).ToString();
+                PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JetA1_S_Amnt_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                PAVI_SaleTAmnt();
+                PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_TTS_T_TStck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                PAVI_DepoStck();
+                PAVI_DepoSale();
+                PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_MA_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                PAVI_Depo_Tstck_TB.Text = PAVI_TTS_T_TStck_TB.Text;
+                PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_MA_Sale_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                PAVI_DepoTotAmnt();
+                PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void ParAVI_Rst_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PAVI_Clr();
+            }
+            catch (Exception)
+            {
+            }
+        }
 
         #endregion
         #region=================================================HR Dept==================================================
@@ -4075,440 +4509,6 @@ namespace AuditPlan
 
         #endregion
 
-        public void PAVI_PurTStck()
-        {
-            PAVI_TPSA_P_TStck_TB.Text = ((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) + Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text)) * 30).ToString();
 
-        }
-        public void PAVI_PurTAmnt()
-        {
-            PAVI_TPSA_P_TAmnt_TB.Text = ((Convert.ToInt64(PAVI_JP4_P_Prc_TB.Text) + Convert.ToInt64(PAVI_JetA1_P_Prc_TB.Text)) * 30).ToString();
-        }
-        public void PAVI_TranTStck()
-        {
-            PAVI_TTS_T_TStck_TB.Text = ((Convert.ToInt64(PAVI_JP4_T_Stck_TB.Text) + Convert.ToInt64(PAVI_JetA1_T_Stck_TB.Text)) * 30).ToString();
-        }
-        public void PAVI_SaleTAmnt()
-        {
-            PAVI_TSA_S_TAmnt_TB.Text = ((Convert.ToInt64(PAVI_JP4_S_Amnt_TB.Text) + Convert.ToInt64(PAVI_JetA1_S_Amnt_TB.Text)) * 30).ToString();
-        }
-        public void PAVI_DepoTotAmnt()
-        {
-            PAVI_Depo_TSale_TB.Text = ((Convert.ToInt64(PAVI_LA_Sale_TB.Text) + Convert.ToInt64(PAVI_MA_Sale_TB.Text)) * 30).ToString();
-        }
-        public void PAVI_DepoStck()
-        {
-            PAVI_LA_Stck_TB.Text = (Convert.ToInt64(PAVI_TTS_T_TStck_TB.Text) / 60).ToString();
-            PAVI_MA_Stck_TB.Text = (Convert.ToInt64(PAVI_TTS_T_TStck_TB.Text) / 60).ToString();
-        }
-        public void PAVI_DepoSale()
-        {
-            PAVI_LA_Sale_TB.Text = (Convert.ToInt64(PAVI_LA_Stck_TB.Text) * 127).ToString();
-            PAVI_MA_Sale_TB.Text = (Convert.ToInt64(PAVI_MA_Stck_TB.Text) * 132).ToString();
-        }
-        public void PAVI_Clr()
-        {
-            PA_Date.Text = null; PAVI_JP4_P_IN_TB.Clear(); PAVI_JetA1_P_IN_TB.Clear(); PAVI_TPSA_P_TStck_TB.Clear(); PAVI_JP4_P_Prc_TB.Clear();
-            PAVI_JetA1_P_Prc_TB.Clear(); PAVI_TPSA_P_TAmnt_TB.Clear(); PAVI_JP4_T_IN_TB.Clear(); PAVI_JetA1_T_IN_TB.Clear();
-            PAVI_JP4_T_Stck_TB.Clear(); PAVI_JetA1_T_Stck_TB.Clear(); PAVI_TTS_T_TStck_TB.Clear(); PAVI_JP4_S_IN_TB.Clear();
-            PAVI_JetA1_S_IN_TB.Clear(); PAVI_JP4_S_Amnt_TB.Clear(); PAVI_JetA1_S_Amnt_TB.Clear(); PAVI_TSA_S_TAmnt_TB.Clear();
-            PAVI_LA_Stck_TB.Clear(); PAVI_MA_Stck_TB.Clear(); PAVI_Depo_Tstck_TB.Clear(); PAVI_LA_Sale_TB.Clear();
-            PAVI_MA_Sale_TB.Clear(); PAVI_Depo_TSale_TB.Clear();
-        }
-        public void PARCOAvi_Result()
-        {
-            int j = 0;
-            while (Res_GV.Rows.Count > j)
-            {
-                string dept = Res_GV.Rows[j].Cells[1].Value.ToString();
-                if (dept == "PARCO Aviation")
-                {
-                    try
-                    {
-                        SQL_Queires SQ = new SQL_Queires();
-                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
-                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
-                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
-                    }
-                    catch (Exception)
-                    {
-                    }
-                }
-                j++;
-            }
-            int Low = risk.Next(1, 40);
-            int Medium = risk.Next(41, 70);
-            int High = risk.Next(71, 100);
-            int i = 0;
-            double val = 0;
-            while (PAVI_GV.Rows.Count > i)
-            {
-                val += double.Parse(PAVI_GV.Rows[i].Cells[7].Value.ToString());
-                i++;
-            }
-            if (val > 25000000)
-            {
-                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('PARCO Aviation', '" + HighFreq + "', '" + High + "')";
-                SQL_Queires SQ = new SQL_Queires();
-                SQ.InsertData(query);
-                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
-            }
-            else if (val < 25000000 && val > 15000000)
-            {
-                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('PARCO Aviation', '" + MedFreq + "', '" + Medium + "')";
-                SQL_Queires SQ = new SQL_Queires();
-                SQ.InsertData(query);
-                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
-            }
-            else if (val < 15000000)
-            {
-                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('PARCO Aviation', '" + LowFreq + "', '" + Low + "')";
-                SQL_Queires SQ = new SQL_Queires();
-                SQ.InsertData(query);
-                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
-            }
-        }
-        private void ParAVI_AddInfo_Btn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SQL_Queires SQ = new SQL_Queires();
-                int j = 0;
-                while (PAVI_GV.Rows.Count > j)
-                {
-                    string val = PAVI_GV.Rows[j].Cells[1].Value.ToString();
-                    if (PA_Date.Text == val)
-                    {
-                        SQ.DeleteData("DELETE FROM PARCOAvi WHERE Date = '" + val + "';");
-                    }
-                    j++;
-                }
-                double JP4_SaleStck = (Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_S_IN_TB.Text)) / 100;
-                double JetA1_SaleStck = (Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_S_IN_TB.Text)) / 100;
-                double JP4_CStck = Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) - (Convert.ToInt64(PAVI_JP4_T_Stck_TB.Text) + JP4_SaleStck);
-                double JetA1_CStck = Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) - (Convert.ToInt64(PAVI_JetA1_T_Stck_TB.Text) + JetA1_SaleStck);
-                String query = "Insert INTO PARCOAvi (Date, JP4_Pur_Ltr, JetA1_Pur_Ltr, Pur_Tstock, JP4_Pur_Amnt, JetA1_Pur_Amnt," +
-                "Pur_Tamount, JP4_Tran_Per, JetA1_Tran_Per, JP4_Tran_Stck, JetA1_Tran_Stck, Tran_Tstock, JP4_Sale_Per, JetA1_Sale_per, " +
-                "JP4_Sale_Amnt, JetA1_Sale_Amnt, Sale_Tamount, LAhA_Stck, MulA_Stck, Avi_Tstock, LahA_Sale, " +
-                "MulA_Sale, Avi_TSale, JP4_Pur_Prc, JetA1_Pur_Prc, JP4_ClosingS, JetA1_ClosingS, JP4_Sale_Prc, " +
-                "JetA1_Sale_Prc) VALUES('" + PA_Date.Text + "', '" + PAVI_JP4_P_IN_TB.Text + "', '" + PAVI_JetA1_P_IN_TB.Text + "', '" + PAVI_TPSA_P_TStck_TB.Text + "', " +
-                "'" + PAVI_JP4_P_Prc_TB.Text + "', '" + PAVI_JetA1_P_Prc_TB.Text + "', '" + PAVI_TPSA_P_TAmnt_TB.Text + "', '" + PAVI_JP4_T_IN_TB.Text + "', " +
-                "'" + PAVI_JetA1_T_IN_TB.Text + "', '" + PAVI_JP4_T_Stck_TB.Text + "', '" + PAVI_JetA1_T_Stck_TB.Text + "', '" + PAVI_TTS_T_TStck_TB.Text + "', " +
-                "'" + PAVI_JP4_S_IN_TB.Text + "', '" + PAVI_JetA1_S_IN_TB.Text + "', '" + PAVI_JP4_S_Amnt_TB.Text + "', '" + PAVI_JetA1_S_Amnt_TB.Text + "', " +
-                "'" + PAVI_TSA_S_TAmnt_TB.Text + "', '" + PAVI_LA_Stck_TB.Text + "', '" + PAVI_MA_Stck_TB.Text + "', '" + PAVI_Depo_Tstck_TB.Text + "', " +
-                "'" + PAVI_LA_Sale_TB.Text + "', '" + PAVI_MA_Sale_TB.Text + "', '" + PAVI_Depo_TSale_TB.Text + "', '" + 110 + "', '" + 115 + "', '" + JP4_CStck + "', " +
-                "'" + JetA1_CStck + "', '" + 120 + "', '" + 125 + "')";
-                SQ.InsertData(query);
-                MessageBox.Show("Success!");
-                PAVI_Clr();
-                SQ.ShowGVData("SELECT * FROM PARCOAvi", PAVI_GV);
-                PARCOAvi_Result();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void PAVI_GV_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                string id = PAVI_GV.SelectedRows[0].Cells[0].Value.ToString();
-                PA_Date.Text = PAVI_GV.SelectedRows[0].Cells[1].Value.ToString();
-                PAVI_JP4_P_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[2].Value.ToString();
-                PAVI_JetA1_P_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[3].Value.ToString();
-                PAVI_TPSA_P_TStck_TB.Text = PAVI_GV.SelectedRows[0].Cells[4].Value.ToString();
-                PAVI_JP4_P_Prc_TB.Text = PAVI_GV.SelectedRows[0].Cells[5].Value.ToString();
-                PAVI_JetA1_P_Prc_TB.Text = PAVI_GV.SelectedRows[0].Cells[6].Value.ToString();
-                PAVI_TPSA_P_TAmnt_TB.Text = PAVI_GV.SelectedRows[0].Cells[7].Value.ToString();
-                PAVI_JP4_T_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[8].Value.ToString();
-                PAVI_JetA1_T_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[9].Value.ToString();
-                PAVI_JP4_T_Stck_TB.Text = PAVI_GV.SelectedRows[0].Cells[10].Value.ToString();
-                PAVI_JetA1_T_Stck_TB.Text = PAVI_GV.SelectedRows[0].Cells[11].Value.ToString();
-                PAVI_TTS_T_TStck_TB.Text = PAVI_GV.SelectedRows[0].Cells[12].Value.ToString();
-                PAVI_JP4_S_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[13].Value.ToString();
-                PAVI_JetA1_S_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[14].Value.ToString();
-                PAVI_JP4_S_Amnt_TB.Text = PAVI_GV.SelectedRows[0].Cells[15].Value.ToString();
-                PAVI_JetA1_S_Amnt_TB.Text = PAVI_GV.SelectedRows[0].Cells[16].Value.ToString();
-                PAVI_TSA_S_TAmnt_TB.Text = PAVI_GV.SelectedRows[0].Cells[17].Value.ToString();
-                PAVI_LA_Stck_TB.Text = PAVI_GV.SelectedRows[0].Cells[18].Value.ToString();
-                PAVI_MA_Stck_TB.Text = PAVI_GV.SelectedRows[0].Cells[19].Value.ToString();
-                PAVI_Depo_Tstck_TB.Text = PAVI_GV.SelectedRows[0].Cells[20].Value.ToString();
-                PAVI_LA_Sale_TB.Text = PAVI_GV.SelectedRows[0].Cells[21].Value.ToString();
-                PAVI_MA_Sale_TB.Text = PAVI_GV.SelectedRows[0].Cells[22].Value.ToString();
-                PAVI_Depo_TSale_TB.Text = PAVI_GV.SelectedRows[0].Cells[23].Value.ToString();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void ParAVI_Delete_Btn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    SQL_Queires SQ = new SQL_Queires();
-                    string id = PAVI_GV.SelectedRows[0].Cells[0].Value.ToString();
-                    SQ.DeleteData("DELETE FROM PARCOAvi WHERE ID = '" + id + "';");
-                    SQ.ShowGVData("Select * FROM PARCOAvi", PAVI_GV);
-                    PAVI_Clr();
-                }
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void ParAVI_Update_Btn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string comp = PAVI_GV.SelectedRows[0].Cells[1].Value.ToString();
-                if (PA_Date.Text == comp)
-                {
-                    double JP4_SaleStck = (Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_S_IN_TB.Text)) / 100;
-                    double JetA1_SaleStck = (Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_S_IN_TB.Text)) / 100;
-                    double JP4_CStck = Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) - (Convert.ToInt64(PAVI_JP4_T_Stck_TB.Text) + JP4_SaleStck);
-                    double JetA1_CStck = Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) - (Convert.ToInt64(PAVI_JetA1_T_Stck_TB.Text) + JetA1_SaleStck);
-                    SQL_Queires SQ = new SQL_Queires();
-                    con.Open();
-                    string id = PAVI_GV.SelectedRows[0].Cells[0].Value.ToString();
-                    SqlDataAdapter Update = new SqlDataAdapter("UPDATE PARCOAvi SET Date= '" + PA_Date.Text + "', JP4_Pur_Ltr= '" + PAVI_JP4_P_IN_TB.Text + "', JetA1_Pur_Ltr= '" + PAVI_JetA1_P_IN_TB.Text + "', Pur_Tstock= '" + PAVI_TPSA_P_TStck_TB.Text + "'," +
-                        "JP4_Pur_Amnt= '" + PAVI_JP4_P_Prc_TB.Text + "', JetA1_Pur_Amnt= '" + PAVI_JetA1_P_Prc_TB.Text + "', Pur_Tamount= '" + PAVI_TPSA_P_TAmnt_TB.Text + "', JP4_Tran_Per= '" + PAVI_JP4_T_IN_TB.Text + "', JetA1_Tran_Per= '" + PAVI_JetA1_T_IN_TB.Text + "'," +
-                        "JP4_Tran_Stck= '" + PAVI_JP4_T_Stck_TB.Text + "', JetA1_Tran_Stck= '" + PAVI_JetA1_T_Stck_TB.Text + "', Tran_Tstock= '" + PAVI_TTS_T_TStck_TB.Text + "', JP4_Sale_Per= '" + PAVI_JP4_S_IN_TB.Text + "', JetA1_Sale_Per= '" + PAVI_JetA1_S_IN_TB.Text + "'," +
-                        "JP4_Sale_Amnt= '" + PAVI_JP4_S_Amnt_TB.Text + "', JetA1_Sale_Amnt= '" + PAVI_JetA1_S_Amnt_TB.Text + "', Sale_Tamount= '" + PAVI_TSA_S_TAmnt_TB.Text + "', LahA_Stck= '" + PAVI_LA_Stck_TB.Text + "', MulA_Stck= '" + PAVI_MA_Stck_TB.Text + "'," +
-                        "Avi_Tstock= '" + PAVI_Depo_Tstck_TB.Text + "', LahA_Sale= '" + PAVI_LA_Sale_TB.Text + "', MulA_Sale= '" + PAVI_MA_Sale_TB.Text + "'," +
-                        "Avi_TSale= '" + PAVI_Depo_TSale_TB.Text + "', JP4_ClosingS= '" + JP4_CStck + "', JetA1_ClosingS= '" + JetA1_CStck + "' WHERE ID = '" + id + "'", con);
-                    Update.SelectCommand.ExecuteNonQuery();
-                    con.Close();
-                    SQ.ShowGVData("SELECT * FROM PARCOAvi", PAVI_GV);
-                    PAVI_Clr();
-                    MessageBox.Show("Updated Successfully");
-                }
-                else
-                {
-                    MessageBox.Show("You cannot change date");
-                }
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-        public void PA_TextChange()
-        {
-            try
-            {
-                PAVI_JP4_P_Prc_TB.Text = (Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * 110).ToString();
-                PAVI_JetA1_P_Prc_TB.Text = (Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * 115).ToString();
-                PAVI_PurTStck();
-                PAVI_PurTAmnt();
-                PAVI_JP4_T_Stck_TB.Text = ((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_T_IN_TB.Text)) / 100).ToString();
-                PAVI_JetA1_T_Stck_TB.Text = ((Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_T_IN_TB.Text)) / 100).ToString();
-                PAVI_TranTStck();
-                PAVI_JP4_S_Amnt_TB.Text = (((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_S_IN_TB.Text)) / 100) * 120).ToString();
-                PAVI_JetA1_S_Amnt_TB.Text = (((Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_S_IN_TB.Text)) / 100) * 125).ToString();
-                PAVI_SaleTAmnt();
-                PAVI_DepoStck();
-                PAVI_DepoSale();
-                PAVI_Depo_Tstck_TB.Text = PAVI_TTS_T_TStck_TB.Text;
-                PAVI_DepoTotAmnt();
-            }
-            catch (Exception)
-            {
-            }
-        }
-        private void PAVI_JP4_P_IN_TB_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (PAVI_JP4_P_IN_TB.Text == String.Empty)
-                {
-                    PAVI_JP4_P_Prc_TB.Clear();
-                }
-                PAVI_JP4_P_Prc_TB.Text = (Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * 110).ToString();
-                PA_TextChange();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void PAVI_JetA1_P_IN_TB_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (PAVI_JetA1_P_IN_TB.Text == String.Empty)
-                {
-                    PAVI_JetA1_P_Prc_TB.Clear();
-                    PAVI_TPSA_P_TStck_TB.Clear();
-                    PAVI_TPSA_P_TAmnt_TB.Clear();
-                }
-                PAVI_JetA1_P_Prc_TB.Text = (Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * 115).ToString();
-                PAVI_PurTStck();
-                PA_TextChange();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void PAVI_JetA1_P_Prc_TB_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                PAVI_PurTAmnt();
-                PA_TextChange();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void PAVI_JP4_T_IN_TB_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (PAVI_JP4_T_IN_TB.Text == String.Empty)
-                {
-                    PAVI_JP4_T_Stck_TB.Clear();
-                }
-                PAVI_JP4_T_Stck_TB.Text = ((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_T_IN_TB.Text)) / 100).ToString();
-                PA_TextChange();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void PAVI_JetA1_T_IN_TB_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (PAVI_JetA1_T_IN_TB.Text == String.Empty)
-                {
-                    PAVI_JetA1_T_Stck_TB.Clear();
-                    PAVI_TTS_T_TStck_TB.Clear();
-                    PAVI_LA_Stck_TB.Clear();
-                    PAVI_LA_Sale_TB.Clear();
-                    PAVI_MA_Stck_TB.Clear();
-                    PAVI_MA_Sale_TB.Clear();
-                    PAVI_Depo_Tstck_TB.Clear();
-                    PAVI_Depo_TSale_TB.Clear();
-                }
-                PAVI_JetA1_T_Stck_TB.Text = ((Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_T_IN_TB.Text)) / 100).ToString();
-                PA_TextChange();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void PAVI_JetA1_T_Stck_TB_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                PAVI_TranTStck();
-                PA_TextChange();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void PAVI_JP4_S_IN_TB_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (PAVI_JP4_S_IN_TB.Text == String.Empty)
-                {
-                    PAVI_JP4_S_Amnt_TB.Clear();
-                }
-                PAVI_JP4_S_Amnt_TB.Text = (((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_S_IN_TB.Text)) / 100) * 120).ToString();
-                PA_TextChange();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void PAVI_JetA1_S_IN_TB_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (PAVI_JetA1_S_IN_TB.Text == String.Empty)
-                {
-                    PAVI_JetA1_S_Amnt_TB.Clear();
-                    PAVI_TSA_S_TAmnt_TB.Clear();
-                }
-                PAVI_JetA1_S_Amnt_TB.Text = (((Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_S_IN_TB.Text)) / 100) * 125).ToString();
-                PA_TextChange();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void PAVI_JetA1_S_Amnt_TB_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                PAVI_SaleTAmnt();
-                PA_TextChange();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void PAVI_TTS_T_TStck_TB_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                PAVI_DepoStck();
-                PAVI_DepoSale();
-                PA_TextChange();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void PAVI_MA_Stck_TB_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                PAVI_Depo_Tstck_TB.Text = PAVI_TTS_T_TStck_TB.Text;
-                PA_TextChange();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void PAVI_MA_Sale_TB_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                PAVI_DepoTotAmnt();
-                PA_TextChange();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void ParAVI_Rst_Btn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                PAVI_Clr();
-            }
-            catch (Exception)
-            {
-            }
-        }
     }
 }
