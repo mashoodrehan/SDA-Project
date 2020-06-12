@@ -3362,5 +3362,16 @@ namespace AuditPlan
             {
             }
         }
+
+        private void CAVI_Rst_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //CAVI_Clr();
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
