@@ -4075,6 +4075,37 @@ namespace AuditPlan
 
         #endregion
 
+        public void PAVI_PurTStck()
+        {
+            PAVI_TPSA_P_TStck_TB.Text = ((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) + Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text)) * 30).ToString();
+
+        }
+        public void PAVI_PurTAmnt()
+        {
+            PAVI_TPSA_P_TAmnt_TB.Text = ((Convert.ToInt64(PAVI_JP4_P_Prc_TB.Text) + Convert.ToInt64(PAVI_JetA1_P_Prc_TB.Text)) * 30).ToString();
+        }
+        public void PAVI_TranTStck()
+        {
+            PAVI_TTS_T_TStck_TB.Text = ((Convert.ToInt64(PAVI_JP4_T_Stck_TB.Text) + Convert.ToInt64(PAVI_JetA1_T_Stck_TB.Text)) * 30).ToString();
+        }
+        public void PAVI_SaleTAmnt()
+        {
+            PAVI_TSA_S_TAmnt_TB.Text = ((Convert.ToInt64(PAVI_JP4_S_Amnt_TB.Text) + Convert.ToInt64(PAVI_JetA1_S_Amnt_TB.Text)) * 30).ToString();
+        }
+        public void PAVI_DepoTotAmnt()
+        {
+            PAVI_Depo_TSale_TB.Text = ((Convert.ToInt64(PAVI_LA_Sale_TB.Text) + Convert.ToInt64(PAVI_MA_Sale_TB.Text)) * 30).ToString();
+        }
+        public void PAVI_DepoStck()
+        {
+            PAVI_LA_Stck_TB.Text = (Convert.ToInt64(PAVI_TTS_T_TStck_TB.Text) / 60).ToString();
+            PAVI_MA_Stck_TB.Text = (Convert.ToInt64(PAVI_TTS_T_TStck_TB.Text) / 60).ToString();
+        }
+        public void PAVI_DepoSale()
+        {
+            PAVI_LA_Sale_TB.Text = (Convert.ToInt64(PAVI_LA_Stck_TB.Text) * 127).ToString();
+            PAVI_MA_Sale_TB.Text = (Convert.ToInt64(PAVI_MA_Stck_TB.Text) * 132).ToString();
+        }
         public void PAVI_Clr()
         {
             PA_Date.Text = null; PAVI_JP4_P_IN_TB.Clear(); PAVI_JetA1_P_IN_TB.Clear(); PAVI_TPSA_P_TStck_TB.Clear(); PAVI_JP4_P_Prc_TB.Clear();
@@ -4083,6 +4114,59 @@ namespace AuditPlan
             PAVI_JetA1_S_IN_TB.Clear(); PAVI_JP4_S_Amnt_TB.Clear(); PAVI_JetA1_S_Amnt_TB.Clear(); PAVI_TSA_S_TAmnt_TB.Clear();
             PAVI_LA_Stck_TB.Clear(); PAVI_MA_Stck_TB.Clear(); PAVI_Depo_Tstck_TB.Clear(); PAVI_LA_Sale_TB.Clear();
             PAVI_MA_Sale_TB.Clear(); PAVI_Depo_TSale_TB.Clear();
+        }
+        public void PARCOAvi_Result()
+        {
+            int j = 0;
+            while (Res_GV.Rows.Count > j)
+            {
+                string dept = Res_GV.Rows[j].Cells[1].Value.ToString();
+                if (dept == "PARCO Aviation")
+                {
+                    try
+                    {
+                        SQL_Queires SQ = new SQL_Queires();
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                j++;
+            }
+            int Low = risk.Next(1, 40);
+            int Medium = risk.Next(41, 70);
+            int High = risk.Next(71, 100);
+            int i = 0;
+            double val = 0;
+            while (PAVI_GV.Rows.Count > i)
+            {
+                val += double.Parse(PAVI_GV.Rows[i].Cells[7].Value.ToString());
+                i++;
+            }
+            if (val > 25000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('PARCO Aviation', '" + HighFreq + "', '" + High + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 25000000 && val > 15000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('PARCO Aviation', '" + MedFreq + "', '" + Medium + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 15000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('PARCO Aviation', '" + LowFreq + "', '" + Low + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
         }
         private void ParAVI_AddInfo_Btn_Click(object sender, EventArgs e)
         {
@@ -4116,9 +4200,9 @@ namespace AuditPlan
                 "'" + JetA1_CStck + "', '" + 120 + "', '" + 125 + "')";
                 SQ.InsertData(query);
                 MessageBox.Show("Success!");
-                //PAVI_Clr();
+                PAVI_Clr();
                 SQ.ShowGVData("SELECT * FROM PARCOAvi", PAVI_GV);
-                //PARCOAvi_Result();
+                PARCOAvi_Result();
             }
             catch (Exception)
             {
@@ -4169,7 +4253,7 @@ namespace AuditPlan
                     string id = PAVI_GV.SelectedRows[0].Cells[0].Value.ToString();
                     SQ.DeleteData("DELETE FROM PARCOAvi WHERE ID = '" + id + "';");
                     SQ.ShowGVData("Select * FROM PARCOAvi", PAVI_GV);
-                    //PAVI_Clr();
+                    PAVI_Clr();
                 }
             }
             catch (Exception)
@@ -4200,7 +4284,7 @@ namespace AuditPlan
                     Update.SelectCommand.ExecuteNonQuery();
                     con.Close();
                     SQ.ShowGVData("SELECT * FROM PARCOAvi", PAVI_GV);
-                    //PAVI_Clr();
+                    PAVI_Clr();
                     MessageBox.Show("Updated Successfully");
                 }
                 else
@@ -4213,7 +4297,29 @@ namespace AuditPlan
                 con.Close();
             }
         }
-
+        public void PA_TextChange()
+        {
+            try
+            {
+                PAVI_JP4_P_Prc_TB.Text = (Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * 110).ToString();
+                PAVI_JetA1_P_Prc_TB.Text = (Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * 115).ToString();
+                PAVI_PurTStck();
+                PAVI_PurTAmnt();
+                PAVI_JP4_T_Stck_TB.Text = ((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_T_IN_TB.Text)) / 100).ToString();
+                PAVI_JetA1_T_Stck_TB.Text = ((Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_T_IN_TB.Text)) / 100).ToString();
+                PAVI_TranTStck();
+                PAVI_JP4_S_Amnt_TB.Text = (((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_S_IN_TB.Text)) / 100) * 120).ToString();
+                PAVI_JetA1_S_Amnt_TB.Text = (((Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_S_IN_TB.Text)) / 100) * 125).ToString();
+                PAVI_SaleTAmnt();
+                PAVI_DepoStck();
+                PAVI_DepoSale();
+                PAVI_Depo_Tstck_TB.Text = PAVI_TTS_T_TStck_TB.Text;
+                PAVI_DepoTotAmnt();
+            }
+            catch (Exception)
+            {
+            }
+        }
         private void PAVI_JP4_P_IN_TB_TextChanged(object sender, EventArgs e)
         {
             try
@@ -4223,7 +4329,7 @@ namespace AuditPlan
                     PAVI_JP4_P_Prc_TB.Clear();
                 }
                 PAVI_JP4_P_Prc_TB.Text = (Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * 110).ToString();
-                //PA_TextChange();
+                PA_TextChange();
             }
             catch (Exception)
             {
@@ -4241,8 +4347,8 @@ namespace AuditPlan
                     PAVI_TPSA_P_TAmnt_TB.Clear();
                 }
                 PAVI_JetA1_P_Prc_TB.Text = (Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * 115).ToString();
-                //PAVI_PurTStck();
-                //PA_TextChange();
+                PAVI_PurTStck();
+                PA_TextChange();
             }
             catch (Exception)
             {
@@ -4253,8 +4359,8 @@ namespace AuditPlan
         {
             try
             {
-                //PAVI_PurTAmnt();
-                //PA_TextChange();
+                PAVI_PurTAmnt();
+                PA_TextChange();
             }
             catch (Exception)
             {
@@ -4270,7 +4376,7 @@ namespace AuditPlan
                     PAVI_JP4_T_Stck_TB.Clear();
                 }
                 PAVI_JP4_T_Stck_TB.Text = ((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_T_IN_TB.Text)) / 100).ToString();
-                //PA_TextChange();
+                PA_TextChange();
             }
             catch (Exception)
             {
@@ -4293,7 +4399,7 @@ namespace AuditPlan
                     PAVI_Depo_TSale_TB.Clear();
                 }
                 PAVI_JetA1_T_Stck_TB.Text = ((Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_T_IN_TB.Text)) / 100).ToString();
-                //PA_TextChange();
+                PA_TextChange();
             }
             catch (Exception)
             {
@@ -4304,8 +4410,8 @@ namespace AuditPlan
         {
             try
             {
-                //PAVI_TranTStck();
-                //PA_TextChange();
+                PAVI_TranTStck();
+                PA_TextChange();
             }
             catch (Exception)
             {
@@ -4321,7 +4427,7 @@ namespace AuditPlan
                     PAVI_JP4_S_Amnt_TB.Clear();
                 }
                 PAVI_JP4_S_Amnt_TB.Text = (((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_S_IN_TB.Text)) / 100) * 120).ToString();
-                //PA_TextChange();
+                PA_TextChange();
             }
             catch (Exception)
             {
@@ -4338,7 +4444,7 @@ namespace AuditPlan
                     PAVI_TSA_S_TAmnt_TB.Clear();
                 }
                 PAVI_JetA1_S_Amnt_TB.Text = (((Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_S_IN_TB.Text)) / 100) * 125).ToString();
-                //PA_TextChange();
+                PA_TextChange();
             }
             catch (Exception)
             {
@@ -4349,8 +4455,8 @@ namespace AuditPlan
         {
             try
             {
-                //PAVI_SaleTAmnt();
-                //PA_TextChange();
+                PAVI_SaleTAmnt();
+                PA_TextChange();
             }
             catch (Exception)
             {
@@ -4361,9 +4467,9 @@ namespace AuditPlan
         {
             try
             {
-                //PAVI_DepoStck();
-                //PAVI_DepoSale();
-                //PA_TextChange();
+                PAVI_DepoStck();
+                PAVI_DepoSale();
+                PA_TextChange();
             }
             catch (Exception)
             {
@@ -4375,7 +4481,7 @@ namespace AuditPlan
             try
             {
                 PAVI_Depo_Tstck_TB.Text = PAVI_TTS_T_TStck_TB.Text;
-                //PA_TextChange();
+                PA_TextChange();
             }
             catch (Exception)
             {
@@ -4386,8 +4492,8 @@ namespace AuditPlan
         {
             try
             {
-                //PAVI_DepoTotAmnt();
-                //PA_TextChange();
+                PAVI_DepoTotAmnt();
+                PA_TextChange();
             }
             catch (Exception)
             {
