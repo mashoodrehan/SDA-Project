@@ -3197,7 +3197,50 @@ namespace AuditPlan
 
         private void PARCOD_GV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            try
+            {
+                string id = PARCOD_GV.SelectedRows[0].Cells[0].Value.ToString();
+                PD_Date.Text = PARCOD_GV.SelectedRows[0].Cells[1].Value.ToString();
+                P_MS_P_IN_TB.Text = PARCOD_GV.SelectedRows[0].Cells[2].Value.ToString();
+                P_HOBC_P_IN_TB.Text = PARCOD_GV.SelectedRows[0].Cells[3].Value.ToString();
+                P_HSD_P_IN_TB.Text = PARCOD_GV.SelectedRows[0].Cells[4].Value.ToString();
+                P_KO_P_IN_TB.Text = PARCOD_GV.SelectedRows[0].Cells[5].Value.ToString();
+                P_TPSM_P_TS_TB.Text = PARCOD_GV.SelectedRows[0].Cells[6].Value.ToString();
+                P_MS_P_Prc_TB.Text = PARCOD_GV.SelectedRows[0].Cells[7].Value.ToString();
+                P_HOBC_P_Prc_TB.Text = PARCOD_GV.SelectedRows[0].Cells[8].Value.ToString();
+                P_HSD_P_Prc_TB.Text = PARCOD_GV.SelectedRows[0].Cells[9].Value.ToString();
+                P_KO_P_Prc_TB.Text = PARCOD_GV.SelectedRows[0].Cells[10].Value.ToString();
+                P_TPSM_P_TA_TB.Text = PARCOD_GV.SelectedRows[0].Cells[11].Value.ToString();
+                P_MS_T_IN_TB.Text = PARCOD_GV.SelectedRows[0].Cells[12].Value.ToString();
+                P_HOBC_T_IN_TB.Text = PARCOD_GV.SelectedRows[0].Cells[13].Value.ToString();
+                P_HSD_T_IN_TB.Text = PARCOD_GV.SelectedRows[0].Cells[14].Value.ToString();
+                P_KO_T_IN_TB.Text = PARCOD_GV.SelectedRows[0].Cells[15].Value.ToString();
+                P_MS_T_Stck_TB.Text = PARCOD_GV.SelectedRows[0].Cells[16].Value.ToString();
+                P_HOBC_T_Stck_TB.Text = PARCOD_GV.SelectedRows[0].Cells[17].Value.ToString();
+                P_HSD_T_Stck_TB.Text = PARCOD_GV.SelectedRows[0].Cells[18].Value.ToString();
+                P_KO_T_Stck_TB.Text = PARCOD_GV.SelectedRows[0].Cells[19].Value.ToString();
+                P_TTS_T_TStck_TB.Text = PARCOD_GV.SelectedRows[0].Cells[20].Value.ToString();
+                P_MS_S_IN_TB.Text = PARCOD_GV.SelectedRows[0].Cells[21].Value.ToString();
+                P_HOBC_S_IN_TB.Text = PARCOD_GV.SelectedRows[0].Cells[22].Value.ToString();
+                P_HSD_S_IN_TB.Text = PARCOD_GV.SelectedRows[0].Cells[23].Value.ToString();
+                P_KO_S_IN_TB.Text = PARCOD_GV.SelectedRows[0].Cells[24].Value.ToString();
+                P_MS_S_Amnt_TB.Text = PARCOD_GV.SelectedRows[0].Cells[25].Value.ToString();
+                P_HOBC_S_Amnt_TB.Text = PARCOD_GV.SelectedRows[0].Cells[26].Value.ToString();
+                P_HSD_S_Amnt_TB.Text = PARCOD_GV.SelectedRows[0].Cells[27].Value.ToString();
+                P_KO_S_Amnt_TB.Text = PARCOD_GV.SelectedRows[0].Cells[28].Value.ToString();
+                P_TSA_S_TAmnt_TB.Text = PARCOD_GV.SelectedRows[0].Cells[29].Value.ToString();
+                P_VD_Stck_TB.Text = PARCOD_GV.SelectedRows[0].Cells[30].Value.ToString();
+                P_SherD_Stck_TB.Text = PARCOD_GV.SelectedRows[0].Cells[31].Value.ToString();
+                P_SahiD_Stck_TB.Text = PARCOD_GV.SelectedRows[0].Cells[32].Value.ToString();
+                P_Depo_TStck.Text = PARCOD_GV.SelectedRows[0].Cells[33].Value.ToString();
+                P_VD_Sale_TB.Text = PARCOD_GV.SelectedRows[0].Cells[34].Value.ToString();
+                P_SherD_Sale_TB.Text = PARCOD_GV.SelectedRows[0].Cells[35].Value.ToString();
+                P_SahiD_Sale_TB.Text = PARCOD_GV.SelectedRows[0].Cells[36].Value.ToString();
+                P_Depo_TAmnt.Text = PARCOD_GV.SelectedRows[0].Cells[37].Value.ToString();
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void P_Delete_Btn_Click(object sender, EventArgs e)
@@ -3259,6 +3302,35 @@ namespace AuditPlan
             finally
             {
                 con.Close();
+            }
+        }
+        public void PD_TextChange()
+        {
+            try
+            {
+                P_MS_P_Prc_TB.Text = (Convert.ToInt64(P_MS_P_IN_TB.Text) * 90).ToString();
+                P_HOBC_P_Prc_TB.Text = (Convert.ToInt64(P_HOBC_P_IN_TB.Text) * 100).ToString();
+                P_HSD_P_Prc_TB.Text = (Convert.ToInt64(P_HSD_P_IN_TB.Text) * 115).ToString();
+                P_KO_P_Prc_TB.Text = (Convert.ToInt64(P_KO_P_IN_TB.Text) * 110).ToString();
+                P_PTotStck();
+                P_PTotAmnt();
+                P_MS_T_Stck_TB.Text = ((Convert.ToInt64(P_MS_P_IN_TB.Text) * Convert.ToInt64(P_MS_T_IN_TB.Text)) / 100).ToString();
+                P_HOBC_T_Stck_TB.Text = ((Convert.ToInt64(P_HOBC_P_IN_TB.Text) * Convert.ToInt64(P_HOBC_T_IN_TB.Text)) / 100).ToString();
+                P_HSD_T_Stck_TB.Text = ((Convert.ToInt64(P_HSD_P_IN_TB.Text) * Convert.ToInt64(P_HSD_T_IN_TB.Text)) / 100).ToString();
+                P_KO_T_Stck_TB.Text = ((Convert.ToInt64(P_KO_P_IN_TB.Text) * Convert.ToInt64(P_KO_T_IN_TB.Text)) / 100).ToString();
+                P_TTotStck();
+                P_MS_S_Amnt_TB.Text = (((Convert.ToInt64(P_MS_P_IN_TB.Text) * Convert.ToInt64(P_MS_S_IN_TB.Text)) / 100) * 98).ToString();
+                P_HOBC_S_Amnt_TB.Text = (((Convert.ToInt64(P_HOBC_P_IN_TB.Text) * Convert.ToInt64(P_HOBC_S_IN_TB.Text)) / 100) * 116).ToString();
+                P_HSD_S_Amnt_TB.Text = (((Convert.ToInt64(P_HSD_P_IN_TB.Text) * Convert.ToInt64(P_HSD_S_IN_TB.Text)) / 100) * 125).ToString();
+                P_KO_S_Amnt_TB.Text = (((Convert.ToInt64(P_KO_P_IN_TB.Text) * Convert.ToInt64(P_KO_S_IN_TB.Text)) / 100) * 120).ToString();
+                P_STotAmnt();
+                P_DepoStck();
+                P_Depo_TStck.Text = P_TTS_T_TStck_TB.Text;
+                P_DepoTotSale();
+                P_DepoSale();
+            }
+            catch (Exception)
+            {
             }
         }
     }
