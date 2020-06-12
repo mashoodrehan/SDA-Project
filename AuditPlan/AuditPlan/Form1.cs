@@ -3148,5 +3148,118 @@ namespace AuditPlan
             }
         }
         #endregion
+
+        private void P_AddInfo_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQL_Queires SQ = new SQL_Queires();
+                int j = 0;
+                while (PARCOD_GV.Rows.Count > j)
+                {
+                    string val = PARCOD_GV.Rows[j].Cells[1].Value.ToString();
+                    if (PD_Date.Text == val)
+                    {
+                        SQ.DeleteData("DELETE FROM PARCODepo WHERE Date = '" + val + "';");
+                    }
+                    j++;
+                }
+                double MS_SaleStck = (Convert.ToInt64(P_MS_P_IN_TB.Text) * Convert.ToInt64(P_MS_S_IN_TB.Text)) / 100;
+                double HOBC_SaleStck = (Convert.ToInt64(P_HOBC_P_IN_TB.Text) * Convert.ToInt64(P_HOBC_S_IN_TB.Text)) / 100;
+                double HSD_SaleStck = (Convert.ToInt64(P_HSD_P_IN_TB.Text) * Convert.ToInt64(P_HSD_S_IN_TB.Text)) / 100;
+                double KO_SaleStck = (Convert.ToInt64(P_KO_P_IN_TB.Text) * Convert.ToInt64(P_KO_S_IN_TB.Text)) / 100;
+                double MS_CStck = Convert.ToInt64(P_MS_P_IN_TB.Text) - (Convert.ToInt64(P_MS_T_Stck_TB.Text) + MS_SaleStck);
+                double HOBC_CStck = Convert.ToInt64(P_HOBC_P_IN_TB.Text) - (Convert.ToInt64(P_HOBC_T_Stck_TB.Text) + HOBC_SaleStck);
+                double HSD_CStck = Convert.ToInt64(P_HSD_P_IN_TB.Text) - (Convert.ToInt64(P_HSD_T_Stck_TB.Text) + HSD_SaleStck);
+                double KO_CStck = Convert.ToInt64(P_KO_P_IN_TB.Text) - (Convert.ToInt64(P_KO_T_Stck_TB.Text) + KO_SaleStck);
+                String query = "Insert INTO PARCODepo (Date, MS_Pur_Ltr, HOBC_Pur_Ltr, HSD_Pur_Ltr, KO_Pur_Ltr, Pur_Tstock, MS_Pur_Amnt, HOBC_Pur_Amnt," +
+                "HSD_Pur_Amnt, KO_Pur_Amnt, Pur_Tamount, MS_Tran_Per, HOBC_Tran_Per, HSD_Tran_Per, KO_Tran_Per, MS_Tran_Stck, HOBC_Tran_Stck, " +
+                "HSD_Tran_Stck, KO_Tran_Stck, Tran_Tstock, MS_Sale_Per, HOBC_Sale_per, HSD_Sale_Per, KO_Sale_Per, MS_Sale_Amnt, HOBC_Sale_Amnt, HSD_Sale_Amnt," +
+                "KO_Sale_Amnt, Sale_Tamount, VehD_Stck, SherD_Stck, SahiD_Stck, Depo_Tstock, VehD_Sale, SherD_Sale, SahiD_Sale, Depo_TSale, MS_Pur_Prc," +
+                "HOBC_Pur_Prc, HSD_Pur_Prc, KO_Pur_Prc, MS_ClosingS, HOBC_ClosingS, HSD_ClosingS, KO_ClosingS, MS_Sale_Prc, HOBC_Sale_Prc," +
+                "HSD_Sale_Prc, KO_Sale_Prc) VALUES('" + PD_Date.Text + "', '" + P_MS_P_IN_TB.Text + "', '" + P_HOBC_P_IN_TB.Text + "', '" + P_HSD_P_IN_TB.Text + "', '" + P_KO_P_IN_TB.Text + "', '" + P_TPSM_P_TS_TB.Text + "', " +
+                "'" + P_MS_P_Prc_TB.Text + "', '" + P_HOBC_P_Prc_TB.Text + "', '" + P_HSD_P_Prc_TB.Text + "', '" + P_KO_P_Prc_TB.Text + "', '" + P_TPSM_P_TA_TB.Text + "', '" + P_MS_T_IN_TB.Text + "', " +
+                "'" + P_HOBC_T_IN_TB.Text + "', '" + P_HSD_T_IN_TB.Text + "', '" + P_KO_T_IN_TB.Text + "', '" + P_MS_T_Stck_TB.Text + "', '" + P_HOBC_T_Stck_TB.Text + "', '" + P_HSD_T_Stck_TB.Text + "', " +
+                "'" + P_KO_T_Stck_TB.Text + "', '" + P_TTS_T_TStck_TB.Text + "', '" + P_MS_S_IN_TB.Text + "', '" + P_HOBC_S_IN_TB.Text + "', '" + P_HSD_S_IN_TB.Text + "', '" + P_KO_S_IN_TB.Text + "', " +
+                "'" + P_MS_S_Amnt_TB.Text + "', '" + P_HOBC_S_Amnt_TB.Text + "', '" + P_HSD_S_Amnt_TB.Text + "', '" + P_KO_S_Amnt_TB.Text + "', '" + P_TSA_S_TAmnt_TB.Text + "', '" + P_VD_Stck_TB.Text + "', '" + P_SherD_Stck_TB.Text + "', " +
+                "'" + P_SahiD_Stck_TB.Text + "', '" + P_Depo_TStck.Text + "', '" + P_VD_Sale_TB.Text + "', '" + P_SherD_Sale_TB.Text + "', '" + P_SahiD_Sale_TB.Text + "', '" + P_Depo_TAmnt.Text + "', " +
+                "'" + 90 + "', '" + 100 + "', '" + 115 + "', '" + 110 + "', '" + MS_CStck + "', '" + HOBC_CStck + "', '" + HSD_CStck + "', '" + KO_CStck + "', '" + 98 + "', '" + 116 + "', '" + 125 + "', '" + 120 + "')";
+                SQ.InsertData(query);
+                MessageBox.Show("Success!");
+                PD_Clr();
+                SQ.ShowGVData("SELECT * FROM PARCODepo", PARCOD_GV);
+                PARCODepo_Result();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PARCOD_GV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void P_Delete_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    string id = PARCOD_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SQ.DeleteData("DELETE FROM PARCODepo WHERE ID = '" + id + "';");
+                    SQ.ShowGVData("Select * FROM PARCODepo", PARCOD_GV);
+                    PD_Clr();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void P_Update_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string comp = PARCOD_GV.SelectedRows[0].Cells[1].Value.ToString();
+                if (PD_Date.Text == comp)
+                {
+                    double MS_SaleStck = (Convert.ToInt64(P_MS_P_IN_TB.Text) * Convert.ToInt64(P_MS_S_IN_TB.Text)) / 100;
+                    double HOBC_SaleStck = (Convert.ToInt64(P_HOBC_P_IN_TB.Text) * Convert.ToInt64(P_HOBC_S_IN_TB.Text)) / 100;
+                    double HSD_SaleStck = (Convert.ToInt64(P_HSD_P_IN_TB.Text) * Convert.ToInt64(P_HSD_S_IN_TB.Text)) / 100;
+                    double KO_SaleStck = (Convert.ToInt64(P_KO_P_IN_TB.Text) * Convert.ToInt64(P_KO_S_IN_TB.Text)) / 100;
+                    double MS_CStck = Convert.ToInt64(P_MS_P_IN_TB.Text) - (Convert.ToInt64(P_MS_T_Stck_TB.Text) + MS_SaleStck);
+                    double HOBC_CStck = Convert.ToInt64(P_HOBC_P_IN_TB.Text) - (Convert.ToInt64(P_HOBC_T_Stck_TB.Text) + HOBC_SaleStck);
+                    double HSD_CStck = Convert.ToInt64(P_HSD_P_IN_TB.Text) - (Convert.ToInt64(P_HSD_T_Stck_TB.Text) + HSD_SaleStck);
+                    double KO_CStck = Convert.ToInt64(P_KO_P_IN_TB.Text) - (Convert.ToInt64(P_KO_T_Stck_TB.Text) + KO_SaleStck);
+                    SQL_Queires SQ = new SQL_Queires();
+                    con.Open();
+                    string id = PARCOD_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SqlDataAdapter Update = new SqlDataAdapter("UPDATE PARCODepo SET Date= '" + PD_Date.Text + "', MS_Pur_Ltr= '" + P_MS_P_IN_TB.Text + "', HOBC_Pur_Ltr= '" + P_HOBC_P_IN_TB.Text + "', HSD_Pur_Ltr= '" + P_HSD_P_IN_TB.Text + "'," +
+                        "KO_Pur_Ltr= '" + P_KO_P_IN_TB.Text + "', Pur_Tstock= '" + P_TPSM_P_TS_TB.Text + "', MS_Pur_Amnt= '" + P_MS_P_Prc_TB.Text + "', HOBC_Pur_Amnt= '" + P_HOBC_P_Prc_TB.Text + "', HSD_Pur_Amnt= '" + P_HSD_P_Prc_TB.Text + "'," +
+                        "KO_Pur_Amnt= '" + P_KO_P_Prc_TB.Text + "', Pur_Tamount= '" + P_TPSM_P_TA_TB.Text + "', MS_Tran_Per= '" + P_MS_T_IN_TB.Text + "', HOBC_Tran_Per= '" + P_HOBC_T_IN_TB.Text + "', HSD_Tran_Per= '" + P_HSD_T_IN_TB.Text + "'," +
+                        "KO_Tran_Per= '" + P_KO_T_IN_TB.Text + "', MS_Tran_Stck= '" + P_MS_T_Stck_TB.Text + "', HOBC_Tran_Stck= '" + P_HOBC_T_Stck_TB.Text + "', HSD_Tran_Stck= '" + P_HSD_T_Stck_TB.Text + "', KO_Tran_Stck= '" + P_KO_T_Stck_TB.Text + "'," +
+                        "Tran_Tstock= '" + P_TTS_T_TStck_TB.Text + "', MS_Sale_Per= '" + P_MS_S_IN_TB.Text + "', HOBC_Sale_Per= '" + P_HOBC_S_IN_TB.Text + "', HSD_Sale_Per= '" + P_HSD_S_IN_TB.Text + "', KO_Sale_Per= '" + P_KO_S_IN_TB.Text + "'," +
+                        "MS_Sale_Amnt= '" + P_MS_S_Amnt_TB.Text + "', HOBC_Sale_Amnt= '" + P_HOBC_S_Amnt_TB.Text + "', HSD_Sale_Amnt= '" + P_HSD_S_Amnt_TB.Text + "', KO_Sale_Amnt= '" + P_KO_S_Amnt_TB.Text + "', Sale_Tamount= '" + P_TSA_S_TAmnt_TB.Text + "'," +
+                        "VehD_Stck= '" + P_VD_Stck_TB.Text + "', SherD_Stck= '" + P_SherD_Stck_TB.Text + "', SahiD_Stck= '" + P_SahiD_Stck_TB.Text + "', Depo_Tstock= '" + P_Depo_TStck.Text + "', VehD_Sale= '" + P_VD_Sale_TB.Text + "'," +
+                        "SherD_Sale= '" + P_SherD_Sale_TB.Text + "', SahiD_Sale= '" + P_SahiD_Sale_TB.Text + "', Depo_TSale= '" + P_Depo_TAmnt.Text + "', MS_ClosingS= '" + MS_CStck + "', HOBC_ClosingS= '" + HOBC_CStck + "'," +
+                        "HSD_ClosingS= '" + HSD_CStck + "', KO_ClosingS= '" + KO_CStck + "' WHERE ID = '" + id + "'", con);
+                    Update.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+                    SQ.ShowGVData("SELECT * FROM PARCODepo", PARCOD_GV);
+                    PD_Clr();
+                    MessageBox.Show("Updated Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("You cannot change date");
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }
