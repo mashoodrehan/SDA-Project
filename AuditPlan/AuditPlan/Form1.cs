@@ -4075,6 +4075,15 @@ namespace AuditPlan
 
         #endregion
 
+        public void PAVI_Clr()
+        {
+            PA_Date.Text = null; PAVI_JP4_P_IN_TB.Clear(); PAVI_JetA1_P_IN_TB.Clear(); PAVI_TPSA_P_TStck_TB.Clear(); PAVI_JP4_P_Prc_TB.Clear();
+            PAVI_JetA1_P_Prc_TB.Clear(); PAVI_TPSA_P_TAmnt_TB.Clear(); PAVI_JP4_T_IN_TB.Clear(); PAVI_JetA1_T_IN_TB.Clear();
+            PAVI_JP4_T_Stck_TB.Clear(); PAVI_JetA1_T_Stck_TB.Clear(); PAVI_TTS_T_TStck_TB.Clear(); PAVI_JP4_S_IN_TB.Clear();
+            PAVI_JetA1_S_IN_TB.Clear(); PAVI_JP4_S_Amnt_TB.Clear(); PAVI_JetA1_S_Amnt_TB.Clear(); PAVI_TSA_S_TAmnt_TB.Clear();
+            PAVI_LA_Stck_TB.Clear(); PAVI_MA_Stck_TB.Clear(); PAVI_Depo_Tstck_TB.Clear(); PAVI_LA_Sale_TB.Clear();
+            PAVI_MA_Sale_TB.Clear(); PAVI_Depo_TSale_TB.Clear();
+        }
         private void ParAVI_AddInfo_Btn_Click(object sender, EventArgs e)
         {
             try
@@ -4379,6 +4388,17 @@ namespace AuditPlan
             {
                 //PAVI_DepoTotAmnt();
                 //PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void ParAVI_Rst_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PAVI_Clr();
             }
             catch (Exception)
             {
