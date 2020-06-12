@@ -2452,6 +2452,442 @@ namespace AuditPlan
             }
         }
         #endregion
+        #region=============================================Chaklala Aviation=============================================
+        public void CAVI_PurTStck()
+        {
+            CAVI_TPSM_P_TStck_TB.Text = ((Convert.ToInt64(CAVI_JP4_P_IN_TB.Text) + Convert.ToInt64(CAVI_JetA1_P_IN_TB.Text)) * 30).ToString();
+        }
+        public void CAVI_PurTAmnt()
+        {
+            CAVI_TPSM_P_TAmnt_TB.Text = ((Convert.ToInt64(CAVI_JP4_P_Prc_TB.Text) + Convert.ToInt64(CAVI_JetA1_P_Prc_TB.Text)) * 30).ToString();
+        }
+        public void CAVI_TranTStck()
+        {
+            CAVI_TTS_T_TStck_TB.Text = ((Convert.ToInt64(CAVI_JP4_T_Stck_TB.Text) + Convert.ToInt64(CAVI_JetA1_T_Stck_TB.Text)) * 30).ToString();
+        }
+        public void CAVI_SaleTAmnt()
+        {
+            CAVI_TSA_S_TAmnt_TB.Text = ((Convert.ToInt64(CAVI_JP4_S_Amnt_TB.Text) + Convert.ToInt64(CAVI_JetA1_S_Amnt_TB.Text)) * 30).ToString();
+        }
+        public void CAVI_DepoTotAmnt()
+        {
+            CAVI_Depo_TSale_TB.Text = ((Convert.ToInt64(CAVI_IA_Sale_TB.Text) + Convert.ToInt64(CAVI_PA_Sale_TB.Text)) * 30).ToString();
+        }
+        public void CAVI_DepoStck()
+        {
+            CAVI_IA_Stck_TB.Text = (Convert.ToInt64(CAVI_TTS_T_TStck_TB.Text) / 60).ToString();
+            CAVI_PA_Stck_TB.Text = (Convert.ToInt64(CAVI_TTS_T_TStck_TB.Text) / 60).ToString();
+        }
+        public void CAVI_DepoSale()
+        {
+            CAVI_IA_Sale_TB.Text = (Convert.ToInt64(CAVI_IA_Stck_TB.Text) * 130).ToString();
+            CAVI_PA_Sale_TB.Text = (Convert.ToInt64(CAVI_PA_Stck_TB.Text) * 128).ToString();
+        }
+        public void CAVI_Clr()
+        {
+            CA_Date.Text = null; CAVI_JP4_P_IN_TB.Clear(); CAVI_JetA1_P_IN_TB.Clear(); CAVI_TPSM_P_TStck_TB.Clear(); CAVI_JP4_P_Prc_TB.Clear();
+            CAVI_JetA1_P_Prc_TB.Clear(); CAVI_TPSM_P_TAmnt_TB.Clear(); CAVI_JP4_T_IN_TB.Clear(); CAVI_JetA1_T_IN_TB.Clear();
+            CAVI_JP4_T_Stck_TB.Clear(); CAVI_JetA1_T_Stck_TB.Clear(); CAVI_TTS_T_TStck_TB.Clear(); CAVI_JP4_S_IN_TB.Clear();
+            CAVI_JetA1_S_IN_TB.Clear(); CAVI_JP4_S_Amnt_TB.Clear(); CAVI_JetA1_S_Amnt_TB.Clear(); CAVI_TSA_S_TAmnt_TB.Clear();
+            CAVI_IA_Stck_TB.Clear(); CAVI_PA_Stck_TB.Clear(); CAVI_Depo_Tstck_TB.Clear(); CAVI_IA_Sale_TB.Clear();
+            CAVI_PA_Sale_TB.Clear(); CAVI_Depo_TSale_TB.Clear();
+        }
+        public void ChaklalaAvi_Result()
+        {
+            int j = 0;
+            while (Res_GV.Rows.Count > j)
+            {
+                string dept = Res_GV.Rows[j].Cells[1].Value.ToString();
+                if (dept == "Chaklala Aviation")
+                {
+                    try
+                    {
+                        SQL_Queires SQ = new SQL_Queires();
+                        string id = Res_GV.Rows[j].Cells[0].Value.ToString();
+                        SQ.DeleteData("DELETE FROM AuditPlanRes WHERE ID = '" + id + "';");
+                        SQ.ShowGVData("Select * FROM AuditPlanRes", Res_GV);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+                j++;
+            }
+            int Low = risk.Next(1, 40);
+            int Medium = risk.Next(41, 70);
+            int High = risk.Next(71, 100);
+            int i = 0;
+            double val = 0;
+            while (CAVI_GV.Rows.Count > i)
+            {
+                val += double.Parse(CAVI_GV.Rows[i].Cells[7].Value.ToString());
+                i++;
+            }
+            if (val > 25000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Chaklala Aviation', '" + HighFreq + "', '" + High + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 25000000 && val > 15000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Chaklala Aviation', '" + MedFreq + "', '" + Medium + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+            else if (val < 15000000)
+            {
+                String query = "Insert INTO AuditPlanRes(Departments, Frequency, Risk) VALUES('Chaklala Aviation', '" + LowFreq + "', '" + Low + "')";
+                SQL_Queires SQ = new SQL_Queires();
+                SQ.InsertData(query);
+                SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
+            }
+        }
+        private void CAVI_AddInfo_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQL_Queires SQ = new SQL_Queires();
+                int j = 0;
+                while (CAVI_GV.Rows.Count > j)
+                {
+                    string val = CAVI_GV.Rows[j].Cells[1].Value.ToString();
+                    if (CA_Date.Text == val)
+                    {
+                        SQ.DeleteData("DELETE FROM ChaklalaAvi WHERE Date = '" + val + "';");
+                    }
+                    j++;
+                }
+                double JP4_SaleStck = (Convert.ToInt64(CAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(CAVI_JP4_S_IN_TB.Text)) / 100;
+                double JetA1_SaleStck = (Convert.ToInt64(CAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(CAVI_JetA1_S_IN_TB.Text)) / 100;
+                double JP4_CStck = Convert.ToInt64(CAVI_JP4_P_IN_TB.Text) - (Convert.ToInt64(CAVI_JP4_T_Stck_TB.Text) + JP4_SaleStck);
+                double JetA1_CStck = Convert.ToInt64(CAVI_JetA1_P_IN_TB.Text) - (Convert.ToInt64(CAVI_JetA1_T_Stck_TB.Text) + JetA1_SaleStck);
+                String query = "Insert INTO ChaklalaAvi (Date, JP4_Pur_Ltr, JetA1_Pur_Ltr, Pur_Tstock, JP4_Pur_Amnt, JetA1_Pur_Amnt," +
+                "Pur_Tamount, JP4_Tran_Per, JetA1_Tran_Per, JP4_Tran_Stck, JetA1_Tran_Stck, Tran_Tstock, JP4_Sale_Per, JetA1_Sale_per, " +
+                "JP4_Sale_Amnt, JetA1_Sale_Amnt,Sale_Tamount, IslA_Stck, PeshA_Stck, Avi_Tstock, IslA_Sale, " +
+                "PeshA_Sale, Avi_TSale, JP4_Pur_Prc, JetA1_Pur_Prc, JP4_ClosingS, JetA1_ClosingS, JP4_Sale_Prc, " +
+                "JetA1_Sale_Prc) VALUES('" + CA_Date.Text + "', '" + CAVI_JP4_P_IN_TB.Text + "', '" + CAVI_JetA1_P_IN_TB.Text + "', '" + CAVI_TPSM_P_TStck_TB.Text + "', " +
+                "'" + CAVI_JP4_P_Prc_TB.Text + "', '" + CAVI_JetA1_P_Prc_TB.Text + "', '" + CAVI_TPSM_P_TAmnt_TB.Text + "', '" + CAVI_JP4_T_IN_TB.Text + "', " +
+                "'" + CAVI_JetA1_T_IN_TB.Text + "', '" + CAVI_JP4_T_Stck_TB.Text + "', '" + CAVI_JetA1_T_Stck_TB.Text + "', '" + CAVI_TTS_T_TStck_TB.Text + "', " +
+                "'" + CAVI_JP4_S_IN_TB.Text + "', '" + CAVI_JetA1_S_IN_TB.Text + "', '" + CAVI_JP4_S_Amnt_TB.Text + "', '" + CAVI_JetA1_S_Amnt_TB.Text + "', " +
+                "'" + CAVI_TSA_S_TAmnt_TB.Text + "', '" + CAVI_IA_Stck_TB.Text + "', '" + CAVI_PA_Stck_TB.Text + "', '" + CAVI_Depo_Tstck_TB.Text + "', " +
+                "'" + CAVI_IA_Sale_TB.Text + "', '" + CAVI_PA_Sale_TB.Text + "', '" + CAVI_Depo_TSale_TB.Text + "', '" + 110 + "', '" + 115 + "', '" + JP4_CStck + "', " +
+                "'" + JetA1_CStck + "', '" + 120 + "', '" + 125 + "')";
+                SQ.InsertData(query);
+                MessageBox.Show("Success!");
+                CAVI_Clr();
+                SQ.ShowGVData("SELECT * FROM ChaklalaAvi", CAVI_GV);
+                ChaklalaAvi_Result();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_GV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string id = CAVI_GV.SelectedRows[0].Cells[0].Value.ToString();
+                CA_Date.Text = CAVI_GV.SelectedRows[0].Cells[1].Value.ToString();
+                CAVI_JP4_P_IN_TB.Text = CAVI_GV.SelectedRows[0].Cells[2].Value.ToString();
+                CAVI_JetA1_P_IN_TB.Text = CAVI_GV.SelectedRows[0].Cells[3].Value.ToString();
+                CAVI_TPSM_P_TStck_TB.Text = CAVI_GV.SelectedRows[0].Cells[4].Value.ToString();
+                CAVI_JP4_P_Prc_TB.Text = CAVI_GV.SelectedRows[0].Cells[5].Value.ToString();
+                CAVI_JetA1_P_Prc_TB.Text = CAVI_GV.SelectedRows[0].Cells[6].Value.ToString();
+                CAVI_TPSM_P_TAmnt_TB.Text = CAVI_GV.SelectedRows[0].Cells[7].Value.ToString();
+                CAVI_JP4_T_IN_TB.Text = CAVI_GV.SelectedRows[0].Cells[8].Value.ToString();
+                CAVI_JetA1_T_IN_TB.Text = CAVI_GV.SelectedRows[0].Cells[9].Value.ToString();
+                CAVI_JP4_T_Stck_TB.Text = CAVI_GV.SelectedRows[0].Cells[10].Value.ToString();
+                CAVI_JetA1_T_Stck_TB.Text = CAVI_GV.SelectedRows[0].Cells[11].Value.ToString();
+                CAVI_TTS_T_TStck_TB.Text = CAVI_GV.SelectedRows[0].Cells[12].Value.ToString();
+                CAVI_JP4_S_IN_TB.Text = CAVI_GV.SelectedRows[0].Cells[13].Value.ToString();
+                CAVI_JetA1_S_IN_TB.Text = CAVI_GV.SelectedRows[0].Cells[14].Value.ToString();
+                CAVI_JP4_S_Amnt_TB.Text = CAVI_GV.SelectedRows[0].Cells[15].Value.ToString();
+                CAVI_JetA1_S_Amnt_TB.Text = CAVI_GV.SelectedRows[0].Cells[16].Value.ToString();
+                CAVI_TSA_S_TAmnt_TB.Text = CAVI_GV.SelectedRows[0].Cells[17].Value.ToString();
+                CAVI_IA_Stck_TB.Text = CAVI_GV.SelectedRows[0].Cells[18].Value.ToString();
+                CAVI_PA_Stck_TB.Text = CAVI_GV.SelectedRows[0].Cells[19].Value.ToString();
+                CAVI_Depo_Tstck_TB.Text = CAVI_GV.SelectedRows[0].Cells[20].Value.ToString();
+                CAVI_IA_Sale_TB.Text = CAVI_GV.SelectedRows[0].Cells[21].Value.ToString();
+                CAVI_PA_Sale_TB.Text = CAVI_GV.SelectedRows[0].Cells[22].Value.ToString();
+                CAVI_Depo_TSale_TB.Text = CAVI_GV.SelectedRows[0].Cells[23].Value.ToString();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_Delete_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    string id = CAVI_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SQ.DeleteData("DELETE FROM ChaklalaAvi WHERE ID = '" + id + "';");
+                    SQ.ShowGVData("Select * FROM ChaklalaAvi", CAVI_GV);
+                    CAVI_Clr();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_Update_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string comp = CAVI_GV.SelectedRows[0].Cells[1].Value.ToString();
+                if (CA_Date.Text == comp)
+                {
+                    double JP4_SaleStck = (Convert.ToInt64(CAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(CAVI_JP4_S_IN_TB.Text)) / 100;
+                    double JetA1_SaleStck = (Convert.ToInt64(CAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(CAVI_JetA1_S_IN_TB.Text)) / 100;
+                    double JP4_CStck = Convert.ToInt64(CAVI_JP4_P_IN_TB.Text) - (Convert.ToInt64(CAVI_JP4_T_Stck_TB.Text) + JP4_SaleStck);
+                    double JetA1_CStck = Convert.ToInt64(CAVI_JetA1_P_IN_TB.Text) - (Convert.ToInt64(CAVI_JetA1_T_Stck_TB.Text) + JetA1_SaleStck);
+                    SQL_Queires SQ = new SQL_Queires();
+                    con.Open();
+                    string id = CAVI_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SqlDataAdapter Update = new SqlDataAdapter("UPDATE ChaklalaAvi SET Date= '" + CA_Date.Text + "', JP4_Pur_Ltr= '" + CAVI_JP4_P_IN_TB.Text + "', JetA1_Pur_Ltr= '" + CAVI_JetA1_P_IN_TB.Text + "', Pur_Tstock= '" + CAVI_TPSM_P_TStck_TB.Text + "'," +
+                        "JP4_Pur_Amnt= '" + CAVI_JP4_P_Prc_TB.Text + "', JetA1_Pur_Amnt= '" + CAVI_JetA1_P_Prc_TB.Text + "', Pur_Tamount= '" + CAVI_TPSM_P_TAmnt_TB.Text + "', JP4_Tran_Per= '" + CAVI_JP4_T_IN_TB.Text + "', JetA1_Tran_Per= '" + CAVI_JetA1_T_IN_TB.Text + "'," +
+                        "JP4_Tran_Stck= '" + CAVI_JP4_T_Stck_TB.Text + "', JetA1_Tran_Stck= '" + CAVI_JetA1_T_Stck_TB.Text + "', Tran_Tstock= '" + CAVI_TTS_T_TStck_TB.Text + "', JP4_Sale_Per= '" + CAVI_JP4_S_IN_TB.Text + "', JetA1_Sale_Per= '" + CAVI_JetA1_S_IN_TB.Text + "'," +
+                        "JP4_Sale_Amnt= '" + CAVI_JP4_S_Amnt_TB.Text + "', JetA1_Sale_Amnt= '" + CAVI_JetA1_S_Amnt_TB.Text + "', Sale_Tamount= '" + CAVI_TSA_S_TAmnt_TB.Text + "', IslA_Stck= '" + CAVI_IA_Stck_TB.Text + "', PeshA_Stck= '" + CAVI_PA_Stck_TB.Text + "'," +
+                        "Avi_Tstock= '" + CAVI_Depo_Tstck_TB.Text + "', IslA_Sale= '" + CAVI_IA_Sale_TB.Text + "', PeshA_Sale= '" + CAVI_PA_Sale_TB.Text + "'," +
+                        "Avi_TSale= '" + CAVI_Depo_TSale_TB.Text + "', JP4_ClosingS= '" + JP4_CStck + "', JetA1_ClosingS= '" + JetA1_CStck + "' WHERE ID = '" + id + "'", con);
+                    Update.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+                    SQ.ShowGVData("SELECT * FROM ChaklalaAvi", CAVI_GV);
+                    CAVI_Clr();
+                    MessageBox.Show("Updated Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("You cannot change date");
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void CA_TextChange()
+        {
+            try
+            {
+                CAVI_JP4_P_Prc_TB.Text = (Convert.ToInt64(CAVI_JP4_P_IN_TB.Text) * 110).ToString();
+                CAVI_JetA1_P_Prc_TB.Text = (Convert.ToInt64(CAVI_JetA1_P_IN_TB.Text) * 115).ToString();
+                CAVI_PurTStck();
+                CAVI_PurTAmnt();
+                CAVI_JP4_T_Stck_TB.Text = ((Convert.ToInt64(CAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(CAVI_JP4_T_IN_TB.Text)) / 100).ToString();
+                CAVI_JetA1_T_Stck_TB.Text = ((Convert.ToInt64(CAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(CAVI_JetA1_T_IN_TB.Text)) / 100).ToString();
+                CAVI_TranTStck();
+                CAVI_JP4_S_Amnt_TB.Text = (((Convert.ToInt64(CAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(CAVI_JP4_S_IN_TB.Text)) / 100) * 120).ToString();
+                CAVI_JetA1_S_Amnt_TB.Text = (((Convert.ToInt64(CAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(CAVI_JetA1_S_IN_TB.Text)) / 100) * 125).ToString();
+                CAVI_SaleTAmnt();
+                CAVI_DepoStck();
+                CAVI_DepoSale();
+                CAVI_Depo_Tstck_TB.Text = CAVI_TTS_T_TStck_TB.Text;
+                CAVI_DepoTotAmnt();
+            }
+            catch (Exception)
+            {
+            }
+        }
+        private void CAVI_JP4_P_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CAVI_JP4_P_IN_TB.Text == String.Empty)
+                {
+                    CAVI_JP4_P_Prc_TB.Clear();
+                }
+                CAVI_JP4_P_Prc_TB.Text = (Convert.ToInt64(CAVI_JP4_P_IN_TB.Text) * 110).ToString();
+                CA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_JetA1_P_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CAVI_JetA1_P_IN_TB.Text == String.Empty)
+                {
+                    CAVI_JetA1_P_Prc_TB.Clear();
+                    CAVI_TPSM_P_TStck_TB.Clear();
+                    CAVI_TPSM_P_TAmnt_TB.Clear();
+                }
+                CAVI_JetA1_P_Prc_TB.Text = (Convert.ToInt64(CAVI_JetA1_P_IN_TB.Text) * 115).ToString();
+                CAVI_PurTStck();
+                CA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_JetA1_P_Prc_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CAVI_PurTAmnt();
+                CA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_JP4_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CAVI_JP4_T_IN_TB.Text == String.Empty)
+                {
+                    CAVI_JP4_T_Stck_TB.Clear();
+                }
+                CAVI_JP4_T_Stck_TB.Text = ((Convert.ToInt64(CAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(CAVI_JP4_T_IN_TB.Text)) / 100).ToString();
+                CA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_JetA1_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CAVI_JetA1_T_IN_TB.Text == String.Empty)
+                {
+                    CAVI_JetA1_T_Stck_TB.Clear();
+                    CAVI_TTS_T_TStck_TB.Clear();
+                    CAVI_IA_Stck_TB.Clear();
+                    CAVI_IA_Sale_TB.Clear();
+                    CAVI_PA_Stck_TB.Clear();
+                    CAVI_PA_Sale_TB.Clear();
+                    CAVI_Depo_Tstck_TB.Clear();
+                    CAVI_Depo_TSale_TB.Clear();
+                }
+                CAVI_JetA1_T_Stck_TB.Text = ((Convert.ToInt64(CAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(CAVI_JetA1_T_IN_TB.Text)) / 100).ToString();
+                CA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_JetA1_T_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CAVI_TranTStck();
+                CA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_JP4_S_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CAVI_JP4_S_IN_TB.Text == String.Empty)
+                {
+                    CAVI_JP4_S_Amnt_TB.Clear();
+                }
+                CAVI_JP4_S_Amnt_TB.Text = (((Convert.ToInt64(CAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(CAVI_JP4_S_IN_TB.Text)) / 100) * 120).ToString();
+                CA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_JetA1_S_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CAVI_JetA1_S_IN_TB.Text == String.Empty)
+                {
+                    CAVI_JetA1_S_Amnt_TB.Clear();
+                    CAVI_TSA_S_TAmnt_TB.Clear();
+                }
+                CAVI_JetA1_S_Amnt_TB.Text = (((Convert.ToInt64(CAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(CAVI_JetA1_S_IN_TB.Text)) / 100) * 125).ToString();
+                CA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_JetA1_S_Amnt_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CAVI_SaleTAmnt();
+                CA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_TTS_T_TStck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CAVI_DepoStck();
+                CAVI_DepoSale();
+                CA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_PA_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CAVI_Depo_Tstck_TB.Text = CAVI_TTS_T_TStck_TB.Text;
+                CA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_PA_Sale_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CAVI_DepoTotAmnt();
+                CA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_Rst_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CAVI_Clr();
+            }
+            catch (Exception)
+            {
+            }
+        }
+        #endregion
         #region=================================================HR Dept==================================================
         public void HR_Clr()
         {
@@ -2513,7 +2949,7 @@ namespace AuditPlan
                 SQ.ShowGVData("SELECT * FROM AuditPlanRes", Res_GV);
             }
         }
-        
+
 
         private void HR_AddInfo_Btn_Click(object sender, EventArgs e)
         {
@@ -2722,7 +3158,7 @@ namespace AuditPlan
         }
 
 
-        
+
 
         private void MD_AddInfo_Btn_Click(object sender, EventArgs e)
         {
@@ -3440,7 +3876,7 @@ namespace AuditPlan
             FD_CSPLW_CB.Text = null;
         }
 
-        
+
 
         private void FD_Pnl2_AddInfo_Btn_Click(object sender, EventArgs e)
         {
@@ -3632,5 +4068,7 @@ namespace AuditPlan
             }
         }
         #endregion
+
+
     }
 }
