@@ -3338,5 +3338,29 @@ namespace AuditPlan
             {
             }
         }
+
+        private void CAVI_PA_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CAVI_Depo_Tstck_TB.Text = CAVI_TTS_T_TStck_TB.Text;
+                //CA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_PA_Sale_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //CAVI_DepoTotAmnt();
+                //CA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
