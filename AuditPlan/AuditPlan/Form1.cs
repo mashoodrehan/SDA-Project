@@ -3127,5 +3127,60 @@ namespace AuditPlan
             {
             }
         }
+
+        private void CAVI_Delete_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    string id = CAVI_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SQ.DeleteData("DELETE FROM ChaklalaAvi WHERE ID = '" + id + "';");
+                    SQ.ShowGVData("Select * FROM ChaklalaAvi", CAVI_GV);
+                    //CAVI_Clr();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void CAVI_Update_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string comp = CAVI_GV.SelectedRows[0].Cells[1].Value.ToString();
+                if (CA_Date.Text == comp)
+                {
+                    double JP4_SaleStck = (Convert.ToInt64(CAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(CAVI_JP4_S_IN_TB.Text)) / 100;
+                    double JetA1_SaleStck = (Convert.ToInt64(CAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(CAVI_JetA1_S_IN_TB.Text)) / 100;
+                    double JP4_CStck = Convert.ToInt64(CAVI_JP4_P_IN_TB.Text) - (Convert.ToInt64(CAVI_JP4_T_Stck_TB.Text) + JP4_SaleStck);
+                    double JetA1_CStck = Convert.ToInt64(CAVI_JetA1_P_IN_TB.Text) - (Convert.ToInt64(CAVI_JetA1_T_Stck_TB.Text) + JetA1_SaleStck);
+                    SQL_Queires SQ = new SQL_Queires();
+                    con.Open();
+                    string id = CAVI_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SqlDataAdapter Update = new SqlDataAdapter("UPDATE ChaklalaAvi SET Date= '" + CA_Date.Text + "', JP4_Pur_Ltr= '" + CAVI_JP4_P_IN_TB.Text + "', JetA1_Pur_Ltr= '" + CAVI_JetA1_P_IN_TB.Text + "', Pur_Tstock= '" + CAVI_TPSM_P_TStck_TB.Text + "'," +
+                        "JP4_Pur_Amnt= '" + CAVI_JP4_P_Prc_TB.Text + "', JetA1_Pur_Amnt= '" + CAVI_JetA1_P_Prc_TB.Text + "', Pur_Tamount= '" + CAVI_TPSM_P_TAmnt_TB.Text + "', JP4_Tran_Per= '" + CAVI_JP4_T_IN_TB.Text + "', JetA1_Tran_Per= '" + CAVI_JetA1_T_IN_TB.Text + "'," +
+                        "JP4_Tran_Stck= '" + CAVI_JP4_T_Stck_TB.Text + "', JetA1_Tran_Stck= '" + CAVI_JetA1_T_Stck_TB.Text + "', Tran_Tstock= '" + CAVI_TTS_T_TStck_TB.Text + "', JP4_Sale_Per= '" + CAVI_JP4_S_IN_TB.Text + "', JetA1_Sale_Per= '" + CAVI_JetA1_S_IN_TB.Text + "'," +
+                        "JP4_Sale_Amnt= '" + CAVI_JP4_S_Amnt_TB.Text + "', JetA1_Sale_Amnt= '" + CAVI_JetA1_S_Amnt_TB.Text + "', Sale_Tamount= '" + CAVI_TSA_S_TAmnt_TB.Text + "', IslA_Stck= '" + CAVI_IA_Stck_TB.Text + "', PeshA_Stck= '" + CAVI_PA_Stck_TB.Text + "'," +
+                        "Avi_Tstock= '" + CAVI_Depo_Tstck_TB.Text + "', IslA_Sale= '" + CAVI_IA_Sale_TB.Text + "', PeshA_Sale= '" + CAVI_PA_Sale_TB.Text + "'," +
+                        "Avi_TSale= '" + CAVI_Depo_TSale_TB.Text + "', JP4_ClosingS= '" + JP4_CStck + "', JetA1_ClosingS= '" + JetA1_CStck + "' WHERE ID = '" + id + "'", con);
+                    Update.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+                    SQ.ShowGVData("SELECT * FROM ChaklalaAvi", CAVI_GV);
+                    //CAVI_Clr();
+                    MessageBox.Show("Updated Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("You cannot change date");
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }
