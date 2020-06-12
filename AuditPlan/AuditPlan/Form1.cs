@@ -4204,5 +4204,161 @@ namespace AuditPlan
                 con.Close();
             }
         }
+
+        private void PAVI_JP4_P_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PAVI_JP4_P_IN_TB.Text == String.Empty)
+                {
+                    PAVI_JP4_P_Prc_TB.Clear();
+                }
+                PAVI_JP4_P_Prc_TB.Text = (Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * 110).ToString();
+                //PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JetA1_P_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PAVI_JetA1_P_IN_TB.Text == String.Empty)
+                {
+                    PAVI_JetA1_P_Prc_TB.Clear();
+                    PAVI_TPSA_P_TStck_TB.Clear();
+                    PAVI_TPSA_P_TAmnt_TB.Clear();
+                }
+                PAVI_JetA1_P_Prc_TB.Text = (Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * 115).ToString();
+                //PAVI_PurTStck();
+                //PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JetA1_P_Prc_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //PAVI_PurTAmnt();
+                //PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JP4_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PAVI_JP4_T_IN_TB.Text == String.Empty)
+                {
+                    PAVI_JP4_T_Stck_TB.Clear();
+                }
+                PAVI_JP4_T_Stck_TB.Text = ((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_T_IN_TB.Text)) / 100).ToString();
+                //PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JetA1_T_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PAVI_JetA1_T_IN_TB.Text == String.Empty)
+                {
+                    PAVI_JetA1_T_Stck_TB.Clear();
+                    PAVI_TTS_T_TStck_TB.Clear();
+                    PAVI_LA_Stck_TB.Clear();
+                    PAVI_LA_Sale_TB.Clear();
+                    PAVI_MA_Stck_TB.Clear();
+                    PAVI_MA_Sale_TB.Clear();
+                    PAVI_Depo_Tstck_TB.Clear();
+                    PAVI_Depo_TSale_TB.Clear();
+                }
+                PAVI_JetA1_T_Stck_TB.Text = ((Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_T_IN_TB.Text)) / 100).ToString();
+                //PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JetA1_T_Stck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //PAVI_TranTStck();
+                //PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JP4_S_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PAVI_JP4_S_IN_TB.Text == String.Empty)
+                {
+                    PAVI_JP4_S_Amnt_TB.Clear();
+                }
+                PAVI_JP4_S_Amnt_TB.Text = (((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_S_IN_TB.Text)) / 100) * 120).ToString();
+                //PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JetA1_S_IN_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PAVI_JetA1_S_IN_TB.Text == String.Empty)
+                {
+                    PAVI_JetA1_S_Amnt_TB.Clear();
+                    PAVI_TSA_S_TAmnt_TB.Clear();
+                }
+                PAVI_JetA1_S_Amnt_TB.Text = (((Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_S_IN_TB.Text)) / 100) * 125).ToString();
+                //PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_JetA1_S_Amnt_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //PAVI_SaleTAmnt();
+                //PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void PAVI_TTS_T_TStck_TB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //PAVI_DepoStck();
+                //PAVI_DepoSale();
+                //PA_TextChange();
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
