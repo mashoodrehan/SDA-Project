@@ -4115,5 +4115,94 @@ namespace AuditPlan
             {
             }
         }
+
+        private void PAVI_GV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string id = PAVI_GV.SelectedRows[0].Cells[0].Value.ToString();
+                PA_Date.Text = PAVI_GV.SelectedRows[0].Cells[1].Value.ToString();
+                PAVI_JP4_P_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[2].Value.ToString();
+                PAVI_JetA1_P_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[3].Value.ToString();
+                PAVI_TPSA_P_TStck_TB.Text = PAVI_GV.SelectedRows[0].Cells[4].Value.ToString();
+                PAVI_JP4_P_Prc_TB.Text = PAVI_GV.SelectedRows[0].Cells[5].Value.ToString();
+                PAVI_JetA1_P_Prc_TB.Text = PAVI_GV.SelectedRows[0].Cells[6].Value.ToString();
+                PAVI_TPSA_P_TAmnt_TB.Text = PAVI_GV.SelectedRows[0].Cells[7].Value.ToString();
+                PAVI_JP4_T_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[8].Value.ToString();
+                PAVI_JetA1_T_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[9].Value.ToString();
+                PAVI_JP4_T_Stck_TB.Text = PAVI_GV.SelectedRows[0].Cells[10].Value.ToString();
+                PAVI_JetA1_T_Stck_TB.Text = PAVI_GV.SelectedRows[0].Cells[11].Value.ToString();
+                PAVI_TTS_T_TStck_TB.Text = PAVI_GV.SelectedRows[0].Cells[12].Value.ToString();
+                PAVI_JP4_S_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[13].Value.ToString();
+                PAVI_JetA1_S_IN_TB.Text = PAVI_GV.SelectedRows[0].Cells[14].Value.ToString();
+                PAVI_JP4_S_Amnt_TB.Text = PAVI_GV.SelectedRows[0].Cells[15].Value.ToString();
+                PAVI_JetA1_S_Amnt_TB.Text = PAVI_GV.SelectedRows[0].Cells[16].Value.ToString();
+                PAVI_TSA_S_TAmnt_TB.Text = PAVI_GV.SelectedRows[0].Cells[17].Value.ToString();
+                PAVI_LA_Stck_TB.Text = PAVI_GV.SelectedRows[0].Cells[18].Value.ToString();
+                PAVI_MA_Stck_TB.Text = PAVI_GV.SelectedRows[0].Cells[19].Value.ToString();
+                PAVI_Depo_Tstck_TB.Text = PAVI_GV.SelectedRows[0].Cells[20].Value.ToString();
+                PAVI_LA_Sale_TB.Text = PAVI_GV.SelectedRows[0].Cells[21].Value.ToString();
+                PAVI_MA_Sale_TB.Text = PAVI_GV.SelectedRows[0].Cells[22].Value.ToString();
+                PAVI_Depo_TSale_TB.Text = PAVI_GV.SelectedRows[0].Cells[23].Value.ToString();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void ParAVI_Delete_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SQL_Queires SQ = new SQL_Queires();
+                    string id = PAVI_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SQ.DeleteData("DELETE FROM PARCOAvi WHERE ID = '" + id + "';");
+                    SQ.ShowGVData("Select * FROM PARCOAvi", PAVI_GV);
+                    //PAVI_Clr();
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void ParAVI_Update_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string comp = PAVI_GV.SelectedRows[0].Cells[1].Value.ToString();
+                if (PA_Date.Text == comp)
+                {
+                    double JP4_SaleStck = (Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) * Convert.ToInt64(PAVI_JP4_S_IN_TB.Text)) / 100;
+                    double JetA1_SaleStck = (Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) * Convert.ToInt64(PAVI_JetA1_S_IN_TB.Text)) / 100;
+                    double JP4_CStck = Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) - (Convert.ToInt64(PAVI_JP4_T_Stck_TB.Text) + JP4_SaleStck);
+                    double JetA1_CStck = Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text) - (Convert.ToInt64(PAVI_JetA1_T_Stck_TB.Text) + JetA1_SaleStck);
+                    SQL_Queires SQ = new SQL_Queires();
+                    con.Open();
+                    string id = PAVI_GV.SelectedRows[0].Cells[0].Value.ToString();
+                    SqlDataAdapter Update = new SqlDataAdapter("UPDATE PARCOAvi SET Date= '" + PA_Date.Text + "', JP4_Pur_Ltr= '" + PAVI_JP4_P_IN_TB.Text + "', JetA1_Pur_Ltr= '" + PAVI_JetA1_P_IN_TB.Text + "', Pur_Tstock= '" + PAVI_TPSA_P_TStck_TB.Text + "'," +
+                        "JP4_Pur_Amnt= '" + PAVI_JP4_P_Prc_TB.Text + "', JetA1_Pur_Amnt= '" + PAVI_JetA1_P_Prc_TB.Text + "', Pur_Tamount= '" + PAVI_TPSA_P_TAmnt_TB.Text + "', JP4_Tran_Per= '" + PAVI_JP4_T_IN_TB.Text + "', JetA1_Tran_Per= '" + PAVI_JetA1_T_IN_TB.Text + "'," +
+                        "JP4_Tran_Stck= '" + PAVI_JP4_T_Stck_TB.Text + "', JetA1_Tran_Stck= '" + PAVI_JetA1_T_Stck_TB.Text + "', Tran_Tstock= '" + PAVI_TTS_T_TStck_TB.Text + "', JP4_Sale_Per= '" + PAVI_JP4_S_IN_TB.Text + "', JetA1_Sale_Per= '" + PAVI_JetA1_S_IN_TB.Text + "'," +
+                        "JP4_Sale_Amnt= '" + PAVI_JP4_S_Amnt_TB.Text + "', JetA1_Sale_Amnt= '" + PAVI_JetA1_S_Amnt_TB.Text + "', Sale_Tamount= '" + PAVI_TSA_S_TAmnt_TB.Text + "', LahA_Stck= '" + PAVI_LA_Stck_TB.Text + "', MulA_Stck= '" + PAVI_MA_Stck_TB.Text + "'," +
+                        "Avi_Tstock= '" + PAVI_Depo_Tstck_TB.Text + "', LahA_Sale= '" + PAVI_LA_Sale_TB.Text + "', MulA_Sale= '" + PAVI_MA_Sale_TB.Text + "'," +
+                        "Avi_TSale= '" + PAVI_Depo_TSale_TB.Text + "', JP4_ClosingS= '" + JP4_CStck + "', JetA1_ClosingS= '" + JetA1_CStck + "' WHERE ID = '" + id + "'", con);
+                    Update.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+                    SQ.ShowGVData("SELECT * FROM PARCOAvi", PAVI_GV);
+                    //PAVI_Clr();
+                    MessageBox.Show("Updated Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("You cannot change date");
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }
