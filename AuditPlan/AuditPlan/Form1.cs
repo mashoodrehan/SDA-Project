@@ -45,6 +45,7 @@ namespace AuditPlan
         int LowFreq = 1;
         int MedFreq = 2;
         int HighFreq = 3;
+
         #region==================================================Panels==================================================
         public void Panel(System.Windows.Forms.Panel p)
         {
@@ -102,16 +103,16 @@ namespace AuditPlan
         private void Dpt_FinDptBtn_Click(object sender, EventArgs e)
         {
             Panel(FinancePnl);
-            //try
-            //{
-            //    SLW();
-            //    LGLW();
-            //    PQVLW();
-            //    CSPLW();
-            //}
-            //catch (Exception)
-            //{
-            //}
+            try
+            {
+                SLW();
+                LGLW();
+                PQVLW();
+                CSPLW();
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void KIDepoHmBtn_Click(object sender, EventArgs e)
@@ -2452,7 +2453,7 @@ namespace AuditPlan
             }
         }
         #endregion
-        #region=============================================Chaklala Aviation=============================================
+        #region============================================Chaklala Aviation=============================================
         public void CAVI_PurTStck()
         {
             CAVI_TPSM_P_TStck_TB.Text = ((Convert.ToInt64(CAVI_JP4_P_IN_TB.Text) + Convert.ToInt64(CAVI_JetA1_P_IN_TB.Text)) * 30).ToString();
@@ -2888,8 +2889,7 @@ namespace AuditPlan
             }
         }
         #endregion
-        #region=============================================PARCO Aviation=============================================
-
+        #region==============================================PARCO AVIATION==============================================
         public void PAVI_PurTStck()
         {
             PAVI_TPSA_P_TStck_TB.Text = ((Convert.ToInt64(PAVI_JP4_P_IN_TB.Text) + Convert.ToInt64(PAVI_JetA1_P_IN_TB.Text)) * 30).ToString();
@@ -4385,6 +4385,38 @@ namespace AuditPlan
             {
             }
         }
+        private void FD2_GV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string id = FD2_GV.SelectedRows[0].Cells[0].Value.ToString();
+                FD_Date.Text = FD2_GV.SelectedRows[0].Cells[1].Value.ToString();
+                FD_SLW_CB.Text = FD2_GV.SelectedRows[0].Cells[2].Value.ToString();
+                FD_LGLW_CB.Text = FD2_GV.SelectedRows[0].Cells[3].Value.ToString();
+                FD_CIPLW_Tb.Text = FD2_GV.SelectedRows[0].Cells[4].Value.ToString();
+                FD_PQVLW_CB.Text = FD2_GV.SelectedRows[0].Cells[5].Value.ToString();
+                FD_PISW_TB.Text = FD2_GV.SelectedRows[0].Cells[6].Value.ToString();
+                FD_CSPLW_CB.Text = FD2_GV.SelectedRows[0].Cells[7].Value.ToString();
+                FD_CA_CB.Text = FD2_GV.SelectedRows[0].Cells[8].Value.ToString();
+                FD_SPWCW_TB.Text = FD2_GV.SelectedRows[0].Cells[9].Value.ToString();
+                FD_PRC_CB.Text = FD2_GV.SelectedRows[0].Cells[10].Value.ToString();
+                FD_CL_TB.Text = FD2_GV.SelectedRows[0].Cells[11].Value.ToString();
+                FD_PSC_CB.Text = FD2_GV.SelectedRows[0].Cells[12].Value.ToString();
+                FD_PE_TB.Text = FD2_GV.SelectedRows[0].Cells[13].Value.ToString();
+                FD_IRL_TB.Text = FD2_GV.SelectedRows[0].Cells[14].Value.ToString();
+                FD_SPPE_TB.Text = FD2_GV.SelectedRows[0].Cells[15].Value.ToString();
+                FD_LAE_TB.Text = FD2_GV.SelectedRows[0].Cells[16].Value.ToString();
+                FD_PFDI_TB.Text = FD2_GV.SelectedRows[0].Cells[17].Value.ToString();
+                FD_PFMI_TB.Text = FD2_GV.SelectedRows[0].Cells[18].Value.ToString();
+                FD_PSCB_CB.Text = FD2_GV.SelectedRows[0].Cells[19].Value.ToString();
+                FD_CPE_TB.Text = FD2_GV.SelectedRows[0].Cells[20].Value.ToString();
+                FD_MBA_TB.Text = FD2_GV.SelectedRows[0].Cells[21].Value.ToString();
+                FD_BR_TB.Text = FD2_GV.SelectedRows[0].Cells[22].Value.ToString();
+            }
+            catch (Exception)
+            {
+            }
+        }
 
         private void FD_Pnl1_Delete_Btn_Click(object sender, EventArgs e)
         {
@@ -4429,7 +4461,8 @@ namespace AuditPlan
             try
             {
                 string comp = FD1_GV.SelectedRows[0].Cells[1].Value.ToString();
-                if (FD_Date.Text == comp)
+                string comp1 = FD2_GV.SelectedRows[0].Cells[1].Value.ToString();
+                if (FD_Date.Text == comp || FD_Date.Text == comp1)
                 {
                     SQL_Queires SQ = new SQL_Queires();
                     con.Open();
@@ -4506,9 +4539,8 @@ namespace AuditPlan
             {
             }
         }
-
         #endregion
 
-
+        
     }
 }
